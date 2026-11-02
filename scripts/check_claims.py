@@ -2,6 +2,9 @@
 
 Each line of `claims()` is one printed number: its place in the paper, the result file, the keys to it, and the value as printed.
 A claim passes if the stored number rounds to the printed one. Point it at results/verify to check a rerun in the same way.
+
+A file can be a tuple of names, and the first that exists is read. A key can be a function, applied to the value reached so far,
+for numbers the paper derives from a stored curve rather than prints as stored.
 """
 
 import json
@@ -17,8 +20,42 @@ def both(place, file, keys, values, digits=2):
     return [(place, file, (reader, *keys), value, digits) for reader, value in zip(READERS, values)]
 
 
+def with_ci(place, file, keys, printed, digits=2):
+    """A printed value, or a value with its CI as (mean, (low, high)), under `keys`; the CI sits at `ci`."""
+    if not isinstance(printed, tuple):
+        return [(place, file, (*keys, "mean"), printed, digits)]
+    mean, (low, high) = printed
+    return [
+        (place, file, (*keys, "mean"), mean, digits),
+        (f"{place}, low", file, (*keys, "ci", 0), low, digits),
+        (f"{place}, high", file, (*keys, "ci", 1), high, digits),
+    ]
+
+
+def h_band(low, high):
+    """h over a band of separations, pooled by pairs, from a stored curve of h by bin centre."""
+
+    def pooled(curve):
+        inside = [(h, n) for r, h, n in zip(curve["r"], curve["h"], curve["pairs"]) if low <= r <= high]
+        return sum(h * n for h, n in inside) / sum(n for _, n in inside)
+
+    pooled.label = f"h({low}-{high} px)"
+    return pooled
+
+
 def claims():
     out = []
+    table1 = {
+        "independent": ((-0.02, -0.02), (-0.01, -0.01), (-0.04, -0.10)),
+        "pairs": ((-0.38, -0.34), (-0.01, -0.01), (-0.99, -0.95)),
+        "one_sign": ((1.00, 1.00), (1.00, 1.00), (3.15, 2.96)),
+    }
+    for name, (short, long, c60) in table1.items():
+        for reader, *values in zip(READERS, short, long, c60):
+            curve = ("controls", name, reader)
+            out.append((f"Table 1, {name}, h(15-45)", "signed_minutiae", (*curve, h_band(15, 45)), values[0], 2))
+            out.append((f"Table 1, {name}, h(60-100)", "signed_minutiae", (*curve, h_band(60, 100)), values[1], 2))
+            out.append((f"Table 1, {name}, C(60)", "signed_minutiae", (*curve, "screening", "60", "mean"), values[2], 2))
     table2 = {
         "real": ((31.5, 27.9), (0.126, 0.228), (0.047, 0.096), (0.70, 1.03)),
         "sfinge": ((25.0, 24.8), (0.449, 0.526), (0.146, 0.170), (2.42, 2.76)),
@@ -51,6 +88,49 @@ def claims():
         out += both(f"Table 4, {name}, h(15-45)", "signed_false", (name, "confirmed", "h_short", "mean"), short, 3)
         out += both(f"Table 4, {name}, h(60-100)", "signed_false", (name, "confirmed", "h_long", "mean"), long, 3)
         out += both(f"Table 4, {name}, C(60)", "signed_false", (name, "confirmed", "c60", "mean"), c60)
+    columns = ("all", "confirmed", "no_singular", "scale6", "scale14")
+    table5 = {
+        "real": ((0.70, 1.03), (0.89, 1.00), (0.65, 0.96), (0.69, 1.02), (0.67, 1.02)),
+        "sfinge": ((2.42, 2.76), (2.82, 2.75), (2.08, 2.59), (2.39, 2.74), (2.45, 2.80)),
+        "model2": ((4.15, 3.88), (4.29, 4.01), (2.78, 2.81), (4.16, 3.89), (4.10, 3.87)),
+        "d_s1_sp2_f3": ((3.39, 2.88), (3.57, 2.96), (2.52, 2.35), (3.38, 2.88), (3.37, 2.87)),
+        "phantom": ((3.82, 3.49), None, (2.74, 2.74), (3.84, 3.50), (3.80, 3.48)),  # the rendered ZP row
+    }
+    for name, row in table5.items():
+        for column, values in zip(columns, row):
+            if values:
+                out += both(f"Table 5, {name}, {column}", "signed_curves", (name, column, "c", "60", "mean"), values)
+    # Table 6 is the charge part of the extractor-free read. Its stored run is D-061's; D-062 reread only the mean flow,
+    # so its stored file has no charge, but scripts/reproduce.py writes both parts under the D-062 name.
+    free = ("extractor_free_d061", "extractor_free_d062")
+    table6 = {
+        "real": ((1.03, (0.88, 1.17)), (1.00, (0.83, 1.17)), (1.22, (1.04, 1.40))),
+        "sfinge": ((1.76, (1.37, 2.23)), (2.96, (2.31, 3.67)), (3.11, (2.41, 3.91))),
+        "model2": ((4.22, (3.95, 4.47)), (4.26, (4.01, 4.53)), (4.04, (3.78, 4.31))),
+    }
+    for name, row in table6.items():
+        for read, printed in zip(("res15", "mindtct15", "leader15"), row):
+            out += with_ci(f"Table 6, {name}, {read}", free, (name, "charge", read, "c60"), printed)
+    out += with_ci("Section 5.7, real, winding at 6 px", free, ("real", "charge", "res6", "c60"), (0.26, (0.13, 0.38)))
+    out += with_ci("Section 5.7, sfinge, winding at 6 px", free, ("sfinge", "charge", "res6", "c60"), (0.27, (0.03, 0.54)))
+    table7 = {
+        "real": ((0.71, 1.05), (0.92, 1.20), ((1.31, (1.01, 1.59)), (1.32, (1.07, 1.57)))),
+        "sfinge": ((2.42, 2.77), (2.92, 3.09), ((3.57, (2.51, 4.58)), (3.80, (2.74, 4.84)))),
+        "model2": ((3.96, 3.69), (4.18, 3.92), (4.32, 4.18)),
+    }
+    for name, row in table7.items():
+        for threshold, values in zip(("0.0", "0.3", "0.5"), row):
+            for reader, printed in zip(READERS, values):
+                keys = (name, reader, "filter", threshold, "c60_rescaled")
+                out += with_ci(f"Table 7, {name}, {reader}, coherence {threshold}", "quality_lift_d063", keys, printed)
+    outside7 = {
+        "synfing": ((1.66, 2.03), ((1.99, (1.79, 2.18)), (2.29, (2.10, 2.49)))),
+        "anguli": ((2.23, 2.22), ((2.88, (2.70, 3.10)), (3.11, (2.94, 3.30)))),
+    }
+    for name, row in outside7.items():
+        for threshold, values in zip(("0.0", "0.5"), row):
+            for reader, printed in zip(READERS, values):
+                out += with_ci(f"Table 7, {name}, {reader}, coherence {threshold}", "review_controls_d071", (name, reader, threshold), printed)
     table8 = {"anguli": ((2.12, 2.10), (0.47, 0.46)), "synfing": ((1.67, 1.92), (0.33, 0.38))}
     for name, (c60, short) in table8.items():
         out += both(f"Table 8, {name}, C(60)", "outside_d066", ("charge", name, "c60", "mean"), c60)
@@ -86,22 +166,23 @@ def claims():
 
 def main(results=ROOT / "results" / "expected"):
     results, cache, failed, missing, checked = Path(results), {}, 0, 0, 0
-    for place, file, keys, printed, digits in claims():
-        path = results / f"{file}.json"
-        if not path.exists():
+    for place, files, keys, printed, digits in claims():
+        shown = tuple(getattr(key, "label", key) for key in keys)
+        file = next((f for f in ([files] if isinstance(files, str) else files) if (results / f"{f}.json").exists()), None)
+        if file is None:
             missing += 1
             continue
-        data = cache.setdefault(file, json.load(open(path)))
+        data = cache.setdefault(file, json.loads((results / f"{file}.json").read_text()))
         checked += 1
         try:
             for key in keys:
-                data = data[key]
+                data = key(data) if callable(key) else data[key]
             if round(float(data), digits) != printed:
                 failed += 1
-                print(f"DIFFERS  {place}: {file} {keys} is {data}, printed {printed}")
+                print(f"DIFFERS  {place}: {file} {shown} is {data}, printed {printed}")
         except (KeyError, IndexError, TypeError) as error:
             failed += 1
-            print(f"MISSING  {place}: {file} {keys}: {error!r}")
+            print(f"MISSING  {place}: {file} {shown}: {error!r}")
     print(f"{checked} printed numbers checked, {failed} don't match, {missing} skipped for want of a file")
     return 1 if failed else 0
 
