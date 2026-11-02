@@ -13,8 +13,8 @@ One Linux workstation: 24 cores, an RTX 4090, Python 3.12.14, with the packages 
 | The main read, `signed_false` (Tables 2 and 4) | Rerun in this layout, 2026-11-02 | 1,118 of 1,118 values identical |
 | Printed numbers in that read | `scripts/check_claims.py results/verify` | 56 of 56 match the paper |
 | Printed numbers in all stored results | `scripts/check_claims.py` | 157 of 157 match the paper |
-| Population prints | Regenerated from seeds | 21 of 21 identical so far |
-| Fronts on a model flow | One print, `field_9100_10` | Identical |
+| Population prints | All regenerated from seeds, `scripts/compare_npz.py` | 200 of 200 identical |
+| Fronts on model flows | All regenerated | 200 of 200 identical |
 | Fronts on a real flow | One print, `realflow_FVC2000_DB1_101` | Identical |
 | Outside generators' selection | `scripts/generate/outside_links.sh` | All 180 links as used |
 
@@ -22,7 +22,7 @@ Prints are compared array by array, leaving out their run metadata (`provenance`
 
 ## Still to run
 
-- The rest of the regeneration: 200 population prints, 200 fronts on model flows, 180 on real flows, 200 slower fronts, the minutiae cache and the matcher's training prints.
+- The rest of the regeneration: 180 fronts on real flows, 200 slower fronts, the minutiae cache and the matcher's training prints.
 - Every other read in `scripts/reproduce.py reads`.
 - The matcher test, on the GPU.
 - The diffusion render can't be regenerated from here (DATA.md), so `signed_curves` reruns against the stored render.
