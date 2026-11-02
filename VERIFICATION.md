@@ -15,14 +15,14 @@ One Linux workstation: 24 cores, an RTX 4090, Python 3.12.14, with the packages 
 | Printed numbers in all stored results | `scripts/check_claims.py` | 157 of 157 match the paper |
 | Population prints | All regenerated from seeds, `scripts/compare_npz.py` | 200 of 200 identical |
 | Fronts on model flows | All regenerated | 200 of 200 identical |
-| Fronts on a real flow | One print, `realflow_FVC2000_DB1_101` | Identical |
+| Fronts on real flows | All 180 regenerated | 180 of 180 identical |
 | Outside generators' selection | `scripts/generate/outside_links.sh` | All 180 links as used |
 
 Prints are compared array by array, leaving out their run metadata (`provenance` and `settings`, which hold paths and commit hashes).
 
 ## Still to run
 
-- The rest of the regeneration: 180 fronts on real flows, 200 slower fronts, the minutiae cache and the matcher's training prints.
+- The rest of the regeneration: 200 slower fronts, the minutiae cache and the matcher's training prints.
 - Every other read in `scripts/reproduce.py reads`.
 - The matcher test, on the GPU.
 - The diffusion render can't be regenerated from here (DATA.md), so `signed_curves` reruns against the stored render.
