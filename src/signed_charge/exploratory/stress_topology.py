@@ -4,10 +4,10 @@ D-029's numbers, the `person` of D-016's population seeds, the singular points i
 
 Run: python -m signed_charge.exploratory.stress_topology OUT.json
 """
+
 import collections
 import json
 import sys
-from pathlib import Path
 
 from signed_charge.generate import competency_model as cm
 from signed_charge.exploratory import growth_stress as gs

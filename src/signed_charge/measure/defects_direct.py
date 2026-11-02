@@ -6,6 +6,7 @@ Counted inside the contact, 16 px in, as the extractors are. A check on mindtct 
 
 Run: python -m signed_charge.measure.defects_direct OUT.json RUN.npz...
 """
+
 import json
 import re
 import sys
@@ -38,7 +39,9 @@ def prune(skeleton):
     for y0, x0 in zip(*np.nonzero(number == 1)):
         path, y, x = [(y0, x0)], y0, x0
         for _ in range(SPUR):
-            step = [(y + dy, x + dx) for dy, dx in NEIGHBOURS if 0 <= y + dy < h and 0 <= x + dx < w and skeleton[y + dy, x + dx] and (y + dy, x + dx) not in path]
+            step = [
+                (y + dy, x + dx) for dy, dx in NEIGHBOURS if 0 <= y + dy < h and 0 <= x + dx < w and skeleton[y + dy, x + dx] and (y + dy, x + dx) not in path
+            ]
             if len(step) != 1:
                 break
             y, x = step[0]
@@ -67,8 +70,14 @@ def count(im):
     endings = int(np.sum((number == 1) & inner & ~small))
     forks = int(np.sum((number >= 3) & inner))
     dots = int(np.sum([np.any(inner[labels == i]) for i in islands]))
-    return {"endings": endings, "forks": forks, "islands": dots, "area_mm2": float(area),
-            "density": (endings + forks + 2 * dots) / area * 100, "density_no_islands": (endings + forks) / area * 100}
+    return {
+        "endings": endings,
+        "forks": forks,
+        "islands": dots,
+        "area_mm2": float(area),
+        "density": (endings + forks + 2 * dots) / area * 100,
+        "density_no_islands": (endings + forks) / area * 100,
+    }
 
 
 def main(out, paths):

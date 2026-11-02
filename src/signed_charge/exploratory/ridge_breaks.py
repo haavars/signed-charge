@@ -5,11 +5,11 @@
 Run: python -m signed_charge.exploratory.ridge_breaks OUT.json
 LIMIT=n takes the first n fingers of each set.
 """
+
 import json
 import os
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -112,7 +112,13 @@ def main(out):
                 stat = lambda idx: (lambda c, p, n: (c / np.maximum(n, 1), p / np.maximum(c, 1)))(*table[idx].sum(0))  # noqa: E731
                 g, h = stat(np.arange(len(group)))
                 draws = [stat(rng.integers(len(group), size=len(group))) for _ in range(rf.RESAMPLES)]
-                report[name][reader][key] = {"g": g.tolist(), "h": h.tolist(), "pairs": table[:, 0].sum(0).tolist(), "h_ci": np.percentile([d[1] for d in draws], (2.5, 97.5), axis=0).tolist(), "types": sum(r[reader]["types"][key] for r in group).tolist()}
+                report[name][reader][key] = {
+                    "g": g.tolist(),
+                    "h": h.tolist(),
+                    "pairs": table[:, 0].sum(0).tolist(),
+                    "h_ci": np.percentile([d[1] for d in draws], (2.5, 97.5), axis=0).tolist(),
+                    "types": sum(r[reader]["types"][key] for r in group).tolist(),
+                }
         print(name, report[name]["fingers"], flush=True)
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)

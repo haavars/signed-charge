@@ -1,8 +1,7 @@
 """Do mindtct and LEADER give the same sign to the same minutia? From the cache alone, no images.
 Mutual nearest neighbours within MATCH px; heading agreement is cos(h_m - h_l) > 0. CI by finger."""
+
 import pickle
-import sys
-from pathlib import Path
 
 import numpy as np
 from scipy.spatial import cKDTree
@@ -42,5 +41,7 @@ for name in ("real", "sfinge", "model2", "e027"):
     value = lambda i: tab[i, 1].sum() / max(tab[i, 0].sum() + tab[i, 1].sum(), 1)  # noqa: E731
     draws = [value(rng.integers(len(tab), size=len(tab))) for _ in range(1000)]
     angles = np.array(angles)
-    print(f"{name}: fingers {len(tab)}, mindtct minutiae {int(tab[:, 2].sum())}, mutual matches {int(tab[:, :2].sum())} ({tab[:, :2].sum() / tab[:, 2].sum():.2f} of mindtct's), "
-          f"opposite sign {value(np.arange(len(tab))):.3f} ({np.percentile(draws, 2.5):.3f}-{np.percentile(draws, 97.5):.3f}); |cos|<0.5 share {np.mean(np.abs(angles) < 0.5):.3f}")
+    print(
+        f"{name}: fingers {len(tab)}, mindtct minutiae {int(tab[:, 2].sum())}, mutual matches {int(tab[:, :2].sum())} ({tab[:, :2].sum() / tab[:, 2].sum():.2f} of mindtct's), "
+        f"opposite sign {value(np.arange(len(tab))):.3f} ({np.percentile(draws, 2.5):.3f}-{np.percentile(draws, 97.5):.3f}); |cos|<0.5 share {np.mean(np.abs(angles) < 0.5):.3f}"
+    )

@@ -19,10 +19,9 @@ SD302 112-113).
 Run: python -m signed_charge.measure.minutiae_stats OUT.json
 [PEOPLE | --procedural PEOPLE VARIANT...] (OMP_NUM_THREADS=1 with --procedural)
 """
+
 import glob
 import json
-import os
-import subprocess
 import sys
 import tempfile
 from concurrent.futures import ProcessPoolExecutor
@@ -99,13 +98,17 @@ def describe(item):
         ok = (xi >= 0) & (xi < w) & (yi >= 0) & (yi < h)
         ok[ok] &= inner[yi[ok], xi[ok]]
         points = points[ok]
-    out = {"count": int(len(points)), "area_mm2": float(inner.sum() * MM2),
-           "density": float(len(points) / (inner.sum() * MM2) * 100),
-           "bifurcations": float(points[:, 3].mean()) if len(points) else None, "mh": histogram(points).tolist()}
+    out = {
+        "count": int(len(points)),
+        "area_mm2": float(inner.sum() * MM2),
+        "density": float(len(points) / (inner.sum() * MM2) * 100),
+        "bifurcations": float(points[:, 3].mean()) if len(points) else None,
+        "mh": histogram(points).tolist(),
+    }
     cores = fs.cores(fs.field(im), fg)
     if len(cores) == 1:
         cx, cy = cores[0]
-        yy, xx = np.mgrid[0:inner.shape[0], 0:inner.shape[1]]
+        yy, xx = np.mgrid[0 : inner.shape[0], 0 : inner.shape[1]]
         near = inner & (np.hypot(xx - cx, yy - cy) < NEAR_CORE_MM * 500 / 25.4)
         above, below = near & (yy < cy), near & (yy >= cy)
         if above.sum() * MM2 > 10 and below.sum() * MM2 > 10:
@@ -143,8 +146,11 @@ def rolled_truth(people=60):
             if t.get("impression") != "rolled":
                 continue
             ms = t["minutiae"]
-            row = {"count": len(ms), "detected": sum(1 for m in ms if m.get("detected")),
-                   "bifurcations": float(np.mean([m["type"] == "bifurcation" for m in ms])) if ms else None}
+            row = {
+                "count": len(ms),
+                "detected": sum(1 for m in ms if m.get("detected")),
+                "bifurcations": float(np.mean([m["type"] == "bifurcation" for m in ms])) if ms else None,
+            }
             if t.get("cores"):
                 cy = min(c[1] for c in t["cores"])
                 row["above"] = sum(1 for m in ms if m["y"] < cy)
@@ -164,9 +170,15 @@ def summary(xs):
     mh = np.mean([np.array(x["mh"]).reshape(MH_BINS, MH_BINS) for x in xs], 0)
     close = mh[:2].sum(0) / max(mh[:2].sum(), 1e-12)
     pairs = {"close_same": float(close[0]), "close_offset": float(close[1]), "close_opposite": float(close[-2:].sum())}
-    return {**pairs, "prints": len(xs), "count": med("count"), "density_per_100mm2": med("density"),
-            "bifurcations": med("bifurcations"), "near_core_below_over_above": float(np.median(ratio)) if ratio else None,
-            "with_core": len(ratio)}
+    return {
+        **pairs,
+        "prints": len(xs),
+        "count": med("count"),
+        "density_per_100mm2": med("density"),
+        "bifurcations": med("bifurcations"),
+        "near_core_below_over_above": float(np.median(ratio)) if ratio else None,
+        "with_core": len(ratio),
+    }
 
 
 def main(out, args):
@@ -174,7 +186,7 @@ def main(out, args):
     without the GPU from masters grown each way, instead of the rendered ones."""
     procedural = "--procedural" in args
     if procedural:
-        people, *variants = args[args.index("--procedural") + 1:]
+        people, *variants = args[args.index("--procedural") + 1 :]
         people = int(people)
     else:
         people = int(args[0]) if args else 60
@@ -184,8 +196,7 @@ def main(out, args):
     with ProcessPoolExecutor(JOBS) as pool:
         described = [(k, v) for k, v in pool.map(describe, sources, chunksize=4) if v]
         if procedural:
-            tasks = [(v, seed, fgp, c) for v in variants for seed in range(3000, 3000 + people)
-                     for fgp in (2, 3, 4, 5, 7, 8, 9, 10) for c in (1, 2)]
+            tasks = [(v, seed, fgp, c) for v in variants for seed in range(3000, 3000 + people) for fgp in (2, 3, 4, 5, 7, 8, 9, 10) for c in (1, 2)]
             described += [(k, v) for k, v in pool.map(procedural_tip, tasks, chunksize=2) if v]
     sets = {}
     for k, v in described:
@@ -197,15 +208,20 @@ def main(out, args):
             report[name]["accuracy_mh"] = cf.accuracy(sets["real"], xs, "mh")
     rolled = [] if procedural else rolled_truth(people)
     ratio = [r["below"] / r["above"] for r in rolled if r.get("above")]
-    report["phantom_rolled_truth"] = None if procedural else {
-        "prints": len(rolled), "drawn_median": float(np.median([r["count"] for r in rolled])),
-        "detected_median": float(np.median([r["detected"] for r in rolled])),
-        "bifurcations_median": float(np.median([r["bifurcations"] for r in rolled if r["bifurcations"] is not None])),
-        "below_over_above_median": float(np.median(ratio)) if ratio else None,
-        "published": "85-115 a rolled print; about twice as many below the core as above (57.8 / 29.2)"}
+    report["phantom_rolled_truth"] = (
+        None
+        if procedural
+        else {
+            "prints": len(rolled),
+            "drawn_median": float(np.median([r["count"] for r in rolled])),
+            "detected_median": float(np.median([r["detected"] for r in rolled])),
+            "bifurcations_median": float(np.median([r["bifurcations"] for r in rolled if r["bifurcations"] is not None])),
+            "below_over_above_median": float(np.median(ratio)) if ratio else None,
+            "published": "85-115 a rolled print; about twice as many below the core as above (57.8 / 29.2)",
+        }
+    )
     print(json.dumps(report, indent=1))
-    json.dump({"report": report, "prints": [[list(k), {kk: vv for kk, vv in v.items() if kk != "mh"}]
-                                            for k, v in described]}, open(out, "w"))
+    json.dump({"report": report, "prints": [[list(k), {kk: vv for kk, vv in v.items() if kk != "mh"}] for k, v in described]}, open(out, "w"))
 
 
 if __name__ == "__main__":

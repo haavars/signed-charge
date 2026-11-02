@@ -5,11 +5,11 @@ the test can't move. A criterion holds at a pair of adjacent speeds if it holds 
 
 Run: python -m signed_charge.exploratory.sweep_low_read OUT.json SHEET.jpg RUN.npz...
 """
+
 import json
 import os
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import numpy as np
 
@@ -18,7 +18,6 @@ from signed_charge.measure import provenance
 from signed_charge.measure import screen
 from signed_charge.measure import signed_minutiae as sm
 from signed_charge.exploratory import sweep_read as sr
-from signed_charge import paths
 
 JOBS = int(os.environ.get("READ_JOBS", 8))
 SIGNED_BANDS = {"mindtct": [0.03, 1.40], "leader": [0.25, 1.51]}  # E-040, C(60) by sensor
@@ -41,22 +40,45 @@ def read(rows, bands, rng):
         cells = {}
         for s in speeds:
             cell = [r for r in mine if r["speed"] == s]
-            c = {"prints": len(cell), "order": sr.agreement(cell), "period_px": float(np.median([r["period_px"] for r in cell])),
-                 "islands": float(np.mean([r["direct"]["islands"] for r in cell])), "direct": float(np.median([r["direct"]["density"] for r in cell])),
-                 "direct_no_islands": float(np.median([r["direct"]["density_no_islands"] for r in cell]))}
+            c = {
+                "prints": len(cell),
+                "order": sr.agreement(cell),
+                "period_px": float(np.median([r["period_px"] for r in cell])),
+                "islands": float(np.mean([r["direct"]["islands"] for r in cell])),
+                "direct": float(np.median([r["direct"]["density"] for r in cell])),
+                "direct_no_islands": float(np.median([r["direct"]["density_no_islands"] for r in cell])),
+            }
             for name in sr.EXTRACTORS:
                 xs = [r["extractors"][name] for r in cell if r["extractors"][name]]
                 signed = sm.curve([r["signed"] for r in cell if r["signed"]], name, rng)
-                c[name] = {**sr.summary(xs), "ci": sr.interval(xs, rng), "forks": float(np.mean([x["forks"] for x in xs if x["forks"] is not None])),
-                           "c60": signed["screening"]["60"], "h": signed["h"], "pairs_binned": signed["pairs"]}
+                c[name] = {
+                    **sr.summary(xs),
+                    "ci": sr.interval(xs, rng),
+                    "forks": float(np.mean([x["forks"] for x in xs if x["forks"] is not None])),
+                    "c60": signed["screening"]["60"],
+                    "h": signed["h"],
+                    "pairs_binned": signed["pairs"],
+                }
             cells[s] = c
-        ok = {s: {"islands": cells[s]["islands"] <= ISLANDS,
-                  "density": all(sr.overlaps(cells[s][n]["ci"]["density"], bands[n]["density"]) for n in sr.EXTRACTORS),
-                  "pairs": all(sr.overlaps(cells[s][n]["ci"][k], bands[n][k]) for n in sr.EXTRACTORS for k in sr.SHARES),
-                  "signed": all(sr.overlaps(cells[s][n]["c60"]["ci"], SIGNED_BANDS[n]) for n in sr.EXTRACTORS)} for s in speeds}
+        ok = {
+            s: {
+                "islands": cells[s]["islands"] <= ISLANDS,
+                "density": all(sr.overlaps(cells[s][n]["ci"]["density"], bands[n]["density"]) for n in sr.EXTRACTORS),
+                "pairs": all(sr.overlaps(cells[s][n]["ci"][k], bands[n][k]) for n in sr.EXTRACTORS for k in sr.SHARES),
+                "signed": all(sr.overlaps(cells[s][n]["c60"]["ci"], SIGNED_BANDS[n]) for n in sr.EXTRACTORS),
+            }
+            for s in speeds
+        }
         pairs = {f"{a}-{b}": {k: bool(ok[a][k] and ok[b][k]) for k in ok[a]} for a, b in zip(speeds, speeds[1:])}
-        report[pattern] = {"valid": len(mine) == len(everything), "prints": len(mine), "of": len(everything), "cells": {str(s): c for s, c in cells.items()},
-                           "by_speed": {str(s): v for s, v in ok.items()}, "by_pair": pairs, "all_hold": [p for p, v in pairs.items() if all(v.values())]}
+        report[pattern] = {
+            "valid": len(mine) == len(everything),
+            "prints": len(mine),
+            "of": len(everything),
+            "cells": {str(s): c for s, c in cells.items()},
+            "by_speed": {str(s): v for s, v in ok.items()},
+            "by_pair": pairs,
+            "all_hold": [p for p, v in pairs.items() if all(v.values())],
+        }
     return report
 
 
@@ -68,7 +90,14 @@ def main(out, figure, paths):
     report = read(rows, bands, np.random.default_rng(0))
     for pattern, r in report.items():
         if isinstance(r, dict):
-            print(pattern, f"{r['prints']}/{r['of']} valid", "ALL HOLD at", r["all_hold"], {p: "".join(k[0] if v else "-" for k, v in x.items()) for p, x in r["by_pair"].items()}, flush=True)
+            print(
+                pattern,
+                f"{r['prints']}/{r['of']} valid",
+                "ALL HOLD at",
+                r["all_hold"],
+                {p: "".join(k[0] if v else "-" for k, v in x.items()) for p, x in r["by_pair"].items()},
+                flush=True,
+            )
     sr.sheet(rows, figure)
     report.update(bands=bands, signed_bands=SIGNED_BANDS, _provenance=provenance.record(started))
     json.dump(report, open(out, "w"), indent=1)

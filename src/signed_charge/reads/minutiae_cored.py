@@ -5,12 +5,12 @@ Also where each set's topmost core sits against its inner foreground's centroid,
 
 Run: python -m signed_charge.reads.minutiae_cored CACHE.pkl OUT.json
 """
+
 import json
 import os
 import pickle
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import numpy as np
 
@@ -87,7 +87,13 @@ def main(cache, out):
     for name in ("real", *parts.SETS):
         parts.ROWS[name] = [dict(r, mask=parts.mask_of(r)) for r in place.ROWS if parts.member(r, name)]
         offsets = np.array([np.subtract(r["core"], parts.centroid(r["mask"])) for r in parts.ROWS[name] if r["core"] is not None])
-        report["core_offset"][name] = {"prints": len(parts.ROWS[name]), "with_core": len(offsets), "median_down": float(np.median(offsets[:, 0])), "median_abs_down": float(np.median(np.abs(offsets[:, 0]))), "median_abs_across": float(np.median(np.abs(offsets[:, 1])))}
+        report["core_offset"][name] = {
+            "prints": len(parts.ROWS[name]),
+            "with_core": len(offsets),
+            "median_down": float(np.median(offsets[:, 0])),
+            "median_abs_down": float(np.median(np.abs(offsets[:, 0]))),
+            "median_abs_across": float(np.median(np.abs(offsets[:, 1]))),
+        }
     for r in parts.ROWS["real"]:
         window = {"mask": r["mask"], "centroid": parts.centroid(r["mask"]), "core": r["core"]}
         (FOR_CORE if r["core"] is not None else NONE).append(window)
@@ -105,14 +111,28 @@ def main(cache, out):
         for task, value in pool.map(parts.score, jobs, chunksize=4):
             results.setdefault(task[:4], []).append(value)
     for reader in parts.READERS:
-        report[reader] = {"cases": {}, "coverage": {name: float(np.mean([coverage[(reader, "cored", "none", s)][name]["on_print"] for s in range(cl.SEEDS)])) for name in ("real", *parts.SETS)},
-                          "counts": {name: float(np.mean([coverage[(reader, "cored", "none", s)][name]["count"] for s in range(cl.SEEDS)])) for name in ("real", *parts.SETS)}, "effects": {name: parts.effects(reader, "cored", name) for name in parts.SETS}}
+        report[reader] = {
+            "cases": {},
+            "coverage": {
+                name: float(np.mean([coverage[(reader, "cored", "none", s)][name]["on_print"] for s in range(cl.SEEDS)])) for name in ("real", *parts.SETS)
+            },
+            "counts": {
+                name: float(np.mean([coverage[(reader, "cored", "none", s)][name]["count"] for s in range(cl.SEEDS)])) for name in ("real", *parts.SETS)
+            },
+            "effects": {name: parts.effects(reader, "cored", name) for name in parts.SETS},
+        }
         for case in CASES:
             label = "/".join(x for x in case if x != "none")
             entry = {name: cl.spread(results[("fold", reader, name, case)]) for name in parts.SETS}
             entry["population_ci"] = [float(np.percentile(results[("draw", reader, "population", case)], q)) for q in (2.5, 97.5)]
             report[reader]["cases"][label] = entry
-            print(reader, label.ljust(20), {k: round(v["mean"], 3) for k, v in entry.items() if isinstance(v, dict)}, [round(x, 3) for x in entry["population_ci"]], flush=True)
+            print(
+                reader,
+                label.ljust(20),
+                {k: round(v["mean"], 3) for k, v in entry.items() if isinstance(v, dict)},
+                [round(x, 3) for x in entry["population_ci"]],
+                flush=True,
+            )
         print(reader, report[reader]["coverage"], report[reader]["counts"], flush=True)
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)

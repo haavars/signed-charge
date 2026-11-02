@@ -4,10 +4,10 @@ Every fourth print of `stress_flow`'s, each at its best pose for each candidate:
 
 Run: python -m signed_charge.exploratory.stress_where OUT.json FIGURE.jpg
 """
+
 import json
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -81,10 +81,13 @@ def main(out, figure):
         mean = np.degrees(total / np.maximum(count, 1))
         tiles.append(cv2.applyColorMap(np.clip(mean / 45 * 255, 0, 255).astype(np.uint8), cv2.COLORMAP_VIRIDIS) * (count[..., None] > 5))
         third = h // 3
-        report[name] = {"by_template": {p: float(np.mean([r[name][1][p] for r in rows if p in r[name][1]])) for p in sf.SETS[name]},
-                        "chosen_as": {p: float(np.mean([r[name][1][p] for r in rows if r[name][0] == p])) for p in sf.SETS[name] if any(r[name][0] == p for r in rows)},
-                        "tip_third": float(total[:third].sum() / count[:third].sum() * 180 / np.pi), "middle_third": float(total[third : 2 * third].sum() / count[third : 2 * third].sum() * 180 / np.pi),
-                        "base_third": float(total[2 * third :].sum() / max(count[2 * third :].sum(), 1) * 180 / np.pi)}
+        report[name] = {
+            "by_template": {p: float(np.mean([r[name][1][p] for r in rows if p in r[name][1]])) for p in sf.SETS[name]},
+            "chosen_as": {p: float(np.mean([r[name][1][p] for r in rows if r[name][0] == p])) for p in sf.SETS[name] if any(r[name][0] == p for r in rows)},
+            "tip_third": float(total[:third].sum() / count[:third].sum() * 180 / np.pi),
+            "middle_third": float(total[third : 2 * third].sum() / count[third : 2 * third].sum() * 180 / np.pi),
+            "base_third": float(total[2 * third :].sum() / max(count[2 * third :].sum(), 1) * 180 / np.pi),
+        }
     cv2.imwrite(figure, cv2.resize(np.hstack(tiles), None, fx=6, fy=6, interpolation=cv2.INTER_NEAREST), [cv2.IMWRITE_JPEG_QUALITY, 90])
     report["prints"] = len(rows)
     report["_provenance"] = provenance.record(started)

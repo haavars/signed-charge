@@ -5,6 +5,7 @@
 Run: python -m signed_charge.reads.agreement_scales CACHE.pkl OUT.json RUN.npz...
 LIMIT=n takes the first n prints of each set, to try the code.
 """
+
 import json
 import os
 import pickle
@@ -90,7 +91,10 @@ def summary(rows, rng):
             for r in rows:
                 table[where[r["finger"]]] += r[reader][scale]
             value = lambda i: table[i, 0].sum() / max(table[i, 1].sum(), 1)  # noqa: E731
-            report[reader][scale] = {"mean": float(value(np.arange(len(fingers)))), "ci": [float(np.percentile([value(i) for i in draws], q)) for q in (2.5, 97.5)]}
+            report[reader][scale] = {
+                "mean": float(value(np.arange(len(fingers)))),
+                "ci": [float(np.percentile([value(i) for i in draws], q)) for q in (2.5, 97.5)],
+            }
     return report
 
 

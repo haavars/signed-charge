@@ -4,8 +4,8 @@
 
 Run: python -m signed_charge.reads.outside_read CACHE.pkl OUT.json IMAGE...
 """
+
 import sys
-from pathlib import Path
 
 import cv2
 

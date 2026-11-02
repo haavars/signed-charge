@@ -2,13 +2,13 @@
 ridgegen version, host and times. `started = provenance.start()` at the beginning of a run, then
 `report["_provenance"] = provenance.record(started)` before writing it.
 """
+
 import os
 import platform
 import socket
 import subprocess
 import sys
 import time
-from pathlib import Path
 from signed_charge import paths
 
 REPO = paths.ROOT

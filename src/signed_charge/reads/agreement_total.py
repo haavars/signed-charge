@@ -5,12 +5,12 @@ Wieditz et al. 2022: ridges must be added where ridges spread or their frequency
 Run: python -m signed_charge.reads.agreement_total CACHE.pkl OUT.json RUN.npz...
 LIMIT=n takes the first n prints of each set, to try the code.
 """
+
 import json
 import os
 import pickle
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -37,7 +37,9 @@ def frequency_term(im, fg, angle, scale):
     _, _, period = fo.fields(im, fg)
     weight = fg.astype(np.float32)
     log_f = -np.log(np.maximum(period, 1.0)).astype(np.float32) * weight
-    smooth = cv2.GaussianBlur(log_f, (0, 0), scale, borderType=cv2.BORDER_CONSTANT) / np.maximum(cv2.GaussianBlur(weight, (0, 0), scale, borderType=cv2.BORDER_CONSTANT), 1e-3)
+    smooth = cv2.GaussianBlur(log_f, (0, 0), scale, borderType=cv2.BORDER_CONSTANT) / np.maximum(
+        cv2.GaussianBlur(weight, (0, 0), scale, borderType=cv2.BORDER_CONSTANT), 1e-3
+    )
     gy, gx = np.gradient(smooth)
     return np.cos(angle) * gx + np.sin(angle) * gy
 
@@ -69,7 +71,12 @@ def summary(rows, rng):
     fingers = sorted({r["finger"] for r in rows})
     where = {f: i for i, f in enumerate(fingers)}
     draws = [rng.integers(len(fingers), size=len(fingers)) for _ in range(RESAMPLES)]
-    report = {"prints": len(rows), "fingers": len(fingers), "size_flow": float(np.mean([r["sizes"][0] for r in rows])), "size_frequency": float(np.mean([r["sizes"][1] for r in rows]))}
+    report = {
+        "prints": len(rows),
+        "fingers": len(fingers),
+        "size_flow": float(np.mean([r["sizes"][0] for r in rows])),
+        "size_frequency": float(np.mean([r["sizes"][1] for r in rows])),
+    }
     for reader in sm.EXTRACTORS:
         table = np.zeros((len(fingers), 4))
         for r in rows:
@@ -77,7 +84,10 @@ def summary(rows, rng):
         report[reader] = {}
         for column, name in enumerate(("flow", "frequency", "total")):
             value = lambda i: table[i, column].sum() / max(table[i, 3].sum(), 1)  # noqa: E731
-            report[reader][name] = {"mean": float(value(np.arange(len(fingers)))), "ci": [float(np.percentile([value(i) for i in draws], q)) for q in (2.5, 97.5)]}
+            report[reader][name] = {
+                "mean": float(value(np.arange(len(fingers)))),
+                "ci": [float(np.percentile([value(i) for i in draws], q)) for q in (2.5, 97.5)],
+            }
     return report
 
 

@@ -5,6 +5,7 @@ For each print and extractor: minutiae density on and off; and h(15-45 px) and h
 
 Run: python -m signed_charge.reads.minutiae_seams OUT.json RUN.npz...
 """
+
 import json
 import os
 import re
@@ -90,8 +91,27 @@ def main(out, paths):
     json.dump(report, open(out, "w"), indent=1)
     for reader in sm.EXTRACTORS:
         for name, r in report[reader].items():
-            print(reader, name.ljust(6), "area", round(r["area_on"], 2), "density", {k: round(v, 1) for k, v in r["density"].items()}, "enrich", round(r["enrichment"]["mean"], 2), [round(c, 2) for c in r["enrichment"]["ci"]],
-                  {k: (round(r[k]["h_short"]["mean"], 3), [round(c, 3) for c in r[k]["h_short"]["ci"]], int(r[k]["h_short_pairs"]), round(r[k]["h_long"]["mean"], 3)) for k in ("on", "off")}, flush=True)
+            print(
+                reader,
+                name.ljust(6),
+                "area",
+                round(r["area_on"], 2),
+                "density",
+                {k: round(v, 1) for k, v in r["density"].items()},
+                "enrich",
+                round(r["enrichment"]["mean"], 2),
+                [round(c, 2) for c in r["enrichment"]["ci"]],
+                {
+                    k: (
+                        round(r[k]["h_short"]["mean"], 3),
+                        [round(c, 3) for c in r[k]["h_short"]["ci"]],
+                        int(r[k]["h_short_pairs"]),
+                        round(r[k]["h_long"]["mean"], 3),
+                    )
+                    for k in ("on", "off")
+                },
+                flush=True,
+            )
 
 
 if __name__ == "__main__":

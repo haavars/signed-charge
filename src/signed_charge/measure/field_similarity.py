@@ -18,6 +18,7 @@ phalanges left out, at 500 ppi.
 Run from python_biometrics: .venv/bin/python -I python -m signed_charge.measure.field_similarity OUT
 or python -m signed_charge.measure.field_similarity OUT --procedural 2 60 3000
 """
+
 import glob
 import itertools
 import json
@@ -29,8 +30,7 @@ import numpy as np
 from signed_charge import paths
 
 FVC = str(paths.FVC)
-FVC_DBS = {"FVC2004/DB1_B": 500, "FVC2004/DB2_B": 500, "FVC2002/DB1_B": 500, "FVC2002/DB2_B": 569,
-           "FVC2000/DB3_B": 500}
+FVC_DBS = {"FVC2004/DB1_B": 500, "FVC2004/DB2_B": 500, "FVC2002/DB1_B": 500, "FVC2002/DB2_B": 569, "FVC2000/DB3_B": 500}
 PHANTOM = str(paths.RENDERED_02)
 MM = 500 / 25.4
 B = 8
@@ -64,8 +64,8 @@ def field(im):
 
 
 def cores(theta, fg):
-    th = theta[B // 2::B, B // 2::B]
-    f = cv2.erode(fg.astype(np.uint8), np.ones((5 * B, 5 * B), np.uint8))[B // 2::B, B // 2::B].astype(bool)
+    th = theta[B // 2 :: B, B // 2 :: B]
+    f = cv2.erode(fg.astype(np.uint8), np.ones((5 * B, 5 * B), np.uint8))[B // 2 :: B, B // 2 :: B].astype(bool)
 
     def d(a, b):
         return (b - a + np.pi / 2) % np.pi - np.pi / 2
@@ -78,7 +78,9 @@ def cores(theta, fg):
     for x, y in zip((xs + 1) * B, (ys + 1) * B):
         for q in merged:
             if np.hypot(x - q[0] / q[2], y - q[1] / q[2]) < 3 * B:
-                q[0] += x; q[1] += y; q[2] += 1
+                q[0] += x
+                q[1] += y
+                q[2] += 1
                 break
         else:
             merged.append([x, y, 1])
@@ -88,7 +90,7 @@ def cores(theta, fg):
 def spacing_mm(im, core):
     """Ridge spacing near the core: the peak of the local spectrum in a 64 px window, mm."""
     x, y = int(core[0]), int(core[1])
-    w = im[max(0, y - 32):y + 32, max(0, x - 32):x + 32].astype(np.float32)
+    w = im[max(0, y - 32) : y + 32, max(0, x - 32) : x + 32].astype(np.float32)
     if w.shape != (64, 64):
         return None
     w = (w - w.mean()) * np.outer(np.hanning(64), np.hanning(64))
@@ -168,8 +170,7 @@ def phantom(people=60):
                 for fing in truth["fingers"]:
                     if "tip_polygon" not in fing:
                         continue
-                    yield (f"{os.path.basename(person)}/{fing['fgp']}", capture,
-                           at_500(upright(im, fing), 1000))
+                    yield (f"{os.path.basename(person)}/{fing['fgp']}", capture, at_500(upright(im, fing), 1000))
 
 
 def procedural(model, people, first):
@@ -211,8 +212,7 @@ def run(source):
             counts["one_core"] += 1
             described[(key, impression)] = d
     fingers = sorted({k for k, _ in described})
-    same = [distance(described[(k, 1)], described[(k, 2)]) for k in fingers
-            if (k, 1) in described and (k, 2) in described]
+    same = [distance(described[(k, 1)], described[(k, 2)]) for k in fingers if (k, 1) in described and (k, 2) in described]
     firsts = [k for k in fingers if (k, 1) in described]
     between = []
     for a, b in itertools.combinations(firsts, 2):
@@ -227,17 +227,27 @@ def run(source):
 
 def summary(name, counts, same, between, spacing):
     q = lambda xs, p: float(np.percentile(xs, p)) if len(xs) else None
-    return {"set": name, **counts, "same_n": len(same), "same_median": q(same, 50), "same_p90": q(same, 90),
-            "between_n": len(between), "between_p1": q(between, 1), "between_p5": q(between, 5),
-            "between_median": q(between, 50), "spacing_median_mm": q(spacing, 50),
-            "spacing_sd_mm": float(np.std(spacing)) if spacing else None, "spacing_n": len(spacing)}
+    return {
+        "set": name,
+        **counts,
+        "same_n": len(same),
+        "same_median": q(same, 50),
+        "same_p90": q(same, 90),
+        "between_n": len(between),
+        "between_p1": q(between, 1),
+        "between_p5": q(between, 5),
+        "between_median": q(between, 50),
+        "spacing_median_mm": q(spacing, 50),
+        "spacing_sd_mm": float(np.std(spacing)) if spacing else None,
+        "spacing_n": len(spacing),
+    }
 
 
 if __name__ == "__main__":
     out = sys.argv[1]
     results = {}
     if "--procedural" in sys.argv:
-        args = [int(a) for a in sys.argv[sys.argv.index("--procedural") + 1:]]
+        args = [int(a) for a in sys.argv[sys.argv.index("--procedural") + 1 :]]
         model, people, first = (args + [60, 3000])[:3] if len(args) >= 1 else (2, 60, 3000)
         mine = procedural(model, people, first)
     else:
@@ -249,6 +259,13 @@ if __name__ == "__main__":
     real = np.array(results["fvc"]["between"])
     for name in ("fvc", "phantom"):
         b = np.array(results[name]["between"])
-        print(json.dumps({"set": name, "between_below_fvc_p1": float(np.mean(b < np.percentile(real, 1))),
-                          "between_below_fvc_p5": float(np.mean(b < np.percentile(real, 5)))}))
+        print(
+            json.dumps(
+                {
+                    "set": name,
+                    "between_below_fvc_p1": float(np.mean(b < np.percentile(real, 1))),
+                    "between_below_fvc_p5": float(np.mean(b < np.percentile(real, 5))),
+                }
+            )
+        )
     json.dump(results, open(out, "w"))

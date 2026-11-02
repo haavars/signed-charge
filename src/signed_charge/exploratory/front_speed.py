@@ -7,9 +7,9 @@ point 25 % from u*.
 
 Run: python -m signed_charge.exploratory.front_speed OUT.json
 """
+
 import json
 import sys
-from pathlib import Path
 
 import numpy as np
 import scipy.sparse as sp
@@ -32,8 +32,12 @@ def h(u, v):
 
 
 def jacobian(u, v, e=1e-6):
-    return np.array([[(f(u + e, v) - f(u - e, v)) / (2 * e), (f(u, v + e) - f(u, v - e)) / (2 * e)],
-                     [(h(u + e, v) - h(u - e, v)) / (2 * e), (h(u, v + e) - h(u, v - e)) / (2 * e)]])
+    return np.array(
+        [
+            [(f(u + e, v) - f(u - e, v)) / (2 * e), (f(u, v + e) - f(u, v - e)) / (2 * e)],
+            [(h(u + e, v) - h(u - e, v)) / (2 * e), (h(u, v + e) - h(u, v - e)) / (2 * e)],
+        ]
+    )
 
 
 def pulled(u, v):
@@ -52,8 +56,14 @@ def pulled(u, v):
     k, kappa, speed = fsolve(conditions, [0.3, -0.1, 0.8], xtol=1e-11)
     wavenumbers = np.linspace(0.01, 1, 4000)
     growth = np.array([s(q).real for q in wavenumbers])
-    return {"k": abs(float(k)), "kappa": abs(float(kappa)), "speed": abs(float(speed)), "max_growth": float(growth.max()),
-            "wavelength": float(2 * np.pi / wavenumbers[growth.argmax()]), "front_wavelength": float(2 * np.pi / abs(k))}
+    return {
+        "k": abs(float(k)),
+        "kappa": abs(float(kappa)),
+        "speed": abs(float(speed)),
+        "max_growth": float(growth.max()),
+        "wavelength": float(2 * np.pi / wavenumbers[growth.argmax()]),
+        "front_wavelength": float(2 * np.pi / abs(k)),
+    }
 
 
 def front(ustar, vstar, dx, dt):

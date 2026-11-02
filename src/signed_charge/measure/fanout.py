@@ -7,6 +7,7 @@ spacing a generator must place splay / period minutiae per px². Also the print'
 
 Run: python -m signed_charge.measure.fanout OUT.json [RUN.npz...]
 """
+
 import json
 import os
 import sys
@@ -20,7 +21,6 @@ from signed_charge.measure import conformality as cf
 from signed_charge.measure import field_similarity as fs
 from signed_charge.measure import flow_check as fc
 from signed_charge.measure import provenance
-from signed_charge.measure import signed_minutiae as sm
 
 SCALE, EDGE, CLEAR, MM2 = float(os.environ.get("FANOUT_SCALE", 18)), 24, 45, (25.4 / 500) ** 2
 JOBS = int(os.environ.get("FANOUT_JOBS", 8))
@@ -66,8 +66,15 @@ def measure(item):
     bend = np.abs(cos * tx + sin * ty)[inner]
     p = float(np.median(period[inner]))
     ln = np.log(period[inner])
-    return key, {"splay_per_ridge": float(np.mean(splay) * p), "splay_p90": float(np.percentile(splay, 90) * p), "bend_per_ridge": float(np.mean(bend) * p), "period": p,
-                 "demand_per_100mm2": float(np.mean(splay) / p / MM2 * 100), "ln_period_sd": float(ln.std()), "coherence": float(np.mean(coherence[inner]))}
+    return key, {
+        "splay_per_ridge": float(np.mean(splay) * p),
+        "splay_p90": float(np.percentile(splay, 90) * p),
+        "bend_per_ridge": float(np.mean(bend) * p),
+        "period": p,
+        "demand_per_100mm2": float(np.mean(splay) / p / MM2 * 100),
+        "ln_period_sd": float(ln.std()),
+        "coherence": float(np.mean(coherence[inner])),
+    }
 
 
 def rendered(task):

@@ -8,6 +8,7 @@ above its median. Then `minutiae_stats.describe` and `minutiae_pairs.describe`, 
 Run: python -m signed_charge.measure.screen
 OUT.json RUN.npz...
 """
+
 import json
 import sys
 from pathlib import Path
@@ -60,9 +61,18 @@ def main(out, paths):
         s, p = report[name]["stats"], pairs or {}
         close = p.get("close", {})
         n = max(sum(close.get(k, 0) for k in ("same", "offset", "facing", "other")), 1)
-        print(name.ljust(16), "count", s.get("count"), "density", round(s.get("density", 0), 1), "bif",
-              round(s.get("bifurcations") or 0, 2), "close", n,
-              [round(close.get(k, 0) / n, 2) for k in ("same", "offset", "facing")])
+        print(
+            name.ljust(16),
+            "count",
+            s.get("count"),
+            "density",
+            round(s.get("density", 0), 1),
+            "bif",
+            round(s.get("bifurcations") or 0, 2),
+            "close",
+            n,
+            [round(close.get(k, 0) / n, 2) for k in ("same", "offset", "facing")],
+        )
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)
 

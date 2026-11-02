@@ -17,6 +17,7 @@ the total ridge count's mean and SD. Prints the grid's closest fits to Medland's
 
 Run: python -m signed_charge.exploratory.person_traits 20000
 """
+
 import itertools
 import sys
 
@@ -54,8 +55,7 @@ def simulate(people, a, b, c, d, seed=0):
 
 def correlations(counts):
     same = [np.corrcoef(counts[:, f], counts[:, f + 5])[0, 1] for f in range(5)]
-    other = [np.corrcoef(counts[:, i], counts[:, j])[0, 1] for i, j in itertools.combinations(range(10), 2)
-             if j - i != 5]
+    other = [np.corrcoef(counts[:, i], counts[:, j])[0, 1] for i, j in itertools.combinations(range(10), 2) if j - i != 5]
     return float(np.mean(same)), float(np.median(other)), float(min(other)), float(max(other))
 
 

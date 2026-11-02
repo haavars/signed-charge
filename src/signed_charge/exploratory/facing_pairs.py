@@ -5,10 +5,10 @@ under 40 px apart: distance, angle difference (> 144° facing), types, ridges be
 
 Run: python -m signed_charge.exploratory.facing_pairs OUT.json
 """
+
 import json
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -35,8 +35,7 @@ def one(item):
             d = np.hypot(p[0] - q[0], p[1] - q[1])
             if d < 40:
                 da = np.degrees(abs((p[2] - q[2] + np.pi) % (2 * np.pi) - np.pi))
-                out.append((float(d), float(da), int(p[3]) + int(q[3]),
-                            mp.ridges_between(ridges, np.array(p[:2]), np.array(q[:2]))))
+                out.append((float(d), float(da), int(p[3]) + int(q[3]), mp.ridges_between(ridges, np.array(p[:2]), np.array(q[:2]))))
     return out
 
 
@@ -46,14 +45,21 @@ def main(out):
         rows = [r for rs in pool.map(one, list(cf.fvc(("DB1", "DB2", "DB3"))), chunksize=4) for r in rs]
     a = np.array(rows)
     facing = a[a[:, 1] > 144]
-    report = {"close_pairs": len(a), "facing": len(facing), "facing_median_px": float(np.median(facing[:, 0])),
-              "facing_distance_hist_5px": np.histogram(facing[:, 0], np.arange(0, 45, 5))[0].tolist(),
-              "close_distance_hist_5px": np.histogram(a[:, 0], np.arange(0, 45, 5))[0].tolist(), "by_distance": {}}
+    report = {
+        "close_pairs": len(a),
+        "facing": len(facing),
+        "facing_median_px": float(np.median(facing[:, 0])),
+        "facing_distance_hist_5px": np.histogram(facing[:, 0], np.arange(0, 45, 5))[0].tolist(),
+        "close_distance_hist_5px": np.histogram(a[:, 0], np.arange(0, 45, 5))[0].tolist(),
+        "by_distance": {},
+    }
     for lo, hi in ((0, 15), (15, 25), (25, 40)):
         f = facing[(facing[:, 0] >= lo) & (facing[:, 0] < hi)]
         report["by_distance"][f"{lo}-{hi}"] = {
-            "n": len(f), "EE_EB_BB": np.bincount(f[:, 2].astype(int), minlength=3).tolist(),
-            "ridges_between_0_1_2plus": np.bincount(np.minimum(f[:, 3], 2).astype(int), minlength=3).tolist()}
+            "n": len(f),
+            "EE_EB_BB": np.bincount(f[:, 2].astype(int), minlength=3).tolist(),
+            "ridges_between_0_1_2plus": np.bincount(np.minimum(f[:, 3], 2).astype(int), minlength=3).tolist(),
+        }
     report["_provenance"] = provenance.record(started)
     print(json.dumps(report, indent=1))
     json.dump(report, open(out, "w"), indent=1)

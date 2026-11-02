@@ -4,11 +4,11 @@ In `flux_scale`'s patches of FVC DB1-3 B, the spread of the ridge direction smoo
 
 Run: python -m signed_charge.exploratory.sweep_targets OUT.json
 """
+
 import json
 import pickle
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import numpy as np
 
@@ -44,11 +44,21 @@ def task(t):
 def main(out):
     rows = pickle.load(open(w.CACHE, "rb"))["rows"]
     where = place.sources(rows)
-    tasks = [(dict(finger=r["finger"], mask=r.get("mask"), **{k: r[k] for k in r if k not in ("finger", "mask")}), where[id(r)]) for r in rows if parts.member(r, "real") and id(r) in where]
+    tasks = [
+        (dict(finger=r["finger"], mask=r.get("mask"), **{k: r[k] for k in r if k not in ("finger", "mask")}), where[id(r)])
+        for r in rows
+        if parts.member(r, "real") and id(r) in where
+    ]
     with ProcessPoolExecutor(fx.JOBS) as pool:
         got = list(pool.map(task, tasks, chunksize=4))
     values = np.array([v for _, g in got for v in g])
-    report = {"patches": len(values), "direction_sd": float(values[:, 0].mean()), "period_cv": float(values[:, 1].mean()), "period_cv_q": np.percentile(values[:, 1], (10, 90)).tolist(), "period": float(values[:, 2].mean())}
+    report = {
+        "patches": len(values),
+        "direction_sd": float(values[:, 0].mean()),
+        "period_cv": float(values[:, 1].mean()),
+        "period_cv_q": np.percentile(values[:, 1], (10, 90)).tolist(),
+        "period": float(values[:, 2].mean()),
+    }
     print(report)
     json.dump(report, open(out, "w"), indent=1)
 

@@ -4,8 +4,8 @@
 
 Run: python -m signed_charge.reads.lead_read CACHE.pkl OUT.json RUN.npz...
 """
+
 import sys
-from pathlib import Path
 
 from signed_charge.reads import flow_read as fl
 

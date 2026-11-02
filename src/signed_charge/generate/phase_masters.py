@@ -21,10 +21,10 @@ DB1-3 B: density, bifurcations, close pairs (`minutiae_pairs.py`) and the minuti
 
 Run: python -m signed_charge.generate.phase_masters OUT.json 20 model2 cleared ...
 """
+
 import json
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import numpy as np
 
@@ -37,26 +37,54 @@ from signed_charge.generate import phase_edit as pe
 
 # (clear, pairs per 100 mm² of master, mix of across / diagonal / along)
 # Masters drawn from one phase (`phase_global.py`): (smoothing of the flow's spirals, pairs per 100 mm²).
-GLOBAL = {"global_flow": (2.0, 0.0), "global_add1": (2.0, 1.0), "global_add2": (2.0, 2.0), "global_add3": (2.0, 3.0),
-          "global_add2_s3": (3.0, 2.0)}
+GLOBAL = {"global_flow": (2.0, 0.0), "global_add1": (2.0, 1.0), "global_add2": (2.0, 2.0), "global_add3": (2.0, 3.0), "global_add2_s3": (3.0, 2.0)}
 # (smoothing, pairs per 100 mm², the flow's spirals' least spacing in periods, mix across / diagonal / along)
-GLOBAL.update({"global_free2_sp2": (2.0, 2.0, 2.0, (0, 0, 0, 1)), "global_free3_sp2": (2.0, 3.0, 2.0, (0, 0, 0, 1)),
-               "global_free4_sp2": (2.0, 4.0, 2.0, (0, 0, 0, 1)), "global_free4_sp3": (2.0, 4.0, 3.0, (0, 0, 0, 1))})
-GLOBAL.update({"global_s4_free4_sp3": (4.0, 4.0, 3.0, (0, 0, 0, 1)), "global_s4_free5_sp3": (4.0, 5.0, 3.0, (0, 0, 0, 1)),
-               "global_s6_free5_sp3": (6.0, 5.0, 3.0, (0, 0, 0, 1))})
+GLOBAL.update(
+    {
+        "global_free2_sp2": (2.0, 2.0, 2.0, (0, 0, 0, 1)),
+        "global_free3_sp2": (2.0, 3.0, 2.0, (0, 0, 0, 1)),
+        "global_free4_sp2": (2.0, 4.0, 2.0, (0, 0, 0, 1)),
+        "global_free4_sp3": (2.0, 4.0, 3.0, (0, 0, 0, 1)),
+    }
+)
+GLOBAL.update(
+    {
+        "global_s4_free4_sp3": (4.0, 4.0, 3.0, (0, 0, 0, 1)),
+        "global_s4_free5_sp3": (4.0, 5.0, 3.0, (0, 0, 0, 1)),
+        "global_s6_free5_sp3": (6.0, 5.0, 3.0, (0, 0, 0, 1)),
+    }
+)
 # (…, regional clumping, pairs below the core against above[, error diffusion, spacing weight])
 FREE = (0, 0, 0, 1)
-GLOBAL.update({"d_s0_f2": (0.0, 2.0, 0.0, FREE, 0.5, 1.6, False, 0.05), "d_s0_sp2_f2": (0.0, 2.0, 2.0, FREE, 0.5, 1.6, False, 0.05),
-               "d_s1_sp2_f3": (1.0, 3.0, 2.0, FREE, 0.5, 1.6, False, 0.05)})
-GLOBAL.update({"e_vary": (1.0, 3.0, 2.0, FREE, 0.5, 1.6, False, 0.05, (3.0, 9.0)),  # E-044: spacing at real's spread
-               "e_far": (1.0, 3.0, 2.0, FREE, 0.5, 1.6, False, 0.05, None, (8.0, 16.0))})  # E-044: its pairs far apart, so signs mix
-GLOBAL.update({"m3_clump0.5": (6.0, 5.0, 3.0, FREE, 0.5, 1.0), "m3_below1.6": (6.0, 5.0, 3.0, FREE, 0.0, 1.6),
-               "m3_clump0.5_below1.6": (6.0, 5.0, 3.0, FREE, 0.5, 1.6), "m3_clump0.8_below1.6": (6.0, 5.0, 3.0, FREE, 0.8, 1.6)})
-GLOBAL.update({"global_add2_sp2": (2.0, 2.0, 2.0), "global_add2_sp3": (2.0, 2.0, 3.0),
-               "global_add3_sp3_across": (2.0, 3.0, 3.0, (0.8, 0.1, 0.1))})
-VARIANTS = {"model2": (False, 0, None), "cleared": (True, 0, None),
-            "cleared_add2": (True, 2.0, (0.5, 0.3, 0.2)), "cleared_add4": (True, 4.0, (0.5, 0.3, 0.2)),
-            "cleared_add6": (True, 6.0, (0.5, 0.3, 0.2))}
+GLOBAL.update(
+    {
+        "d_s0_f2": (0.0, 2.0, 0.0, FREE, 0.5, 1.6, False, 0.05),
+        "d_s0_sp2_f2": (0.0, 2.0, 2.0, FREE, 0.5, 1.6, False, 0.05),
+        "d_s1_sp2_f3": (1.0, 3.0, 2.0, FREE, 0.5, 1.6, False, 0.05),
+    }
+)
+GLOBAL.update(
+    {
+        "e_vary": (1.0, 3.0, 2.0, FREE, 0.5, 1.6, False, 0.05, (3.0, 9.0)),  # E-044: spacing at real's spread
+        "e_far": (1.0, 3.0, 2.0, FREE, 0.5, 1.6, False, 0.05, None, (8.0, 16.0)),
+    }
+)  # E-044: its pairs far apart, so signs mix
+GLOBAL.update(
+    {
+        "m3_clump0.5": (6.0, 5.0, 3.0, FREE, 0.5, 1.0),
+        "m3_below1.6": (6.0, 5.0, 3.0, FREE, 0.0, 1.6),
+        "m3_clump0.5_below1.6": (6.0, 5.0, 3.0, FREE, 0.5, 1.6),
+        "m3_clump0.8_below1.6": (6.0, 5.0, 3.0, FREE, 0.8, 1.6),
+    }
+)
+GLOBAL.update({"global_add2_sp2": (2.0, 2.0, 2.0), "global_add2_sp3": (2.0, 2.0, 3.0), "global_add3_sp3_across": (2.0, 3.0, 3.0, (0.8, 0.1, 0.1))})
+VARIANTS = {
+    "model2": (False, 0, None),
+    "cleared": (True, 0, None),
+    "cleared_add2": (True, 2.0, (0.5, 0.3, 0.2)),
+    "cleared_add4": (True, 4.0, (0.5, 0.3, 0.2)),
+    "cleared_add6": (True, 6.0, (0.5, 0.3, 0.2)),
+}
 MAX_SEPARATION = 6  # periods
 EDGE = 30  # px: the master's edge band, left as grown (prints' contact starts about 28 px in)
 ROUNDS = 14
@@ -91,7 +119,7 @@ def near_singular(m, mid, half, period, beta2=None):
         return False
     h, w = beta2.shape
     cx, cy = int(np.clip(mid[0], 0, w - 1)), int(np.clip(mid[1], 0, h - 1))
-    window = beta2[max(0, cy - half):cy + half + 1:4, max(0, cx - half):cx + half + 1:4]
+    window = beta2[max(0, cy - half) : cy + half + 1 : 4, max(0, cx - half) : cx + half + 1 : 4]
     turn = np.abs((window - beta2[cy, cx] + np.pi) % (2 * np.pi) - np.pi) / 2
     return float(turn.max()) > MAX_TURN
 
@@ -106,7 +134,7 @@ def clear(m, ridges):
         points = inner(pe.found(ridges), w, h)
         candidates = []
         for i, p in enumerate(points):
-            for q in points[i + 1:]:
+            for q in points[i + 1 :]:
                 d = np.hypot(p["x"] - q["x"], p["y"] - q["y"])
                 if d < MAX_SEPARATION * period:
                     candidates.append((d, p, q))
@@ -161,8 +189,7 @@ def add_pairs(m, ridges, rate, mix, rng):
                 continue
             beta = beta2[int(y), int(x)] / 2  # across the ridges
             layout = rng.choice(3, p=mix)
-            a, sep = [(beta, 1.0), (beta + rng.choice([-1, 1]) * np.pi / 4, rng.uniform(1.0, 1.5)),
-                      (beta + np.pi / 2, rng.uniform(1.5, 3.0))][layout]
+            a, sep = [(beta, 1.0), (beta + rng.choice([-1, 1]) * np.pi / 4, rng.uniform(1.0, 1.5)), (beta + np.pi / 2, rng.uniform(1.5, 3.0))][layout]
             d = sep * period * np.array([np.cos(a), np.sin(a)]) / 2
             sign = rng.choice([-1, 1])
             ridges = pe.apply_dipole(ridges, v, beta2, (x, y) + sign * d, (x, y) - sign * d, period, half)
@@ -191,11 +218,10 @@ def use(variant):
                 from signed_charge.generate import phase_global as pg
 
                 defaults = (2.0, 0.0, 0.0, (0.5, 0.3, 0.2), 0.0, 1.0, False, None, None, pg.FREE_SEPARATION)
-                smooth, pairs, spacing, mix, clump, below, dither, weight, vary, free = GLOBAL[variant] + defaults[len(GLOBAL[variant]):]
+                smooth, pairs, spacing, mix, clump, below, dither, weight, vary, free = GLOBAL[variant] + defaults[len(GLOBAL[variant]) :]
                 ridges, _ = pg.master_ridges(m, seed, finger, smooth, pairs, mix, spacing, clump, below, dither, weight, vary, free)
                 use.cache.clear()
-                use.cache[key] = type(m)(**{**m.__dict__, "ridges": ridges,
-                                            "minutiae": minutiae.master(finger, ridges)})
+                use.cache[key] = type(m)(**{**m.__dict__, "ridges": ridges, "minutiae": minutiae.master(finger, ridges)})
             return use.cache[key]
         if not cleared:
             return m
@@ -207,7 +233,7 @@ def use(variant):
                 ridges, spirals = add_pairs(m, ridges, rate, mix, rng_for(seed, finger, PAIR_SALT))
             # The added pairs are held through the polish, which would anneal them (a disc of `HOLD` periods).
             held = np.zeros(ridges.shape, bool)
-            yy, xx = np.mgrid[0:ridges.shape[0], 0:ridges.shape[1]]
+            yy, xx = np.mgrid[0 : ridges.shape[0], 0 : ridges.shape[1]]
             for x, y in spirals:
                 r = int(HOLD * m.period) + 1
                 y0, y1, x0, x1 = max(0, int(y) - r), int(y) + r + 1, max(0, int(x) - r), int(x) + r + 1
@@ -249,8 +275,7 @@ def tip(task):
 def main(out, people=20, variants=("model2",)):
     started = provenance.start()
     real = list(cf.fvc(("DB1", "DB2", "DB3")))
-    tasks = [(v, s, f, c) for v in variants for s in range(3000, 3000 + people) for f in (2, 3, 4, 5, 7, 8, 9, 10)
-             for c in (1, 2)]
+    tasks = [(v, s, f, c) for v in variants for s in range(3000, 3000 + people) for f in (2, 3, 4, 5, 7, 8, 9, 10) for c in (1, 2)]
     with ProcessPoolExecutor(JOBS) as pool:
         real_stats = [(k, v) for k, v in pool.map(ms.describe, real, chunksize=4) if v]
         mine = list(pool.map(tip, tasks, chunksize=2))
@@ -259,9 +284,12 @@ def main(out, people=20, variants=("model2",)):
         xs = [x for x in mine if x[0][0] == v]
         stats = [(k, s) for k, s, _, _ in xs if s]
         pairs = [p for _, _, p, _ in xs if p]
-        report[v] = {**ms.summary([s for _, s in stats]), "accuracy_mh": cf.accuracy(real_stats, stats, "mh"),
-                     "pairs": {k: val for k, val in mp.summary(pairs).items() if k != "nn_share"},
-                     "master_minutiae_median": float(np.median([n for *_, n in xs if n is not None]))}
+        report[v] = {
+            **ms.summary([s for _, s in stats]),
+            "accuracy_mh": cf.accuracy(real_stats, stats, "mh"),
+            "pairs": {k: val for k, val in mp.summary(pairs).items() if k != "nn_share"},
+            "master_minutiae_median": float(np.median([n for *_, n in xs if n is not None])),
+        }
         print(json.dumps({v: report[v]}), flush=True)
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)

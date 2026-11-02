@@ -17,6 +17,7 @@ Sets: FVC 2000, 2002, 2004 DB1-3 B (real), DB4 B (SFinGe), Phantom's rendered fi
 Run: python -m signed_charge.reads.minutiae_pairs OUT.json
 [PEOPLE]
 """
+
 import json
 import subprocess
 import sys
@@ -44,10 +45,8 @@ def mindtct(im):
     with tempfile.TemporaryDirectory() as tmp:
         h, w = im.shape
         np.ascontiguousarray(im, dtype=np.uint8).tofile(f"{tmp}/i.raw")
-        subprocess.run([cf.NBIS / "cjpegl", "jpl", f"{tmp}/i.raw", "-raw_in", f"{w},{h},8,500"], check=True,
-                       capture_output=True)
-        subprocess.run([cf.NBIS / "mindtct", "-b", "-m1", f"{tmp}/i.jpl", f"{tmp}/b"], check=True,
-                       capture_output=True)
+        subprocess.run([cf.NBIS / "cjpegl", "jpl", f"{tmp}/i.raw", "-raw_in", f"{w},{h},8,500"], check=True, capture_output=True)
+        subprocess.run([cf.NBIS / "mindtct", "-b", "-m1", f"{tmp}/i.jpl", f"{tmp}/b"], check=True, capture_output=True)
         b = np.fromfile(f"{tmp}/b.brw", np.uint8).reshape(h, w)
         rows = []
         for line in Path(f"{tmp}/b.min").read_text().splitlines()[4:]:
@@ -70,8 +69,8 @@ def ridges_between(ridges, a, b):
     v = ridges[ys, xs].astype(int)
     # Drop the runs at each end (the minutiae's own ridges, or the valley an ending faces into), then count the
     # ridge runs left between.
-    inner = v[np.argmax(v != v[0]):][::-1]
-    inner = inner[np.argmax(inner != inner[0]):][::-1] if len(inner) else inner
+    inner = v[np.argmax(v != v[0]) :][::-1]
+    inner = inner[np.argmax(inner != inner[0]) :][::-1] if len(inner) else inner
     if len(inner) == 0 or (v == v[0]).all():
         return 0
     return int(np.sum(np.diff(np.r_[0, inner]) == 1))
@@ -107,8 +106,20 @@ def describe(item):
     cells = np.argwhere(inner)
     uniform = cells[rng.choice(len(cells), len(points), replace=False)][:, ::-1] + rng.random((len(points), 2))
     clustering = {r: [pairs_within(xy, r), pairs_within(uniform, r)] for r in RADII}
-    close = {"same": 0, "offset": 0, "facing": 0, "other": 0, "EE": 0, "EB": 0, "BB": 0,
-             "across0": 0, "across1": 0, "across2": 0, "facing_across1": 0, "facing_EB": 0}
+    close = {
+        "same": 0,
+        "offset": 0,
+        "facing": 0,
+        "other": 0,
+        "EE": 0,
+        "EB": 0,
+        "BB": 0,
+        "across0": 0,
+        "across1": 0,
+        "across2": 0,
+        "facing_across1": 0,
+        "facing_EB": 0,
+    }
     for i, j in zip(*np.triu_indices(len(points), 1)):
         if d[i, j] >= CLOSE:
             continue
@@ -122,8 +133,7 @@ def describe(item):
         if kind == "facing":
             close["facing_across1"] += across == 1
             close["facing_EB"] += types == "EB"
-    return key, {"count": len(points), "area_mm2": float(inner.sum() * ms.MM2), "nn": nn.tolist(),
-                 "clustering": clustering, "close": close}
+    return key, {"count": len(points), "area_mm2": float(inner.sum() * ms.MM2), "nn": nn.tolist(), "clustering": clustering, "close": close}
 
 
 def summary(xs):
@@ -131,15 +141,18 @@ def summary(xs):
     close = {k: sum(x["close"][k] for x in xs) for k in xs[0]["close"]}
     n = max(close["same"] + close["offset"] + close["facing"] + close["other"], 1)
     facing = max(close["facing"], 1)
-    clustering = {r: float(sum(x["clustering"][r][0] for x in xs) / max(sum(x["clustering"][r][1] for x in xs), 1))
-                  for r in xs[0]["clustering"]}
-    return {"prints": len(xs), "density_per_100mm2": float(np.median([x["count"] / x["area_mm2"] * 100 for x in xs])),
-            "nn_median_px": float(np.interp(0.5, np.cumsum(nn) / nn.sum(), NN_BINS[1:])),
-            "nn_share": (nn / nn.sum()).round(4).tolist(), "clustering": clustering,
-            "close_pairs_per_print": n / len(xs),
-            **{f"close_{k}": close[k] / n for k in ("same", "offset", "facing", "EE", "EB", "BB",
-                                                     "across0", "across1", "across2")},
-            "facing_across1": close["facing_across1"] / facing, "facing_EB": close["facing_EB"] / facing}
+    clustering = {r: float(sum(x["clustering"][r][0] for x in xs) / max(sum(x["clustering"][r][1] for x in xs), 1)) for r in xs[0]["clustering"]}
+    return {
+        "prints": len(xs),
+        "density_per_100mm2": float(np.median([x["count"] / x["area_mm2"] * 100 for x in xs])),
+        "nn_median_px": float(np.interp(0.5, np.cumsum(nn) / nn.sum(), NN_BINS[1:])),
+        "nn_share": (nn / nn.sum()).round(4).tolist(),
+        "clustering": clustering,
+        "close_pairs_per_print": n / len(xs),
+        **{f"close_{k}": close[k] / n for k in ("same", "offset", "facing", "EE", "EB", "BB", "across0", "across1", "across2")},
+        "facing_across1": close["facing_across1"] / facing,
+        "facing_EB": close["facing_EB"] / facing,
+    }
 
 
 def main(out, people=60):

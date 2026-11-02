@@ -4,6 +4,7 @@
 
 Run: python -m signed_charge.reads.quality_degrade OUT.json
 """
+
 import glob
 import json
 import os
@@ -17,7 +18,6 @@ import cv2
 import numpy as np
 from scipy.spatial import cKDTree
 
-from signed_charge.reads import field_read as fr
 from signed_charge.measure import field_similarity as fs
 from signed_charge.measure import minutiae_cache as mc
 from signed_charge.reads import minutiae_parts as parts
@@ -127,8 +127,16 @@ def main(out):
         for reader in sm.EXTRACTORS:
             entry[reader] = {}
             for c in ql.COHERENCE:
-                t = np.array([r[reader][c][0] for r in read]); k = np.array([r[reader][c][1] for r in read]); f = np.array([float(r[reader][c][2]) for r in read]); n = np.array([float(r[reader][c][3]) for r in read])
-                entry[reader][c] = {"per_print": float(n.mean()), "kept": float(k.sum() / max(f.sum(), 1)), "h_short": ql.boot(every, lambda i: t[i][:, ql.BAND].sum() / max(k[i][:, ql.BAND].sum(), 1), rng), "c60": ql.boot(every, lambda i: 2 * t[i][:, ql.NEAR].sum() / max(n[i].sum(), 1) * f[i].sum() / max(k[i].sum(), 1), rng)}
+                t = np.array([r[reader][c][0] for r in read])
+                k = np.array([r[reader][c][1] for r in read])
+                f = np.array([float(r[reader][c][2]) for r in read])
+                n = np.array([float(r[reader][c][3]) for r in read])
+                entry[reader][c] = {
+                    "per_print": float(n.mean()),
+                    "kept": float(k.sum() / max(f.sum(), 1)),
+                    "h_short": ql.boot(every, lambda i: t[i][:, ql.BAND].sum() / max(k[i][:, ql.BAND].sum(), 1), rng),
+                    "c60": ql.boot(every, lambda i: 2 * t[i][:, ql.NEAR].sum() / max(n[i].sum(), 1) * f[i].sum() / max(k[i].sum(), 1), rng),
+                }
         report[arm] = entry
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1, default=float)

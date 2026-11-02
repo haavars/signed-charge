@@ -5,9 +5,9 @@ laid on each side can't. Weighted by length of seam.
 
 Run: python -m signed_charge.exploratory.seam_angles OUT.json
 """
+
 import json
 import sys
-from pathlib import Path
 
 import numpy as np
 
@@ -50,7 +50,12 @@ def main(out):
             times = c.site_arrivals(points, index, s, pattern, 0.7, c.person_of(seed, 1))
             collected.append(angles(times, index))
         all_ = np.concatenate(collected)
-        report[pattern] = {"median": float(np.median(all_)), "p90": float(np.percentile(all_, 90)), "over_30": float(np.mean(all_ > 30)), "seam_px": float(len(all_) / len(SEEDS))}
+        report[pattern] = {
+            "median": float(np.median(all_)),
+            "p90": float(np.percentile(all_, 90)),
+            "over_30": float(np.mean(all_ > 30)),
+            "seam_px": float(len(all_) / len(SEEDS)),
+        }
         print(pattern, {k: round(v, 2) for k, v in report[pattern].items()}, flush=True)
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)

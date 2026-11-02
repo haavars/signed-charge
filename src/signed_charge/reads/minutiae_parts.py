@@ -11,12 +11,12 @@ Each over 10 fold seeds, redrawing windows and transforms each seed. For the pop
 
 Run: python -m signed_charge.reads.minutiae_parts CACHE.pkl OUT.json
 """
+
 import json
 import os
 import pickle
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import numpy as np
 
@@ -168,10 +168,20 @@ def main(cache, out):
     for r in ROWS["real"]:
         cy, cx = centroid(r["mask"])
         MASKS.append({"mask": r["mask"], "centroid": (cy, cx), "print_centroid": centroid})
-    report = {"sizes": {name: {"prints": len(v), "median_area_mm2": float(np.median([r["mask"].sum() * ms.MM2 for r in v])),
-                               "median_counts": {reader: float(np.median([len(r["points"][reader]) for r in v])) for reader in READERS}} for name, v in ROWS.items()}}
+    report = {
+        "sizes": {
+            name: {
+                "prints": len(v),
+                "median_area_mm2": float(np.median([r["mask"].sum() * ms.MM2 for r in v])),
+                "median_counts": {reader: float(np.median([len(r["points"][reader]) for r in v])) for reader in READERS},
+            }
+            for name, v in ROWS.items()
+        }
+    }
     print(json.dumps(report["sizes"]), flush=True)
-    tasks = [(reader, base, transform, seed) for reader in READERS for base in ("cut", "windows") for transform in ("none", *TRANSFORMS) for seed in range(cl.SEEDS)]
+    tasks = [
+        (reader, base, transform, seed) for reader in READERS for base in ("cut", "windows") for transform in ("none", *TRANSFORMS) for seed in range(cl.SEEDS)
+    ]
     coverage = {}
     with ProcessPoolExecutor(JOBS) as pool:
         for key, hists, cover in pool.map(histograms, tasks, chunksize=1):
@@ -201,11 +211,21 @@ def main(cache, out):
                 entry["floor"] = cl.spread(results[("floor", reader, "real", case)])
             out_reader["cases"][label] = entry
         for base in ("cut", "windows"):
-            out_reader["coverage"][base] = {name: float(np.mean([coverage[(reader, base, "none", s)][name]["mean_on_print"] for s in range(cl.SEEDS)])) for name in ("real", *SETS)}
-            out_reader["coverage"][f"{base}_counts"] = {name: float(np.mean([coverage[(reader, base, "none", s)][name]["median_count"] for s in range(cl.SEEDS)])) for name in ("real", *SETS)}
+            out_reader["coverage"][base] = {
+                name: float(np.mean([coverage[(reader, base, "none", s)][name]["mean_on_print"] for s in range(cl.SEEDS)])) for name in ("real", *SETS)
+            }
+            out_reader["coverage"][f"{base}_counts"] = {
+                name: float(np.mean([coverage[(reader, base, "none", s)][name]["median_count"] for s in range(cl.SEEDS)])) for name in ("real", *SETS)
+            }
             out_reader["effects"][base] = {name: effects(reader, base, name) for name in SETS}
         for label, entry in out_reader["cases"].items():
-            print(reader, label.ljust(22), {k: round(v["mean"], 3) for k, v in entry.items() if isinstance(v, dict)}, [round(x, 3) for x in entry["population_ci"]], flush=True)
+            print(
+                reader,
+                label.ljust(22),
+                {k: round(v["mean"], 3) for k, v in entry.items() if isinstance(v, dict)},
+                [round(x, 3) for x in entry["population_ci"]],
+                flush=True,
+            )
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)
 

@@ -11,6 +11,7 @@ The formula generators' `all` row is also D-034's item: it's measured against re
 
 Run: python -m signed_charge.reads.signed_false OUT.json
 """
+
 import glob
 import json
 import os
@@ -34,7 +35,12 @@ JOBS = int(os.environ.get("SIGNED_JOBS", 8))
 SUPPORT, DIPOLE = 3, 15  # impressions, px
 TOLERANCE, TURN = 15.0, np.deg2rad(30)  # how near a minutia must fall, and how far its direction may differ
 ROTATIONS = np.deg2rad(np.arange(-30, 31, 5))
-BIN, REACH, AT_LEAST, SHARE = 8, 240, 8, 0.55  # the vote's grid, its reach in px; aligned takes at least this many matches and this share of the smaller print's minutiae, as different fingers reach 0.54 at most, same fingers 0.75 at the median
+BIN, REACH, AT_LEAST, SHARE = (
+    8,
+    240,
+    8,
+    0.55,
+)  # the vote's grid, its reach in px; aligned takes at least this many matches and this share of the smaller print's minutiae, as different fingers reach 0.54 at most, same fingers 0.75 at the median
 FINGERS = (2, 3, 4, 5, 7, 8, 9, 10)
 FRESH = range(9000, 9012)
 CAPTURES = range(1, 9)
@@ -147,7 +153,12 @@ def finger(task):
             continue
         inner = cv2.erode(fg.astype(np.uint8), np.ones((2 * ms.BORDER + 1, 2 * ms.BORDER + 1), np.uint8)).astype(bool)
         ready.append((im, inner, sm.direction(im), quality(im)))
-    out = {"set": name, "finger": label, "prints": len(ready), "top_quality_share": float(np.mean([(q[m] == 4).mean() for _, m, _, q in ready])) if ready else 0.0}
+    out = {
+        "set": name,
+        "finger": label,
+        "prints": len(ready),
+        "top_quality_share": float(np.mean([(q[m] == 4).mean() for _, m, _, q in ready])) if ready else 0.0,
+    }
     for reader, (extract, y_sign) in sm.EXTRACTORS.items():
         points = [inside(extract(im), m) for im, m, _, _ in ready]
         counts = support(points, y_sign)
@@ -198,15 +209,25 @@ def interval(values, measure, rng):
 
 
 def read(rows, reader, rng):
-    report = {"fingers": len(rows), "prints": sum(r["prints"] for r in rows), "top_quality_share": float(np.mean([r["top_quality_share"] for r in rows])), "confirmed_share": float(np.mean([r[reader]["confirmed_share"] for r in rows]))}
+    report = {
+        "fingers": len(rows),
+        "prints": sum(r["prints"] for r in rows),
+        "top_quality_share": float(np.mean([r["top_quality_share"] for r in rows])),
+        "confirmed_share": float(np.mean([r[reader]["confirmed_share"] for r in rows])),
+    }
     ratio = lambda a: a[:, 0].sum() / max(a[:, 1].sum(), 1)  # noqa: E731
     for key in ("all", "confirmed", "clean"):
         near = sm.EDGES[1:] <= 60
         apart = near & (sm.EDGES[:-1] >= DIPOLE)
         c60 = np.array([[2 * r[reader][key]["sum"][near].sum(), r[reader][key]["minutiae"]] for r in rows])
         far = np.array([[2 * r[reader][key]["sum"][apart].sum(), r[reader][key]["minutiae"]] for r in rows])
-        report[key] = {"minutiae": float(np.mean([r[reader][key]["minutiae"] / max(r["prints"], 1) for r in rows])), "c60": interval(c60, ratio, rng), "c60_apart": interval(far, ratio, rng),
-                       "h_short": interval(band(rows, key, reader, SHORT), ratio, rng), "h_long": interval(band(rows, key, reader, LONG), ratio, rng)}
+        report[key] = {
+            "minutiae": float(np.mean([r[reader][key]["minutiae"] / max(r["prints"], 1) for r in rows])),
+            "c60": interval(c60, ratio, rng),
+            "c60_apart": interval(far, ratio, rng),
+            "h_short": interval(band(rows, key, reader, SHORT), ratio, rng),
+            "h_long": interval(band(rows, key, reader, LONG), ratio, rng),
+        }
     return report
 
 
@@ -217,7 +238,11 @@ def main(out):
         rows = list(pool.map(fvc_task, fvc_fingers(), chunksize=1))
         print("fvc", len(rows), flush=True)
         rows += list(pool.map(variant_task, fingers, chunksize=1))
-    groups = {"real": [r for r in rows if r["set"].startswith("FVC") and "DB4" not in r["set"]], "sfinge": [r for r in rows if "DB4" in r["set"]], **{v: [r for r in rows if r["set"] == v] for v in VARIANTS}}
+    groups = {
+        "real": [r for r in rows if r["set"].startswith("FVC") and "DB4" not in r["set"]],
+        "sfinge": [r for r in rows if "DB4" in r["set"]],
+        **{v: [r for r in rows if r["set"] == v] for v in VARIANTS},
+    }
     for name in sorted({r["set"] for r in rows if r["set"].startswith("FVC") and "DB4" not in r["set"]}):
         groups[name] = [r for r in rows if r["set"] == name]
     rng = np.random.default_rng(0)
@@ -226,7 +251,26 @@ def main(out):
     json.dump(report, open(out, "w"), indent=1)
     for reader in sm.EXTRACTORS:
         for name, r in report[reader].items():
-            print(reader, name.ljust(16), r["fingers"], "q4", round(r["top_quality_share"], 2), "conf", round(r["confirmed_share"], 2), {k: (round(r[k]["minutiae"], 1), round(r[k]["c60"]["mean"], 2), round(r[k]["c60_apart"]["mean"], 2), round(r[k]["h_short"]["mean"], 3), round(r[k]["h_long"]["mean"], 3)) for k in ("all", "confirmed", "clean")}, flush=True)
+            print(
+                reader,
+                name.ljust(16),
+                r["fingers"],
+                "q4",
+                round(r["top_quality_share"], 2),
+                "conf",
+                round(r["confirmed_share"], 2),
+                {
+                    k: (
+                        round(r[k]["minutiae"], 1),
+                        round(r[k]["c60"]["mean"], 2),
+                        round(r[k]["c60_apart"]["mean"], 2),
+                        round(r[k]["h_short"]["mean"], 3),
+                        round(r[k]["h_long"]["mean"], 3),
+                    )
+                    for k in ("all", "confirmed", "clean")
+                },
+                flush=True,
+            )
 
 
 if __name__ == "__main__":

@@ -4,11 +4,11 @@ D-020's 200 prints, speed 0.7, by pattern, and FVC DB1-3 B as the control for th
 
 Run: python -m signed_charge.exploratory.region_read OUT.json
 """
+
 import json
 import os
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -101,7 +101,11 @@ def ratio(rows, top, bottom, rng):
     for _ in range(RESAMPLES):
         s = pairs[rng.integers(len(pairs), size=len(pairs))]
         draws.append(s[:, 0].mean() / max(s[:, 1].mean(), 1e-6))
-    return {"ratio": float(pairs[:, 0].mean() / max(pairs[:, 1].mean(), 1e-6)), "ci": [float(np.percentile(draws, q)) for q in (2.5, 97.5)], "fingers": len(pairs)}
+    return {
+        "ratio": float(pairs[:, 0].mean() / max(pairs[:, 1].mean(), 1e-6)),
+        "ci": [float(np.percentile(draws, q)) for q in (2.5, 97.5)],
+        "fingers": len(pairs),
+    }
 
 
 def main(out):
@@ -120,9 +124,21 @@ def main(out):
         entry["loop_minus_arch"] = difference(means["loop"].values(), means["arch"].values(), rng)
         for p, g in groups.items():
             flat = [{**r[reader], "finger": r["finger"]} for r in g]
-            entry[p] = {"below_over_above": ratio(flat, "below", "above", rng), "counts_below_over_above": ratio(flat, "n_below", "n_above", rng), "delta_over_open": ratio(flat, "delta_side", "open_side", rng)}
+            entry[p] = {
+                "below_over_above": ratio(flat, "below", "above", rng),
+                "counts_below_over_above": ratio(flat, "n_below", "n_above", rng),
+                "delta_over_open": ratio(flat, "delta_side", "open_side", rng),
+            }
         report[reader] = entry
-    report["prints"] = {p: {"prints": len(g), "one_core": sum(r["cores"] == 1 for r in g), "one_core_one_delta": sum(r["cores"] == 1 and r["deltas"] == 1 for r in g), "rule_agrees": sum(r.get("rule_agrees", False) for r in g)} for p, g in groups.items()}
+    report["prints"] = {
+        p: {
+            "prints": len(g),
+            "one_core": sum(r["cores"] == 1 for r in g),
+            "one_core_one_delta": sum(r["cores"] == 1 and r["deltas"] == 1 for r in g),
+            "rule_agrees": sum(r.get("rule_agrees", False) for r in g),
+        }
+        for p, g in groups.items()
+    }
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)
     print(json.dumps({k: v for k, v in report.items() if k != "_provenance"}, indent=0)[:6000])

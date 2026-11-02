@@ -14,6 +14,7 @@ Run from python_biometrics:
   RIDGEGEN_TOOLS=$PWD/tools PYTHONPATH=. OMP_NUM_THREADS=1 .venv/bin/python winding.py OUT.json [SETS...]
 LIMIT=n takes the first n prints of each set. S is the residue-to-heading handedness, calibrated on one-sign sheets.
 """
+
 import json
 import os
 import pickle
@@ -46,7 +47,12 @@ MARGIN, DIPOLE, DIPOLE_FAR, MATCH, SPIRALS, SHEETS, EDGE, STRIDE, SAMPLES = 16, 
 CACHE = str(paths.CACHE)
 FLOW = paths.GENERATED / "flow_d055"
 RESAMPLES = 1000
-BAND, AMPLITUDE, ALONG, DIRECTIONS = (1.5, 6.0), 0.4, 5.0, 16  # the band-pass round the ridge frequency, and the least local amplitude (of the median) a residue may sit in
+BAND, AMPLITUDE, ALONG, DIRECTIONS = (
+    (1.5, 6.0),
+    0.4,
+    5.0,
+    16,
+)  # the band-pass round the ridge frequency, and the least local amplitude (of the median) a residue may sit in
 ROWS = []
 
 
@@ -209,8 +215,16 @@ def analyse(im, points, inner, finger, truth=None):
     spread = {s: fc.spreading(z2, float(s)) for s in SCALES}
     _, _, period = fo.fields(im, fg)
     phi = 1.0 / np.maximum(period, 1.0)
-    out = {"finger": finger, "residues": int(len(rx)), "cleaned6": int(keep6.sum()), "cleaned15": int(keep15.sum()), "singular": len(singular), "weak_share": float(1 - strong.sum() / max(inner.sum(), 1)),
-           "guarded_px": int(guarded.sum()), "phi_disc": float(phi[guarded].mean()) if guarded.any() else float("nan")}
+    out = {
+        "finger": finger,
+        "residues": int(len(rx)),
+        "cleaned6": int(keep6.sum()),
+        "cleaned15": int(keep15.sum()),
+        "singular": len(singular),
+        "weak_share": float(1 - strong.sum() / max(inner.sum(), 1)),
+        "guarded_px": int(guarded.sum()),
+        "phi_disc": float(phi[guarded].mean()) if guarded.any() else float("nan"),
+    }
     # Agreement with d at each scale: residues (cleaned at 6 and 15 px) and the extractors, in the guarded disc.
     out["agree"], out["count"] = {}, {}
     for name, p, y_sign in [("res6", sf.inside(res6, guarded), 1.0), ("res15", sf.inside(res15, guarded), 1.0)] + [
@@ -262,20 +276,27 @@ def analyse(im, points, inner, finger, truth=None):
             n_dot = np.cos(beta_t) * grad[0] + np.sin(beta_t) * grad[1]
             sources["truth"] = (np.c_[tx, ty], ts * np.sign(n_dot) * TRUTH_SIGN)
         lifts = {name: lifted(th2, cells, xy, q) if len(xy) else np.zeros((len(cells), 0)) for name, (xy, q) in sources.items()}
-        dist = {name: np.hypot(cells[:, 0][:, None] - xy[:, 0][None], cells[:, 1][:, None] - xy[:, 1][None]) if len(xy) else np.zeros((len(cells), 0)) for name, (xy, q) in sources.items()}
+        dist = {
+            name: np.hypot(cells[:, 0][:, None] - xy[:, 0][None], cells[:, 1][:, None] - xy[:, 1][None]) if len(xy) else np.zeros((len(cells), 0))
+            for name, (xy, q) in sources.items()
+        }
         near_c = near[ci_, cj_]
         phi_c = phi[ci_, cj_]
         clean_c = qmap[ci_, cj_] >= 3
         for s in SCALES:
             ang, d = spread[s]
             dc = d[ci_, cj_] * np.sign(np.cos(ang[ci_, cj_]) * kcx + np.sin(ang[ci_, cj_]) * kcy + 1e-12) * phi_c
-            rho = {name: (lifts[name] * np.exp(-dist[name] ** 2 / (2 * s * s)) / (2 * np.pi * s * s)).sum(1) for name in sources}
+            rho = {name: (lifts[name] * np.exp(-(dist[name] ** 2) / (2 * s * s)) / (2 * np.pi * s * s)).sum(1) for name in sources}
             entry = {}
             for part, pick in (("near", near_c < s), ("far", near_c >= s), ("farclean", (near_c >= s) & clean_c), ("all", np.ones(len(cells), bool))):
                 if pick.sum() < 3:
                     continue
-                e = {"n": int(pick.sum()), "abs_d": float(np.abs(dc[pick]).sum()), "dd": float(dc[pick] @ dc[pick]),
-                     "cross": {reader: float(rho["res"][pick] @ rho[reader][pick]) for reader in sm.EXTRACTORS}}
+                e = {
+                    "n": int(pick.sum()),
+                    "abs_d": float(np.abs(dc[pick]).sum()),
+                    "dd": float(dc[pick] @ dc[pick]),
+                    "cross": {reader: float(rho["res"][pick] @ rho[reader][pick]) for reader in sm.EXTRACTORS},
+                }
                 for name in sources:
                     r_ = rho[name][pick]
                     e[name] = (float(np.abs(r_).sum()), float(r_ @ r_), float(r_ @ dc[pick]))
@@ -314,7 +335,17 @@ def analyse(im, points, inner, finger, truth=None):
                 else:
                     qe[reader] = 0.0
                 ne[reader] = int(mm.sum())
-            out["patches"].append({"side": side, "qw": qw, "nres": int(m.sum()), "qe": qe, "ne": ne, "qmin": int(qmap[i0:i1, j0:j1].min()), "qmean": float(qmap[i0:i1, j0:j1].mean())})
+            out["patches"].append(
+                {
+                    "side": side,
+                    "qw": qw,
+                    "nres": int(m.sum()),
+                    "qe": qe,
+                    "ne": ne,
+                    "qmin": int(qmap[i0:i1, j0:j1].min()),
+                    "qmean": float(qmap[i0:i1, j0:j1].mean()),
+                }
+            )
     if truth is not None:
         tx, ty, ts, grad = truth
         found = same = 0
@@ -402,12 +433,18 @@ def summary(rows, rng):
     for reader in sm.EXTRACTORS:
         tab = np.array([[r["signs"][reader][k] for k in ("-", "0", "+", "++", "n")] for r in rows], float)
         tot = tab[:, 4].sum()
-        rep["signs"][reader] = {"minutiae": float(tot), "share": {k: float(tab[:, i].sum() / max(tot, 1)) for i, k in enumerate(("-", "0", "+", "++"))},
-                                "opposite_given_signed": ci(tab, fingers, lambda i: tab[i, 0].sum() / max(tab[i, 0].sum() + tab[i, 2].sum() + tab[i, 3].sum(), 1), rng)}
+        rep["signs"][reader] = {
+            "minutiae": float(tot),
+            "share": {k: float(tab[:, i].sum() / max(tot, 1)) for i, k in enumerate(("-", "0", "+", "++"))},
+            "opposite_given_signed": ci(tab, fingers, lambda i: tab[i, 0].sum() / max(tab[i, 0].sum() + tab[i, 2].sum() + tab[i, 3].sum(), 1), rng),
+        }
         tab = np.array([[r["signs"][reader][k] for k in ("c-", "c0", "c+", "c++", "cn")] for r in rows], float)
         tot = tab[:, 4].sum()
-        rep["signs"][reader]["clean"] = {"minutiae": float(tot), "share": {k: float(tab[:, i].sum() / max(tot, 1)) for i, k in enumerate(("-", "0", "+", "++"))},
-                                         "opposite_given_signed": ci(tab, fingers, lambda i: tab[i, 0].sum() / max(tab[i, 0].sum() + tab[i, 2].sum() + tab[i, 3].sum(), 1), rng)}
+        rep["signs"][reader]["clean"] = {
+            "minutiae": float(tot),
+            "share": {k: float(tab[:, i].sum() / max(tot, 1)) for i, k in enumerate(("-", "0", "+", "++"))},
+            "opposite_given_signed": ci(tab, fingers, lambda i: tab[i, 0].sum() / max(tab[i, 0].sum() + tab[i, 2].sum() + tab[i, 3].sum(), 1), rng),
+        }
     rep["cells"] = {}
     for s in SCALES:
         rep["cells"][s] = {}
@@ -424,15 +461,19 @@ def summary(rows, rng):
             e = {"prints": len(have), "cells": float(n.sum()), "mean_abs_phi_d": float(absd.sum() / n.sum())}
             rr = np.array([get(r)["res"][1] for r in have]).sum()
             for reader in sm.EXTRACTORS:
-                e[f"corr_res_{reader}"] = float(np.array([get(r)["cross"][reader] for r in have]).sum() / np.sqrt(max(rr * np.array([get(r)[reader][1] for r in have]).sum(), 1e-24)))
+                e[f"corr_res_{reader}"] = float(
+                    np.array([get(r)["cross"][reader] for r in have]).sum() / np.sqrt(max(rr * np.array([get(r)[reader][1] for r in have]).sum(), 1e-24))
+                )
             for name in get(have[0]):
                 if name in ("n", "abs_d", "dd", "cross"):
                     continue
                 t = np.array([get(r)[name] for r in have])  # abs, rr, rd
-                e[name] = {"mean_abs_rho": float(t[:, 0].sum() / n.sum()),
-                           "slope_phi_d_on_rho": ci(t, hf, lambda i: t[i, 2].sum() / max(t[i, 1].sum(), 1e-12), rng),
-                           "slope_rho_on_phi_d": ci(t, hf, lambda i: t[i, 2].sum() / max(dd[i].sum(), 1e-12), rng),
-                           "corr": float(t[:, 2].sum() / np.sqrt(max(t[:, 1].sum() * dd.sum(), 1e-24)))}
+                e[name] = {
+                    "mean_abs_rho": float(t[:, 0].sum() / n.sum()),
+                    "slope_phi_d_on_rho": ci(t, hf, lambda i: t[i, 2].sum() / max(t[i, 1].sum(), 1e-12), rng),
+                    "slope_rho_on_phi_d": ci(t, hf, lambda i: t[i, 2].sum() / max(dd[i].sum(), 1e-12), rng),
+                    "corr": float(t[:, 2].sum() / np.sqrt(max(t[:, 1].sum() * dd.sum(), 1e-24))),
+                }
             rep["cells"][s][part] = e
     rep["patches"] = {}
     for side, grade in [(sd, g) for sd in SIDES for g in ("all", "clean")]:
@@ -441,32 +482,100 @@ def summary(rows, rng):
             continue
         pf = [fingers[k] for k, _ in P]
         qw = np.array([p["qw"] for _, p in P])
-        entry = {"n": len(P), "mean_abs_qw": float(np.abs(qw).mean()), "mean_nres": float(np.mean([p["nres"] for _, p in P])),
-                 "mean_n": {rd: float(np.mean([p["ne"][rd] for _, p in P])) for rd in sm.EXTRACTORS}}
+        entry = {
+            "n": len(P),
+            "mean_abs_qw": float(np.abs(qw).mean()),
+            "mean_nres": float(np.mean([p["nres"] for _, p in P])),
+            "mean_n": {rd: float(np.mean([p["ne"][rd] for _, p in P])) for rd in sm.EXTRACTORS},
+        }
         for rd in sm.EXTRACTORS:
             arr = np.array([p["qe"][rd] for _, p in P])
-            entry[rd] = {"mean_abs": float(np.abs(arr).mean()), "slope_on_qw": ci(arr, pf, lambda i: float(arr[i] @ qw[i] / max(qw[i] @ qw[i], 1e-9)), rng),
-                         "corr": float(np.corrcoef(arr, qw)[0, 1]) if arr.std() > 0 and qw.std() > 0 else float("nan"),
-                         "exact": float(np.mean(arr == qw)), "rms_diff": float(np.sqrt(np.mean((arr - qw) ** 2)))}
+            entry[rd] = {
+                "mean_abs": float(np.abs(arr).mean()),
+                "slope_on_qw": ci(arr, pf, lambda i: float(arr[i] @ qw[i] / max(qw[i] @ qw[i], 1e-9)), rng),
+                "corr": float(np.corrcoef(arr, qw)[0, 1]) if arr.std() > 0 and qw.std() > 0 else float("nan"),
+                "exact": float(np.mean(arr == qw)),
+                "rms_diff": float(np.sqrt(np.mean((arr - qw) ** 2))),
+            }
         rep["patches"][f"{side}/{grade}"] = entry
     if "truth" in rows[0]:
         t = np.array([(r["truth"]["planted"], r["truth"]["found"], r["truth"]["same_sign"], r["truth"]["extra"]) for r in rows], float).sum(0)
-        rep["truth"] = {"planted": float(t[0]), "found": float(t[1] / t[0]), "same_sign": float(t[2] / max(t[1], 1)), "extra_per_sheet": float(t[3] / len(rows))}
+        rep["truth"] = {
+            "planted": float(t[0]),
+            "found": float(t[1] / t[0]),
+            "same_sign": float(t[2] / max(t[1], 1)),
+            "extra_per_sheet": float(t[3] / len(rows)),
+        }
     return rep
 
 
 def show(name, rep):
-    print("==", name, rep["prints"], "prints; counts", {k: round(v, 1) for k, v in rep["mean_counts"].items()}, "raw residues", round(rep["mean_residues_raw"], 1), "weak share", round(rep["weak_share"], 3), "phi", round(rep["phi"], 4))
+    print(
+        "==",
+        name,
+        rep["prints"],
+        "prints; counts",
+        {k: round(v, 1) for k, v in rep["mean_counts"].items()},
+        "raw residues",
+        round(rep["mean_residues_raw"], 1),
+        "weak share",
+        round(rep["weak_share"], 3),
+        "phi",
+        round(rep["phi"], 4),
+    )
     print("  agree", {who: {s: round(v["mean"], 2) for s, v in a.items()} for who, a in rep["agree"].items()})
-    print("  signs", {rd: ({k: round(v, 3) for k, v in e["share"].items()}, round(e["opposite_given_signed"]["mean"], 3), [round(c, 3) for c in e["opposite_given_signed"]["ci"]]) for rd, e in rep["signs"].items()})
-    print("  signs clean", {rd: (int(e["clean"]["minutiae"]), {k: round(v, 3) for k, v in e["clean"]["share"].items()}, round(e["clean"]["opposite_given_signed"]["mean"], 3), [round(c, 3) for c in e["clean"]["opposite_given_signed"]["ci"]]) for rd, e in rep["signs"].items()})
+    print(
+        "  signs",
+        {
+            rd: (
+                {k: round(v, 3) for k, v in e["share"].items()},
+                round(e["opposite_given_signed"]["mean"], 3),
+                [round(c, 3) for c in e["opposite_given_signed"]["ci"]],
+            )
+            for rd, e in rep["signs"].items()
+        },
+    )
+    print(
+        "  signs clean",
+        {
+            rd: (
+                int(e["clean"]["minutiae"]),
+                {k: round(v, 3) for k, v in e["clean"]["share"].items()},
+                round(e["clean"]["opposite_given_signed"]["mean"], 3),
+                [round(c, 3) for c in e["clean"]["opposite_given_signed"]["ci"]],
+            )
+            for rd, e in rep["signs"].items()
+        },
+    )
     for s, parts_ in rep["cells"].items():
         for part, e in parts_.items():
-            print(f"  cells s={s} {part}: prints={e['prints']} cells={int(e['cells'])} |phi d|={e['mean_abs_phi_d']:.2e} res~mindtct={e['corr_res_mindtct']:.2f} res~leader={e['corr_res_leader']:.2f}",
-                  {name: (f"|rho|={v['mean_abs_rho']:.2e}", f"d/rho={v['slope_phi_d_on_rho']['mean']:.2f}", f"rho/d={v['slope_rho_on_phi_d']['mean']:.2f}", f"corr={v['corr']:.2f}") for name, v in e.items() if isinstance(v, dict)})
+            print(
+                f"  cells s={s} {part}: prints={e['prints']} cells={int(e['cells'])} |phi d|={e['mean_abs_phi_d']:.2e} res~mindtct={e['corr_res_mindtct']:.2f} res~leader={e['corr_res_leader']:.2f}",
+                {
+                    name: (
+                        f"|rho|={v['mean_abs_rho']:.2e}",
+                        f"d/rho={v['slope_phi_d_on_rho']['mean']:.2f}",
+                        f"rho/d={v['slope_rho_on_phi_d']['mean']:.2f}",
+                        f"corr={v['corr']:.2f}",
+                    )
+                    for name, v in e.items()
+                    if isinstance(v, dict)
+                },
+            )
     for side, e in rep["patches"].items():
-        print(f"  L={side} n={e['n']} |qw|={e['mean_abs_qw']:.2f} nres={e['mean_nres']:.1f} n={ {k: round(v, 1) for k, v in e['mean_n'].items()} }",
-              {k: (round(e[k]["mean_abs"], 2), round(e[k]["slope_on_qw"]["mean"], 2), [round(c, 2) for c in e[k]["slope_on_qw"]["ci"]], round(e[k]["corr"], 2), round(e[k]["exact"], 2)) for k in sm.EXTRACTORS})
+        print(
+            f"  L={side} n={e['n']} |qw|={e['mean_abs_qw']:.2f} nres={e['mean_nres']:.1f} n={ {k: round(v, 1) for k, v in e['mean_n'].items()} }",
+            {
+                k: (
+                    round(e[k]["mean_abs"], 2),
+                    round(e[k]["slope_on_qw"]["mean"], 2),
+                    [round(c, 2) for c in e[k]["slope_on_qw"]["ci"]],
+                    round(e[k]["corr"], 2),
+                    round(e[k]["exact"], 2),
+                )
+                for k in sm.EXTRACTORS
+            },
+        )
     if "truth" in rep:
         print("  truth", rep["truth"])
 

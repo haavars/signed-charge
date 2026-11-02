@@ -5,11 +5,11 @@ If that's near the floor, binary images alone don't fool it, and the population'
 
 Run: python -m signed_charge.exploratory.population_control OUT.json
 """
+
 import json
 import os
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import numpy as np
 
@@ -46,8 +46,13 @@ def main(out):
             a = {sensors[j] for j in rng.permutation(len(sensors))[:4]}
             left = [x for x in r if x[0][0] in a]
             right = [x for x in i if x[0][0] not in a]
-            scores.append(cf.accuracy([left[j] for j in rng.permutation(len(left))[:SIZE]], [right[j] for j in rng.permutation(len(right))[:SIZE]], "mh", seed=seed))
-        report[name] = {"real_against_reinked": cl.spread(scores), "plain_against_inked_all": cl.spread([cf.accuracy(r, i, "mh", seed=s) for s in range(cl.SEEDS)])}
+            scores.append(
+                cf.accuracy([left[j] for j in rng.permutation(len(left))[:SIZE]], [right[j] for j in rng.permutation(len(right))[:SIZE]], "mh", seed=seed)
+            )
+        report[name] = {
+            "real_against_reinked": cl.spread(scores),
+            "plain_against_inked_all": cl.spread([cf.accuracy(r, i, "mh", seed=s) for s in range(cl.SEEDS)]),
+        }
         print(name, report[name], flush=True)
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)

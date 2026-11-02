@@ -5,6 +5,7 @@ distance from the nearest minutia; and how concentrated it is, the share of the 
 
 Run: python -m signed_charge.exploratory.wobble_where OUT.json RUN.npz...
 """
+
 import json
 import os
 import sys
@@ -15,7 +16,6 @@ import cv2
 import numpy as np
 
 from signed_charge.measure import conformality as cf
-from signed_charge.exploratory import diffused as df
 from signed_charge.measure import field_similarity as fs
 from signed_charge.measure import flow_check as fc
 from signed_charge.reads import minutiae_pairs as mp

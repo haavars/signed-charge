@@ -14,10 +14,10 @@ shares of the three layouts, so each is well sampled.
 
 Run: python -m signed_charge.exploratory.pair_readout OUT.json [PEOPLE]
 """
+
 import json
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -43,8 +43,7 @@ def master_with_pairs(seed, fgp):
     singular = m.cores + m.deltas
     barrier = pg.cuts(shape, singular)
     beta_u = pg.unwrap_direction(m.orientation, barrier)
-    flow, _, _ = pg.flow_spirals(beta_u, period, barrier, rng_for(seed, fgp, pg.FLOW_SALT), smooth=SMOOTH,
-                                 spacing=SPACING)
+    flow, _, _ = pg.flow_spirals(beta_u, period, barrier, rng_for(seed, fgp, pg.FLOW_SALT), smooth=SMOOTH, spacing=SPACING)
     labels = []
     added = pg.pairs(beta_u, period, flow, singular, RATE, MIX, rng_for(seed, fgp, pg.PAIR_SALT), labels=labels)
     psi_c, psi_s, _ = pg.solve_continuous(beta_u, period, flow + added)
@@ -101,13 +100,16 @@ def one(task):
         if a is None or b is None:
             continue
         ia, ib = nearest(a), nearest(b)
-        row = {"kind": "pair", "layout": layout, "separation": float(np.hypot(x2 - x1, y2 - y1) / m.period),
-               "found": int(ia is not None) + int(ib is not None and ib != ia)}
+        row = {
+            "kind": "pair",
+            "layout": layout,
+            "separation": float(np.hypot(x2 - x1, y2 - y1) / m.period),
+            "found": int(ia is not None) + int(ib is not None and ib != ia),
+        }
         if ia is not None and ib is not None and ia != ib:
             p, q = found[ia], found[ib]
             da = np.degrees(abs((p[2] - q[2] + np.pi) % (2 * np.pi) - np.pi))
-            row.update(angle=float(da), distance=float(np.hypot(p[0] - q[0], p[1] - q[1])),
-                       types="".join(sorted("B" if t else "E" for t in (p[3], q[3]))))
+            row.update(angle=float(da), distance=float(np.hypot(p[0] - q[0], p[1] - q[1])), types="".join(sorted("B" if t else "E" for t in (p[3], q[3]))))
         rows.append(row)
     for x, y, _ in flow:
         a = to_tip(x, y)

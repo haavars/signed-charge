@@ -11,13 +11,13 @@ CI by finger.
 Run: python -m signed_charge.measure.flow_charge CACHE.pkl OUT.json RUN.npz...
 LIMIT=n takes the first n prints of each set, to try the code.
 """
+
 import json
 import os
 import pickle
 import sys
 import zlib
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -49,7 +49,9 @@ def spreading(field, scale, fg=None):
         z = cv2.GaussianBlur(z.real.astype(np.float32), (0, 0), scale) + 1j * cv2.GaussianBlur(z.imag.astype(np.float32), (0, 0), scale)
     else:
         z = z * fg
-        z = cv2.GaussianBlur(z.real.astype(np.float32), (0, 0), scale, borderType=cv2.BORDER_CONSTANT) + 1j * cv2.GaussianBlur(z.imag.astype(np.float32), (0, 0), scale, borderType=cv2.BORDER_CONSTANT)
+        z = cv2.GaussianBlur(z.real.astype(np.float32), (0, 0), scale, borderType=cv2.BORDER_CONSTANT) + 1j * cv2.GaussianBlur(
+            z.imag.astype(np.float32), (0, 0), scale, borderType=cv2.BORDER_CONSTANT
+        )
     z = z / (np.abs(z) + 1e-9)
     zx, zy = (np.roll(z, -1, 1) - np.roll(z, 1, 1)) / 2, (np.roll(z, -1, 0) - np.roll(z, 1, 0)) / 2
     tx, ty = np.imag(np.conj(z) * zx) / 2, np.imag(np.conj(z) * zy) / 2  # z is the gradient's: its angle less 90° is twice k's, and the turning is the same
@@ -95,7 +97,11 @@ def one(task):
         heading = sf.heading(p, y_sign)
         cy, cx = p[:, 1].astype(int), p[:, 0].astype(int)
         agree = lambda a, b: float(np.sign(b[cy, cx] * np.sign(np.cos(heading) * np.cos(a[cy, cx]) + np.sin(heading) * np.sin(a[cy, cx]))).sum())  # noqa: E731
-        out[reader] = {"agree": (agree(angle, d), len(p)), "agree_also": (agree(angle_also, d_also), len(p)), "boxes": {size: box_pairs(sf.inside(row["points"][reader], disc), disc, size) for size in BOXES}}
+        out[reader] = {
+            "agree": (agree(angle, d), len(p)),
+            "agree_also": (agree(angle_also, d_also), len(p)),
+            "boxes": {size: box_pairs(sf.inside(row["points"][reader], disc), disc, size) for size in BOXES},
+        }
     rng = np.random.default_rng(zlib.crc32(row["finger"].encode()))
     cells = np.flatnonzero(guarded)
     weight = np.abs(d).ravel()[cells]
@@ -105,7 +111,12 @@ def one(task):
         pointing = angle[py, px] + np.where(d[py, px] < 0, np.pi, 0)
         total, count, _ = sf.binned(np.stack([px, py, pointing], 1).astype(float), 1.0, field, guarded)
         band = lambda a, b: (sm.EDGES[:-1] >= a) & (sm.EDGES[1:] <= b)  # noqa: E731
-        out["flow"] = [float(total[band(*sf.SHORT)].sum()), float(count[band(*sf.SHORT)].sum()), float(total[band(*sf.LONG)].sum()), float(count[band(*sf.LONG)].sum())]
+        out["flow"] = [
+            float(total[band(*sf.SHORT)].sum()),
+            float(count[band(*sf.SHORT)].sum()),
+            float(total[band(*sf.LONG)].sum()),
+            float(count[band(*sf.LONG)].sum()),
+        ]
     return out
 
 

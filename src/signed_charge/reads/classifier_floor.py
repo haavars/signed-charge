@@ -12,11 +12,11 @@ all nine (fixed). So, with mindtct and LEADER, on the people of E-024 and E-027:
 
 Run: python -m signed_charge.reads.classifier_floor OUT.json 20
 """
+
 import itertools
 import json
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import numpy as np
 
@@ -69,8 +69,13 @@ def stale(real, synthetic, feature, folds=5, seed=0):
 
 
 def spread(xs):
-    return {"mean": float(np.mean(xs)), "sd": float(np.std(xs, ddof=1)) if len(xs) > 1 else 0.0, "min": float(np.min(xs)),
-            "max": float(np.max(xs)), "n": len(xs)}
+    return {
+        "mean": float(np.mean(xs)),
+        "sd": float(np.std(xs, ddof=1)) if len(xs) > 1 else 0.0,
+        "min": float(np.min(xs)),
+        "max": float(np.max(xs)),
+        "n": len(xs),
+    }
 
 
 def floor(real, mine, rng):
@@ -96,11 +101,11 @@ def floor(real, mine, rng):
         stats = [(k, v) for k, v in mine if k[0] == variant]
         people = lambda p: [(k, v) for k, v in stats if int(k[1][2:].split("/")[0]) < FIRST + p]
         report[variant] = {
-            "prints": len(stats), "stale": stale(real, stats, "mh"),
+            "prints": len(stats),
+            "stale": stale(real, stats, "mh"),
             "fair": spread([cf.accuracy(real, stats, "mh", seed=s) for s in range(SEEDS)]),
             "fair_by_people": {str(p): spread([cf.accuracy(real, people(p), "mh", seed=s) for s in range(SEEDS)]) for p in (5, 10, 20)},
-            "against_sensor": spread([cf.accuracy(by_sensor[s], [stats[i] for i in rng.permutation(len(stats))[:80]], "mh")
-                                      for s in sensors]),
+            "against_sensor": spread([cf.accuracy(by_sensor[s], [stats[i] for i in rng.permutation(len(stats))[:80]], "mh") for s in sensors]),
         }
         print(variant, json.dumps(report[variant]), flush=True)
     return report
@@ -109,8 +114,7 @@ def floor(real, mine, rng):
 def main(out, people=20):
     started = provenance.start()
     items = list(cf.fvc(("DB1", "DB2", "DB3")))
-    tasks = [(v, s, f, c) for v in VARIANTS for s in range(FIRST, FIRST + people) for f in (2, 3, 4, 5, 7, 8, 9, 10)
-             for c in (1, 2)]
+    tasks = [(v, s, f, c) for v in VARIANTS for s in range(FIRST, FIRST + people) for f in (2, 3, 4, 5, 7, 8, 9, 10) for c in (1, 2)]
     with ProcessPoolExecutor(JOBS) as pool:
         real = list(pool.map(described, items, chunksize=4))
         print("real", len(real), flush=True)

@@ -8,10 +8,10 @@ frozen phase-drawn settings (D-005) with the half-size solver; and those on a fl
 
 Run: python -m signed_charge.measure.flow_check OUT.json 20 7000 [VARIANT...]
 """
+
 import json
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import numpy as np
 
@@ -55,8 +55,7 @@ def main(out, people=20, first=7000, *variants):
     if variants:
         VARIANTS[:] = variants
     real_items = [((k[0], k[1], k[2]), im) for k, im in cf.fvc(("DB1", "DB2", "DB3"))]
-    tasks = [(v, s, f, c) for v in VARIANTS for s in range(first, first + people) for f in (2, 3, 4, 5, 7, 8, 9, 10)
-             for c in (1, 2)]
+    tasks = [(v, s, f, c) for v in VARIANTS for s in range(first, first + people) for f in (2, 3, 4, 5, 7, 8, 9, 10) for c in (1, 2)]
     with ProcessPoolExecutor(JOBS) as pool:
         real_flow = list(pool.map(fv.describe, real_items, chunksize=4))
         real_stats = [(k, v) for k, v in pool.map(ms.describe, real_items, chunksize=4) if v]
@@ -72,11 +71,16 @@ def main(out, people=20, first=7000, *variants):
         t = fv.tail(flows)
         cs = [(k, c) for k, c, _ in flows if c]
         stats = [(k, s) for k, s, _, _ in xs if s]
-        report[v] = {**fv.shares([c for _, c in cs]), "accuracy_h10": cf.accuracy(real_c, cs, "h10"),
-                     "between_median": float(np.median(t)), "below_fvc_p1": float(np.mean(t < p1)),
-                     "below_fvc_p5": float(np.mean(t < p5)), "minutiae": ms.summary([s for _, s in stats]),
-                     "accuracy_mh": cf.accuracy(real_stats, stats, "mh"),
-                     "pairs": {k: val for k, val in mp.summary([p for _, _, p, _ in xs if p]).items() if k != "nn_share"}}
+        report[v] = {
+            **fv.shares([c for _, c in cs]),
+            "accuracy_h10": cf.accuracy(real_c, cs, "h10"),
+            "between_median": float(np.median(t)),
+            "below_fvc_p1": float(np.mean(t < p1)),
+            "below_fvc_p5": float(np.mean(t < p5)),
+            "minutiae": ms.summary([s for _, s in stats]),
+            "accuracy_mh": cf.accuracy(real_stats, stats, "mh"),
+            "pairs": {k: val for k, val in mp.summary([p for _, _, p, _ in xs if p]).items() if k != "nn_share"},
+        }
         print(json.dumps({v: {k: val for k, val in report[v].items() if k not in ("minutiae", "pairs")}}), flush=True)
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)

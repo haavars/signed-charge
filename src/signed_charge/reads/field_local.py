@@ -4,6 +4,7 @@ Each planar print of `field_print`, read over the sheet inside `fs.foreground`'s
 
 Run: python -m signed_charge.reads.field_local OUT.json RUN.npz...
 """
+
 import json
 import os
 import sys
@@ -77,7 +78,7 @@ def main(out, paths):
     rng = np.random.default_rng(0)
     draws = [rng.integers(len(rows), size=len(rows)) for _ in range(RESAMPLES)]
     every = np.arange(len(rows))
-    per = lambda n, c: (lambda i: n[i].sum() / max(c[i].sum() * ms.MM2, 1e-6) * 100)  # noqa: E731
+    per = lambda n, c: lambda i: n[i].sum() / max(c[i].sum() * ms.MM2, 1e-6) * 100  # noqa: E731
     with_ci = lambda f: {"mean": float(f(every)), "ci": [float(np.percentile([f(i) for i in draws], q)) for q in (2.5, 97.5)]}  # noqa: E731
     report = {"prints": len(rows), "seam_share": float(sum(r["on_cells"] for r in rows) / sum(r["inner"] for r in rows))}
     for reader in sm.EXTRACTORS:

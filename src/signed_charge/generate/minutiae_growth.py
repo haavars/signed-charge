@@ -12,6 +12,7 @@ For each variant and master: minutiae within the rolled print's reach (an ellips
 
 Run: python -m signed_charge.generate.minutiae_growth OUT.jsonl [MASTERS]
 """
+
 import json
 import os
 import sys
@@ -19,13 +20,27 @@ from concurrent.futures import ProcessPoolExecutor
 
 import numpy as np
 
-VARIANTS = {"base": (14, 1.0), "passes30": (30, 1.0), "passes60": (60, 1.0), "long1.5": (14, 1.5),
-            "long2": (14, 2.0), "long1.5_passes30": (30, 1.5), "long2_passes30": (30, 2.0),
-            "long2_passes45": (45, 2.0), "long2.5_passes30": (30, 2.5)}
+VARIANTS = {
+    "base": (14, 1.0),
+    "passes30": (30, 1.0),
+    "passes60": (60, 1.0),
+    "long1.5": (14, 1.5),
+    "long2": (14, 2.0),
+    "long1.5_passes30": (30, 1.5),
+    "long2_passes30": (30, 2.0),
+    "long2_passes45": (45, 2.0),
+    "long2.5_passes30": (30, 2.5),
+}
 # With breaks planted after growth (`plant_breaks`): (passes, elongation, breaks per 100 mm², share that are a short
 # ridge's two ends).
-VARIANTS.update({"long2_passes30_breaks0.75": (30, 2.0, 0.75, 0.4), "long2_passes30_breaks1.5": (30, 2.0, 1.5, 0.4),
-                 "long2_passes30_breaks1.5_frag7": (30, 2.0, 1.5, 0.7), "long2_passes30_breaks4": (30, 2.0, 4.0, 0.4)})
+VARIANTS.update(
+    {
+        "long2_passes30_breaks0.75": (30, 2.0, 0.75, 0.4),
+        "long2_passes30_breaks1.5": (30, 2.0, 1.5, 0.4),
+        "long2_passes30_breaks1.5_frag7": (30, 2.0, 1.5, 0.7),
+        "long2_passes30_breaks4": (30, 2.0, 4.0, 0.4),
+    }
+)
 MM2 = (25.4 / 500) ** 2
 RUN = ("base", "passes30", "passes60", "long1.5", "long2", "long1.5_passes30")  # the first run's
 FINGERS = (2, 3, 7, 8, 1)
@@ -39,10 +54,10 @@ def elongated(elongation):
         theta = np.pi * bin_index / synthesis.ORIENTATION_BINS
         across_sigma, along_sigma = 0.55 * period, 0.55 * period * elongation
         radius = int(np.ceil(2.6 * along_sigma))
-        y, x = np.mgrid[-radius:radius + 1, -radius:radius + 1].astype(np.float32)
+        y, x = np.mgrid[-radius : radius + 1, -radius : radius + 1].astype(np.float32)
         across = -x * np.sin(theta) + y * np.cos(theta)
         along = x * np.cos(theta) + y * np.sin(theta)
-        kernel = np.exp(-across**2 / (2 * across_sigma**2) - along**2 / (2 * along_sigma**2))
+        kernel = np.exp(-(across**2) / (2 * across_sigma**2) - along**2 / (2 * along_sigma**2))
         kernel = kernel * np.cos(2 * np.pi * across / period)
         kernel -= kernel.mean()
         kernel /= np.abs(kernel).sum()
@@ -138,9 +153,16 @@ def one(task):
     rx, ry = 0.43 * fw / scale, 0.525 * fh / scale
     cx, cy = fingers.MASTER_W / 2, fingers.MASTER_H * 0.47 + 0.2 * ry
     ms = [p for p in m.minutiae if ((p["x"] - cx) / rx) ** 2 + ((p["y"] - cy) / ry) ** 2 < 1]
-    row = {"variant": variant, "seed": seed, "fgp": fgp, "pattern": m.pattern, "period": round(m.period, 2),
-           "count": len(ms), "all": len(m.minutiae),
-           "bifurcations": float(np.mean([p["type"] == "bifurcation" for p in ms])) if ms else None}
+    row = {
+        "variant": variant,
+        "seed": seed,
+        "fgp": fgp,
+        "pattern": m.pattern,
+        "period": round(m.period, 2),
+        "count": len(ms),
+        "all": len(m.minutiae),
+        "bifurcations": float(np.mean([p["type"] == "bifurcation" for p in ms])) if ms else None,
+    }
     if m.cores:
         top = min(c[1] for c in m.cores)
         row["above"] = sum(1 for p in ms if p["y"] < top)
@@ -162,9 +184,17 @@ def main(out, masters=40):
     for v in RUN:
         x = [r for r in rows if r["variant"] == v]
         ratio = [r["below"] / r["above"] for r in x if r.get("above")]
-        print(json.dumps({"variant": v, "masters": len(x), "count_median": float(np.median([r["count"] for r in x])),
-                          "bifurcations": float(np.median([r["bifurcations"] for r in x if r["bifurcations"] is not None])),
-                          "below_over_above": float(np.median(ratio)) if ratio else None}))
+        print(
+            json.dumps(
+                {
+                    "variant": v,
+                    "masters": len(x),
+                    "count_median": float(np.median([r["count"] for r in x])),
+                    "bifurcations": float(np.median([r["bifurcations"] for r in x if r["bifurcations"] is not None])),
+                    "below_over_above": float(np.median(ratio)) if ratio else None,
+                }
+            )
+        )
 
 
 if __name__ == "__main__":

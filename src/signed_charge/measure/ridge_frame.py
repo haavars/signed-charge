@@ -8,6 +8,7 @@ For pairs under `REACH` px whose segment stays on the print, away from singular 
 Run: python -m signed_charge.measure.ridge_frame OUT.json [SETS...]
 LIMIT=n takes the first n prints of each set.
 """
+
 import json
 import os
 import pickle
@@ -106,12 +107,20 @@ def summary(rows, rng):
         tables = np.zeros((len(fingers), 3, len(ALONG) - 1, len(ACROSS) - 1))
         for r in rows:
             tables[at[r["finger"]]] += np.stack(r[reader])
+
         def stats(idx):
             c, p, n = tables[idx].sum(0)
             return c / np.maximum(n, 1), p / np.maximum(c, 1)
+
         g, h = stats(np.arange(len(fingers)))
         draws = [stats(rng.integers(len(fingers), size=len(fingers))) for _ in range(RESAMPLES)]
-        out[reader] = {"g": g.tolist(), "h": h.tolist(), "pairs": tables[:, 0].sum(0).tolist(), "g_ci": np.percentile([d[0] for d in draws], (2.5, 97.5), axis=0).tolist(), "h_ci": np.percentile([d[1] for d in draws], (2.5, 97.5), axis=0).tolist()}
+        out[reader] = {
+            "g": g.tolist(),
+            "h": h.tolist(),
+            "pairs": tables[:, 0].sum(0).tolist(),
+            "g_ci": np.percentile([d[0] for d in draws], (2.5, 97.5), axis=0).tolist(),
+            "h_ci": np.percentile([d[1] for d in draws], (2.5, 97.5), axis=0).tolist(),
+        }
     return out
 
 

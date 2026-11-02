@@ -4,6 +4,7 @@ As `flat_read`, adding over the sheet inside its margin density, h(15-45 px), h(
 
 Run: python -m signed_charge.exploratory.flat_read_2 OUT.json RUN.npz...
 """
+
 import json
 import os
 import re
@@ -98,7 +99,40 @@ def main(out, paths):
                 entry[key] = {"mean": float(values.mean()), "half": half}
         report[name] = entry
         short = lambda k: round(entry[k]["mean"], 1)  # noqa: E731
-        print(name.ljust(22), "on/off", short("skeleton_on"), short("skeleton_off"), short("mindtct_on"), short("mindtct_off"), short("leader_on"), short("leader_off"), "all", short("mindtct_all"), short("leader_all"), "h", round(entry["mindtct_hshort_on"]["mean"], 2), round(entry["leader_hshort_on"]["mean"], 2), "whole", round(entry["mindtct_hshort_all"]["mean"], 2), round(entry["leader_hshort_all"]["mean"], 2), round(entry["mindtct_hlong_all"]["mean"], 2), round(entry["leader_hlong_all"]["mean"], 2), "c60", short("mindtct_c60"), short("leader_c60"), "isl", short("islands"), "step", round(entry["in_step_share"]["mean"], 2), "slip/step", short("mindtct_slip"), short("mindtct_step"), "aligned", round(entry["aligned"]["mean"], 2), flush=True)
+        print(
+            name.ljust(22),
+            "on/off",
+            short("skeleton_on"),
+            short("skeleton_off"),
+            short("mindtct_on"),
+            short("mindtct_off"),
+            short("leader_on"),
+            short("leader_off"),
+            "all",
+            short("mindtct_all"),
+            short("leader_all"),
+            "h",
+            round(entry["mindtct_hshort_on"]["mean"], 2),
+            round(entry["leader_hshort_on"]["mean"], 2),
+            "whole",
+            round(entry["mindtct_hshort_all"]["mean"], 2),
+            round(entry["leader_hshort_all"]["mean"], 2),
+            round(entry["mindtct_hlong_all"]["mean"], 2),
+            round(entry["leader_hlong_all"]["mean"], 2),
+            "c60",
+            short("mindtct_c60"),
+            short("leader_c60"),
+            "isl",
+            short("islands"),
+            "step",
+            round(entry["in_step_share"]["mean"], 2),
+            "slip/step",
+            short("mindtct_slip"),
+            short("mindtct_step"),
+            "aligned",
+            round(entry["aligned"]["mean"], 2),
+            flush=True,
+        )
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)
 

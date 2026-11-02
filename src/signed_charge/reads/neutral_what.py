@@ -7,6 +7,7 @@ Per cell, each named by the start of its prints' stems, by finger, inside the pr
 
 Run: python -m signed_charge.reads.neutral_what OUT.json RUN.npz...
 """
+
 import json
 import os
 import sys
@@ -51,7 +52,10 @@ def one(path):
         labels, n = nd.label(mask)
         sizes = nd.sum(mask, labels, range(1, n + 1))
         boxes = nd.find_objects(labels)
-        small += sum(s < SMALL and b[0].start >= MARGIN and b[1].start >= MARGIN and b[0].stop <= im.shape[0] - MARGIN and b[1].stop <= im.shape[1] - MARGIN for s, b in zip(sizes, boxes))
+        small += sum(
+            s < SMALL and b[0].start >= MARGIN and b[1].start >= MARGIN and b[0].stop <= im.shape[0] - MARGIN and b[1].stop <= im.shape[1] - MARGIN
+            for s, b in zip(sizes, boxes)
+        )
     return {
         "cell": Path(path).stem.split("_")[0],
         "misfit": float(off[inner].mean()),

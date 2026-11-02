@@ -4,6 +4,7 @@ Within each set, fingers sorted by sha256 of `D-030/<year>/<db>/<finger>` as tex
 
 Run anywhere: python3 research/realism/held_out_split.py research/realism/held_out_checking.json
 """
+
 import hashlib
 import json
 import sys

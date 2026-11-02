@@ -8,11 +8,11 @@ Also by the flow's own strength, |d| terciles over all the set's minutiae, and e
 
 Run: python -m signed_charge.exploratory.agreement_confirmed OUT.json
 """
+
 import json
 import os
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -69,7 +69,11 @@ def report_for(rows, reader, rng):
     tables = [r[reader] for r in rows]
     draws = [rng.integers(len(tables), size=len(tables)) for _ in range(RESAMPLES)]
     every = np.arange(len(tables))
-    with_ci = lambda s, n: {"mean": float(s.sum() / max(n.sum(), 1)), "ci": [float(np.percentile([s[i].sum() / max(n[i].sum(), 1) for i in draws], q)) for q in (2.5, 97.5)], "minutiae": int(n.sum())}  # noqa: E731
+    with_ci = lambda s, n: {
+        "mean": float(s.sum() / max(n.sum(), 1)),
+        "ci": [float(np.percentile([s[i].sum() / max(n[i].sum(), 1) for i in draws], q)) for q in (2.5, 97.5)],
+        "minutiae": int(n.sum()),
+    }  # noqa: E731
     out = {}
     for key in KEYS:
         got = [pick(t, key) for t in tables]

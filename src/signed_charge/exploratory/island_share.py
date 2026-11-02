@@ -4,11 +4,11 @@ D-020's 200 prints by `defects_direct.count`, inside the contact: islands are fo
 
 Run: python -m signed_charge.exploratory.island_share OUT.json
 """
+
 import json
 import os
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import numpy as np
 
@@ -38,7 +38,13 @@ def main(out):
         a, b = np.array([r["islands"] for r in picked], float), np.array([r["features"] for r in picked], float)
         share = lambda i: float(a[i].sum() / (a[i].sum() + b[i].sum()) * 100)  # noqa: E731
         draws = [share(rng.integers(len(a), size=len(a))) for _ in range(RESAMPLES)]
-        report[pattern] = {"prints": len(a), "islands_a_print": float(a.mean()), "features_a_print": float(b.mean()), "share_percent": share(np.arange(len(a))), "ci": [float(np.percentile(draws, q)) for q in (2.5, 97.5)]}
+        report[pattern] = {
+            "prints": len(a),
+            "islands_a_print": float(a.mean()),
+            "features_a_print": float(b.mean()),
+            "share_percent": share(np.arange(len(a))),
+            "ci": [float(np.percentile(draws, q)) for q in (2.5, 97.5)],
+        }
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)
     print({k: v for k, v in report.items() if k != "_provenance"})

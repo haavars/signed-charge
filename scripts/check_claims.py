@@ -3,6 +3,7 @@
 Each line of `claims()` is one printed number: its place in the paper, the result file, the keys to it, and the value as printed.
 A claim passes if the stored number rounds to the printed one. Point it at results/verify to check a rerun in the same way.
 """
+
 import json
 import sys
 from pathlib import Path
@@ -29,7 +30,12 @@ def claims():
         out += both(f"Table 2, {name}, h(15-45)", "signed_false", (name, "all", "h_short", "mean"), short, 3)
         out += both(f"Table 2, {name}, h(60-100)", "signed_false", (name, "all", "h_long", "mean"), long, 3)
         out += both(f"Table 2, {name}, C(60)", "signed_false", (name, "all", "c60", "mean"), c60)
-    table3 = {"a": ((0.81, 1.07), ((0.72, 0.91), (0.97, 1.16))), "b": ((0.70, 1.03), ((0.53, 0.87), (0.86, 1.20))), "a_sfinge": ((2.38, 2.73), ((2.15, 2.61), (2.49, 2.95))), "b_sfinge": ((2.42, 2.76), ((1.79, 3.14), (2.10, 3.50)))}
+    table3 = {
+        "a": ((0.81, 1.07), ((0.72, 0.91), (0.97, 1.16))),
+        "b": ((0.70, 1.03), ((0.53, 0.87), (0.86, 1.20))),
+        "a_sfinge": ((2.38, 2.73), ((2.15, 2.61), (2.49, 2.95))),
+        "b_sfinge": ((2.42, 2.76), ((1.79, 3.14), (2.10, 3.50))),
+    }
     for name, (mean, cis) in table3.items():
         for reader, m, (low, high) in zip(READERS, mean, cis):
             out.append((f"Table 3, {name}, C(60)", "held_out_look1", (name, reader, "pooled", "mean"), m, 2))
@@ -64,7 +70,12 @@ def claims():
             out.append((f"Table 9, {name}, X", "flux_scale_d070", (name, reader, "X", "mean"), values[1], 1))
             out.append((f"Table 9, {name}, r(G(9), Q)", "flux_scale_d070", (name, reader, "G", "9", "r", "mean"), values[2], 2))
             out.append((f"Table 9, {name}, r(F(50), Q)", "flux_scale_d070", (name, reader, "F", "50", "r", "mean"), values[3], 2))
-    table10 = {"real": ((-0.36, -0.35), (0.01, 0.05), (0.06, 0.17)), "sfinge": ((0.40, 0.54), (0.39, 0.47), (0.22, 0.19)), "model2": ((0.44, 0.35), (0.53, 0.52), (0.31, 0.26)), "realflow": ((0.57, 0.58), (0.49, 0.45), (0.26, 0.27))}
+    table10 = {
+        "real": ((-0.36, -0.35), (0.01, 0.05), (0.06, 0.17)),
+        "sfinge": ((0.40, 0.54), (0.39, 0.47), (0.22, 0.19)),
+        "model2": ((0.44, 0.35), (0.53, 0.52), (0.31, 0.26)),
+        "realflow": ((0.57, 0.58), (0.49, 0.45), (0.26, 0.27)),
+    }
     for name, bands in table10.items():
         for band, values in enumerate(bands, 1):
             for reader, value in zip(READERS, values):

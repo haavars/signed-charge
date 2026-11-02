@@ -11,9 +11,9 @@ NFIQ 2, whether it passed. Needs the GPU and NBIS and NFIQ 2.
 
 Run: python -m signed_charge.exploratory.fine_ridges_slaps OUT.jsonl 40 3
 """
+
 import json
 import sys
-from pathlib import Path
 
 from ridgegen import diffusion, fingerprints, jp2, server, verify
 from ridgegen import impression as imp
@@ -46,17 +46,29 @@ def main(out, n=40, attempts=3):
         for kind, seed, code, periods in pick(n):
             for variant in ("before", "after"):
                 # A fresh capture for each: attempt 0 continues the capture's own generator (`Capture.rng_for`).
-                capture = (fingerprints.slap_capture(seed, code, 0) if kind == "slap"
-                           else fingerprints.tip_capture(seed, code, 0))
+                capture = fingerprints.slap_capture(seed, code, 0) if kind == "slap" else fingerprints.tip_capture(seed, code, 0)
                 drawn = imp.upscale(capture, 2)
                 diffusion.FINE_STRENGTH = diffusion.STRENGTH if variant == "before" else 0.25
                 for attempt in range(attempts):
                     image = server.render_capture(drawn, request, attempt)
                     m = verify.verify(jp2.downsample(image), capture)
-                    f.write(json.dumps({
-                        "kind": kind, "seed": seed, "code": code, "periods": [round(p, 2) for p in periods],
-                        "variant": variant, "attempt": attempt, "recall": m["minutiae_recall"],
-                        "spurious": m["minutiae_spurious"], "nfiq2": m["nfiq2"], "accepted": m["accepted"]}) + "\n")
+                    f.write(
+                        json.dumps(
+                            {
+                                "kind": kind,
+                                "seed": seed,
+                                "code": code,
+                                "periods": [round(p, 2) for p in periods],
+                                "variant": variant,
+                                "attempt": attempt,
+                                "recall": m["minutiae_recall"],
+                                "spurious": m["minutiae_spurious"],
+                                "nfiq2": m["nfiq2"],
+                                "accepted": m["accepted"],
+                            }
+                        )
+                        + "\n"
+                    )
                     f.flush()
     diffusion.FINE_STRENGTH = 0.25
 

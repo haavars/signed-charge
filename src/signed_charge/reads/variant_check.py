@@ -2,10 +2,10 @@
 
 Run: python -m signed_charge.reads.variant_check OUT.json e_vary e_far
 """
+
 import json
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import numpy as np
 
@@ -53,12 +53,30 @@ def main(out, variants):
             stats = [(k, s[name]) for k, s, _, _ in rows if s[name]]
             pairs = mp.summary([p[name] for _, _, p, _ in rows if p[name]])
             signed = sm.curve([q for _, _, _, q in rows if q], name, rng)
-            report[name][variant] = {"accuracy": cl.spread([cf.accuracy(r, stats, "mh", seed=s) for s in range(cl.SEEDS)]),
-                                     "density": pairs["density_per_100mm2"], "same": pairs["close_same"], "offset": pairs["close_offset"], "facing": pairs["close_facing"],
-                                     "forks": float(np.mean([v["bifurcations"] for _, v in stats if v["bifurcations"] is not None])),
-                                     "c60": signed["screening"]["60"], "c90": signed["screening"]["90"], "h": signed["h"], "pairs": signed["pairs"]}
+            report[name][variant] = {
+                "accuracy": cl.spread([cf.accuracy(r, stats, "mh", seed=s) for s in range(cl.SEEDS)]),
+                "density": pairs["density_per_100mm2"],
+                "same": pairs["close_same"],
+                "offset": pairs["close_offset"],
+                "facing": pairs["close_facing"],
+                "forks": float(np.mean([v["bifurcations"] for _, v in stats if v["bifurcations"] is not None])),
+                "c60": signed["screening"]["60"],
+                "c90": signed["screening"]["90"],
+                "h": signed["h"],
+                "pairs": signed["pairs"],
+            }
             x = report[name][variant]
-            print(name, variant, round(x["accuracy"]["mean"], 3), round(x["density"], 1), round(x["same"], 2), round(x["offset"], 2), round(x["facing"], 2), round(x["c60"]["mean"], 2), flush=True)
+            print(
+                name,
+                variant,
+                round(x["accuracy"]["mean"], 3),
+                round(x["density"], 1),
+                round(x["same"], 2),
+                round(x["offset"], 2),
+                round(x["facing"], 2),
+                round(x["c60"]["mean"], 2),
+                flush=True,
+            )
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)
 

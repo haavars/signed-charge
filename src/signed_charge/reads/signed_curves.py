@@ -10,11 +10,11 @@ CIs by finger. FVC B only, and the fresh people of `signed_false`.
 
 Run: python -m signed_charge.reads.signed_curves OUT.json
 """
+
 import json
 import os
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -73,7 +73,13 @@ def finger(task):
         sums = {k: [np.zeros(len(sm.EDGES) - 1), np.zeros(len(sm.EDGES) - 1), 0] for k in KEYS}
         for p, c, (im, m, guarded) in zip(points, counts, ready):
             field = sm.direction(im)
-            cases = {"all": (p, field, m), "confirmed": (p[c >= sf.SUPPORT] if len(p) else p, field, m), "no_singular": (sf.inside(p, guarded), field, guarded), "scale6": (p, smoothed(im, 6.0), m), "scale14": (p, smoothed(im, 14.0), m)}
+            cases = {
+                "all": (p, field, m),
+                "confirmed": (p[c >= sf.SUPPORT] if len(p) else p, field, m),
+                "no_singular": (sf.inside(p, guarded), field, guarded),
+                "scale6": (p, smoothed(im, 6.0), m),
+                "scale14": (p, smoothed(im, 14.0), m),
+            }
             for key, (use, f, mask) in cases.items():
                 total, count, n = sf.binned(use, y_sign, f, mask)
                 sums[key][0] += total
@@ -102,8 +108,16 @@ def curves(rows, reader, key, rng):
     every = np.arange(len(rows))
     draws = [rng.integers(len(rows), size=len(rows)) for _ in range(RESAMPLES)]
     hs = np.array([h(d) for d in draws])
-    return {"fingers": len(rows), "minutiae_a_print": float(minutiae.sum() / max(sum(r["prints"] for r in rows), 1)), "r": ((sm.EDGES[:-1] + sm.EDGES[1:]) / 2).tolist(), "h": h(every).tolist(), "h_low": np.percentile(hs, 2.5, 0).tolist(), "h_high": np.percentile(hs, 97.5, 0).tolist(), "pairs": count.sum(0).tolist(),
-            "c": {str(R): {"mean": float(screen(every, R)), "ci": [float(np.percentile([screen(d, R) for d in draws], q)) for q in (2.5, 97.5)]} for R in sm.RADII}}
+    return {
+        "fingers": len(rows),
+        "minutiae_a_print": float(minutiae.sum() / max(sum(r["prints"] for r in rows), 1)),
+        "r": ((sm.EDGES[:-1] + sm.EDGES[1:]) / 2).tolist(),
+        "h": h(every).tolist(),
+        "h_low": np.percentile(hs, 2.5, 0).tolist(),
+        "h_high": np.percentile(hs, 97.5, 0).tolist(),
+        "pairs": count.sum(0).tolist(),
+        "c": {str(R): {"mean": float(screen(every, R)), "ci": [float(np.percentile([screen(d, R) for d in draws], q)) for q in (2.5, 97.5)]} for R in sm.RADII},
+    }
 
 
 def main(out):
@@ -118,14 +132,32 @@ def main(out):
         rows += list(pool.map(variant_task, fingers, chunksize=1))
         print("variants", len(rows), flush=True)
         rows += list(pool.map(finger, [("phantom", k, v) for k, v in groups.items()], chunksize=1))
-    sets = {"real": [r for r in rows if r["set"].startswith("FVC") and "DB4" not in r["set"]], "sfinge": [r for r in rows if "DB4" in r["set"]], "phantom": [r for r in rows if r["set"] == "phantom"], **{v: [r for r in rows if r["set"] == v] for v in sf.VARIANTS}}
+    sets = {
+        "real": [r for r in rows if r["set"].startswith("FVC") and "DB4" not in r["set"]],
+        "sfinge": [r for r in rows if "DB4" in r["set"]],
+        "phantom": [r for r in rows if r["set"] == "phantom"],
+        **{v: [r for r in rows if r["set"] == v] for v in sf.VARIANTS},
+    }
     rng = np.random.default_rng(0)
-    report = {reader: {name: {key: curves(group, reader, key, rng) for key in KEYS if group and (key != "confirmed" or name != "phantom")} for name, group in sets.items()} for reader in sm.EXTRACTORS}
+    report = {
+        reader: {
+            name: {key: curves(group, reader, key, rng) for key in KEYS if group and (key != "confirmed" or name != "phantom")} for name, group in sets.items()
+        }
+        for reader in sm.EXTRACTORS
+    }
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)
     for reader in sm.EXTRACTORS:
         for name, entry in report[reader].items():
-            print(reader, name.ljust(12), {k: (v["fingers"], round(v["c"]["60"]["mean"], 2), [round(c, 2) for c in v["c"]["60"]["ci"]], round(v["c"]["150"]["mean"], 2)) for k, v in entry.items()}, flush=True)
+            print(
+                reader,
+                name.ljust(12),
+                {
+                    k: (v["fingers"], round(v["c"]["60"]["mean"], 2), [round(c, 2) for c in v["c"]["60"]["ci"]], round(v["c"]["150"]["mean"], 2))
+                    for k, v in entry.items()
+                },
+                flush=True,
+            )
 
 
 if __name__ == "__main__":

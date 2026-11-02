@@ -4,6 +4,7 @@ h(r) and C(R) under `all`, with 95 % CIs by finger, mindtct and LEADER side by s
 
 Run with python_biometrics/.venv-figures.
 """
+
 import json
 import sys
 from pathlib import Path
@@ -14,14 +15,22 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-SERIES = {"real": ("Real, FVC B", "#2a78d6"), "sfinge": ("SFinGe", "#eb6834"), "model2": ("ZP", "#1baf7a"), "d_s1_sp2_f3": ("ZP+P", "#eda100"), "phantom": ("Rendered ZP", "#e87ba4")}
+SERIES = {
+    "real": ("Real, FVC B", "#2a78d6"),
+    "sfinge": ("SFinGe", "#eb6834"),
+    "model2": ("ZP", "#1baf7a"),
+    "d_s1_sp2_f3": ("ZP+P", "#eda100"),
+    "phantom": ("Rendered ZP", "#e87ba4"),
+}
 READERS = {"mindtct": "mindtct", "leader": "LEADER"}
 RADII = (30, 60, 90, 120, 150)
 INK, MUTED, GRID = "#0b0b0b", "#52514e", "#e6e5e0"
 
 
 def axes(n):
-    plt.rcParams.update({"font.size": 9, "axes.edgecolor": MUTED, "axes.labelcolor": INK, "xtick.color": MUTED, "ytick.color": MUTED, "font.family": "sans-serif"})
+    plt.rcParams.update(
+        {"font.size": 9, "axes.edgecolor": MUTED, "axes.labelcolor": INK, "xtick.color": MUTED, "ytick.color": MUTED, "font.family": "sans-serif"}
+    )
     fig, ax = plt.subplots(1, n, figsize=(7.2, 3.0), sharey=True, constrained_layout=True)
     for a in ax:
         a.grid(True, color=GRID, linewidth=0.6)

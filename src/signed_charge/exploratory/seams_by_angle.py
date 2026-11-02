@@ -4,6 +4,7 @@ E-072's prints and seam, k at least `SEAM`. Each seam cell takes the angle at wh
 
 Run: python -m signed_charge.exploratory.seams_by_angle OUT.json RUN.npz...
 """
+
 import json
 import os
 import sys
@@ -67,8 +68,20 @@ def main(out, paths):
             charge = lambda i: h[i, 0].sum() / max(h[i, 1].sum(), 1)  # noqa: E731
             draws = [rng.integers(len(rows), size=len(rows)) for _ in range(RESAMPLES)]
             every = np.arange(len(rows))
-            report[f"{reader}/{name}"] = {"share_of_seam": float(cells.sum() / max(sum(r["seam"] for r in rows), 1)), "density": density(every), "density_ci": [float(np.percentile([density(i) for i in draws], q)) for q in (2.5, 97.5)], "h": charge(every), "h_ci": [float(np.percentile([charge(i) for i in draws], q)) for q in (2.5, 97.5)], "pairs": int(h[:, 1].sum())}
-            print(reader, name.ljust(10), {k: (round(v, 3) if isinstance(v, float) else v) for k, v in report[f"{reader}/{name}"].items() if "ci" not in k}, flush=True)
+            report[f"{reader}/{name}"] = {
+                "share_of_seam": float(cells.sum() / max(sum(r["seam"] for r in rows), 1)),
+                "density": density(every),
+                "density_ci": [float(np.percentile([density(i) for i in draws], q)) for q in (2.5, 97.5)],
+                "h": charge(every),
+                "h_ci": [float(np.percentile([charge(i) for i in draws], q)) for q in (2.5, 97.5)],
+                "pairs": int(h[:, 1].sum()),
+            }
+            print(
+                reader,
+                name.ljust(10),
+                {k: (round(v, 3) if isinstance(v, float) else v) for k, v in report[f"{reader}/{name}"].items() if "ci" not in k},
+                flush=True,
+            )
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)
 

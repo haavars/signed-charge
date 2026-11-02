@@ -4,13 +4,13 @@ ZP and ZP+P on fresh people, seeds from `FIRST`, and SynFing's pairs, all as the
 
 Run: python -m signed_charge.reads.tstr_data OUT_DIR
 """
+
 import os
 import sys
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
 import cv2
-import numpy as np
 
 from signed_charge.measure import flow_check as fc
 from signed_charge.reads import tstr
@@ -40,7 +40,13 @@ def pair(task):
 
 
 if __name__ == "__main__":
-    tasks = [(variant, name, seed, finger, capture) for variant, name in (("model2", "zp"), ("d_s1_sp2_f3", "zpp")) for seed in range(FIRST, FIRST + PEOPLE) for finger in FINGERS for capture in CAPTURES]
+    tasks = [
+        (variant, name, seed, finger, capture)
+        for variant, name in (("model2", "zp"), ("d_s1_sp2_f3", "zpp"))
+        for seed in range(FIRST, FIRST + PEOPLE)
+        for finger in FINGERS
+        for capture in CAPTURES
+    ]
     images = PEOPLE * len(FINGERS) * len(CAPTURES)
     pairs = [(SYNFING / f"impression_{k}" / f"F_{i * 16:05d}.jpg", i, k) for i in range(images // 2) for k in (1, 2)]
     with ProcessPoolExecutor(JOBS) as pool:

@@ -5,6 +5,7 @@ and drawn images are read alike. Also the same at `FINE` against `MID`, the midd
 
 Run: python -m signed_charge.exploratory.wobble OUT.json RUN.npz...
 """
+
 import json
 import os
 import re
@@ -19,7 +20,6 @@ from signed_charge.measure import conformality as cf
 from signed_charge.measure import field_similarity as fs
 from signed_charge.measure import flow_check as fc
 from signed_charge.reads import minutiae_pairs as mp
-from signed_charge.measure import minutiae_stats as ms
 from signed_charge.measure import provenance
 
 FINE, MID, COARSE, CLEAR, BORDER = 2.5, 9.0, 18.0, 14, 16
@@ -51,7 +51,11 @@ def measure(item):
         return key, None
     fine, mid, coarse = (direction(gx, gy, s) for s in (FINE, MID, COARSE))
     gap = lambda a, b: np.degrees(np.abs(0.5 * np.angle(np.exp(2j * (a - b)))))
-    return key, {"fine_coarse": float(np.sqrt(np.mean(gap(fine, coarse)[keep] ** 2))), "fine_mid": float(np.sqrt(np.mean(gap(fine, mid)[keep] ** 2))), "pixels": int(keep.sum())}
+    return key, {
+        "fine_coarse": float(np.sqrt(np.mean(gap(fine, coarse)[keep] ** 2))),
+        "fine_mid": float(np.sqrt(np.mean(gap(fine, mid)[keep] ** 2))),
+        "pixels": int(keep.sum()),
+    }
 
 
 def rendered(task):
@@ -85,7 +89,10 @@ def main(out, runs):
         for k, v in pool.map(developmental, runs, chunksize=2):
             if v:
                 sets.setdefault(k[0], []).append(v)
-    report = {k: {"prints": len(v), "fine_coarse": float(np.median([x["fine_coarse"] for x in v])), "fine_mid": float(np.median([x["fine_mid"] for x in v]))} for k, v in sets.items()}
+    report = {
+        k: {"prints": len(v), "fine_coarse": float(np.median([x["fine_coarse"] for x in v])), "fine_mid": float(np.median([x["fine_mid"] for x in v]))}
+        for k, v in sets.items()
+    }
     for k, v in report.items():
         print(k.ljust(30), v["prints"], round(v["fine_coarse"], 2), round(v["fine_mid"], 2), flush=True)
     report["_provenance"] = provenance.record(started)

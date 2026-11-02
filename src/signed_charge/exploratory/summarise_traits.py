@@ -1,4 +1,5 @@
 """Summary of master_traits.py's lines, by finger: summarise_traits.py TRAITS.jsonl"""
+
 import json
 import sys
 from collections import Counter, defaultdict

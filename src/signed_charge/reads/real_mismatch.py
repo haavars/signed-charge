@@ -10,6 +10,7 @@ Three measures, on mindtct, LEADER and `both`, minutiae of mindtct with one of L
 Run: python -m signed_charge.reads.real_mismatch CACHE.pkl OUT.json RUN.npz...
 LIMIT=n takes the first n prints of each set, to try the code.
 """
+
 import json
 import os
 import pickle
@@ -18,7 +19,6 @@ import sys
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
-import cv2
 import numpy as np
 from scipy import ndimage as nd
 
@@ -117,7 +117,7 @@ def one(task):
     kind[off & (angle >= LOW[0]) & (angle < LOW[1])] = 0
     kind[off & (angle >= HIGH[0]) & (angle < HIGH[1])] = 1
     sample = np.zeros(im.shape, bool)
-    sample[:: STEP, :: STEP] = True
+    sample[::STEP, ::STEP] = True
     keep = sample & (kind >= 0)
     pack = lambda ys, xs: np.stack([position[ys, xs], np.float32(splay[ys, xs]), np.float32(coherence[ys, xs]), kind[ys, xs]], 1).astype(np.float32)  # noqa: E731
     out["cells"] = pack(*np.nonzero(keep))
@@ -136,7 +136,11 @@ def one(task):
     for reader, p in points.items():
         ys, xs = cells_of(p)
         hit = kind[ys, xs] >= 0
-        out[reader] = {"minutiae": pack(ys[hit], xs[hit]), "mirror": (int(high[ys, xs].sum()), int(low[ys, xs].sum())), "bins": [int((off[ys, xs] & (angle[ys, xs] >= a) & (angle[ys, xs] <= b)).sum()) for a, b in fl.BINS.values()]}
+        out[reader] = {
+            "minutiae": pack(ys[hit], xs[hit]),
+            "mirror": (int(high[ys, xs].sum()), int(low[ys, xs].sum())),
+            "bins": [int((off[ys, xs] & (angle[ys, xs] >= a) & (angle[ys, xs] <= b)).sum()) for a, b in fl.BINS.values()],
+        }
     return out
 
 
@@ -173,7 +177,11 @@ def mantel_haenszel(c, m):
 def with_ci(c, m, rng):
     draws = [rng.integers(len(c), size=len(c)) for _ in range(RESAMPLES)]
     values = [mantel_haenszel(c[i].sum(0), m[i].sum(0)) for i in draws]
-    return {"ratio": mantel_haenszel(c.sum(0), m.sum(0)), "ci": [float(np.percentile(values, q)) for q in (2.5, 97.5)], "minutiae": [float(x) for x in m.sum((0, 1))]}
+    return {
+        "ratio": mantel_haenszel(c.sum(0), m.sum(0)),
+        "ci": [float(np.percentile(values, q)) for q in (2.5, 97.5)],
+        "minutiae": [float(x) for x in m.sum((0, 1))],
+    }
 
 
 def group(rows, rng):
@@ -194,7 +202,12 @@ def group(rows, rng):
             areas[i] += r["bins"]
         ratio = lambda i: (pairs[i, 0].sum() / max(pairs[i, 2].sum(), 1)) / max(pairs[i, 1].sum() / max(pairs[i, 3].sum(), 1), 1e-9)  # noqa: E731
         draws = [rng.integers(len(fingers), size=len(fingers)) for _ in range(RESAMPLES)]
-        entry["mirror"] = {"ratio": float(ratio(np.arange(len(fingers)))), "ci": [float(np.percentile([ratio(i) for i in draws], q)) for q in (2.5, 97.5)], "minutiae": [float(x) for x in pairs[:, :2].sum(0)], "cells": [float(x) for x in pairs[:, 2:].sum(0)]}
+        entry["mirror"] = {
+            "ratio": float(ratio(np.arange(len(fingers)))),
+            "ci": [float(np.percentile([ratio(i) for i in draws], q)) for q in (2.5, 97.5)],
+            "minutiae": [float(x) for x in pairs[:, :2].sum(0)],
+            "cells": [float(x) for x in pairs[:, 2:].sum(0)],
+        }
         entry["density"] = [float(a / max(b * ms.MM2, 1e-6) * 100) for a, b in zip(bins.sum(0), areas.sum(0))]
         entry["shelf"] = float(entry["density"][3] / max(entry["density"][5], 1e-6))
         report[reader] = entry

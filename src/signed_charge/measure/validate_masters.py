@@ -16,11 +16,10 @@ tuning, so LEADER sees them less like FVC's grey images than it would rendered o
 
 Run: python -m signed_charge.measure.validate_masters OUT.json 30 7000 model2 VARIANT...
 """
+
 import json
-import os
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import numpy as np
 
@@ -73,8 +72,11 @@ def run(extractor, tasks, real):
     for variant in sorted({t[0] for t in tasks}):
         xs = [x for x in mine if x[0][0] == variant]
         s = [(k, v) for k, v, _, _ in xs if v]
-        report[variant] = {**ms.summary([v for _, v in s]), "accuracy_mh": cf.accuracy(stats, s, "mh"),
-                           "pairs": short(mp.summary([p for _, _, p, _ in xs if p]))}
+        report[variant] = {
+            **ms.summary([v for _, v in s]),
+            "accuracy_mh": cf.accuracy(stats, s, "mh"),
+            "pairs": short(mp.summary([p for _, _, p, _ in xs if p])),
+        }
     return report
 
 
@@ -85,17 +87,22 @@ def short(summary):
 def main(out, people, first, variants):
     started = provenance.start()
     real = list(cf.fvc(("DB1", "DB2", "DB3")))
-    tasks = [(v, s, f, c) for v in variants for s in range(first, first + people) for f in (2, 3, 4, 5, 7, 8, 9, 10)
-             for c in (1, 2)]
+    tasks = [(v, s, f, c) for v in variants for s in range(first, first + people) for f in (2, 3, 4, 5, 7, 8, 9, 10) for c in (1, 2)]
     report = {name: run(name, tasks, real) for name in ("mindtct", "leader")}
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)
     for name in ("mindtct", "leader"):
         for k, v in report[name].items():
             p = v["pairs"]
-            print(name, k, round(v["density_per_100mm2"], 1), round(v["bifurcations"], 2),
-                  round(v.get("accuracy_mh", 0), 3), [round(p[f"close_{x}"], 2) for x in ("same", "offset", "facing")],
-                  {r: round(c, 2) for r, c in p["clustering"].items()})
+            print(
+                name,
+                k,
+                round(v["density_per_100mm2"], 1),
+                round(v["bifurcations"], 2),
+                round(v.get("accuracy_mh", 0), 3),
+                [round(p[f"close_{x}"], 2) for x in ("same", "offset", "facing")],
+                {r: round(c, 2) for r, c in p["clustering"].items()},
+            )
 
 
 if __name__ == "__main__":

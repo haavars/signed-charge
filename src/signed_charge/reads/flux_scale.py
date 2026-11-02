@@ -8,6 +8,7 @@ Per set, by finger: slope of Q on F and G, their correlation, and X = <Q²> - <N
 Sets: planted (flat sheets, independent signs), real, sfinge, model2, realflow, readflow, lead. Run: python -m signed_charge.reads.flux_scale OUT.json [SETS...]
 LIMIT=n takes the first n prints of each set.
 """
+
 import json
 import os
 import pickle
@@ -71,7 +72,9 @@ def read(im, points, inner, finger):
     phi = 1.0 / np.maximum(period, 1.0)
     quality = sf.quality(im)
     smoothed = {s: smooth(z2, fg, s) for s in SCALES}
-    heads = {reader: (points[reader], sf.heading(points[reader], y_sign) if len(points[reader]) else np.zeros(0)) for reader, (_, y_sign) in sm.EXTRACTORS.items()}
+    heads = {
+        reader: (points[reader], sf.heading(points[reader], y_sign) if len(points[reader]) else np.zeros(0)) for reader, (_, y_sign) in sm.EXTRACTORS.items()
+    }
     out = []
     for i0, j0 in w.patches(inner, singular, SIDE):
         if quality[i0 : i0 + SIDE, j0 : j0 + SIDE].min() < QUALITY:
@@ -153,7 +156,9 @@ def summary(rows, rng):
         e = {"X": boot(rows, lambda p: excess(p, q), rng), "minutiae": float(np.mean([r["n_" + q] for r in rows]))}
         e["rms_Q"] = boot(rows, lambda p: float(np.sqrt(np.mean([r[q] ** 2 for r in p]))), rng)
         for key in ("F", "G"):
-            e[key] = {str(s): {"slope": boot(rows, lambda p: slope(p, q, key, s), rng), "r": boot(rows, lambda p: correlation(p, q, key, s), rng)} for s in SCALES}
+            e[key] = {
+                str(s): {"slope": boot(rows, lambda p: slope(p, q, key, s), rng), "r": boot(rows, lambda p: correlation(p, q, key, s), rng)} for s in SCALES
+            }
         out[q] = e
     return out
 

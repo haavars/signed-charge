@@ -19,10 +19,10 @@ process is built on them:
 Run: python -m signed_charge.generate.phase_edit OUT.json
 [MASTERS]
 """
+
 import json
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -47,7 +47,7 @@ def vortex(ridges):
 
 def doubled_direction(v, sigma=3):
     """e^{2iβ} from V (= i e^{iβ} b sin ψ: −V² = e^{2iβ} b² sin² ψ), averaged so it holds at sin ψ = 0 too."""
-    d = -v**2
+    d = -(v**2)
     re = cv2.GaussianBlur(d.real.astype(np.float32), (0, 0), sigma)
     im = cv2.GaussianBlur(d.imag.astype(np.float32), (0, 0), sigma)
     return np.arctan2(im, re)
@@ -71,6 +71,7 @@ def local_phase(ridges, v, beta2, centre, half):
 def residues(psi):
     """ψ's winding round each 2 × 2 plaquette (Goldstein's residues): +1 or −1 at a spiral, at the plaquette's
     centre (x + 0.5, y + 0.5)."""
+
     def wrap(d):
         return (d + np.pi) % (2 * np.pi) - np.pi
 
@@ -123,6 +124,7 @@ def found(ridges):
 
 def changes(before, after, near, radius=40):
     """Minutiae within `radius` of `near` that are new in `after` and gone from `before` (3 px tolerance)."""
+
     def close(p, q):
         return (p["x"] - q["x"]) ** 2 + (p["y"] - q["y"]) ** 2 <= 9 and p["type"] == q["type"]
 
@@ -165,19 +167,18 @@ def one(task):
         angle = None
         if len(new) == 2:
             angle = abs((new[0]["angle"] - new[1]["angle"] + 180) % 360 - 180)
-        rows.append({"op": "add", "layout": layout, "new": len(new), "gone": len(gone),
-                     "types": sorted(p["type"][0] for p in new), "angle": angle})
+        rows.append({"op": "add", "layout": layout, "new": len(new), "gone": len(gone), "types": sorted(p["type"][0] for p in new), "angle": angle})
 
     # Remove grown pairs: two minutiae under 20 px apart whose windings are opposite.
     # Not in the master's edge band (half its minutiae, where the growth met the edge; no print shows it).
     inner = [p for p in base if min(p["x"], p["y"], w - p["x"], h - p["y"]) > EDGE]
     pairs = []
     for i, p in enumerate(inner):
-        for q in inner[i + 1:]:
+        for q in inner[i + 1 :]:
             if (p["x"] - q["x"]) ** 2 + (p["y"] - q["y"]) ** 2 < 400:
                 pairs.append((p, q))
     rng.shuffle(pairs)
-    for p, q in pairs[:EDITS * 2]:
+    for p, q in pairs[: EDITS * 2]:
         mid = ((p["x"] + q["x"]) / 2, (p["y"] + q["y"]) / 2)
         psi, (ys, xs) = local_phase(ridges, v, beta2, mid, int(WINDOW * period))
         res = residues(psi)
@@ -206,18 +207,32 @@ def main(out, masters=16):
     for layout in ("along", "across", "diagonal"):
         xs = [r for r in rows if r["op"] == "add" and r["layout"] == layout]
         two = [r for r in xs if r["new"] == 2 and r["gone"] == 0]
-        print(json.dumps({"add": layout, "tries": len(xs), "exactly_two": len(two) / len(xs),
-                          "types": {t: sum(r["types"] == list(t) for r in two) for t in ("bb", "be", "ee")},
-                          "facing_over_144": sum(r["angle"] > 144 for r in two) / max(len(two), 1),
-                          "new_hist": np.bincount([r["new"] for r in xs]).tolist()}))
+        print(
+            json.dumps(
+                {
+                    "add": layout,
+                    "tries": len(xs),
+                    "exactly_two": len(two) / len(xs),
+                    "types": {t: sum(r["types"] == list(t) for r in two) for t in ("bb", "be", "ee")},
+                    "facing_over_144": sum(r["angle"] > 144 for r in two) / max(len(two), 1),
+                    "new_hist": np.bincount([r["new"] for r in xs]).tolist(),
+                }
+            )
+        )
     rem = [r for r in rows if r["op"] == "remove"]
     opposite = [r for r in rem if "gone" in r]
-    print(json.dumps({"remove_candidates": len(rem), "opposite_windings": len(opposite) / max(len(rem), 1),
-                      "both_gone_none_new": sum(r["gone"] == 2 and r["new"] == 0 for r in opposite) / max(len(opposite), 1),
-                      "gone_hist": np.bincount([r["gone"] for r in opposite]).tolist(),
-                      "new_hist": np.bincount([r["new"] for r in opposite]).tolist(),
-                      "windings": {str(k): sum(tuple(r["windings"]) == k for r in rem)
-                                   for k in {tuple(r["windings"]) for r in rem}}}))
+    print(
+        json.dumps(
+            {
+                "remove_candidates": len(rem),
+                "opposite_windings": len(opposite) / max(len(rem), 1),
+                "both_gone_none_new": sum(r["gone"] == 2 and r["new"] == 0 for r in opposite) / max(len(opposite), 1),
+                "gone_hist": np.bincount([r["gone"] for r in opposite]).tolist(),
+                "new_hist": np.bincount([r["new"] for r in opposite]).tolist(),
+                "windings": {str(k): sum(tuple(r["windings"]) == k for r in rem) for k in {tuple(r["windings"]) for r in rem}},
+            }
+        )
+    )
 
 
 if __name__ == "__main__":
