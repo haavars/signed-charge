@@ -92,6 +92,7 @@ def steps():
         read("flow_agree_readflow", f"{R}.flow_agree", CACHE, out("flow_agree_readflow"), *read_flow),
         read("flow_agree_realflow", f"{R}.flow_agree", CACHE, out("flow_agree_realflow"), *real_flow),
         read("extractor_free_d062", f"{R}.extractor_free", out("extractor_free_d062")),
+        read("cross_signs", f"{R}.cross_signs", out("cross_signs")),
         read("quality_lift_d063", f"{R}.quality_lift", out("quality_lift_d063")),
         read("quality_degrade_d064", f"{R}.quality_degrade", out("quality_degrade_d064")),
         read("cancel_sweep_e102", f"{R}.cancel_sweep", out("cancel_sweep_e102")),
