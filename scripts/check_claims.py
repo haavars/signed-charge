@@ -112,6 +112,8 @@ def claims():
         for read, printed in zip(("res15", "mindtct15", "leader15"), row):
             out += with_ci(f"Table 6, {name}, {read}", free, (name, "charge", read, "c60"), printed)
     out += with_ci("Section 5.7, real, winding at 6 px", free, ("real", "charge", "res6", "c60"), (0.26, (0.13, 0.38)))
+    out.append(("Section 5.7, minutiae both extractors share", "cross_signs", ("real", "matches"), 15424, 0))
+    out.append(("Section 5.7, share of them with opposite signs", "cross_signs", ("real", "opposite", "mean"), 0.007, 3))
     out += with_ci("Section 5.7, sfinge, winding at 6 px", free, ("sfinge", "charge", "res6", "c60"), (0.27, (0.03, 0.54)))
     table7 = {
         "real": ((0.71, 1.05), (0.92, 1.20), ((1.31, (1.01, 1.59)), (1.32, (1.07, 1.57)))),
