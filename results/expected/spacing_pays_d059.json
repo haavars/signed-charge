@@ -1,0 +1,345 @@
+{
+ "real": {
+  "prints": 708,
+  "fingers": 90,
+  "50": {
+   "payment": {
+    "mean": -0.0006479910374609103,
+    "ci": [
+     -0.0015477877565177797,
+     0.00022495950327228387
+    ]
+   },
+   "left": {
+    "mean": 1.0034228172942028,
+    "ci": [
+     1.0016744816309016,
+     1.0055432023963435
+    ]
+   },
+   "size_d": 0.0030067075358300764,
+   "size_t": 0.00032663849663203066
+  },
+  "100": {
+   "payment": {
+    "mean": -0.000541750713861697,
+    "ci": [
+     -0.0011250165025873823,
+     3.60530771376131e-05
+    ]
+   },
+   "left": {
+    "mean": 1.001586240008433,
+    "ci": [
+     1.0004051484841163,
+     1.0027831870145039
+    ]
+   },
+   "size_d": 0.0030755806053765337,
+   "size_t": 0.0001597108327541888
+  },
+  "150": {
+   "payment": {
+    "mean": -0.00016203276501123852,
+    "ci": [
+     -0.0006548843947482649,
+     0.00029610340429384166
+    ]
+   },
+   "left": {
+    "mean": 1.000661526747517,
+    "ci": [
+     0.9997299773877751,
+     1.0016773797199916
+    ]
+   },
+   "size_d": 0.0020437100436511415,
+   "size_t": 8.927848830142694e-05
+  }
+ },
+ "sfinge": {
+  "prints": 240,
+  "fingers": 30,
+  "50": {
+   "payment": {
+    "mean": 0.0006452722226049144,
+    "ci": [
+     -0.00024493132087868993,
+     0.0015774202768242935
+    ]
+   },
+   "left": {
+    "mean": 0.9990836123681976,
+    "ci": [
+     0.9972453200117628,
+     1.0008482898751816
+    ]
+   },
+   "size_d": 0.0039108609074059225,
+   "size_t": 0.00017296376616993356
+  },
+  "100": {
+   "payment": {
+    "mean": 0.0001151545571319732,
+    "ci": [
+     -0.00015932854650793792,
+     0.0004123093553265332
+    ]
+   },
+   "left": {
+    "mean": 0.999819859626044,
+    "ci": [
+     0.9992302161010956,
+     1.0003685820623092
+    ]
+   },
+   "size_d": 0.0035150808453328418,
+   "size_t": 6.0291344110192444e-05
+  },
+  "150": {
+   "payment": {
+    "mean": 4.302839939193677e-05,
+    "ci": [
+     -8.734754994336345e-05,
+     0.00018719725336573242
+    ]
+   },
+   "left": {
+    "mean": 0.9999338309307231,
+    "ci": [
+     0.9996463378026632,
+     1.0001986766277804
+    ]
+   },
+   "size_d": 0.002164836734747128,
+   "size_t": 2.6259744985837482e-05
+  }
+ },
+ "model2": {
+  "prints": 320,
+  "fingers": 160,
+  "50": {
+   "payment": {
+    "mean": 0.0025450447155371215,
+    "ci": [
+     0.0005666609030332287,
+     0.004573315547337783
+    ]
+   },
+   "left": {
+    "mean": 0.9975544660144162,
+    "ci": [
+     0.9936406811971862,
+     1.0014485572771008
+    ]
+   },
+   "size_d": 0.0028087222512511714,
+   "size_t": 0.0002079917623333214
+  },
+  "100": {
+   "payment": {
+    "mean": -0.00044532653439099924,
+    "ci": [
+     -0.001255973176994257,
+     0.0003402994183958306
+    ]
+   },
+   "left": {
+    "mean": 1.0012390269432976,
+    "ci": [
+     0.9996652988112731,
+     1.0029063427463305
+    ]
+   },
+   "size_d": 0.002213554171853352,
+   "size_t": 8.055914490679911e-05
+  },
+  "150": {
+   "payment": {
+    "mean": -0.0004779623929279358,
+    "ci": [
+     -0.001297138397122444,
+     0.00029278221191498876
+    ]
+   },
+   "left": {
+    "mean": 1.0011116648446714,
+    "ci": [
+     0.9995735258830452,
+     1.002757412779371
+    ]
+   },
+   "size_d": 0.0016996184551066541,
+   "size_t": 4.0696589747438396e-05
+  }
+ },
+ "realflow": {
+  "prints": 90,
+  "fingers": 90,
+  "50": {
+   "payment": {
+    "mean": 0.0021994177422291427,
+    "ci": [
+     0.0002847629210868478,
+     0.004033711109972962
+    ]
+   },
+   "left": {
+    "mean": 0.9969627528729841,
+    "ci": [
+     0.9932856869494089,
+     1.0008918761747643
+    ]
+   },
+   "size_d": 0.0023868655818519912,
+   "size_t": 0.00010566679499237097
+  },
+  "100": {
+   "payment": {
+    "mean": 0.0003849470656458907,
+    "ci": [
+     -0.0002959314427559086,
+     0.0010573300286824947
+    ]
+   },
+   "left": {
+    "mean": 0.9993716470213411,
+    "ci": [
+     0.9980214605157668,
+     1.0007354863797242
+    ]
+   },
+   "size_d": 0.0022081213098100664,
+   "size_t": 4.619377407363165e-05
+  },
+  "150": {
+   "payment": {
+    "mean": 0.00040880675524181104,
+    "ci": [
+     2.1537961499949853e-05,
+     0.0008424282913056632
+    ]
+   },
+   "left": {
+    "mean": 0.9992208895630319,
+    "ci": [
+     0.9983544193998243,
+     0.9999975046477517
+    ]
+   },
+   "size_d": 0.0019055567432890086,
+   "size_t": 2.307068264273507e-05
+  }
+ },
+ "_provenance": {
+  "commit": "e40c4654863553543a00fefbda2939ffa455b15d",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/developmental/spacing_pays.py",
+   "../data/research/minutiae_parts/cache.pkl",
+   "../research/developmental/spacing_pays_d059.json",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_101.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_102.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_103.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_104.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_105.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_106.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_107.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_108.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_109.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_110.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_101.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_102.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_103.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_104.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_105.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_106.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_107.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_108.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_109.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_110.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_101.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_102.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_103.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_104.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_105.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_106.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_107.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_108.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_109.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_110.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_101.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_102.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_103.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_104.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_105.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_106.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_107.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_108.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_109.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_110.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_101.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_102.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_103.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_104.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_105.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_106.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_107.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_108.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_109.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_110.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_101.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_102.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_103.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_104.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_105.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_106.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_107.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_108.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_109.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_110.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_101.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_102.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_103.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_104.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_105.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_106.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_107.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_108.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_109.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_110.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_101.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_102.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_103.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_104.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_105.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_106.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_107.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_108.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_109.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_110.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_101.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_102.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_103.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_104.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_105.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_106.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_107.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_108.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_109.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_110.npz"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-11-01T08:12:19+0100",
+  "finished": "2026-11-01T08:39:52+0100"
+ }
+}

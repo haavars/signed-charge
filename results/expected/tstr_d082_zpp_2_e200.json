@@ -1,0 +1,113 @@
+{
+ "arm": "zpp",
+ "seed": 2,
+ "classes": 1000,
+ "images": 5400,
+ "epochs": 200,
+ "sensors": {
+  "FVC2000/DB1_B": {
+   "eer": 0.14285714285714288,
+   "fmr100": 0.4336734693877551,
+   "genuine": 196,
+   "impostor": 21,
+   "genuine_mean": 0.8701777458190918,
+   "impostor_mean": 0.5964497923851013
+  },
+  "FVC2000/DB2_B": {
+   "eer": 0.17633928571428573,
+   "fmr100": 0.5446428571428571,
+   "genuine": 224,
+   "impostor": 28,
+   "genuine_mean": 0.7815828919410706,
+   "impostor_mean": 0.4230971038341522
+  },
+  "FVC2000/DB3_B": {
+   "eer": 0.33333333333333337,
+   "fmr100": 0.623015873015873,
+   "genuine": 252,
+   "impostor": 36,
+   "genuine_mean": 0.779241681098938,
+   "impostor_mean": 0.632047176361084
+  },
+  "FVC2002/DB1_B": {
+   "eer": 0.3109126984126984,
+   "fmr100": 0.7714285714285715,
+   "genuine": 280,
+   "impostor": 45,
+   "genuine_mean": 0.6878343820571899,
+   "impostor_mean": 0.4580337107181549
+  },
+  "FVC2002/DB2_B": {
+   "eer": 0.2142857142857143,
+   "fmr100": 0.6696428571428571,
+   "genuine": 224,
+   "impostor": 28,
+   "genuine_mean": 0.745864748954773,
+   "impostor_mean": 0.5141144394874573
+  },
+  "FVC2002/DB3_B": {
+   "eer": 0.4654761904761905,
+   "fmr100": 0.8690476190476191,
+   "genuine": 168,
+   "impostor": 15,
+   "genuine_mean": 0.8106580376625061,
+   "impostor_mean": 0.7035205364227295
+  },
+  "FVC2004/DB1_B": {
+   "eer": 0.25,
+   "fmr100": 0.65625,
+   "genuine": 224,
+   "impostor": 28,
+   "genuine_mean": 0.582316517829895,
+   "impostor_mean": 0.35686296224594116
+  },
+  "FVC2004/DB2_B": {
+   "eer": 0.5535714285714286,
+   "fmr100": 0.9682539682539683,
+   "genuine": 252,
+   "impostor": 36,
+   "genuine_mean": 0.6028305888175964,
+   "impostor_mean": 0.6409854888916016
+  },
+  "FVC2004/DB3_B": {
+   "eer": 0.3818027210884354,
+   "fmr100": 0.7091836734693877,
+   "genuine": 196,
+   "impostor": 21,
+   "genuine_mean": 0.8233218789100647,
+   "impostor_mean": 0.7879014015197754
+  }
+ },
+ "eer": 0.3142865016376921,
+ "eer_ci": [
+  0.26587301587301587,
+  0.34367553618669694
+ ],
+ "synthetic": {
+  "eer": 0.0013737373737373782,
+  "fmr100": 0.0,
+  "genuine": 1500,
+  "impostor": 4950,
+  "genuine_mean": 0.8859349489212036,
+  "impostor_mean": 0.10327581316232681
+ },
+ "_provenance": {
+  "commit": "a7e3fc568e844f2d4836abe89dd4337df1be6a1f",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/developmental/tstr.py",
+   "../data/research/tstr_d079",
+   "zpp",
+   "2",
+   "../research/developmental/tstr_d082_zpp_2_e200.json"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {},
+  "started": "2026-11-02T00:16:54+0100",
+  "finished": "2026-11-02T00:40:32+0100"
+ }
+}

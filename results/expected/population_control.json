@@ -1,0 +1,54 @@
+{
+ "mindtct": {
+  "real_against_reinked": {
+   "mean": 0.6050845629544773,
+   "sd": 0.056102648946021,
+   "min": 0.4755203885340332,
+   "max": 0.6903062579888253,
+   "n": 30
+  },
+  "plain_against_inked_all": {
+   "mean": 0.6223734486832634,
+   "sd": 0.006593794312810547,
+   "min": 0.6151422486471468,
+   "max": 0.6339546008866278,
+   "n": 10
+  }
+ },
+ "leader": {
+  "real_against_reinked": {
+   "mean": 0.5490546161518755,
+   "sd": 0.04336094613245607,
+   "min": 0.47919195560324584,
+   "max": 0.6458956346335742,
+   "n": 30
+  },
+  "plain_against_inked_all": {
+   "mean": 0.5536508322537703,
+   "sd": 0.00997487927137898,
+   "min": 0.5354258179389285,
+   "max": 0.5692761372081718,
+   "n": 10
+  }
+ },
+ "_provenance": {
+  "commit": "70cecb6251af13de35e1799599ac2c1a0da235a8",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/developmental/population_control.py",
+   "../research/developmental/population_control.json"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-10-31T17:11:54+0100",
+  "finished": "2026-10-31T17:20:38+0100"
+ }
+}

@@ -1,0 +1,1127 @@
+{
+ "readflow": {
+  "field": {
+   "prints": 20,
+   "fingers": 20,
+   "flow_h_short": {
+    "mean": 0.9413848631239936,
+    "ci": [
+     0.9094885033540189,
+     0.9683212908257007
+    ]
+   },
+   "flow_h_long": {
+    "mean": 0.6367082369887419,
+    "ci": [
+     0.5500487675640547,
+     0.7244098383494513
+    ]
+   },
+   "mindtct": {
+    "agreement": {
+     "mean": 0.6970873786407767,
+     "ci": [
+      0.6349331945634644,
+      0.7523905240488155
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.7650485436893204,
+     "ci": [
+      0.721439198318128,
+      0.8071394774844993
+     ]
+    },
+    "K60": {
+     "mean": 0.07257385155521674,
+     "ci": [
+      -0.00829510143044777,
+      0.15711677049782083
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": 0.04664635623903306,
+     "ci": [
+      -0.007013610518380197,
+      0.10596061930039037
+     ],
+     "fingers": 20
+    }
+   },
+   "leader": {
+    "agreement": {
+     "mean": 0.6813996316758748,
+     "ci": [
+      0.6203966005665722,
+      0.7384898710865562
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.7495395948434622,
+     "ci": [
+      0.7058823529411765,
+      0.7926501609126214
+     ]
+    },
+    "K60": {
+     "mean": 0.05120246390191604,
+     "ci": [
+      -0.01537933683173101,
+      0.1292102291821475
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": 0.030910838468555257,
+     "ci": [
+      -0.012799647173429402,
+      0.07870921385472321
+     ],
+     "fingers": 20
+    }
+   }
+  },
+  "_provenance": {
+   "commit": "4286bff3c48ec48a3c27467245f1e3dd91ce6566",
+   "uncommitted_changes": [],
+   "command": [
+    "python",
+    "../research/developmental/flow_agree.py",
+    "../data/research/minutiae_parts/cache.pkl",
+    "<scratch>/agree_readflow.json",
+    "../data/research/flow_d055/readflow_9100_2.npz",
+    "../data/research/flow_d055/readflow_9100_3.npz",
+    "../data/research/flow_d055/readflow_9100_4.npz",
+    "../data/research/flow_d055/readflow_9100_5.npz",
+    "../data/research/flow_d055/readflow_9100_7.npz",
+    "../data/research/flow_d055/readflow_9100_8.npz",
+    "../data/research/flow_d055/readflow_9100_9.npz",
+    "../data/research/flow_d055/readflow_9100_10.npz",
+    "../data/research/flow_d055/readflow_9101_2.npz",
+    "../data/research/flow_d055/readflow_9101_3.npz",
+    "../data/research/flow_d055/readflow_9101_4.npz",
+    "../data/research/flow_d055/readflow_9101_5.npz",
+    "../data/research/flow_d055/readflow_9101_7.npz",
+    "../data/research/flow_d055/readflow_9101_8.npz",
+    "../data/research/flow_d055/readflow_9101_9.npz",
+    "../data/research/flow_d055/readflow_9101_10.npz",
+    "../data/research/flow_d055/readflow_9102_2.npz",
+    "../data/research/flow_d055/readflow_9102_3.npz",
+    "../data/research/flow_d055/readflow_9102_4.npz",
+    "../data/research/flow_d055/readflow_9102_5.npz"
+   ],
+   "cwd": "<repo>/python_biometrics",
+   "ridgegen": "0.25.1",
+   "python": "3.12.14",
+   "host": "STORE",
+   "env": {
+    "OMP_NUM_THREADS": "1",
+    "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+    "PYTHONPATH": "."
+   },
+   "started": "2026-11-01T16:09:41+0100",
+   "finished": "2026-11-01T16:09:52+0100"
+  }
+ },
+ "e30n10": {
+  "field": {
+   "prints": 20,
+   "fingers": 20,
+   "flow_h_short": {
+    "mean": 0.9427926839094352,
+    "ci": [
+     0.901607034836991,
+     0.9738082109485284
+    ]
+   },
+   "flow_h_long": {
+    "mean": 0.6716417910447762,
+    "ci": [
+     0.5926352973124496,
+     0.7411861558439068
+    ]
+   },
+   "mindtct": {
+    "agreement": {
+     "mean": 0.5856014047410009,
+     "ci": [
+      0.5489311775097934,
+      0.6180559995737426
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.659350307287094,
+     "ci": [
+      0.6233177735976857,
+      0.6966515767959811
+     ]
+    },
+    "K60": {
+     "mean": 0.05527675684370974,
+     "ci": [
+      -0.02104890251477278,
+      0.1372050146556808
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": 0.035047331652333806,
+     "ci": [
+      -0.004828809512066777,
+      0.07376725256197701
+     ],
+     "fingers": 20
+    }
+   },
+   "leader": {
+    "agreement": {
+     "mean": 0.5765690376569038,
+     "ci": [
+      0.5401069518716578,
+      0.6082304526748972
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.6485355648535565,
+     "ci": [
+      0.6130474413232544,
+      0.682911197167725
+     ]
+    },
+    "K60": {
+     "mean": 0.028613607891054667,
+     "ci": [
+      -0.028686060208506142,
+      0.08753383541590479
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": 0.02600542812679894,
+     "ci": [
+      -0.010814432151773079,
+      0.07011247659216004
+     ],
+     "fingers": 20
+    }
+   }
+  },
+  "_provenance": {
+   "commit": "4286bff3c48ec48a3c27467245f1e3dd91ce6566",
+   "uncommitted_changes": [],
+   "command": [
+    "python",
+    "../research/developmental/flow_agree.py",
+    "../data/research/minutiae_parts/cache.pkl",
+    "<scratch>/agree_e30n10.json",
+    "../data/research/neutral_d065/e30n10_9100_10.npz",
+    "../data/research/neutral_d065/e30n10_9100_2.npz",
+    "../data/research/neutral_d065/e30n10_9100_3.npz",
+    "../data/research/neutral_d065/e30n10_9100_4.npz",
+    "../data/research/neutral_d065/e30n10_9100_5.npz",
+    "../data/research/neutral_d065/e30n10_9100_7.npz",
+    "../data/research/neutral_d065/e30n10_9100_8.npz",
+    "../data/research/neutral_d065/e30n10_9100_9.npz",
+    "../data/research/neutral_d065/e30n10_9101_10.npz",
+    "../data/research/neutral_d065/e30n10_9101_2.npz",
+    "../data/research/neutral_d065/e30n10_9101_3.npz",
+    "../data/research/neutral_d065/e30n10_9101_4.npz",
+    "../data/research/neutral_d065/e30n10_9101_5.npz",
+    "../data/research/neutral_d065/e30n10_9101_7.npz",
+    "../data/research/neutral_d065/e30n10_9101_8.npz",
+    "../data/research/neutral_d065/e30n10_9101_9.npz",
+    "../data/research/neutral_d065/e30n10_9102_2.npz",
+    "../data/research/neutral_d065/e30n10_9102_3.npz",
+    "../data/research/neutral_d065/e30n10_9102_4.npz",
+    "../data/research/neutral_d065/e30n10_9102_5.npz"
+   ],
+   "cwd": "<repo>/python_biometrics",
+   "ridgegen": "0.25.1",
+   "python": "3.12.14",
+   "host": "STORE",
+   "env": {
+    "OMP_NUM_THREADS": "1",
+    "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+    "PYTHONPATH": "."
+   },
+   "started": "2026-11-01T16:09:53+0100",
+   "finished": "2026-11-01T16:10:04+0100"
+  }
+ },
+ "e30n30": {
+  "field": {
+   "prints": 20,
+   "fingers": 20,
+   "flow_h_short": {
+    "mean": 0.931841873145698,
+    "ci": [
+     0.8672795975874928,
+     0.9745012992041463
+    ]
+   },
+   "flow_h_long": {
+    "mean": 0.6975379277250747,
+    "ci": [
+     0.6087256350997771,
+     0.7819167725657349
+    ]
+   },
+   "mindtct": {
+    "agreement": {
+     "mean": 0.4720357941834452,
+     "ci": [
+      0.4313564063315608,
+      0.5126059400689471
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.5451155853840418,
+     "ci": [
+      0.5032217230657197,
+      0.5895139434661324
+     ]
+    },
+    "K60": {
+     "mean": -0.03529200427592667,
+     "ci": [
+      -0.11250089066404888,
+      0.040594043771462605
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": 0.029984541675217496,
+     "ci": [
+      -0.01506124629194665,
+      0.08020645391006409
+     ],
+     "fingers": 20
+    }
+   },
+   "leader": {
+    "agreement": {
+     "mean": 0.45724381625441696,
+     "ci": [
+      0.4161083947669314,
+      0.4954364102109664
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.5279151943462898,
+     "ci": [
+      0.48121730149420033,
+      0.573261824652386
+     ]
+    },
+    "K60": {
+     "mean": -0.016204955889513088,
+     "ci": [
+      -0.08298638201741605,
+      0.056620726174806464
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": -0.0023353301122616744,
+     "ci": [
+      -0.03288927210225502,
+      0.03048505316412155
+     ],
+     "fingers": 20
+    }
+   }
+  },
+  "_provenance": {
+   "commit": "4286bff3c48ec48a3c27467245f1e3dd91ce6566",
+   "uncommitted_changes": [],
+   "command": [
+    "python",
+    "../research/developmental/flow_agree.py",
+    "../data/research/minutiae_parts/cache.pkl",
+    "<scratch>/agree_e30n30.json",
+    "../data/research/neutral_d065/e30n30_9100_10.npz",
+    "../data/research/neutral_d065/e30n30_9100_2.npz",
+    "../data/research/neutral_d065/e30n30_9100_3.npz",
+    "../data/research/neutral_d065/e30n30_9100_4.npz",
+    "../data/research/neutral_d065/e30n30_9100_5.npz",
+    "../data/research/neutral_d065/e30n30_9100_7.npz",
+    "../data/research/neutral_d065/e30n30_9100_8.npz",
+    "../data/research/neutral_d065/e30n30_9100_9.npz",
+    "../data/research/neutral_d065/e30n30_9101_10.npz",
+    "../data/research/neutral_d065/e30n30_9101_2.npz",
+    "../data/research/neutral_d065/e30n30_9101_3.npz",
+    "../data/research/neutral_d065/e30n30_9101_4.npz",
+    "../data/research/neutral_d065/e30n30_9101_5.npz",
+    "../data/research/neutral_d065/e30n30_9101_7.npz",
+    "../data/research/neutral_d065/e30n30_9101_8.npz",
+    "../data/research/neutral_d065/e30n30_9101_9.npz",
+    "../data/research/neutral_d065/e30n30_9102_2.npz",
+    "../data/research/neutral_d065/e30n30_9102_3.npz",
+    "../data/research/neutral_d065/e30n30_9102_4.npz",
+    "../data/research/neutral_d065/e30n30_9102_5.npz"
+   ],
+   "cwd": "<repo>/python_biometrics",
+   "ridgegen": "0.25.1",
+   "python": "3.12.14",
+   "host": "STORE",
+   "env": {
+    "OMP_NUM_THREADS": "1",
+    "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+    "PYTHONPATH": "."
+   },
+   "started": "2026-11-01T16:10:05+0100",
+   "finished": "2026-11-01T16:10:15+0100"
+  }
+ },
+ "e20n03": {
+  "field": {
+   "prints": 20,
+   "fingers": 20,
+   "flow_h_short": {
+    "mean": 0.9416646523245508,
+    "ci": [
+     0.900453704160183,
+     0.9721316912318227
+    ]
+   },
+   "flow_h_long": {
+    "mean": 0.601968370835055,
+    "ci": [
+     0.5334227488705405,
+     0.6682737905438214
+    ]
+   },
+   "mindtct": {
+    "agreement": {
+     "mean": 0.6199021207177814,
+     "ci": [
+      0.5710645802451559,
+      0.6706453498960041
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.6818923327895595,
+     "ci": [
+      0.6423416198877305,
+      0.7247433048149038
+     ]
+    },
+    "K60": {
+     "mean": 0.10424596296577304,
+     "ci": [
+      0.06118417542296834,
+      0.1465202938786473
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": 0.074319729434871,
+     "ci": [
+      0.03577789504389141,
+      0.11119587454734065
+     ],
+     "fingers": 20
+    }
+   },
+   "leader": {
+    "agreement": {
+     "mean": 0.5889328063241107,
+     "ci": [
+      0.5420311733257575,
+      0.6369233176838811
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.658498023715415,
+     "ci": [
+      0.6200136886537624,
+      0.7008773377126676
+     ]
+    },
+    "K60": {
+     "mean": 0.04915939010289623,
+     "ci": [
+      0.0018953831818108913,
+      0.08982020734607034
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": 0.048597911375574086,
+     "ci": [
+      0.012872350351966549,
+      0.08420790637007154
+     ],
+     "fingers": 20
+    }
+   }
+  },
+  "_provenance": {
+   "commit": "4286bff3c48ec48a3c27467245f1e3dd91ce6566",
+   "uncommitted_changes": [],
+   "command": [
+    "python",
+    "../research/developmental/flow_agree.py",
+    "../data/research/minutiae_parts/cache.pkl",
+    "<scratch>/agree_e20n03.json",
+    "../data/research/neutral_d065/e20n03_9100_10.npz",
+    "../data/research/neutral_d065/e20n03_9100_2.npz",
+    "../data/research/neutral_d065/e20n03_9100_3.npz",
+    "../data/research/neutral_d065/e20n03_9100_4.npz",
+    "../data/research/neutral_d065/e20n03_9100_5.npz",
+    "../data/research/neutral_d065/e20n03_9100_7.npz",
+    "../data/research/neutral_d065/e20n03_9100_8.npz",
+    "../data/research/neutral_d065/e20n03_9100_9.npz",
+    "../data/research/neutral_d065/e20n03_9101_10.npz",
+    "../data/research/neutral_d065/e20n03_9101_2.npz",
+    "../data/research/neutral_d065/e20n03_9101_3.npz",
+    "../data/research/neutral_d065/e20n03_9101_4.npz",
+    "../data/research/neutral_d065/e20n03_9101_5.npz",
+    "../data/research/neutral_d065/e20n03_9101_7.npz",
+    "../data/research/neutral_d065/e20n03_9101_8.npz",
+    "../data/research/neutral_d065/e20n03_9101_9.npz",
+    "../data/research/neutral_d065/e20n03_9102_2.npz",
+    "../data/research/neutral_d065/e20n03_9102_3.npz",
+    "../data/research/neutral_d065/e20n03_9102_4.npz",
+    "../data/research/neutral_d065/e20n03_9102_5.npz"
+   ],
+   "cwd": "<repo>/python_biometrics",
+   "ridgegen": "0.25.1",
+   "python": "3.12.14",
+   "host": "STORE",
+   "env": {
+    "OMP_NUM_THREADS": "1",
+    "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+    "PYTHONPATH": "."
+   },
+   "started": "2026-11-01T16:10:16+0100",
+   "finished": "2026-11-01T16:10:27+0100"
+  }
+ },
+ "e20n10": {
+  "field": {
+   "prints": 20,
+   "fingers": 20,
+   "flow_h_short": {
+    "mean": 0.9407506033119747,
+    "ci": [
+     0.9039981628036561,
+     0.9711199240906566
+    ]
+   },
+   "flow_h_long": {
+    "mean": 0.6063004285217929,
+    "ci": [
+     0.5116515945687821,
+     0.6993935473939755
+    ]
+   },
+   "mindtct": {
+    "agreement": {
+     "mean": 0.5172943889315911,
+     "ci": [
+      0.4675520199010132,
+      0.5654919617135953
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.595695618754804,
+     "ci": [
+      0.5507718285412422,
+      0.6363670929830625
+     ]
+    },
+    "K60": {
+     "mean": 0.025988327440242515,
+     "ci": [
+      -0.030607315644250108,
+      0.08394464525814889
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": 0.01477188255917608,
+     "ci": [
+      -0.012973224510487841,
+      0.04582055137112609
+     ],
+     "fingers": 20
+    }
+   },
+   "leader": {
+    "agreement": {
+     "mean": 0.5065123010130246,
+     "ci": [
+      0.45584773858927646,
+      0.552841344345864
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.5716353111432706,
+     "ci": [
+      0.5283154560498866,
+      0.6130943337036795
+     ]
+    },
+    "K60": {
+     "mean": -0.021829561948911502,
+     "ci": [
+      -0.07243213442386566,
+      0.03222795906561516
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": 0.007085558406248288,
+     "ci": [
+      -0.01884975370413352,
+      0.037071039745662365
+     ],
+     "fingers": 20
+    }
+   }
+  },
+  "_provenance": {
+   "commit": "4286bff3c48ec48a3c27467245f1e3dd91ce6566",
+   "uncommitted_changes": [],
+   "command": [
+    "python",
+    "../research/developmental/flow_agree.py",
+    "../data/research/minutiae_parts/cache.pkl",
+    "<scratch>/agree_e20n10.json",
+    "../data/research/neutral_d065/e20n10_9100_10.npz",
+    "../data/research/neutral_d065/e20n10_9100_2.npz",
+    "../data/research/neutral_d065/e20n10_9100_3.npz",
+    "../data/research/neutral_d065/e20n10_9100_4.npz",
+    "../data/research/neutral_d065/e20n10_9100_5.npz",
+    "../data/research/neutral_d065/e20n10_9100_7.npz",
+    "../data/research/neutral_d065/e20n10_9100_8.npz",
+    "../data/research/neutral_d065/e20n10_9100_9.npz",
+    "../data/research/neutral_d065/e20n10_9101_10.npz",
+    "../data/research/neutral_d065/e20n10_9101_2.npz",
+    "../data/research/neutral_d065/e20n10_9101_3.npz",
+    "../data/research/neutral_d065/e20n10_9101_4.npz",
+    "../data/research/neutral_d065/e20n10_9101_5.npz",
+    "../data/research/neutral_d065/e20n10_9101_7.npz",
+    "../data/research/neutral_d065/e20n10_9101_8.npz",
+    "../data/research/neutral_d065/e20n10_9101_9.npz",
+    "../data/research/neutral_d065/e20n10_9102_2.npz",
+    "../data/research/neutral_d065/e20n10_9102_3.npz",
+    "../data/research/neutral_d065/e20n10_9102_4.npz",
+    "../data/research/neutral_d065/e20n10_9102_5.npz"
+   ],
+   "cwd": "<repo>/python_biometrics",
+   "ridgegen": "0.25.1",
+   "python": "3.12.14",
+   "host": "STORE",
+   "env": {
+    "OMP_NUM_THREADS": "1",
+    "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+    "PYTHONPATH": "."
+   },
+   "started": "2026-11-01T16:10:28+0100",
+   "finished": "2026-11-01T16:10:39+0100"
+  }
+ },
+ "e20n30": {
+  "field": {
+   "prints": 20,
+   "fingers": 20,
+   "flow_h_short": {
+    "mean": 0.9487927402365905,
+    "ci": [
+     0.9057588756727515,
+     0.9767785898343854
+    ]
+   },
+   "flow_h_long": {
+    "mean": 0.6834765927620172,
+    "ci": [
+     0.5986261834015372,
+     0.7551600917391171
+    ]
+   },
+   "mindtct": {
+    "agreement": {
+     "mean": 0.3768371546149324,
+     "ci": [
+      0.33406934831813484,
+      0.4165238722905682
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.4720752498530276,
+     "ci": [
+      0.43870031745449206,
+      0.5080858502975795
+     ]
+    },
+    "K60": {
+     "mean": -0.003969440741434882,
+     "ci": [
+      -0.041047432543299234,
+      0.035848101964640146
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": -0.02494401352561541,
+     "ci": [
+      -0.053092907201636695,
+      0.0062272537418040395
+     ],
+     "fingers": 20
+    }
+   },
+   "leader": {
+    "agreement": {
+     "mean": 0.3559322033898305,
+     "ci": [
+      0.31561279252309155,
+      0.39548272310141397
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.4412247129579005,
+     "ci": [
+      0.40604457627217316,
+      0.48033073438733975
+     ]
+    },
+    "K60": {
+     "mean": -0.04367772286693177,
+     "ci": [
+      -0.07813607961757363,
+      -0.004844885111568566
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": -0.026278973243548297,
+     "ci": [
+      -0.046640195655052445,
+      -0.0017766323524413246
+     ],
+     "fingers": 20
+    }
+   }
+  },
+  "_provenance": {
+   "commit": "4286bff3c48ec48a3c27467245f1e3dd91ce6566",
+   "uncommitted_changes": [],
+   "command": [
+    "python",
+    "../research/developmental/flow_agree.py",
+    "../data/research/minutiae_parts/cache.pkl",
+    "<scratch>/agree_e20n30.json",
+    "../data/research/neutral_d065/e20n30_9100_10.npz",
+    "../data/research/neutral_d065/e20n30_9100_2.npz",
+    "../data/research/neutral_d065/e20n30_9100_3.npz",
+    "../data/research/neutral_d065/e20n30_9100_4.npz",
+    "../data/research/neutral_d065/e20n30_9100_5.npz",
+    "../data/research/neutral_d065/e20n30_9100_7.npz",
+    "../data/research/neutral_d065/e20n30_9100_8.npz",
+    "../data/research/neutral_d065/e20n30_9100_9.npz",
+    "../data/research/neutral_d065/e20n30_9101_10.npz",
+    "../data/research/neutral_d065/e20n30_9101_2.npz",
+    "../data/research/neutral_d065/e20n30_9101_3.npz",
+    "../data/research/neutral_d065/e20n30_9101_4.npz",
+    "../data/research/neutral_d065/e20n30_9101_5.npz",
+    "../data/research/neutral_d065/e20n30_9101_7.npz",
+    "../data/research/neutral_d065/e20n30_9101_8.npz",
+    "../data/research/neutral_d065/e20n30_9101_9.npz",
+    "../data/research/neutral_d065/e20n30_9102_2.npz",
+    "../data/research/neutral_d065/e20n30_9102_3.npz",
+    "../data/research/neutral_d065/e20n30_9102_4.npz",
+    "../data/research/neutral_d065/e20n30_9102_5.npz"
+   ],
+   "cwd": "<repo>/python_biometrics",
+   "ridgegen": "0.25.1",
+   "python": "3.12.14",
+   "host": "STORE",
+   "env": {
+    "OMP_NUM_THREADS": "1",
+    "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+    "PYTHONPATH": "."
+   },
+   "started": "2026-11-01T16:10:39+0100",
+   "finished": "2026-11-01T16:10:50+0100"
+  }
+ },
+ "e10n03": {
+  "field": {
+   "prints": 20,
+   "fingers": 20,
+   "flow_h_short": {
+    "mean": 0.8991218520937658,
+    "ci": [
+     0.8372915915782265,
+     0.9513776844134771
+    ]
+   },
+   "flow_h_long": {
+    "mean": 0.5180147755256678,
+    "ci": [
+     0.42059136447569284,
+     0.6064070496495408
+    ]
+   },
+   "mindtct": {
+    "agreement": {
+     "mean": 0.5386565272496832,
+     "ci": [
+      0.49000773790810004,
+      0.5915779872301611
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.6261089987325729,
+     "ci": [
+      0.5859117964125541,
+      0.6697092292670965
+     ]
+    },
+    "K60": {
+     "mean": 0.18651281217858848,
+     "ci": [
+      0.12201580927511033,
+      0.25928219596092295
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": 0.08305036701218811,
+     "ci": [
+      0.036676524731066966,
+      0.13109091033525594
+     ],
+     "fingers": 20
+    }
+   },
+   "leader": {
+    "agreement": {
+     "mean": 0.47046560111188324,
+     "ci": [
+      0.42801236228613354,
+      0.5189737126669611
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.5608061153578874,
+     "ci": [
+      0.525233193206567,
+      0.5997016906477282
+     ]
+    },
+    "K60": {
+     "mean": 0.1064608391071751,
+     "ci": [
+      0.053999210406815865,
+      0.16167296131224326
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": 0.060261667988631605,
+     "ci": [
+      0.0037293790995298086,
+      0.123540970947312
+     ],
+     "fingers": 20
+    }
+   }
+  },
+  "_provenance": {
+   "commit": "4286bff3c48ec48a3c27467245f1e3dd91ce6566",
+   "uncommitted_changes": [],
+   "command": [
+    "python",
+    "../research/developmental/flow_agree.py",
+    "../data/research/minutiae_parts/cache.pkl",
+    "<scratch>/agree_e10n03.json",
+    "../data/research/neutral_d065/e10n03_9100_10.npz",
+    "../data/research/neutral_d065/e10n03_9100_2.npz",
+    "../data/research/neutral_d065/e10n03_9100_3.npz",
+    "../data/research/neutral_d065/e10n03_9100_4.npz",
+    "../data/research/neutral_d065/e10n03_9100_5.npz",
+    "../data/research/neutral_d065/e10n03_9100_7.npz",
+    "../data/research/neutral_d065/e10n03_9100_8.npz",
+    "../data/research/neutral_d065/e10n03_9100_9.npz",
+    "../data/research/neutral_d065/e10n03_9101_10.npz",
+    "../data/research/neutral_d065/e10n03_9101_2.npz",
+    "../data/research/neutral_d065/e10n03_9101_3.npz",
+    "../data/research/neutral_d065/e10n03_9101_4.npz",
+    "../data/research/neutral_d065/e10n03_9101_5.npz",
+    "../data/research/neutral_d065/e10n03_9101_7.npz",
+    "../data/research/neutral_d065/e10n03_9101_8.npz",
+    "../data/research/neutral_d065/e10n03_9101_9.npz",
+    "../data/research/neutral_d065/e10n03_9102_2.npz",
+    "../data/research/neutral_d065/e10n03_9102_3.npz",
+    "../data/research/neutral_d065/e10n03_9102_4.npz",
+    "../data/research/neutral_d065/e10n03_9102_5.npz"
+   ],
+   "cwd": "<repo>/python_biometrics",
+   "ridgegen": "0.25.1",
+   "python": "3.12.14",
+   "host": "STORE",
+   "env": {
+    "OMP_NUM_THREADS": "1",
+    "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+    "PYTHONPATH": "."
+   },
+   "started": "2026-11-01T16:10:51+0100",
+   "finished": "2026-11-01T16:11:02+0100"
+  }
+ },
+ "e10n10": {
+  "field": {
+   "prints": 20,
+   "fingers": 20,
+   "flow_h_short": {
+    "mean": 0.9036425902864259,
+    "ci": [
+     0.8511909658981865,
+     0.9484922912627427
+    ]
+   },
+   "flow_h_long": {
+    "mean": 0.5664399437625869,
+    "ci": [
+     0.4955458136652214,
+     0.6414578884316439
+    ]
+   },
+   "mindtct": {
+    "agreement": {
+     "mean": 0.3635022134776193,
+     "ci": [
+      0.3301050553412272,
+      0.39838516459820783
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.4510575504181013,
+     "ci": [
+      0.42184819689252023,
+      0.4841640866873065
+     ]
+    },
+    "K60": {
+     "mean": 0.07575889892841504,
+     "ci": [
+      0.029631014400612683,
+      0.12350029950805543
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": 0.057573550481973504,
+     "ci": [
+      0.02851170865989507,
+      0.08566019728265774
+     ],
+     "fingers": 20
+    }
+   },
+   "leader": {
+    "agreement": {
+     "mean": 0.33574007220216606,
+     "ci": [
+      0.31221079951633385,
+      0.3623051323574884
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.4100051572975761,
+     "ci": [
+      0.38393687339734917,
+      0.4378622313710075
+     ]
+    },
+    "K60": {
+     "mean": -0.009000699827781716,
+     "ci": [
+      -0.04222158185074746,
+      0.033081596856798914
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": 0.007233751115413611,
+     "ci": [
+      -0.009775975171428735,
+      0.026425287266540795
+     ],
+     "fingers": 20
+    }
+   }
+  },
+  "_provenance": {
+   "commit": "4286bff3c48ec48a3c27467245f1e3dd91ce6566",
+   "uncommitted_changes": [],
+   "command": [
+    "python",
+    "../research/developmental/flow_agree.py",
+    "../data/research/minutiae_parts/cache.pkl",
+    "<scratch>/agree_e10n10.json",
+    "../data/research/neutral_d065/e10n10_9100_10.npz",
+    "../data/research/neutral_d065/e10n10_9100_2.npz",
+    "../data/research/neutral_d065/e10n10_9100_3.npz",
+    "../data/research/neutral_d065/e10n10_9100_4.npz",
+    "../data/research/neutral_d065/e10n10_9100_5.npz",
+    "../data/research/neutral_d065/e10n10_9100_7.npz",
+    "../data/research/neutral_d065/e10n10_9100_8.npz",
+    "../data/research/neutral_d065/e10n10_9100_9.npz",
+    "../data/research/neutral_d065/e10n10_9101_10.npz",
+    "../data/research/neutral_d065/e10n10_9101_2.npz",
+    "../data/research/neutral_d065/e10n10_9101_3.npz",
+    "../data/research/neutral_d065/e10n10_9101_4.npz",
+    "../data/research/neutral_d065/e10n10_9101_5.npz",
+    "../data/research/neutral_d065/e10n10_9101_7.npz",
+    "../data/research/neutral_d065/e10n10_9101_8.npz",
+    "../data/research/neutral_d065/e10n10_9101_9.npz",
+    "../data/research/neutral_d065/e10n10_9102_2.npz",
+    "../data/research/neutral_d065/e10n10_9102_3.npz",
+    "../data/research/neutral_d065/e10n10_9102_4.npz",
+    "../data/research/neutral_d065/e10n10_9102_5.npz"
+   ],
+   "cwd": "<repo>/python_biometrics",
+   "ridgegen": "0.25.1",
+   "python": "3.12.14",
+   "host": "STORE",
+   "env": {
+    "OMP_NUM_THREADS": "1",
+    "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+    "PYTHONPATH": "."
+   },
+   "started": "2026-11-01T16:11:02+0100",
+   "finished": "2026-11-01T16:11:13+0100"
+  }
+ },
+ "e10n30": {
+  "field": {
+   "prints": 20,
+   "fingers": 20,
+   "flow_h_short": {
+    "mean": 0.9310344827586207,
+    "ci": [
+     0.8765019156920831,
+     0.9716027050770565
+    ]
+   },
+   "flow_h_long": {
+    "mean": 0.6679773808186346,
+    "ci": [
+     0.5743606694721637,
+     0.7513796121974812
+    ]
+   },
+   "mindtct": {
+    "agreement": {
+     "mean": 0.26475155279503104,
+     "ci": [
+      0.23809251389342923,
+      0.29004772829693964
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.3408385093167702,
+     "ci": [
+      0.31215463218338835,
+      0.36953421388618674
+     ]
+    },
+    "K60": {
+     "mean": -0.019056132257702262,
+     "ci": [
+      -0.05046120981138794,
+      0.013565669720003257
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": -0.0018724641110317963,
+     "ci": [
+      -0.018510419710587946,
+      0.015970552684575617
+     ],
+     "fingers": 20
+    }
+   },
+   "leader": {
+    "agreement": {
+     "mean": 0.2318782539046856,
+     "ci": [
+      0.19999601116872756,
+      0.26379726767512
+     ]
+    },
+    "agreement_also": {
+     "mean": 0.3095714857829395,
+     "ci": [
+      0.2797803132275902,
+      0.3399699161625744
+     ]
+    },
+    "K60": {
+     "mean": -0.07247148881322063,
+     "ci": [
+      -0.09175591287154504,
+      -0.05170795752595332
+     ],
+     "fingers": 20
+    },
+    "K100": {
+     "mean": -0.030152934124285602,
+     "ci": [
+      -0.041046078552394935,
+      -0.018265998173532264
+     ],
+     "fingers": 20
+    }
+   }
+  },
+  "_provenance": {
+   "commit": "4286bff3c48ec48a3c27467245f1e3dd91ce6566",
+   "uncommitted_changes": [],
+   "command": [
+    "python",
+    "../research/developmental/flow_agree.py",
+    "../data/research/minutiae_parts/cache.pkl",
+    "<scratch>/agree_e10n30.json",
+    "../data/research/neutral_d065/e10n30_9100_10.npz",
+    "../data/research/neutral_d065/e10n30_9100_2.npz",
+    "../data/research/neutral_d065/e10n30_9100_3.npz",
+    "../data/research/neutral_d065/e10n30_9100_4.npz",
+    "../data/research/neutral_d065/e10n30_9100_5.npz",
+    "../data/research/neutral_d065/e10n30_9100_7.npz",
+    "../data/research/neutral_d065/e10n30_9100_8.npz",
+    "../data/research/neutral_d065/e10n30_9100_9.npz",
+    "../data/research/neutral_d065/e10n30_9101_10.npz",
+    "../data/research/neutral_d065/e10n30_9101_2.npz",
+    "../data/research/neutral_d065/e10n30_9101_3.npz",
+    "../data/research/neutral_d065/e10n30_9101_4.npz",
+    "../data/research/neutral_d065/e10n30_9101_5.npz",
+    "../data/research/neutral_d065/e10n30_9101_7.npz",
+    "../data/research/neutral_d065/e10n30_9101_8.npz",
+    "../data/research/neutral_d065/e10n30_9101_9.npz",
+    "../data/research/neutral_d065/e10n30_9102_2.npz",
+    "../data/research/neutral_d065/e10n30_9102_3.npz",
+    "../data/research/neutral_d065/e10n30_9102_4.npz",
+    "../data/research/neutral_d065/e10n30_9102_5.npz"
+   ],
+   "cwd": "<repo>/python_biometrics",
+   "ridgegen": "0.25.1",
+   "python": "3.12.14",
+   "host": "STORE",
+   "env": {
+    "OMP_NUM_THREADS": "1",
+    "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+    "PYTHONPATH": "."
+   },
+   "started": "2026-11-01T16:11:14+0100",
+   "finished": "2026-11-01T16:11:25+0100"
+  }
+ }
+}

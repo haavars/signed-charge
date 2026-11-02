@@ -1,0 +1,650 @@
+{
+ "mindtct": {
+  "all": {
+   "prints": 200,
+   "area_on": 0.19494829509092304,
+   "enrichment": {
+    "mean": 6.139481153422193,
+    "ci": [
+     5.783553999698514,
+     6.533052083102613
+    ]
+   },
+   "density": {
+    "on": 59.2818354923928,
+    "off": 9.655838011547386
+   },
+   "on": {
+    "minutiae": 23.735,
+    "h_short": {
+     "mean": 0.7011870650839133,
+     "ci": [
+      0.6734929398019599,
+      0.7259727708210774
+     ]
+    },
+    "h_short_pairs": 4886.0,
+    "h_long": {
+     "mean": 0.1507587576230322,
+     "ci": [
+      0.11444229597927211,
+      0.18424884236002823
+     ]
+    },
+    "h_long_pairs": 7051.0
+   },
+   "off": {
+    "minutiae": 15.845,
+    "h_short": {
+     "mean": -0.00887688151292937,
+     "ci": [
+      -0.049559084421040143,
+      0.02965836822626653
+     ]
+    },
+    "h_short_pairs": 2591.0,
+    "h_long": {
+     "mean": 0.06162361623616236,
+     "ci": [
+      0.03721303757460735,
+      0.08564258706897017
+     ]
+    },
+    "h_long_pairs": 5420.0
+   }
+  },
+  "arch": {
+   "prints": 20,
+   "area_on": 0.07853685733375872,
+   "enrichment": {
+    "mean": 12.408344038703586,
+    "ci": [
+     10.748242383812912,
+     14.837588618464032
+    ]
+   },
+   "density": {
+    "on": 67.2932883977308,
+    "off": 5.423228771529255
+   },
+   "on": {
+    "minutiae": 10.95,
+    "h_short": {
+     "mean": 0.582089552238806,
+     "ci": [
+      0.4459084084084084,
+      0.7195682656826567
+     ]
+    },
+    "h_short_pairs": 268.0,
+    "h_long": {
+     "mean": 0.07368421052631578,
+     "ci": [
+      -0.002883982247154499,
+      0.16968222485409737
+     ]
+    },
+    "h_long_pairs": 285.0
+   },
+   "off": {
+    "minutiae": 10.35,
+    "h_short": {
+     "mean": -0.2631578947368421,
+     "ci": [
+      -0.40596157073334455,
+      -0.14704477332334215
+     ]
+    },
+    "h_short_pairs": 133.0,
+    "h_long": {
+     "mean": 0.059907834101382486,
+     "ci": [
+      -0.03572232947232947,
+      0.17896086369770572
+     ]
+    },
+    "h_long_pairs": 217.0
+   }
+  },
+  "loop": {
+   "prints": 120,
+   "area_on": 0.2251848999667283,
+   "enrichment": {
+    "mean": 4.94331961355778,
+    "ci": [
+     4.7105324748668345,
+     5.2254177465075635
+    ]
+   },
+   "density": {
+    "on": 60.25715817543163,
+    "off": 12.18961404198254
+   },
+   "on": {
+    "minutiae": 28.083333333333332,
+    "h_short": {
+     "mean": 0.6834128543362336,
+     "ci": [
+      0.6531487736036281,
+      0.7142061735003092
+     ]
+    },
+    "h_short_pairs": 3563.0,
+    "h_long": {
+     "mean": 0.18968023255813954,
+     "ci": [
+      0.1512785110176294,
+      0.22977708821281104
+     ]
+    },
+    "h_long_pairs": 5504.0
+   },
+   "off": {
+    "minutiae": 19.55,
+    "h_short": {
+     "mean": 0.03671912255603243,
+     "ci": [
+      -0.004704001668471219,
+      0.07963530681316518
+     ]
+    },
+    "h_short_pairs": 2097.0,
+    "h_long": {
+     "mean": 0.06466563672478481,
+     "ci": [
+      0.03636716870726949,
+      0.09421909077803298
+     ]
+    },
+    "h_long_pairs": 4531.0
+   }
+  },
+  "whorl": {
+   "prints": 60,
+   "area_on": 0.17327889792503412,
+   "enrichment": {
+    "mean": 9.111399767251077,
+    "ci": [
+     8.22534319335162,
+     10.12141267563272
+    ]
+   },
+   "density": {
+    "on": 54.66070582453581,
+    "off": 5.999155697349786
+   },
+   "on": {
+    "minutiae": 19.3,
+    "h_short": {
+     "mean": 0.7914691943127962,
+     "ci": [
+      0.731152900157477,
+      0.8411816987506032
+     ]
+    },
+    "h_short_pairs": 1055.0,
+    "h_long": {
+     "mean": -0.001584786053882726,
+     "ci": [
+      -0.09583805331822938,
+      0.0918693998941249
+     ]
+    },
+    "h_long_pairs": 1262.0
+   },
+   "off": {
+    "minutiae": 10.266666666666667,
+    "h_short": {
+     "mean": -0.18005540166204986,
+     "ci": [
+      -0.2701953077254627,
+      -0.08053647694587292
+     ]
+    },
+    "h_short_pairs": 361.0,
+    "h_long": {
+     "mean": 0.041666666666666664,
+     "ci": [
+      -0.02060169842584921,
+      0.10739639927559383
+     ]
+    },
+    "h_long_pairs": 672.0
+   }
+  }
+ },
+ "leader": {
+  "all": {
+   "prints": 200,
+   "area_on": 0.19494829509092304,
+   "enrichment": {
+    "mean": 5.462968871153875,
+    "ci": [
+     5.0675578905612815,
+     5.914254929041202
+    ]
+   },
+   "density": {
+    "on": 52.29323637744684,
+    "off": 9.572310882745628
+   },
+   "on": {
+    "minutiae": 20.195,
+    "h_short": {
+     "mean": 0.6740576496674058,
+     "ci": [
+      0.6423305451921502,
+      0.7053501411462115
+     ]
+    },
+    "h_short_pairs": 3608.0,
+    "h_long": {
+     "mean": 0.20277101666354616,
+     "ci": [
+      0.1692481252517159,
+      0.23553901187757467
+     ]
+    },
+    "h_long_pairs": 5341.0
+   },
+   "off": {
+    "minutiae": 15.7,
+    "h_short": {
+     "mean": 0.008835958509412217,
+     "ci": [
+      -0.03483768804433888,
+      0.050270592940063766
+     ]
+    },
+    "h_short_pairs": 2603.0,
+    "h_long": {
+     "mean": 0.03865546218487395,
+     "ci": [
+      0.01362274526243111,
+      0.062371830490534505
+     ]
+    },
+    "h_long_pairs": 5355.0
+   }
+  },
+  "arch": {
+   "prints": 20,
+   "area_on": 0.07853685733375872,
+   "enrichment": {
+    "mean": 15.71982335778944,
+    "ci": [
+     13.732309390620392,
+     18.395128152304036
+    ]
+   },
+   "density": {
+    "on": 78.6574786131047,
+    "off": 5.003712625951905
+   },
+   "on": {
+    "minutiae": 12.8,
+    "h_short": {
+     "mean": 0.6060606060606061,
+     "ci": [
+      0.522455198834853,
+      0.69269589305234
+     ]
+    },
+    "h_short_pairs": 396.0,
+    "h_long": {
+     "mean": 0.046875,
+     "ci": [
+      -5.494505494505182e-05,
+      0.09938132093265258
+     ]
+    },
+    "h_long_pairs": 384.0
+   },
+   "off": {
+    "minutiae": 9.55,
+    "h_short": {
+     "mean": -0.2743362831858407,
+     "ci": [
+      -0.44092118390422347,
+      -0.11503073701276775
+     ]
+    },
+    "h_short_pairs": 113.0,
+    "h_long": {
+     "mean": 0.07142857142857142,
+     "ci": [
+      -0.04434125066675034,
+      0.21111502347417838
+     ]
+    },
+    "h_long_pairs": 168.0
+   }
+  },
+  "loop": {
+   "prints": 120,
+   "area_on": 0.2251848999667283,
+   "enrichment": {
+    "mean": 3.9836666167480868,
+    "ci": [
+     3.7719775340780926,
+     4.192362808012527
+    ]
+   },
+   "density": {
+    "on": 48.43072704781322,
+    "off": 12.157324321317779
+   },
+   "on": {
+    "minutiae": 22.525,
+    "h_short": {
+     "mean": 0.6434245366284201,
+     "ci": [
+      0.603152891046853,
+      0.6834984967040708
+     ]
+    },
+    "h_short_pairs": 2266.0,
+    "h_long": {
+     "mean": 0.2661756970015781,
+     "ci": [
+      0.2317714044912742,
+      0.3026262591708474
+     ]
+    },
+    "h_long_pairs": 3802.0
+   },
+   "off": {
+    "minutiae": 19.5,
+    "h_short": {
+     "mean": 0.053276756247053275,
+     "ci": [
+      0.007154171635465008,
+      0.09769112309376604
+     ]
+    },
+    "h_short_pairs": 2121.0,
+    "h_long": {
+     "mean": 0.03881126635617654,
+     "ci": [
+      0.010254503814805808,
+      0.0657058453842039
+     ]
+    },
+    "h_long_pairs": 4509.0
+   }
+  },
+  "whorl": {
+   "prints": 60,
+   "area_on": 0.17327889792503412,
+   "enrichment": {
+    "mean": 8.64622389356654,
+    "ci": [
+     7.749803367633771,
+     9.637986585642587
+    ]
+   },
+   "density": {
+    "on": 51.230174291494805,
+    "off": 5.925150091199237
+   },
+   "on": {
+    "minutiae": 18.0,
+    "h_short": {
+     "mean": 0.7758985200845666,
+     "ci": [
+      0.7136308902303886,
+      0.8275678641263379
+     ]
+    },
+    "h_short_pairs": 946.0,
+    "h_long": {
+     "mean": 0.04588744588744589,
+     "ci": [
+      -0.021866117973517247,
+      0.11516477538696658
+     ]
+    },
+    "h_long_pairs": 1155.0
+   },
+   "off": {
+    "minutiae": 10.15,
+    "h_short": {
+     "mean": -0.15989159891598917,
+     "ci": [
+      -0.24719851576994434,
+      -0.06700869171375577
+     ]
+    },
+    "h_short_pairs": 369.0,
+    "h_long": {
+     "mean": 0.029498525073746312,
+     "ci": [
+      -0.024193548387096774,
+      0.08623451623059968
+     ]
+    },
+    "h_long_pairs": 678.0
+   }
+  }
+ },
+ "_provenance": {
+  "commit": "39fb026130a044262a9d24bcec0c7f06885799c6",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/realism/minutiae_seams.py",
+   "../research/realism/minutiae_seams.json",
+   "../data/research/population_d020/arch_a0.7_s0.03_4281.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4282.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4283.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4284.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4285.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4286.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4287.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4288.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4289.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4290.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4291.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4292.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4293.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4294.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4295.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4296.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4297.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4298.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4299.npz",
+   "../data/research/population_d020/arch_a0.7_s0.03_4300.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4101.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4102.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4103.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4104.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4105.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4106.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4107.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4108.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4109.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4110.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4111.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4112.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4113.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4114.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4115.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4116.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4117.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4118.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4119.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4120.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4121.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4122.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4123.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4124.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4125.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4126.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4127.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4128.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4129.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4130.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4131.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4132.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4133.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4134.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4135.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4136.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4137.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4138.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4139.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4140.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4141.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4142.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4143.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4144.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4145.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4146.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4147.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4148.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4149.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4150.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4151.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4152.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4153.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4154.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4155.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4156.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4157.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4158.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4159.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4160.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4161.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4162.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4163.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4164.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4165.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4166.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4167.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4168.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4169.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4170.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4171.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4172.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4173.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4174.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4175.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4176.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4177.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4178.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4179.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4180.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4181.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4182.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4183.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4184.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4185.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4186.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4187.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4188.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4189.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4190.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4191.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4192.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4193.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4194.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4195.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4196.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4197.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4198.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4199.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4200.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4201.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4202.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4203.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4204.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4205.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4206.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4207.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4208.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4209.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4210.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4211.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4212.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4213.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4214.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4215.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4216.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4217.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4218.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4219.npz",
+   "../data/research/population_d020/loop_a0.7_s0.03_4220.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4221.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4222.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4223.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4224.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4225.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4226.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4227.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4228.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4229.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4230.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4231.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4232.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4233.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4234.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4235.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4236.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4237.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4238.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4239.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4240.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4241.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4242.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4243.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4244.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4245.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4246.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4247.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4248.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4249.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4250.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4251.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4252.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4253.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4254.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4255.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4256.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4257.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4258.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4259.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4260.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4261.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4262.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4263.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4264.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4265.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4266.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4267.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4268.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4269.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4270.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4271.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4272.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4273.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4274.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4275.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4276.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4277.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4278.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4279.npz",
+   "../data/research/population_d020/whorl_a0.7_s0.03_4280.npz"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-10-31T20:24:58+0100",
+  "finished": "2026-10-31T20:25:22+0100"
+ }
+}

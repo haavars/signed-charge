@@ -1,0 +1,384 @@
+{
+ "prints": 200,
+ "seam_share": 0.08793783221879287,
+ "mindtct": {
+  "0-15": {
+   "mean": 2.0117412241710446,
+   "ci": [
+    1.797500499237669,
+    2.2112768094784374
+   ],
+   "share_of_off": 0.38648297327829995
+  },
+  "15-30": {
+   "mean": 5.596504397483565,
+   "ci": [
+    5.16929165697658,
+    6.016638421913583
+   ],
+   "share_of_off": 0.24209258923198318
+  },
+  "30-45": {
+   "mean": 16.684049581170694,
+   "ci": [
+    15.714078063284779,
+    17.748970441986383
+   ],
+   "share_of_off": 0.14006375629303014
+  },
+  "45-60": {
+   "mean": 21.79760313394972,
+   "ci": [
+    20.552488085764963,
+    23.07064071305324
+   ],
+   "share_of_off": 0.09359870290714845
+  },
+  "60-75": {
+   "mean": 23.01113273398935,
+   "ci": [
+    21.774781536921704,
+    24.35129242105139
+   ],
+   "share_of_off": 0.0687651533966274
+  },
+  "75-90": {
+   "mean": 23.6016421032233,
+   "ci": [
+    22.321338886899976,
+    24.98514299788559
+   ],
+   "share_of_off": 0.06899682489291092
+  },
+  "spearman": 1.0,
+  "seam_on": {
+   "mean": 30.860638969529298,
+   "ci": [
+    29.449097946615804,
+    32.17188822114372
+   ]
+  },
+  "seam_off": {
+   "mean": 9.720236444023723,
+   "ci": [
+    9.351005207571752,
+    10.098188851301135
+   ]
+  },
+  "on_over_off": {
+   "mean": 3.1748856262136806,
+   "ci": [
+    3.0243234445638882,
+    3.3192402920263433
+   ]
+  },
+  "h_on": {
+   "mean": 0.8893905191873589,
+   "ci": [
+    0.8619164095602452,
+    0.9153877489438744
+   ],
+   "pairs": 1772
+  }
+ },
+ "leader": {
+  "0-15": {
+   "mean": 2.9691810290080043,
+   "ci": [
+    2.7272748178601773,
+    3.215920552439082
+   ],
+   "share_of_off": 0.38648297327829995
+  },
+  "15-30": {
+   "mean": 6.738405401008373,
+   "ci": [
+    6.2421375489597235,
+    7.211440227306699
+   ],
+   "share_of_off": 0.24209258923198318
+  },
+  "30-45": {
+   "mean": 18.79140026764019,
+   "ci": [
+    17.843117550313902,
+    19.847133535234054
+   ],
+   "share_of_off": 0.14006375629303014
+  },
+  "45-60": {
+   "mean": 23.42819306492973,
+   "ci": [
+    22.275633218530473,
+    24.626292564918895
+   ],
+   "share_of_off": 0.09359870290714845
+  },
+  "60-75": {
+   "mean": 24.686192441650086,
+   "ci": [
+    23.394176246113812,
+    26.054246996823903
+   ],
+   "share_of_off": 0.0687651533966274
+  },
+  "75-90": {
+   "mean": 25.14586979167469,
+   "ci": [
+    23.816532421621567,
+    26.51160655693988
+   ],
+   "share_of_off": 0.06899682489291092
+  },
+  "spearman": 1.0,
+  "seam_on": {
+   "mean": 33.61141512863425,
+   "ci": [
+    32.023969737353625,
+    35.09896975498344
+   ]
+  },
+  "seam_off": {
+   "mean": 11.03623349776949,
+   "ci": [
+    10.628066550538342,
+    11.477091852601648
+   ]
+  },
+  "on_over_off": {
+   "mean": 3.045551286625766,
+   "ci": [
+    2.90610062529301,
+    3.1788598923770954
+   ]
+  },
+  "h_on": {
+   "mean": 0.8787575150300602,
+   "ci": [
+    0.8504258868984896,
+    0.9061534223936097
+   ],
+   "pairs": 1996
+  }
+ },
+ "_provenance": {
+  "commit": "a26c525216d6aeb01a5fe66a2bb723319f6e441b",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/developmental/field_local.py",
+   "../research/developmental/field_local_d050.json",
+   "../data/research/field_d049/field_9100_10.npz",
+   "../data/research/field_d049/field_9100_2.npz",
+   "../data/research/field_d049/field_9100_3.npz",
+   "../data/research/field_d049/field_9100_4.npz",
+   "../data/research/field_d049/field_9100_5.npz",
+   "../data/research/field_d049/field_9100_7.npz",
+   "../data/research/field_d049/field_9100_8.npz",
+   "../data/research/field_d049/field_9100_9.npz",
+   "../data/research/field_d049/field_9101_10.npz",
+   "../data/research/field_d049/field_9101_2.npz",
+   "../data/research/field_d049/field_9101_3.npz",
+   "../data/research/field_d049/field_9101_4.npz",
+   "../data/research/field_d049/field_9101_5.npz",
+   "../data/research/field_d049/field_9101_7.npz",
+   "../data/research/field_d049/field_9101_8.npz",
+   "../data/research/field_d049/field_9101_9.npz",
+   "../data/research/field_d049/field_9102_10.npz",
+   "../data/research/field_d049/field_9102_2.npz",
+   "../data/research/field_d049/field_9102_3.npz",
+   "../data/research/field_d049/field_9102_4.npz",
+   "../data/research/field_d049/field_9102_5.npz",
+   "../data/research/field_d049/field_9102_7.npz",
+   "../data/research/field_d049/field_9102_8.npz",
+   "../data/research/field_d049/field_9102_9.npz",
+   "../data/research/field_d049/field_9103_10.npz",
+   "../data/research/field_d049/field_9103_2.npz",
+   "../data/research/field_d049/field_9103_3.npz",
+   "../data/research/field_d049/field_9103_4.npz",
+   "../data/research/field_d049/field_9103_5.npz",
+   "../data/research/field_d049/field_9103_7.npz",
+   "../data/research/field_d049/field_9103_8.npz",
+   "../data/research/field_d049/field_9103_9.npz",
+   "../data/research/field_d049/field_9104_10.npz",
+   "../data/research/field_d049/field_9104_2.npz",
+   "../data/research/field_d049/field_9104_3.npz",
+   "../data/research/field_d049/field_9104_4.npz",
+   "../data/research/field_d049/field_9104_5.npz",
+   "../data/research/field_d049/field_9104_7.npz",
+   "../data/research/field_d049/field_9104_8.npz",
+   "../data/research/field_d049/field_9104_9.npz",
+   "../data/research/field_d049/field_9105_10.npz",
+   "../data/research/field_d049/field_9105_2.npz",
+   "../data/research/field_d049/field_9105_3.npz",
+   "../data/research/field_d049/field_9105_4.npz",
+   "../data/research/field_d049/field_9105_5.npz",
+   "../data/research/field_d049/field_9105_7.npz",
+   "../data/research/field_d049/field_9105_8.npz",
+   "../data/research/field_d049/field_9105_9.npz",
+   "../data/research/field_d049/field_9106_10.npz",
+   "../data/research/field_d049/field_9106_2.npz",
+   "../data/research/field_d049/field_9106_3.npz",
+   "../data/research/field_d049/field_9106_4.npz",
+   "../data/research/field_d049/field_9106_5.npz",
+   "../data/research/field_d049/field_9106_7.npz",
+   "../data/research/field_d049/field_9106_8.npz",
+   "../data/research/field_d049/field_9106_9.npz",
+   "../data/research/field_d049/field_9107_10.npz",
+   "../data/research/field_d049/field_9107_2.npz",
+   "../data/research/field_d049/field_9107_3.npz",
+   "../data/research/field_d049/field_9107_4.npz",
+   "../data/research/field_d049/field_9107_5.npz",
+   "../data/research/field_d049/field_9107_7.npz",
+   "../data/research/field_d049/field_9107_8.npz",
+   "../data/research/field_d049/field_9107_9.npz",
+   "../data/research/field_d049/field_9108_10.npz",
+   "../data/research/field_d049/field_9108_2.npz",
+   "../data/research/field_d049/field_9108_3.npz",
+   "../data/research/field_d049/field_9108_4.npz",
+   "../data/research/field_d049/field_9108_5.npz",
+   "../data/research/field_d049/field_9108_7.npz",
+   "../data/research/field_d049/field_9108_8.npz",
+   "../data/research/field_d049/field_9108_9.npz",
+   "../data/research/field_d049/field_9109_10.npz",
+   "../data/research/field_d049/field_9109_2.npz",
+   "../data/research/field_d049/field_9109_3.npz",
+   "../data/research/field_d049/field_9109_4.npz",
+   "../data/research/field_d049/field_9109_5.npz",
+   "../data/research/field_d049/field_9109_7.npz",
+   "../data/research/field_d049/field_9109_8.npz",
+   "../data/research/field_d049/field_9109_9.npz",
+   "../data/research/field_d049/field_9110_10.npz",
+   "../data/research/field_d049/field_9110_2.npz",
+   "../data/research/field_d049/field_9110_3.npz",
+   "../data/research/field_d049/field_9110_4.npz",
+   "../data/research/field_d049/field_9110_5.npz",
+   "../data/research/field_d049/field_9110_7.npz",
+   "../data/research/field_d049/field_9110_8.npz",
+   "../data/research/field_d049/field_9110_9.npz",
+   "../data/research/field_d049/field_9111_10.npz",
+   "../data/research/field_d049/field_9111_2.npz",
+   "../data/research/field_d049/field_9111_3.npz",
+   "../data/research/field_d049/field_9111_4.npz",
+   "../data/research/field_d049/field_9111_5.npz",
+   "../data/research/field_d049/field_9111_7.npz",
+   "../data/research/field_d049/field_9111_8.npz",
+   "../data/research/field_d049/field_9111_9.npz",
+   "../data/research/field_d049/field_9112_10.npz",
+   "../data/research/field_d049/field_9112_2.npz",
+   "../data/research/field_d049/field_9112_3.npz",
+   "../data/research/field_d049/field_9112_4.npz",
+   "../data/research/field_d049/field_9112_5.npz",
+   "../data/research/field_d049/field_9112_7.npz",
+   "../data/research/field_d049/field_9112_8.npz",
+   "../data/research/field_d049/field_9112_9.npz",
+   "../data/research/field_d049/field_9113_10.npz",
+   "../data/research/field_d049/field_9113_2.npz",
+   "../data/research/field_d049/field_9113_3.npz",
+   "../data/research/field_d049/field_9113_4.npz",
+   "../data/research/field_d049/field_9113_5.npz",
+   "../data/research/field_d049/field_9113_7.npz",
+   "../data/research/field_d049/field_9113_8.npz",
+   "../data/research/field_d049/field_9113_9.npz",
+   "../data/research/field_d049/field_9114_10.npz",
+   "../data/research/field_d049/field_9114_2.npz",
+   "../data/research/field_d049/field_9114_3.npz",
+   "../data/research/field_d049/field_9114_4.npz",
+   "../data/research/field_d049/field_9114_5.npz",
+   "../data/research/field_d049/field_9114_7.npz",
+   "../data/research/field_d049/field_9114_8.npz",
+   "../data/research/field_d049/field_9114_9.npz",
+   "../data/research/field_d049/field_9115_10.npz",
+   "../data/research/field_d049/field_9115_2.npz",
+   "../data/research/field_d049/field_9115_3.npz",
+   "../data/research/field_d049/field_9115_4.npz",
+   "../data/research/field_d049/field_9115_5.npz",
+   "../data/research/field_d049/field_9115_7.npz",
+   "../data/research/field_d049/field_9115_8.npz",
+   "../data/research/field_d049/field_9115_9.npz",
+   "../data/research/field_d049/field_9116_10.npz",
+   "../data/research/field_d049/field_9116_2.npz",
+   "../data/research/field_d049/field_9116_3.npz",
+   "../data/research/field_d049/field_9116_4.npz",
+   "../data/research/field_d049/field_9116_5.npz",
+   "../data/research/field_d049/field_9116_7.npz",
+   "../data/research/field_d049/field_9116_8.npz",
+   "../data/research/field_d049/field_9116_9.npz",
+   "../data/research/field_d049/field_9117_10.npz",
+   "../data/research/field_d049/field_9117_2.npz",
+   "../data/research/field_d049/field_9117_3.npz",
+   "../data/research/field_d049/field_9117_4.npz",
+   "../data/research/field_d049/field_9117_5.npz",
+   "../data/research/field_d049/field_9117_7.npz",
+   "../data/research/field_d049/field_9117_8.npz",
+   "../data/research/field_d049/field_9117_9.npz",
+   "../data/research/field_d049/field_9118_10.npz",
+   "../data/research/field_d049/field_9118_2.npz",
+   "../data/research/field_d049/field_9118_3.npz",
+   "../data/research/field_d049/field_9118_4.npz",
+   "../data/research/field_d049/field_9118_5.npz",
+   "../data/research/field_d049/field_9118_7.npz",
+   "../data/research/field_d049/field_9118_8.npz",
+   "../data/research/field_d049/field_9118_9.npz",
+   "../data/research/field_d049/field_9119_10.npz",
+   "../data/research/field_d049/field_9119_2.npz",
+   "../data/research/field_d049/field_9119_3.npz",
+   "../data/research/field_d049/field_9119_4.npz",
+   "../data/research/field_d049/field_9119_5.npz",
+   "../data/research/field_d049/field_9119_7.npz",
+   "../data/research/field_d049/field_9119_8.npz",
+   "../data/research/field_d049/field_9119_9.npz",
+   "../data/research/field_d049/field_9120_10.npz",
+   "../data/research/field_d049/field_9120_2.npz",
+   "../data/research/field_d049/field_9120_3.npz",
+   "../data/research/field_d049/field_9120_4.npz",
+   "../data/research/field_d049/field_9120_5.npz",
+   "../data/research/field_d049/field_9120_7.npz",
+   "../data/research/field_d049/field_9120_8.npz",
+   "../data/research/field_d049/field_9120_9.npz",
+   "../data/research/field_d049/field_9121_10.npz",
+   "../data/research/field_d049/field_9121_2.npz",
+   "../data/research/field_d049/field_9121_3.npz",
+   "../data/research/field_d049/field_9121_4.npz",
+   "../data/research/field_d049/field_9121_5.npz",
+   "../data/research/field_d049/field_9121_7.npz",
+   "../data/research/field_d049/field_9121_8.npz",
+   "../data/research/field_d049/field_9121_9.npz",
+   "../data/research/field_d049/field_9122_10.npz",
+   "../data/research/field_d049/field_9122_2.npz",
+   "../data/research/field_d049/field_9122_3.npz",
+   "../data/research/field_d049/field_9122_4.npz",
+   "../data/research/field_d049/field_9122_5.npz",
+   "../data/research/field_d049/field_9122_7.npz",
+   "../data/research/field_d049/field_9122_8.npz",
+   "../data/research/field_d049/field_9122_9.npz",
+   "../data/research/field_d049/field_9123_10.npz",
+   "../data/research/field_d049/field_9123_2.npz",
+   "../data/research/field_d049/field_9123_3.npz",
+   "../data/research/field_d049/field_9123_4.npz",
+   "../data/research/field_d049/field_9123_5.npz",
+   "../data/research/field_d049/field_9123_7.npz",
+   "../data/research/field_d049/field_9123_8.npz",
+   "../data/research/field_d049/field_9123_9.npz",
+   "../data/research/field_d049/field_9124_10.npz",
+   "../data/research/field_d049/field_9124_2.npz",
+   "../data/research/field_d049/field_9124_3.npz",
+   "../data/research/field_d049/field_9124_4.npz",
+   "../data/research/field_d049/field_9124_5.npz",
+   "../data/research/field_d049/field_9124_7.npz",
+   "../data/research/field_d049/field_9124_8.npz",
+   "../data/research/field_d049/field_9124_9.npz"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-11-01T03:00:07+0100",
+  "finished": "2026-11-01T03:02:26+0100"
+ }
+}

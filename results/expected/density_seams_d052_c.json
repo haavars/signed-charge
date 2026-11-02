@@ -1,0 +1,631 @@
+{
+ "arch": {
+  "runs": 20,
+  "direct": {
+   "on": {
+    "per_unit_speed": -7.603998229158845,
+    "ci": [
+     -13.975121672940146,
+     -2.265871116869168
+    ]
+   },
+   "off": {
+    "per_unit_speed": 70.51006075090473,
+    "ci": [
+     61.05734973094333,
+     81.81925147609206
+    ]
+   },
+   "off_density": {
+    "per_unit_speed": 76.7820558819339,
+    "ci": [
+     66.60466635373027,
+     88.51657093310459
+    ]
+   },
+   "by_speed": {
+    "0.003/0.5": {
+     "on": 8.810487515186317,
+     "off": 11.104348857053422,
+     "off_density": 12.027984230723625,
+     "runs": 4,
+     "area_on": 0.07683877402808623
+    },
+    "0.003/0.6": {
+     "on": 8.691737513862314,
+     "off": 11.347657090735204,
+     "off_density": 12.301906606213262,
+     "runs": 4,
+     "area_on": 0.07773955339408974
+    },
+    "0.003/0.7": {
+     "on": 7.481014786667904,
+     "off": 16.17256669813613,
+     "off_density": 17.534810175241372,
+     "runs": 4,
+     "area_on": 0.07770895358822152
+    },
+    "0.003/0.8": {
+     "on": 5.9150687355636835,
+     "off": 29.217575099494773,
+     "off_density": 31.791791752032005,
+     "runs": 4,
+     "area_on": 0.08096024839960654
+    },
+    "0.003/0.9": {
+     "on": 6.396822789756211,
+     "off": 37.42442022812601,
+     "off_density": 40.674069598781216,
+     "runs": 4,
+     "area_on": 0.07991204779319833
+    }
+   }
+  },
+  "mindtct": {
+   "on": {
+    "per_unit_speed": -7.6055311377798445,
+    "ci": [
+     -12.714431424279235,
+     -2.8878270556094914
+    ]
+   },
+   "off": {
+    "per_unit_speed": 73.52186906599431,
+    "ci": [
+     61.121776208909566,
+     85.90158452088386
+    ]
+   },
+   "off_density": {
+    "per_unit_speed": 79.93760991585773,
+    "ci": [
+     66.6366273207041,
+     94.44570222121433
+    ]
+   },
+   "by_speed": {
+    "0.003/0.5": {
+     "on": 6.397372516444437,
+     "off": 0.1206806609243186,
+     "off_density": 0.1311534627834771,
+     "runs": 4,
+     "area_on": 0.07683877402808623
+    },
+    "0.003/0.6": {
+     "on": 5.553077115581399,
+     "off": 1.448685630035843,
+     "off_density": 1.570018368709373,
+     "runs": 4,
+     "area_on": 0.07773955339408974
+    },
+    "0.003/0.7": {
+     "on": 4.7058822553052995,
+     "off": 5.551961753005998,
+     "off_density": 6.0202845540051095,
+     "runs": 4,
+     "area_on": 0.07770895358822152
+    },
+    "0.003/0.8": {
+     "on": 3.500897555502794,
+     "off": 17.023129129103882,
+     "off_density": 18.52262432223579,
+     "runs": 4,
+     "area_on": 0.08096024839960654
+    },
+    "0.003/0.9": {
+     "on": 3.6206967275938173,
+     "off": 29.09439344438746,
+     "off_density": 31.623655443949136,
+     "runs": 4,
+     "area_on": 0.07991204779319833
+    }
+   }
+  },
+  "leader": {
+   "on": {
+    "per_unit_speed": -9.658031004357689,
+    "ci": [
+     -14.15009367349553,
+     -5.437531884370978
+    ]
+   },
+   "off": {
+    "per_unit_speed": 70.86645817672093,
+    "ci": [
+     61.61666555475857,
+     82.04058630782454
+    ]
+   },
+   "off_density": {
+    "per_unit_speed": 77.05474191662515,
+    "ci": [
+     67.01292458222338,
+     89.58603517829062
+    ]
+   },
+   "by_speed": {
+    "0.003/0.5": {
+     "on": 7.121178519530899,
+     "off": 0.1206806609243186,
+     "off_density": 0.1311534627834771,
+     "runs": 4,
+     "area_on": 0.07683877402808623
+    },
+    "0.003/0.6": {
+     "on": 6.7601277127313555,
+     "off": 1.448685630035843,
+     "off_density": 1.570018368709373,
+     "runs": 4,
+     "area_on": 0.07773955339408974
+    },
+    "0.003/0.7": {
+     "on": 5.550954686968365,
+     "off": 5.311140913452436,
+     "off_density": 5.759865089912289,
+     "runs": 4,
+     "area_on": 0.07770895358822152
+    },
+    "0.003/0.8": {
+     "on": 3.862893719200407,
+     "off": 18.471451966022656,
+     "off_density": 20.099670472720415,
+     "runs": 4,
+     "area_on": 0.08096024839960654
+    },
+    "0.003/0.9": {
+     "on": 3.740780014117528,
+     "off": 27.042526581291376,
+     "off_density": 29.393698369090536,
+     "runs": 4,
+     "area_on": 0.07991204779319833
+    }
+   }
+  }
+ },
+ "loop": {
+  "runs": 20,
+  "direct": {
+   "on": {
+    "per_unit_speed": -26.302695519920803,
+    "ci": [
+     -34.856504755924064,
+     -15.82221613374688
+    ]
+   },
+   "off": {
+    "per_unit_speed": 44.79921242646511,
+    "ci": [
+     35.598734127538194,
+     53.75505384435345
+    ]
+   },
+   "off_density": {
+    "per_unit_speed": 57.28703658863937,
+    "ci": [
+     45.94965843168493,
+     68.38784444447413
+    ]
+   },
+   "by_speed": {
+    "0.003/0.5": {
+     "on": 24.011963856830185,
+     "off": 6.27624230911564,
+     "off_density": 8.23233472616171,
+     "runs": 4,
+     "area_on": 0.23718698791342344
+    },
+    "0.003/0.6": {
+     "on": 17.518048472474348,
+     "off": 10.629162146247598,
+     "off_density": 13.70344253030267,
+     "runs": 4,
+     "area_on": 0.2245420182082103
+    },
+    "0.003/0.7": {
+     "on": 17.03411536303965,
+     "off": 12.803925992545924,
+     "off_density": 16.660264601103144,
+     "runs": 4,
+     "area_on": 0.2305789095816582
+    },
+    "0.003/0.8": {
+     "on": 14.366001277597155,
+     "off": 18.471641964003837,
+     "off_density": 23.88622434894897,
+     "runs": 4,
+     "area_on": 0.22674661079927028
+    },
+    "0.003/0.9": {
+     "on": 12.436639694308377,
+     "off": 24.754608613470076,
+     "off_density": 31.784462111158245,
+     "runs": 4,
+     "area_on": 0.2212106379818445
+    }
+   }
+  },
+  "mindtct": {
+   "on": {
+    "per_unit_speed": -15.077431437795315,
+    "ci": [
+     -23.178262946740272,
+     -5.893308248013514
+    ]
+   },
+   "off": {
+    "per_unit_speed": 37.68253352645486,
+    "ci": [
+     29.399006470647606,
+     48.171107545515554
+    ]
+   },
+   "off_density": {
+    "per_unit_speed": 48.15218771832609,
+    "ci": [
+     37.60243755590389,
+     60.948477999249
+    ]
+   },
+   "by_speed": {
+    "0.003/0.5": {
+     "on": 17.37685200577802,
+     "off": 4.705790468414248,
+     "off_density": 6.172652315139022,
+     "runs": 4,
+     "area_on": 0.23718698791342344
+    },
+    "0.003/0.6": {
+     "on": 12.079876059400224,
+     "off": 8.454760521661427,
+     "off_density": 10.90073817243556,
+     "runs": 4,
+     "area_on": 0.2245420182082103
+    },
+    "0.003/0.7": {
+     "on": 13.770906282348754,
+     "off": 9.904940704929006,
+     "off_density": 12.898342094979544,
+     "runs": 4,
+     "area_on": 0.2305789095816582
+    },
+    "0.003/0.8": {
+     "on": 11.469783711704615,
+     "off": 14.246988061246395,
+     "off_density": 18.428473606793133,
+     "runs": 4,
+     "area_on": 0.22674661079927028
+    },
+    "0.003/0.9": {
+     "on": 10.143182460728163,
+     "off": 20.6509434618492,
+     "off_density": 26.484878457123287,
+     "runs": 4,
+     "area_on": 0.2212106379818445
+    }
+   }
+  },
+  "leader": {
+   "on": {
+    "per_unit_speed": -8.201148951705017,
+    "ci": [
+     -13.607315529135846,
+     -3.3547294635807816
+    ]
+   },
+   "off": {
+    "per_unit_speed": 37.679376508787776,
+    "ci": [
+     28.302005841668294,
+     48.64809143171739
+    ]
+   },
+   "off_density": {
+    "per_unit_speed": 48.16891233152851,
+    "ci": [
+     36.710137894326536,
+     61.926767487013116
+    ]
+   },
+   "by_speed": {
+    "0.003/0.5": {
+     "on": 12.187390292613784,
+     "off": 4.2248950608251015,
+     "off_density": 5.542828362414136,
+     "runs": 4,
+     "area_on": 0.23718698791342344
+    },
+    "0.003/0.6": {
+     "on": 11.477907516939196,
+     "off": 7.97115187322944,
+     "off_density": 10.274346942192215,
+     "runs": 4,
+     "area_on": 0.2245420182082103
+    },
+    "0.003/0.7": {
+     "on": 11.236268423884386,
+     "off": 9.662634596325091,
+     "off_density": 12.5900236603576,
+     "runs": 4,
+     "area_on": 0.2305789095816582
+    },
+    "0.003/0.8": {
+     "on": 8.81377832834222,
+     "off": 14.730730885523327,
+     "off_density": 19.049695998096666,
+     "runs": 4,
+     "area_on": 0.22674661079927028
+    },
+    "0.003/0.9": {
+     "on": 9.418880411059762,
+     "off": 19.684793809072048,
+     "off_density": 25.239610000226165,
+     "runs": 4,
+     "area_on": 0.2212106379818445
+    }
+   }
+  }
+ },
+ "whorl": {
+  "runs": 20,
+  "direct": {
+   "on": {
+    "per_unit_speed": -13.060013780529548,
+    "ci": [
+     -19.674892527313038,
+     -6.5862098562417675
+    ]
+   },
+   "off": {
+    "per_unit_speed": 41.3021298142261,
+    "ci": [
+     32.765000189618625,
+     53.552271965898875
+    ]
+   },
+   "off_density": {
+    "per_unit_speed": 50.7524100357085,
+    "ci": [
+     40.21950050566334,
+     64.46050035709152
+    ]
+   },
+   "by_speed": {
+    "0.003/0.5": {
+     "on": 12.685365353850834,
+     "off": 3.8660628425424948,
+     "off_density": 4.765441894399887,
+     "runs": 4,
+     "area_on": 0.1878739378291813
+    },
+    "0.003/0.6": {
+     "on": 12.086000637839533,
+     "off": 4.472166990142611,
+     "off_density": 5.295919685739671,
+     "runs": 4,
+     "area_on": 0.1571602498068176
+    },
+    "0.003/0.7": {
+     "on": 12.438373440295242,
+     "off": 6.884036892098749,
+     "off_density": 8.324947433422095,
+     "runs": 4,
+     "area_on": 0.1751500749124991
+    },
+    "0.003/0.8": {
+     "on": 9.175330303451952,
+     "off": 14.850746167541722,
+     "off_density": 18.39326573286951,
+     "runs": 4,
+     "area_on": 0.19348637488177003
+    },
+    "0.003/0.9": {
+     "on": 7.610693630779849,
+     "off": 19.327838160955995,
+     "off_density": 23.59297388868922,
+     "runs": 4,
+     "area_on": 0.1817470471533783
+    }
+   }
+  },
+  "mindtct": {
+   "on": {
+    "per_unit_speed": -11.490622459042521,
+    "ci": [
+     -16.20640812235907,
+     -5.874804074748394
+    ]
+   },
+   "off": {
+    "per_unit_speed": 43.48041537571543,
+    "ci": [
+     35.298649299432185,
+     53.49636149567595
+    ]
+   },
+   "off_density": {
+    "per_unit_speed": 53.39183540721524,
+    "ci": [
+     43.869622860979916,
+     65.15267779799704
+    ]
+   },
+   "by_speed": {
+    "0.003/0.5": {
+     "on": 10.391962157523242,
+     "off": 1.0862520150660084,
+     "off_density": 1.3477422808789268,
+     "runs": 4,
+     "area_on": 0.1878739378291813
+    },
+    "0.003/0.6": {
+     "on": 9.90950246064617,
+     "off": 2.2979290327653783,
+     "off_density": 2.7059989860098934,
+     "runs": 4,
+     "area_on": 0.1571602498068176
+    },
+    "0.003/0.7": {
+     "on": 9.661564934804398,
+     "off": 5.194180806677015,
+     "off_density": 6.287962751872218,
+     "runs": 4,
+     "area_on": 0.1751500749124991
+    },
+    "0.003/0.8": {
+     "on": 8.089271125980703,
+     "off": 13.160363793413488,
+     "off_density": 16.307161731927778,
+     "runs": 4,
+     "area_on": 0.19348637488177003
+    },
+    "0.003/0.9": {
+     "on": 5.5567665953347145,
+     "off": 17.395242322599678,
+     "off_density": 21.2430786115276,
+     "runs": 4,
+     "area_on": 0.1817470471533783
+    }
+   }
+  },
+  "leader": {
+   "on": {
+    "per_unit_speed": -8.589818731890597,
+    "ci": [
+     -13.125172054101142,
+     -3.877117080730836
+    ]
+   },
+   "off": {
+    "per_unit_speed": 42.148738680603984,
+    "ci": [
+     34.00530250699328,
+     52.903764604302
+    ]
+   },
+   "off_density": {
+    "per_unit_speed": 51.76377776699887,
+    "ci": [
+     41.1244962200931,
+     65.0207490895971
+    ]
+   },
+   "by_speed": {
+    "0.003/0.5": {
+     "on": 8.941676993012731,
+     "off": 1.0869966899064778,
+     "off_density": 1.3452783459578197,
+     "runs": 4,
+     "area_on": 0.1878739378291813
+    },
+    "0.003/0.6": {
+     "on": 9.547321481279175,
+     "off": 2.540088613001006,
+     "off_density": 2.9916520418595978,
+     "runs": 4,
+     "area_on": 0.1571602498068176
+    },
+    "0.003/0.7": {
+     "on": 8.452662989616957,
+     "off": 5.073400834278152,
+     "off_density": 6.1316050157243716,
+     "runs": 4,
+     "area_on": 0.1751500749124991
+    },
+    "0.003/0.8": {
+     "on": 8.210115070899581,
+     "off": 13.522882970131107,
+     "off_density": 16.751671534083556,
+     "runs": 4,
+     "area_on": 0.19348637488177003
+    },
+    "0.003/0.9": {
+     "on": 5.315370832257229,
+     "off": 16.669968851643418,
+     "off_density": 20.347157483345274,
+     "runs": 4,
+     "area_on": 0.1817470471533783
+    }
+   }
+  }
+ },
+ "_provenance": {
+  "commit": "07f878a7d7d94a9a22f8199e8062428495235e90",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/developmental/density_seams.py",
+   "../research/developmental/density_seams_d052_c.json",
+   "../data/research/density_d052/population/arch_a0.5_s0.03_7025.npz",
+   "../data/research/density_d052/population/arch_a0.5_s0.03_7062.npz",
+   "../data/research/density_d052/population/arch_a0.5_s0.03_7099.npz",
+   "../data/research/density_d052/population/arch_a0.5_s0.03_7136.npz",
+   "../data/research/density_d052/population/arch_a0.6_s0.03_7028.npz",
+   "../data/research/density_d052/population/arch_a0.6_s0.03_7065.npz",
+   "../data/research/density_d052/population/arch_a0.6_s0.03_7102.npz",
+   "../data/research/density_d052/population/arch_a0.6_s0.03_7139.npz",
+   "../data/research/density_d052/population/arch_a0.7_s0.03_7031.npz",
+   "../data/research/density_d052/population/arch_a0.7_s0.03_7068.npz",
+   "../data/research/density_d052/population/arch_a0.7_s0.03_7105.npz",
+   "../data/research/density_d052/population/arch_a0.7_s0.03_7142.npz",
+   "../data/research/density_d052/population/arch_a0.8_s0.03_7034.npz",
+   "../data/research/density_d052/population/arch_a0.8_s0.03_7071.npz",
+   "../data/research/density_d052/population/arch_a0.8_s0.03_7108.npz",
+   "../data/research/density_d052/population/arch_a0.8_s0.03_7145.npz",
+   "../data/research/density_d052/population/arch_a0.9_s0.03_7037.npz",
+   "../data/research/density_d052/population/arch_a0.9_s0.03_7074.npz",
+   "../data/research/density_d052/population/arch_a0.9_s0.03_7111.npz",
+   "../data/research/density_d052/population/arch_a0.9_s0.03_7148.npz",
+   "../data/research/density_d052/population/loop_a0.5_s0.03_7023.npz",
+   "../data/research/density_d052/population/loop_a0.5_s0.03_7060.npz",
+   "../data/research/density_d052/population/loop_a0.5_s0.03_7097.npz",
+   "../data/research/density_d052/population/loop_a0.5_s0.03_7134.npz",
+   "../data/research/density_d052/population/loop_a0.6_s0.03_7026.npz",
+   "../data/research/density_d052/population/loop_a0.6_s0.03_7063.npz",
+   "../data/research/density_d052/population/loop_a0.6_s0.03_7100.npz",
+   "../data/research/density_d052/population/loop_a0.6_s0.03_7137.npz",
+   "../data/research/density_d052/population/loop_a0.7_s0.03_7029.npz",
+   "../data/research/density_d052/population/loop_a0.7_s0.03_7066.npz",
+   "../data/research/density_d052/population/loop_a0.7_s0.03_7103.npz",
+   "../data/research/density_d052/population/loop_a0.7_s0.03_7140.npz",
+   "../data/research/density_d052/population/loop_a0.8_s0.03_7032.npz",
+   "../data/research/density_d052/population/loop_a0.8_s0.03_7069.npz",
+   "../data/research/density_d052/population/loop_a0.8_s0.03_7106.npz",
+   "../data/research/density_d052/population/loop_a0.8_s0.03_7143.npz",
+   "../data/research/density_d052/population/loop_a0.9_s0.03_7035.npz",
+   "../data/research/density_d052/population/loop_a0.9_s0.03_7072.npz",
+   "../data/research/density_d052/population/loop_a0.9_s0.03_7109.npz",
+   "../data/research/density_d052/population/loop_a0.9_s0.03_7146.npz",
+   "../data/research/density_d052/population/whorl_a0.5_s0.03_7024.npz",
+   "../data/research/density_d052/population/whorl_a0.5_s0.03_7061.npz",
+   "../data/research/density_d052/population/whorl_a0.5_s0.03_7098.npz",
+   "../data/research/density_d052/population/whorl_a0.5_s0.03_7135.npz",
+   "../data/research/density_d052/population/whorl_a0.6_s0.03_7027.npz",
+   "../data/research/density_d052/population/whorl_a0.6_s0.03_7064.npz",
+   "../data/research/density_d052/population/whorl_a0.6_s0.03_7101.npz",
+   "../data/research/density_d052/population/whorl_a0.6_s0.03_7138.npz",
+   "../data/research/density_d052/population/whorl_a0.7_s0.03_7030.npz",
+   "../data/research/density_d052/population/whorl_a0.7_s0.03_7067.npz",
+   "../data/research/density_d052/population/whorl_a0.7_s0.03_7104.npz",
+   "../data/research/density_d052/population/whorl_a0.7_s0.03_7141.npz",
+   "../data/research/density_d052/population/whorl_a0.8_s0.03_7033.npz",
+   "../data/research/density_d052/population/whorl_a0.8_s0.03_7070.npz",
+   "../data/research/density_d052/population/whorl_a0.8_s0.03_7107.npz",
+   "../data/research/density_d052/population/whorl_a0.8_s0.03_7144.npz",
+   "../data/research/density_d052/population/whorl_a0.9_s0.03_7036.npz",
+   "../data/research/density_d052/population/whorl_a0.9_s0.03_7073.npz",
+   "../data/research/density_d052/population/whorl_a0.9_s0.03_7110.npz",
+   "../data/research/density_d052/population/whorl_a0.9_s0.03_7147.npz"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-11-01T12:03:19+0100",
+  "finished": "2026-11-01T12:03:25+0100"
+ }
+}

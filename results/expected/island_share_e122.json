@@ -1,0 +1,62 @@
+{
+ "loop": {
+  "prints": 120,
+  "islands_a_print": 3.533333333333333,
+  "features_a_print": 46.608333333333334,
+  "share_percent": 7.04670101379425,
+  "ci": [
+   6.329108525625245,
+   7.767077256347967
+  ]
+ },
+ "whorl": {
+  "prints": 60,
+  "islands_a_print": 1.0,
+  "features_a_print": 29.066666666666666,
+  "share_percent": 3.325942350332594,
+  "ci": [
+   2.4431109495168606,
+   4.25658365135291
+  ]
+ },
+ "arch": {
+  "prints": 20,
+  "islands_a_print": 0.6,
+  "features_a_print": 21.95,
+  "share_percent": 2.6607538802660753,
+  "ci": [
+   1.3793103448275863,
+   3.933871998042866
+  ]
+ },
+ "all": {
+  "prints": 200,
+  "islands_a_print": 2.48,
+  "features_a_print": 38.88,
+  "share_percent": 5.996131528046422,
+  "ci": [
+   5.398800199947681,
+   6.561586488075458
+  ]
+ },
+ "_provenance": {
+  "commit": "1ddcaa60155e0663baebada052e07f917df2efae",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/developmental/island_share.py",
+   "../research/developmental/island_share_e122.json"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-11-02T00:50:27+0100",
+  "finished": "2026-11-02T00:50:28+0100"
+ }
+}

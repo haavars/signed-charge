@@ -1,0 +1,720 @@
+{"kind": "tip", "seed": 8000, "code": 3, "periods": [7.48], "variant": "before", "attempt": 0, "recall": 0.839, "spurious": 0.131, "nfiq2": 45, "accepted": false}
+{"kind": "tip", "seed": 8000, "code": 3, "periods": [7.48], "variant": "before", "attempt": 1, "recall": 0.897, "spurious": 0.133, "nfiq2": 44, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 3, "periods": [7.48], "variant": "before", "attempt": 2, "recall": 0.851, "spurious": 0.229, "nfiq2": 49, "accepted": false}
+{"kind": "tip", "seed": 8000, "code": 3, "periods": [7.48], "variant": "after", "attempt": 0, "recall": 0.885, "spurious": 0.072, "nfiq2": 45, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 3, "periods": [7.48], "variant": "after", "attempt": 1, "recall": 0.931, "spurious": 0.08, "nfiq2": 49, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 3, "periods": [7.48], "variant": "after", "attempt": 2, "recall": 0.874, "spurious": 0.136, "nfiq2": 48, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 4, "periods": [7.26], "variant": "before", "attempt": 0, "recall": 0.859, "spurious": 0.029, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 4, "periods": [7.26], "variant": "before", "attempt": 1, "recall": 0.885, "spurious": 0.159, "nfiq2": 52, "accepted": false}
+{"kind": "tip", "seed": 8000, "code": 4, "periods": [7.26], "variant": "before", "attempt": 2, "recall": 0.846, "spurious": 0.096, "nfiq2": 52, "accepted": false}
+{"kind": "tip", "seed": 8000, "code": 4, "periods": [7.26], "variant": "after", "attempt": 0, "recall": 0.962, "spurious": 0.0, "nfiq2": 49, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 4, "periods": [7.26], "variant": "after", "attempt": 1, "recall": 0.936, "spurious": 0.0, "nfiq2": 53, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 4, "periods": [7.26], "variant": "after", "attempt": 2, "recall": 0.936, "spurious": 0.064, "nfiq2": 55, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 5, "periods": [7.94], "variant": "before", "attempt": 0, "recall": 0.912, "spurious": 0.055, "nfiq2": 51, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 5, "periods": [7.94], "variant": "before", "attempt": 1, "recall": 0.93, "spurious": 0.019, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 5, "periods": [7.94], "variant": "before", "attempt": 2, "recall": 0.895, "spurious": 0.056, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 5, "periods": [7.94], "variant": "after", "attempt": 0, "recall": 0.912, "spurious": 0.071, "nfiq2": 48, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 5, "periods": [7.94], "variant": "after", "attempt": 1, "recall": 0.93, "spurious": 0.019, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 5, "periods": [7.94], "variant": "after", "attempt": 2, "recall": 0.895, "spurious": 0.056, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 9, "periods": [7.4], "variant": "before", "attempt": 0, "recall": 0.927, "spurious": 0.019, "nfiq2": 57, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 9, "periods": [7.4], "variant": "before", "attempt": 1, "recall": 0.927, "spurious": 0.038, "nfiq2": 53, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 9, "periods": [7.4], "variant": "before", "attempt": 2, "recall": 0.909, "spurious": 0.0, "nfiq2": 58, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 9, "periods": [7.4], "variant": "after", "attempt": 0, "recall": 0.945, "spurious": 0.0, "nfiq2": 51, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 9, "periods": [7.4], "variant": "after", "attempt": 1, "recall": 0.927, "spurious": 0.038, "nfiq2": 55, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 9, "periods": [7.4], "variant": "after", "attempt": 2, "recall": 0.927, "spurious": 0.0, "nfiq2": 46, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 10, "periods": [7.55], "variant": "before", "attempt": 0, "recall": 0.819, "spurious": 0.092, "nfiq2": 52, "accepted": false}
+{"kind": "tip", "seed": 8000, "code": 10, "periods": [7.55], "variant": "before", "attempt": 1, "recall": 0.875, "spurious": 0.212, "nfiq2": 52, "accepted": false}
+{"kind": "tip", "seed": 8000, "code": 10, "periods": [7.55], "variant": "before", "attempt": 2, "recall": 0.917, "spurious": 0.07, "nfiq2": 59, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 10, "periods": [7.55], "variant": "after", "attempt": 0, "recall": 0.861, "spurious": 0.046, "nfiq2": 61, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 10, "periods": [7.55], "variant": "after", "attempt": 1, "recall": 0.903, "spurious": 0.044, "nfiq2": 49, "accepted": true}
+{"kind": "tip", "seed": 8000, "code": 10, "periods": [7.55], "variant": "after", "attempt": 2, "recall": 0.917, "spurious": 0.0, "nfiq2": 57, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 1, "periods": [7.58], "variant": "before", "attempt": 0, "recall": 0.857, "spurious": 0.143, "nfiq2": 48, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 1, "periods": [7.58], "variant": "before", "attempt": 1, "recall": 0.929, "spurious": 0.058, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 1, "periods": [7.58], "variant": "before", "attempt": 2, "recall": 0.9, "spurious": 0.1, "nfiq2": 49, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 1, "periods": [7.58], "variant": "after", "attempt": 0, "recall": 0.971, "spurious": 0.068, "nfiq2": 48, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 1, "periods": [7.58], "variant": "after", "attempt": 1, "recall": 0.971, "spurious": 0.042, "nfiq2": 50, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 1, "periods": [7.58], "variant": "after", "attempt": 2, "recall": 0.943, "spurious": 0.057, "nfiq2": 57, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 2, "periods": [7.61], "variant": "before", "attempt": 0, "recall": 0.947, "spurious": 0.053, "nfiq2": 48, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 2, "periods": [7.61], "variant": "before", "attempt": 1, "recall": 1.0, "spurious": 0.0, "nfiq2": 58, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 2, "periods": [7.61], "variant": "before", "attempt": 2, "recall": 1.0, "spurious": 0.066, "nfiq2": 57, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 2, "periods": [7.61], "variant": "after", "attempt": 0, "recall": 0.982, "spurious": 0.0, "nfiq2": 51, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 2, "periods": [7.61], "variant": "after", "attempt": 1, "recall": 1.0, "spurious": 0.0, "nfiq2": 57, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 2, "periods": [7.61], "variant": "after", "attempt": 2, "recall": 1.0, "spurious": 0.034, "nfiq2": 57, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 3, "periods": [6.92], "variant": "before", "attempt": 0, "recall": 0.932, "spurious": 0.115, "nfiq2": 58, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 3, "periods": [6.92], "variant": "before", "attempt": 1, "recall": 0.905, "spurious": 0.082, "nfiq2": 51, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 3, "periods": [6.92], "variant": "before", "attempt": 2, "recall": 0.865, "spurious": 0.111, "nfiq2": 49, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 3, "periods": [6.92], "variant": "after", "attempt": 0, "recall": 0.932, "spurious": 0.028, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 3, "periods": [6.92], "variant": "after", "attempt": 1, "recall": 0.973, "spurious": 0.027, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 3, "periods": [6.92], "variant": "after", "attempt": 2, "recall": 0.932, "spurious": 0.028, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 4, "periods": [6.51], "variant": "before", "attempt": 0, "recall": 0.857, "spurious": 0.242, "nfiq2": 40, "accepted": false}
+{"kind": "tip", "seed": 8002, "code": 4, "periods": [6.51], "variant": "before", "attempt": 1, "recall": 0.917, "spurious": 0.115, "nfiq2": 48, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 4, "periods": [6.51], "variant": "before", "attempt": 2, "recall": 0.94, "spurious": 0.168, "nfiq2": 49, "accepted": false}
+{"kind": "tip", "seed": 8002, "code": 4, "periods": [6.51], "variant": "after", "attempt": 0, "recall": 0.964, "spurious": 0.024, "nfiq2": 47, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 4, "periods": [6.51], "variant": "after", "attempt": 1, "recall": 0.952, "spurious": 0.0, "nfiq2": 51, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 4, "periods": [6.51], "variant": "after", "attempt": 2, "recall": 0.929, "spurious": 0.025, "nfiq2": 50, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 5, "periods": [6.65], "variant": "before", "attempt": 0, "recall": 0.865, "spurious": 0.045, "nfiq2": 50, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 5, "periods": [6.65], "variant": "before", "attempt": 1, "recall": 0.892, "spurious": 0.07, "nfiq2": 50, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 5, "periods": [6.65], "variant": "before", "attempt": 2, "recall": 0.892, "spurious": 0.154, "nfiq2": 53, "accepted": false}
+{"kind": "tip", "seed": 8002, "code": 5, "periods": [6.65], "variant": "after", "attempt": 0, "recall": 0.946, "spurious": 0.014, "nfiq2": 46, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 5, "periods": [6.65], "variant": "after", "attempt": 1, "recall": 0.892, "spurious": 0.029, "nfiq2": 46, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 5, "periods": [6.65], "variant": "after", "attempt": 2, "recall": 0.905, "spurious": 0.015, "nfiq2": 51, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 7, "periods": [7.14], "variant": "before", "attempt": 0, "recall": 0.966, "spurious": 0.149, "nfiq2": 51, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 7, "periods": [7.14], "variant": "before", "attempt": 1, "recall": 0.881, "spurious": 0.175, "nfiq2": 51, "accepted": false}
+{"kind": "tip", "seed": 8002, "code": 7, "periods": [7.14], "variant": "before", "attempt": 2, "recall": 0.864, "spurious": 0.19, "nfiq2": 50, "accepted": false}
+{"kind": "tip", "seed": 8002, "code": 7, "periods": [7.14], "variant": "after", "attempt": 0, "recall": 0.983, "spurious": 0.049, "nfiq2": 53, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 7, "periods": [7.14], "variant": "after", "attempt": 1, "recall": 0.949, "spurious": 0.0, "nfiq2": 49, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 7, "periods": [7.14], "variant": "after", "attempt": 2, "recall": 0.966, "spurious": 0.017, "nfiq2": 55, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 8, "periods": [7.45], "variant": "before", "attempt": 0, "recall": 0.946, "spurious": 0.102, "nfiq2": 51, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 8, "periods": [7.45], "variant": "before", "attempt": 1, "recall": 0.946, "spurious": 0.054, "nfiq2": 49, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 8, "periods": [7.45], "variant": "before", "attempt": 2, "recall": 1.0, "spurious": 0.097, "nfiq2": 51, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 8, "periods": [7.45], "variant": "after", "attempt": 0, "recall": 0.964, "spurious": 0.053, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 8, "periods": [7.45], "variant": "after", "attempt": 1, "recall": 0.964, "spurious": 0.036, "nfiq2": 51, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 8, "periods": [7.45], "variant": "after", "attempt": 2, "recall": 1.0, "spurious": 0.067, "nfiq2": 56, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 9, "periods": [7.09], "variant": "before", "attempt": 0, "recall": 0.91, "spurious": 0.147, "nfiq2": 50, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 9, "periods": [7.09], "variant": "before", "attempt": 1, "recall": 0.854, "spurious": 0.208, "nfiq2": 47, "accepted": false}
+{"kind": "tip", "seed": 8002, "code": 9, "periods": [7.09], "variant": "before", "attempt": 2, "recall": 0.944, "spurious": 0.077, "nfiq2": 53, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 9, "periods": [7.09], "variant": "after", "attempt": 0, "recall": 0.978, "spurious": 0.033, "nfiq2": 49, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 9, "periods": [7.09], "variant": "after", "attempt": 1, "recall": 0.91, "spurious": 0.036, "nfiq2": 49, "accepted": false}
+{"kind": "tip", "seed": 8002, "code": 9, "periods": [7.09], "variant": "after", "attempt": 2, "recall": 0.989, "spurious": 0.022, "nfiq2": 56, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 10, "periods": [6.54], "variant": "before", "attempt": 0, "recall": 0.818, "spurious": 0.1, "nfiq2": 49, "accepted": false}
+{"kind": "tip", "seed": 8002, "code": 10, "periods": [6.54], "variant": "before", "attempt": 1, "recall": 0.873, "spurious": 0.2, "nfiq2": 51, "accepted": false}
+{"kind": "tip", "seed": 8002, "code": 10, "periods": [6.54], "variant": "before", "attempt": 2, "recall": 0.8, "spurious": 0.043, "nfiq2": 46, "accepted": false}
+{"kind": "tip", "seed": 8002, "code": 10, "periods": [6.54], "variant": "after", "attempt": 0, "recall": 0.891, "spurious": 0.039, "nfiq2": 41, "accepted": true}
+{"kind": "tip", "seed": 8002, "code": 10, "periods": [6.54], "variant": "after", "attempt": 1, "recall": 0.927, "spurious": 0.056, "nfiq2": 47, "accepted": false}
+{"kind": "tip", "seed": 8002, "code": 10, "periods": [6.54], "variant": "after", "attempt": 2, "recall": 0.891, "spurious": 0.02, "nfiq2": 50, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 1, "periods": [7.65], "variant": "before", "attempt": 0, "recall": 0.937, "spurious": 0.039, "nfiq2": 56, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 1, "periods": [7.65], "variant": "before", "attempt": 1, "recall": 0.911, "spurious": 0.077, "nfiq2": 50, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 1, "periods": [7.65], "variant": "before", "attempt": 2, "recall": 0.911, "spurious": 0.04, "nfiq2": 51, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 1, "periods": [7.65], "variant": "after", "attempt": 0, "recall": 0.911, "spurious": 0.027, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 1, "periods": [7.65], "variant": "after", "attempt": 1, "recall": 0.937, "spurious": 0.039, "nfiq2": 53, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 1, "periods": [7.65], "variant": "after", "attempt": 2, "recall": 0.924, "spurious": 0.014, "nfiq2": 56, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 3, "periods": [7.57], "variant": "before", "attempt": 0, "recall": 0.986, "spurious": 0.027, "nfiq2": 56, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 3, "periods": [7.57], "variant": "before", "attempt": 1, "recall": 0.959, "spurious": 0.054, "nfiq2": 57, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 3, "periods": [7.57], "variant": "before", "attempt": 2, "recall": 0.973, "spurious": 0.027, "nfiq2": 65, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 3, "periods": [7.57], "variant": "after", "attempt": 0, "recall": 0.973, "spurious": 0.0, "nfiq2": 55, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 3, "periods": [7.57], "variant": "after", "attempt": 1, "recall": 1.0, "spurious": 0.027, "nfiq2": 60, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 3, "periods": [7.57], "variant": "after", "attempt": 2, "recall": 0.945, "spurious": 0.028, "nfiq2": 59, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 4, "periods": [7.41], "variant": "before", "attempt": 0, "recall": 0.898, "spurious": 0.07, "nfiq2": 61, "accepted": false}
+{"kind": "tip", "seed": 8005, "code": 4, "periods": [7.41], "variant": "before", "attempt": 1, "recall": 0.881, "spurious": 0.055, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 4, "periods": [7.41], "variant": "before", "attempt": 2, "recall": 0.932, "spurious": 0.127, "nfiq2": 46, "accepted": false}
+{"kind": "tip", "seed": 8005, "code": 4, "periods": [7.41], "variant": "after", "attempt": 0, "recall": 0.915, "spurious": 0.085, "nfiq2": 56, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 4, "periods": [7.41], "variant": "after", "attempt": 1, "recall": 0.966, "spurious": 0.0, "nfiq2": 51, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 4, "periods": [7.41], "variant": "after", "attempt": 2, "recall": 0.966, "spurious": 0.034, "nfiq2": 53, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 5, "periods": [7.79], "variant": "before", "attempt": 0, "recall": 0.791, "spurious": 0.054, "nfiq2": 49, "accepted": false}
+{"kind": "tip", "seed": 8005, "code": 5, "periods": [7.79], "variant": "before", "attempt": 1, "recall": 0.836, "spurious": 0.018, "nfiq2": 53, "accepted": false}
+{"kind": "tip", "seed": 8005, "code": 5, "periods": [7.79], "variant": "before", "attempt": 2, "recall": 0.806, "spurious": 0.053, "nfiq2": 53, "accepted": false}
+{"kind": "tip", "seed": 8005, "code": 5, "periods": [7.79], "variant": "after", "attempt": 0, "recall": 0.791, "spurious": 0.036, "nfiq2": 43, "accepted": false}
+{"kind": "tip", "seed": 8005, "code": 5, "periods": [7.79], "variant": "after", "attempt": 1, "recall": 0.836, "spurious": 0.034, "nfiq2": 51, "accepted": false}
+{"kind": "tip", "seed": 8005, "code": 5, "periods": [7.79], "variant": "after", "attempt": 2, "recall": 0.806, "spurious": 0.053, "nfiq2": 50, "accepted": false}
+{"kind": "tip", "seed": 8005, "code": 6, "periods": [7.99], "variant": "before", "attempt": 0, "recall": 0.959, "spurious": 0.041, "nfiq2": 60, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 6, "periods": [7.99], "variant": "before", "attempt": 1, "recall": 0.904, "spurious": 0.043, "nfiq2": 59, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 6, "periods": [7.99], "variant": "before", "attempt": 2, "recall": 0.945, "spurious": 0.068, "nfiq2": 56, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 6, "periods": [7.99], "variant": "after", "attempt": 0, "recall": 0.959, "spurious": 0.028, "nfiq2": 53, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 6, "periods": [7.99], "variant": "after", "attempt": 1, "recall": 0.904, "spurious": 0.043, "nfiq2": 59, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 6, "periods": [7.99], "variant": "after", "attempt": 2, "recall": 0.945, "spurious": 0.068, "nfiq2": 56, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 8, "periods": [7.86], "variant": "before", "attempt": 0, "recall": 0.878, "spurious": 0.044, "nfiq2": 56, "accepted": false}
+{"kind": "tip", "seed": 8005, "code": 8, "periods": [7.86], "variant": "before", "attempt": 1, "recall": 0.918, "spurious": 0.043, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 8, "periods": [7.86], "variant": "before", "attempt": 2, "recall": 0.918, "spurious": 0.043, "nfiq2": 51, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 8, "periods": [7.86], "variant": "after", "attempt": 0, "recall": 0.959, "spurious": 0.0, "nfiq2": 59, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 8, "periods": [7.86], "variant": "after", "attempt": 1, "recall": 0.918, "spurious": 0.043, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 8, "periods": [7.86], "variant": "after", "attempt": 2, "recall": 0.918, "spurious": 0.022, "nfiq2": 57, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 9, "periods": [7.42], "variant": "before", "attempt": 0, "recall": 0.932, "spurious": 0.083, "nfiq2": 51, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 9, "periods": [7.42], "variant": "before", "attempt": 1, "recall": 0.932, "spurious": 0.035, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 9, "periods": [7.42], "variant": "before", "attempt": 2, "recall": 0.915, "spurious": 0.115, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 9, "periods": [7.42], "variant": "after", "attempt": 0, "recall": 0.949, "spurious": 0.034, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 9, "periods": [7.42], "variant": "after", "attempt": 1, "recall": 0.983, "spurious": 0.049, "nfiq2": 49, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 9, "periods": [7.42], "variant": "after", "attempt": 2, "recall": 0.932, "spurious": 0.083, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 10, "periods": [7.53], "variant": "before", "attempt": 0, "recall": 0.922, "spurious": 0.213, "nfiq2": 48, "accepted": false}
+{"kind": "tip", "seed": 8005, "code": 10, "periods": [7.53], "variant": "before", "attempt": 1, "recall": 0.828, "spurious": 0.264, "nfiq2": 51, "accepted": false}
+{"kind": "tip", "seed": 8005, "code": 10, "periods": [7.53], "variant": "before", "attempt": 2, "recall": 0.875, "spurious": 0.211, "nfiq2": 57, "accepted": false}
+{"kind": "tip", "seed": 8005, "code": 10, "periods": [7.53], "variant": "after", "attempt": 0, "recall": 0.938, "spurious": 0.062, "nfiq2": 48, "accepted": true}
+{"kind": "tip", "seed": 8005, "code": 10, "periods": [7.53], "variant": "after", "attempt": 1, "recall": 0.797, "spurious": 0.19, "nfiq2": 55, "accepted": false}
+{"kind": "tip", "seed": 8005, "code": 10, "periods": [7.53], "variant": "after", "attempt": 2, "recall": 0.984, "spurious": 0.087, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 4, "periods": [7.73], "variant": "before", "attempt": 0, "recall": 0.985, "spurious": 0.03, "nfiq2": 50, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 4, "periods": [7.73], "variant": "before", "attempt": 1, "recall": 0.923, "spurious": 0.048, "nfiq2": 53, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 4, "periods": [7.73], "variant": "before", "attempt": 2, "recall": 1.0, "spurious": 0.044, "nfiq2": 59, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 4, "periods": [7.73], "variant": "after", "attempt": 0, "recall": 1.0, "spurious": 0.0, "nfiq2": 50, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 4, "periods": [7.73], "variant": "after", "attempt": 1, "recall": 0.938, "spurious": 0.032, "nfiq2": 57, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 4, "periods": [7.73], "variant": "after", "attempt": 2, "recall": 1.0, "spurious": 0.044, "nfiq2": 59, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 5, "periods": [7.92], "variant": "before", "attempt": 0, "recall": 0.905, "spurious": 0.05, "nfiq2": 50, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 5, "periods": [7.92], "variant": "before", "attempt": 1, "recall": 1.0, "spurious": 0.045, "nfiq2": 56, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 5, "periods": [7.92], "variant": "before", "attempt": 2, "recall": 1.0, "spurious": 0.045, "nfiq2": 53, "accepted": false}
+{"kind": "tip", "seed": 8006, "code": 5, "periods": [7.92], "variant": "after", "attempt": 0, "recall": 0.905, "spurious": 0.073, "nfiq2": 56, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 5, "periods": [7.92], "variant": "after", "attempt": 1, "recall": 1.0, "spurious": 0.045, "nfiq2": 56, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 5, "periods": [7.92], "variant": "after", "attempt": 2, "recall": 1.0, "spurious": 0.045, "nfiq2": 53, "accepted": false}
+{"kind": "tip", "seed": 8006, "code": 8, "periods": [7.74], "variant": "before", "attempt": 0, "recall": 0.881, "spurious": 0.106, "nfiq2": 53, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 8, "periods": [7.74], "variant": "before", "attempt": 1, "recall": 0.896, "spurious": 0.077, "nfiq2": 56, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 8, "periods": [7.74], "variant": "before", "attempt": 2, "recall": 0.91, "spurious": 0.187, "nfiq2": 59, "accepted": false}
+{"kind": "tip", "seed": 8006, "code": 8, "periods": [7.74], "variant": "after", "attempt": 0, "recall": 0.896, "spurious": 0.048, "nfiq2": 55, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 8, "periods": [7.74], "variant": "after", "attempt": 1, "recall": 0.91, "spurious": 0.032, "nfiq2": 55, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 8, "periods": [7.74], "variant": "after", "attempt": 2, "recall": 0.925, "spurious": 0.139, "nfiq2": 59, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 9, "periods": [7.79], "variant": "before", "attempt": 0, "recall": 0.944, "spurious": 0.089, "nfiq2": 59, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 9, "periods": [7.79], "variant": "before", "attempt": 1, "recall": 0.926, "spurious": 0.074, "nfiq2": 59, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 9, "periods": [7.79], "variant": "before", "attempt": 2, "recall": 0.963, "spurious": 0.019, "nfiq2": 58, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 9, "periods": [7.79], "variant": "after", "attempt": 0, "recall": 0.963, "spurious": 0.037, "nfiq2": 61, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 9, "periods": [7.79], "variant": "after", "attempt": 1, "recall": 0.963, "spurious": 0.037, "nfiq2": 58, "accepted": true}
+{"kind": "tip", "seed": 8006, "code": 9, "periods": [7.79], "variant": "after", "attempt": 2, "recall": 0.963, "spurious": 0.0, "nfiq2": 58, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 4, "periods": [7.78], "variant": "before", "attempt": 0, "recall": 0.95, "spurious": 0.034, "nfiq2": 47, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 4, "periods": [7.78], "variant": "before", "attempt": 1, "recall": 0.967, "spurious": 0.108, "nfiq2": 50, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 4, "periods": [7.78], "variant": "before", "attempt": 2, "recall": 0.95, "spurious": 0.095, "nfiq2": 50, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 4, "periods": [7.78], "variant": "after", "attempt": 0, "recall": 0.95, "spurious": 0.034, "nfiq2": 49, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 4, "periods": [7.78], "variant": "after", "attempt": 1, "recall": 1.0, "spurious": 0.032, "nfiq2": 56, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 4, "periods": [7.78], "variant": "after", "attempt": 2, "recall": 0.95, "spurious": 0.095, "nfiq2": 57, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 8, "periods": [7.12], "variant": "before", "attempt": 0, "recall": 0.917, "spurious": 0.132, "nfiq2": 57, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 8, "periods": [7.12], "variant": "before", "attempt": 1, "recall": 0.958, "spurious": 0.127, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 8, "periods": [7.12], "variant": "before", "attempt": 2, "recall": 0.833, "spurious": 0.277, "nfiq2": 50, "accepted": false}
+{"kind": "tip", "seed": 8008, "code": 8, "periods": [7.12], "variant": "after", "attempt": 0, "recall": 0.958, "spurious": 0.104, "nfiq2": 53, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 8, "periods": [7.12], "variant": "after", "attempt": 1, "recall": 0.972, "spurious": 0.103, "nfiq2": 51, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 8, "periods": [7.12], "variant": "after", "attempt": 2, "recall": 0.903, "spurious": 0.133, "nfiq2": 44, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 9, "periods": [7.42], "variant": "before", "attempt": 0, "recall": 0.931, "spurious": 0.115, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 9, "periods": [7.42], "variant": "before", "attempt": 1, "recall": 0.931, "spurious": 0.1, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 9, "periods": [7.42], "variant": "before", "attempt": 2, "recall": 0.897, "spurious": 0.055, "nfiq2": 46, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 9, "periods": [7.42], "variant": "after", "attempt": 0, "recall": 1.0, "spurious": 0.0, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 9, "periods": [7.42], "variant": "after", "attempt": 1, "recall": 1.0, "spurious": 0.017, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 9, "periods": [7.42], "variant": "after", "attempt": 2, "recall": 1.0, "spurious": 0.0, "nfiq2": 55, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 10, "periods": [7.7], "variant": "before", "attempt": 0, "recall": 0.953, "spurious": 0.032, "nfiq2": 47, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 10, "periods": [7.7], "variant": "before", "attempt": 1, "recall": 0.891, "spurious": 0.034, "nfiq2": 58, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 10, "periods": [7.7], "variant": "before", "attempt": 2, "recall": 0.797, "spurious": 0.0, "nfiq2": 50, "accepted": false}
+{"kind": "tip", "seed": 8008, "code": 10, "periods": [7.7], "variant": "after", "attempt": 0, "recall": 0.969, "spurious": 0.016, "nfiq2": 62, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 10, "periods": [7.7], "variant": "after", "attempt": 1, "recall": 0.922, "spurious": 0.0, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8008, "code": 10, "periods": [7.7], "variant": "after", "attempt": 2, "recall": 0.828, "spurious": 0.0, "nfiq2": 47, "accepted": false}
+{"kind": "tip", "seed": 8011, "code": 3, "periods": [7.87], "variant": "before", "attempt": 0, "recall": 0.949, "spurious": 0.034, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8011, "code": 3, "periods": [7.87], "variant": "before", "attempt": 1, "recall": 1.0, "spurious": 0.078, "nfiq2": 49, "accepted": true}
+{"kind": "tip", "seed": 8011, "code": 3, "periods": [7.87], "variant": "before", "attempt": 2, "recall": 0.983, "spurious": 0.0, "nfiq2": 47, "accepted": true}
+{"kind": "tip", "seed": 8011, "code": 3, "periods": [7.87], "variant": "after", "attempt": 0, "recall": 0.983, "spurious": 0.017, "nfiq2": 57, "accepted": true}
+{"kind": "tip", "seed": 8011, "code": 3, "periods": [7.87], "variant": "after", "attempt": 1, "recall": 1.0, "spurious": 0.048, "nfiq2": 49, "accepted": true}
+{"kind": "tip", "seed": 8011, "code": 3, "periods": [7.87], "variant": "after", "attempt": 2, "recall": 0.983, "spurious": 0.0, "nfiq2": 45, "accepted": true}
+{"kind": "tip", "seed": 8011, "code": 4, "periods": [7.69], "variant": "before", "attempt": 0, "recall": 0.984, "spurious": 0.09, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8011, "code": 4, "periods": [7.69], "variant": "before", "attempt": 1, "recall": 0.919, "spurious": 0.066, "nfiq2": 53, "accepted": true}
+{"kind": "tip", "seed": 8011, "code": 4, "periods": [7.69], "variant": "before", "attempt": 2, "recall": 0.919, "spurious": 0.034, "nfiq2": 60, "accepted": true}
+{"kind": "tip", "seed": 8011, "code": 4, "periods": [7.69], "variant": "after", "attempt": 0, "recall": 1.0, "spurious": 0.046, "nfiq2": 57, "accepted": true}
+{"kind": "tip", "seed": 8011, "code": 4, "periods": [7.69], "variant": "after", "attempt": 1, "recall": 0.935, "spurious": 0.049, "nfiq2": 58, "accepted": true}
+{"kind": "tip", "seed": 8011, "code": 4, "periods": [7.69], "variant": "after", "attempt": 2, "recall": 0.968, "spurious": 0.0, "nfiq2": 58, "accepted": true}
+{"kind": "tip", "seed": 8011, "code": 9, "periods": [7.63], "variant": "before", "attempt": 0, "recall": 0.952, "spurious": 0.0, "nfiq2": 59, "accepted": true}
+{"kind": "tip", "seed": 8011, "code": 9, "periods": [7.63], "variant": "before", "attempt": 1, "recall": 0.952, "spurious": 0.048, "nfiq2": 55, "accepted": true}
+{"kind": "tip", "seed": 8011, "code": 9, "periods": [7.63], "variant": "before", "attempt": 2, "recall": 0.952, "spurious": 0.048, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8011, "code": 9, "periods": [7.63], "variant": "after", "attempt": 0, "recall": 0.968, "spurious": 0.0, "nfiq2": 56, "accepted": true}
+{"kind": "tip", "seed": 8011, "code": 9, "periods": [7.63], "variant": "after", "attempt": 1, "recall": 0.952, "spurious": 0.048, "nfiq2": 60, "accepted": true}
+{"kind": "tip", "seed": 8011, "code": 9, "periods": [7.63], "variant": "after", "attempt": 2, "recall": 0.984, "spurious": 0.046, "nfiq2": 57, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 2, "periods": [7.99], "variant": "before", "attempt": 0, "recall": 0.962, "spurious": 0.074, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 2, "periods": [7.99], "variant": "before", "attempt": 1, "recall": 0.885, "spurious": 0.148, "nfiq2": 45, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 2, "periods": [7.99], "variant": "before", "attempt": 2, "recall": 0.904, "spurious": 0.217, "nfiq2": 53, "accepted": false}
+{"kind": "tip", "seed": 8016, "code": 2, "periods": [7.99], "variant": "after", "attempt": 0, "recall": 0.904, "spurious": 0.254, "nfiq2": 55, "accepted": false}
+{"kind": "tip", "seed": 8016, "code": 2, "periods": [7.99], "variant": "after", "attempt": 1, "recall": 0.885, "spurious": 0.148, "nfiq2": 45, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 2, "periods": [7.99], "variant": "after", "attempt": 2, "recall": 0.904, "spurious": 0.217, "nfiq2": 53, "accepted": false}
+{"kind": "tip", "seed": 8016, "code": 3, "periods": [7.44], "variant": "before", "attempt": 0, "recall": 0.893, "spurious": 0.219, "nfiq2": 56, "accepted": false}
+{"kind": "tip", "seed": 8016, "code": 3, "periods": [7.44], "variant": "before", "attempt": 1, "recall": 0.929, "spurious": 0.161, "nfiq2": 51, "accepted": false}
+{"kind": "tip", "seed": 8016, "code": 3, "periods": [7.44], "variant": "before", "attempt": 2, "recall": 0.875, "spurious": 0.279, "nfiq2": 52, "accepted": false}
+{"kind": "tip", "seed": 8016, "code": 3, "periods": [7.44], "variant": "after", "attempt": 0, "recall": 0.929, "spurious": 0.119, "nfiq2": 53, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 3, "periods": [7.44], "variant": "after", "attempt": 1, "recall": 0.964, "spurious": 0.053, "nfiq2": 55, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 3, "periods": [7.44], "variant": "after", "attempt": 2, "recall": 0.893, "spurious": 0.091, "nfiq2": 49, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 4, "periods": [7.19], "variant": "before", "attempt": 0, "recall": 0.81, "spurious": 0.179, "nfiq2": 53, "accepted": false}
+{"kind": "tip", "seed": 8016, "code": 4, "periods": [7.19], "variant": "before", "attempt": 1, "recall": 0.937, "spurious": 0.051, "nfiq2": 56, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 4, "periods": [7.19], "variant": "before", "attempt": 2, "recall": 0.886, "spurious": 0.054, "nfiq2": 66, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 4, "periods": [7.19], "variant": "after", "attempt": 0, "recall": 0.899, "spurious": 0.053, "nfiq2": 57, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 4, "periods": [7.19], "variant": "after", "attempt": 1, "recall": 0.924, "spurious": 0.0, "nfiq2": 58, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 4, "periods": [7.19], "variant": "after", "attempt": 2, "recall": 0.975, "spurious": 0.037, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 5, "periods": [7.23], "variant": "before", "attempt": 0, "recall": 0.92, "spurious": 0.08, "nfiq2": 50, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 5, "periods": [7.23], "variant": "before", "attempt": 1, "recall": 0.9, "spurious": 0.1, "nfiq2": 50, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 5, "periods": [7.23], "variant": "before", "attempt": 2, "recall": 0.96, "spurious": 0.04, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 5, "periods": [7.23], "variant": "after", "attempt": 0, "recall": 0.96, "spurious": 0.04, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 5, "periods": [7.23], "variant": "after", "attempt": 1, "recall": 0.96, "spurious": 0.02, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 5, "periods": [7.23], "variant": "after", "attempt": 2, "recall": 1.0, "spurious": 0.0, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 8, "periods": [7.53], "variant": "before", "attempt": 0, "recall": 0.948, "spurious": 0.083, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 8, "periods": [7.53], "variant": "before", "attempt": 1, "recall": 0.931, "spurious": 0.085, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 8, "periods": [7.53], "variant": "before", "attempt": 2, "recall": 0.862, "spurious": 0.0, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 8, "periods": [7.53], "variant": "after", "attempt": 0, "recall": 1.0, "spurious": 0.108, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 8, "periods": [7.53], "variant": "after", "attempt": 1, "recall": 0.983, "spurious": 0.081, "nfiq2": 51, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 8, "periods": [7.53], "variant": "after", "attempt": 2, "recall": 0.931, "spurious": 0.0, "nfiq2": 50, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 9, "periods": [6.98], "variant": "before", "attempt": 0, "recall": 0.909, "spurious": 0.048, "nfiq2": 54, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 9, "periods": [6.98], "variant": "before", "attempt": 1, "recall": 0.939, "spurious": 0.075, "nfiq2": 53, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 9, "periods": [6.98], "variant": "before", "attempt": 2, "recall": 0.864, "spurious": 0.066, "nfiq2": 62, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 9, "periods": [6.98], "variant": "after", "attempt": 0, "recall": 0.939, "spurious": 0.016, "nfiq2": 56, "accepted": false}
+{"kind": "tip", "seed": 8016, "code": 9, "periods": [6.98], "variant": "after", "attempt": 1, "recall": 0.97, "spurious": 0.0, "nfiq2": 56, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 9, "periods": [6.98], "variant": "after", "attempt": 2, "recall": 0.879, "spurious": 0.0, "nfiq2": 50, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 10, "periods": [7.56], "variant": "before", "attempt": 0, "recall": 0.95, "spurious": 0.05, "nfiq2": 55, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 10, "periods": [7.56], "variant": "before", "attempt": 1, "recall": 0.925, "spurious": 0.119, "nfiq2": 52, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 10, "periods": [7.56], "variant": "before", "attempt": 2, "recall": 0.975, "spurious": 0.17, "nfiq2": 50, "accepted": false}
+{"kind": "tip", "seed": 8016, "code": 10, "periods": [7.56], "variant": "after", "attempt": 0, "recall": 1.0, "spurious": 0.091, "nfiq2": 58, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 10, "periods": [7.56], "variant": "after", "attempt": 1, "recall": 0.975, "spurious": 0.071, "nfiq2": 50, "accepted": true}
+{"kind": "tip", "seed": 8016, "code": 10, "periods": [7.56], "variant": "after", "attempt": 2, "recall": 1.0, "spurious": 0.091, "nfiq2": 63, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 1, "periods": [9.46], "variant": "before", "attempt": 0, "recall": 0.878, "spurious": 0.023, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 1, "periods": [9.46], "variant": "before", "attempt": 1, "recall": 0.898, "spurious": 0.0, "nfiq2": 60, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 1, "periods": [9.46], "variant": "before", "attempt": 2, "recall": 0.878, "spurious": 0.0, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 1, "periods": [9.46], "variant": "after", "attempt": 0, "recall": 0.898, "spurious": 0.0, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 1, "periods": [9.46], "variant": "after", "attempt": 1, "recall": 0.898, "spurious": 0.0, "nfiq2": 60, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 1, "periods": [9.46], "variant": "after", "attempt": 2, "recall": 0.878, "spurious": 0.0, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 2, "periods": [10.52], "variant": "before", "attempt": 0, "recall": 0.907, "spurious": 0.0, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 2, "periods": [10.52], "variant": "before", "attempt": 1, "recall": 0.86, "spurious": 0.0, "nfiq2": 52, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 2, "periods": [10.52], "variant": "before", "attempt": 2, "recall": 0.884, "spurious": 0.026, "nfiq2": 53, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 2, "periods": [10.52], "variant": "after", "attempt": 0, "recall": 0.93, "spurious": 0.048, "nfiq2": 49, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 2, "periods": [10.52], "variant": "after", "attempt": 1, "recall": 0.86, "spurious": 0.0, "nfiq2": 52, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 2, "periods": [10.52], "variant": "after", "attempt": 2, "recall": 0.884, "spurious": 0.026, "nfiq2": 53, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 3, "periods": [8.44], "variant": "before", "attempt": 0, "recall": 0.983, "spurious": 0.0, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 3, "periods": [8.44], "variant": "before", "attempt": 1, "recall": 0.983, "spurious": 0.0, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 3, "periods": [8.44], "variant": "before", "attempt": 2, "recall": 0.967, "spurious": 0.017, "nfiq2": 49, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 3, "periods": [8.44], "variant": "after", "attempt": 0, "recall": 0.983, "spurious": 0.0, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 3, "periods": [8.44], "variant": "after", "attempt": 1, "recall": 0.983, "spurious": 0.0, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 3, "periods": [8.44], "variant": "after", "attempt": 2, "recall": 0.967, "spurious": 0.017, "nfiq2": 49, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 4, "periods": [9.07], "variant": "before", "attempt": 0, "recall": 0.919, "spurious": 0.081, "nfiq2": 62, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 4, "periods": [9.07], "variant": "before", "attempt": 1, "recall": 0.919, "spurious": 0.029, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 4, "periods": [9.07], "variant": "before", "attempt": 2, "recall": 0.946, "spurious": 0.079, "nfiq2": 51, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 4, "periods": [9.07], "variant": "after", "attempt": 0, "recall": 0.892, "spurious": 0.057, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 4, "periods": [9.07], "variant": "after", "attempt": 1, "recall": 0.919, "spurious": 0.029, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 4, "periods": [9.07], "variant": "after", "attempt": 2, "recall": 0.946, "spurious": 0.079, "nfiq2": 51, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 5, "periods": [8.88], "variant": "before", "attempt": 0, "recall": 0.854, "spurious": 0.024, "nfiq2": 60, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 5, "periods": [8.88], "variant": "before", "attempt": 1, "recall": 0.896, "spurious": 0.044, "nfiq2": 63, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 5, "periods": [8.88], "variant": "before", "attempt": 2, "recall": 0.896, "spurious": 0.044, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 5, "periods": [8.88], "variant": "after", "attempt": 0, "recall": 0.854, "spurious": 0.024, "nfiq2": 60, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 5, "periods": [8.88], "variant": "after", "attempt": 1, "recall": 0.896, "spurious": 0.044, "nfiq2": 63, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 5, "periods": [8.88], "variant": "after", "attempt": 2, "recall": 0.896, "spurious": 0.044, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 6, "periods": [9.53], "variant": "before", "attempt": 0, "recall": 0.922, "spurious": 0.041, "nfiq2": 64, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 6, "periods": [9.53], "variant": "before", "attempt": 1, "recall": 0.922, "spurious": 0.078, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 6, "periods": [9.53], "variant": "before", "attempt": 2, "recall": 0.961, "spurious": 0.02, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 6, "periods": [9.53], "variant": "after", "attempt": 0, "recall": 0.922, "spurious": 0.041, "nfiq2": 63, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 6, "periods": [9.53], "variant": "after", "attempt": 1, "recall": 0.922, "spurious": 0.078, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 6, "periods": [9.53], "variant": "after", "attempt": 2, "recall": 0.961, "spurious": 0.02, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 7, "periods": [9.96], "variant": "before", "attempt": 0, "recall": 0.926, "spurious": 0.0, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 7, "periods": [9.96], "variant": "before", "attempt": 1, "recall": 0.815, "spurious": 0.0, "nfiq2": 56, "accepted": false}
+{"kind": "tip_coarse", "seed": 8001, "code": 7, "periods": [9.96], "variant": "before", "attempt": 2, "recall": 1.0, "spurious": 0.069, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 7, "periods": [9.96], "variant": "after", "attempt": 0, "recall": 0.889, "spurious": 0.111, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 7, "periods": [9.96], "variant": "after", "attempt": 1, "recall": 0.815, "spurious": 0.0, "nfiq2": 56, "accepted": false}
+{"kind": "tip_coarse", "seed": 8001, "code": 7, "periods": [9.96], "variant": "after", "attempt": 2, "recall": 1.0, "spurious": 0.069, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 8, "periods": [9.79], "variant": "before", "attempt": 0, "recall": 0.953, "spurious": 0.024, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 8, "periods": [9.79], "variant": "before", "attempt": 1, "recall": 0.884, "spurious": 0.0, "nfiq2": 48, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 8, "periods": [9.79], "variant": "before", "attempt": 2, "recall": 0.953, "spurious": 0.047, "nfiq2": 53, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 8, "periods": [9.79], "variant": "after", "attempt": 0, "recall": 0.907, "spurious": 0.0, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 8, "periods": [9.79], "variant": "after", "attempt": 1, "recall": 0.884, "spurious": 0.0, "nfiq2": 48, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 8, "periods": [9.79], "variant": "after", "attempt": 2, "recall": 0.953, "spurious": 0.047, "nfiq2": 53, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 9, "periods": [9.12], "variant": "before", "attempt": 0, "recall": 0.842, "spurious": 0.0, "nfiq2": 54, "accepted": false}
+{"kind": "tip_coarse", "seed": 8001, "code": 9, "periods": [9.12], "variant": "before", "attempt": 1, "recall": 0.895, "spurious": 0.0, "nfiq2": 59, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 9, "periods": [9.12], "variant": "before", "attempt": 2, "recall": 0.763, "spurious": 0.121, "nfiq2": 56, "accepted": false}
+{"kind": "tip_coarse", "seed": 8001, "code": 9, "periods": [9.12], "variant": "after", "attempt": 0, "recall": 0.921, "spurious": 0.0, "nfiq2": 52, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 9, "periods": [9.12], "variant": "after", "attempt": 1, "recall": 0.895, "spurious": 0.0, "nfiq2": 59, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 9, "periods": [9.12], "variant": "after", "attempt": 2, "recall": 0.763, "spurious": 0.121, "nfiq2": 56, "accepted": false}
+{"kind": "tip_coarse", "seed": 8001, "code": 10, "periods": [8.72], "variant": "before", "attempt": 0, "recall": 0.946, "spurious": 0.079, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 10, "periods": [8.72], "variant": "before", "attempt": 1, "recall": 0.973, "spurious": 0.0, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 10, "periods": [8.72], "variant": "before", "attempt": 2, "recall": 0.946, "spurious": 0.079, "nfiq2": 50, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 10, "periods": [8.72], "variant": "after", "attempt": 0, "recall": 0.946, "spurious": 0.103, "nfiq2": 45, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 10, "periods": [8.72], "variant": "after", "attempt": 1, "recall": 0.973, "spurious": 0.0, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8001, "code": 10, "periods": [8.72], "variant": "after", "attempt": 2, "recall": 0.946, "spurious": 0.079, "nfiq2": 50, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 1, "periods": [8.51], "variant": "before", "attempt": 0, "recall": 0.909, "spurious": 0.032, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 1, "periods": [8.51], "variant": "before", "attempt": 1, "recall": 0.955, "spurious": 0.074, "nfiq2": 49, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 1, "periods": [8.51], "variant": "before", "attempt": 2, "recall": 0.879, "spurious": 0.147, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 1, "periods": [8.51], "variant": "after", "attempt": 0, "recall": 0.97, "spurious": 0.03, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 1, "periods": [8.51], "variant": "after", "attempt": 1, "recall": 0.955, "spurious": 0.074, "nfiq2": 49, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 1, "periods": [8.51], "variant": "after", "attempt": 2, "recall": 0.879, "spurious": 0.147, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 2, "periods": [8.77], "variant": "before", "attempt": 0, "recall": 0.955, "spurious": 0.059, "nfiq2": 55, "accepted": false}
+{"kind": "tip_coarse", "seed": 8008, "code": 2, "periods": [8.77], "variant": "before", "attempt": 1, "recall": 0.925, "spurious": 0.031, "nfiq2": 52, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 2, "periods": [8.77], "variant": "before", "attempt": 2, "recall": 0.851, "spurious": 0.017, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 2, "periods": [8.77], "variant": "after", "attempt": 0, "recall": 0.91, "spurious": 0.016, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 2, "periods": [8.77], "variant": "after", "attempt": 1, "recall": 0.925, "spurious": 0.031, "nfiq2": 52, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 2, "periods": [8.77], "variant": "after", "attempt": 2, "recall": 0.851, "spurious": 0.017, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 3, "periods": [8.06], "variant": "before", "attempt": 0, "recall": 0.907, "spurious": 0.0, "nfiq2": 53, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 3, "periods": [8.06], "variant": "before", "attempt": 1, "recall": 0.827, "spurious": 0.075, "nfiq2": 52, "accepted": false}
+{"kind": "tip_coarse", "seed": 8008, "code": 3, "periods": [8.06], "variant": "before", "attempt": 2, "recall": 0.933, "spurious": 0.054, "nfiq2": 48, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 3, "periods": [8.06], "variant": "after", "attempt": 0, "recall": 0.853, "spurious": 0.015, "nfiq2": 53, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 3, "periods": [8.06], "variant": "after", "attempt": 1, "recall": 0.827, "spurious": 0.075, "nfiq2": 52, "accepted": false}
+{"kind": "tip_coarse", "seed": 8008, "code": 3, "periods": [8.06], "variant": "after", "attempt": 2, "recall": 0.933, "spurious": 0.054, "nfiq2": 48, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 5, "periods": [8.59], "variant": "before", "attempt": 0, "recall": 0.957, "spurious": 0.022, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 5, "periods": [8.59], "variant": "before", "attempt": 1, "recall": 0.978, "spurious": 0.0, "nfiq2": 62, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 5, "periods": [8.59], "variant": "before", "attempt": 2, "recall": 1.0, "spurious": 0.021, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 5, "periods": [8.59], "variant": "after", "attempt": 0, "recall": 0.957, "spurious": 0.022, "nfiq2": 59, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 5, "periods": [8.59], "variant": "after", "attempt": 1, "recall": 0.978, "spurious": 0.0, "nfiq2": 62, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 5, "periods": [8.59], "variant": "after", "attempt": 2, "recall": 1.0, "spurious": 0.021, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 6, "periods": [8.19], "variant": "before", "attempt": 0, "recall": 0.941, "spurious": 0.059, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 6, "periods": [8.19], "variant": "before", "attempt": 1, "recall": 0.941, "spurious": 0.04, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 6, "periods": [8.19], "variant": "before", "attempt": 2, "recall": 0.902, "spurious": 0.0, "nfiq2": 51, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 6, "periods": [8.19], "variant": "after", "attempt": 0, "recall": 0.961, "spurious": 0.058, "nfiq2": 62, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 6, "periods": [8.19], "variant": "after", "attempt": 1, "recall": 0.941, "spurious": 0.04, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 6, "periods": [8.19], "variant": "after", "attempt": 2, "recall": 0.902, "spurious": 0.0, "nfiq2": 51, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 7, "periods": [8.18], "variant": "before", "attempt": 0, "recall": 0.979, "spurious": 0.06, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 7, "periods": [8.18], "variant": "before", "attempt": 1, "recall": 0.875, "spurious": 0.125, "nfiq2": 61, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 7, "periods": [8.18], "variant": "before", "attempt": 2, "recall": 0.938, "spurious": 0.022, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 7, "periods": [8.18], "variant": "after", "attempt": 0, "recall": 1.0, "spurious": 0.0, "nfiq2": 60, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 7, "periods": [8.18], "variant": "after", "attempt": 1, "recall": 0.875, "spurious": 0.125, "nfiq2": 61, "accepted": true}
+{"kind": "tip_coarse", "seed": 8008, "code": 7, "periods": [8.18], "variant": "after", "attempt": 2, "recall": 0.938, "spurious": 0.022, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 1, "periods": [10.2], "variant": "before", "attempt": 0, "recall": 0.909, "spurious": 0.111, "nfiq2": 54, "accepted": false}
+{"kind": "tip_coarse", "seed": 8015, "code": 1, "periods": [10.2], "variant": "before", "attempt": 1, "recall": 0.909, "spurious": 0.048, "nfiq2": 59, "accepted": false}
+{"kind": "tip_coarse", "seed": 8015, "code": 1, "periods": [10.2], "variant": "before", "attempt": 2, "recall": 0.909, "spurious": 0.091, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 1, "periods": [10.2], "variant": "after", "attempt": 0, "recall": 0.977, "spurious": 0.085, "nfiq2": 52, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 1, "periods": [10.2], "variant": "after", "attempt": 1, "recall": 0.909, "spurious": 0.048, "nfiq2": 59, "accepted": false}
+{"kind": "tip_coarse", "seed": 8015, "code": 1, "periods": [10.2], "variant": "after", "attempt": 2, "recall": 0.909, "spurious": 0.091, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 2, "periods": [9.42], "variant": "before", "attempt": 0, "recall": 0.921, "spurious": 0.0, "nfiq2": 53, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 2, "periods": [9.42], "variant": "before", "attempt": 1, "recall": 0.921, "spurious": 0.0, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 2, "periods": [9.42], "variant": "before", "attempt": 2, "recall": 0.921, "spurious": 0.0, "nfiq2": 59, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 2, "periods": [9.42], "variant": "after", "attempt": 0, "recall": 0.895, "spurious": 0.029, "nfiq2": 61, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 2, "periods": [9.42], "variant": "after", "attempt": 1, "recall": 0.921, "spurious": 0.0, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 2, "periods": [9.42], "variant": "after", "attempt": 2, "recall": 0.921, "spurious": 0.0, "nfiq2": 59, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 3, "periods": [9.01], "variant": "before", "attempt": 0, "recall": 0.94, "spurious": 0.041, "nfiq2": 59, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 3, "periods": [9.01], "variant": "before", "attempt": 1, "recall": 0.96, "spurious": 0.0, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 3, "periods": [9.01], "variant": "before", "attempt": 2, "recall": 0.94, "spurious": 0.0, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 3, "periods": [9.01], "variant": "after", "attempt": 0, "recall": 0.96, "spurious": 0.0, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 3, "periods": [9.01], "variant": "after", "attempt": 1, "recall": 0.96, "spurious": 0.0, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 3, "periods": [9.01], "variant": "after", "attempt": 2, "recall": 0.94, "spurious": 0.0, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 4, "periods": [8.72], "variant": "before", "attempt": 0, "recall": 0.957, "spurious": 0.0, "nfiq2": 62, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 4, "periods": [8.72], "variant": "before", "attempt": 1, "recall": 0.979, "spurious": 0.0, "nfiq2": 60, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 4, "periods": [8.72], "variant": "before", "attempt": 2, "recall": 0.936, "spurious": 0.022, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 4, "periods": [8.72], "variant": "after", "attempt": 0, "recall": 0.936, "spurious": 0.0, "nfiq2": 62, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 4, "periods": [8.72], "variant": "after", "attempt": 1, "recall": 0.979, "spurious": 0.0, "nfiq2": 60, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 4, "periods": [8.72], "variant": "after", "attempt": 2, "recall": 0.936, "spurious": 0.022, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 5, "periods": [9.2], "variant": "before", "attempt": 0, "recall": 0.897, "spurious": 0.0, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 5, "periods": [9.2], "variant": "before", "attempt": 1, "recall": 1.0, "spurious": 0.0, "nfiq2": 49, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 5, "periods": [9.2], "variant": "before", "attempt": 2, "recall": 1.0, "spurious": 0.0, "nfiq2": 47, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 5, "periods": [9.2], "variant": "after", "attempt": 0, "recall": 0.923, "spurious": 0.027, "nfiq2": 50, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 5, "periods": [9.2], "variant": "after", "attempt": 1, "recall": 1.0, "spurious": 0.0, "nfiq2": 49, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 5, "periods": [9.2], "variant": "after", "attempt": 2, "recall": 1.0, "spurious": 0.0, "nfiq2": 47, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 6, "periods": [10.68], "variant": "before", "attempt": 0, "recall": 0.833, "spurious": 0.028, "nfiq2": 59, "accepted": false}
+{"kind": "tip_coarse", "seed": 8015, "code": 6, "periods": [10.68], "variant": "before", "attempt": 1, "recall": 0.929, "spurious": 0.0, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 6, "periods": [10.68], "variant": "before", "attempt": 2, "recall": 0.905, "spurious": 0.0, "nfiq2": 51, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 6, "periods": [10.68], "variant": "after", "attempt": 0, "recall": 0.929, "spurious": 0.0, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 6, "periods": [10.68], "variant": "after", "attempt": 1, "recall": 0.929, "spurious": 0.0, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 6, "periods": [10.68], "variant": "after", "attempt": 2, "recall": 0.905, "spurious": 0.0, "nfiq2": 51, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 7, "periods": [9.74], "variant": "before", "attempt": 0, "recall": 0.955, "spurious": 0.067, "nfiq2": 62, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 7, "periods": [9.74], "variant": "before", "attempt": 1, "recall": 1.0, "spurious": 0.022, "nfiq2": 52, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 7, "periods": [9.74], "variant": "before", "attempt": 2, "recall": 1.0, "spurious": 0.043, "nfiq2": 50, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 7, "periods": [9.74], "variant": "after", "attempt": 0, "recall": 0.977, "spurious": 0.0, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 7, "periods": [9.74], "variant": "after", "attempt": 1, "recall": 1.0, "spurious": 0.022, "nfiq2": 52, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 7, "periods": [9.74], "variant": "after", "attempt": 2, "recall": 1.0, "spurious": 0.043, "nfiq2": 50, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 8, "periods": [9.28], "variant": "before", "attempt": 0, "recall": 0.864, "spurious": 0.0, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 8, "periods": [9.28], "variant": "before", "attempt": 1, "recall": 0.886, "spurious": 0.049, "nfiq2": 64, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 8, "periods": [9.28], "variant": "before", "attempt": 2, "recall": 0.864, "spurious": 0.026, "nfiq2": 63, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 8, "periods": [9.28], "variant": "after", "attempt": 0, "recall": 0.864, "spurious": 0.073, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 8, "periods": [9.28], "variant": "after", "attempt": 1, "recall": 0.886, "spurious": 0.049, "nfiq2": 64, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 8, "periods": [9.28], "variant": "after", "attempt": 2, "recall": 0.864, "spurious": 0.026, "nfiq2": 63, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 9, "periods": [9.05], "variant": "before", "attempt": 0, "recall": 0.9, "spurious": 0.027, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 9, "periods": [9.05], "variant": "before", "attempt": 1, "recall": 0.85, "spurious": 0.029, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 9, "periods": [9.05], "variant": "before", "attempt": 2, "recall": 0.85, "spurious": 0.0, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 9, "periods": [9.05], "variant": "after", "attempt": 0, "recall": 0.875, "spurious": 0.028, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 9, "periods": [9.05], "variant": "after", "attempt": 1, "recall": 0.85, "spurious": 0.029, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 9, "periods": [9.05], "variant": "after", "attempt": 2, "recall": 0.85, "spurious": 0.0, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 10, "periods": [9.01], "variant": "before", "attempt": 0, "recall": 0.911, "spurious": 0.0, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 10, "periods": [9.01], "variant": "before", "attempt": 1, "recall": 0.956, "spurious": 0.0, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 10, "periods": [9.01], "variant": "before", "attempt": 2, "recall": 0.889, "spurious": 0.048, "nfiq2": 59, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 10, "periods": [9.01], "variant": "after", "attempt": 0, "recall": 0.956, "spurious": 0.044, "nfiq2": 59, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 10, "periods": [9.01], "variant": "after", "attempt": 1, "recall": 0.956, "spurious": 0.0, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8015, "code": 10, "periods": [9.01], "variant": "after", "attempt": 2, "recall": 0.889, "spurious": 0.048, "nfiq2": 59, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 1, "periods": [9.22], "variant": "before", "attempt": 0, "recall": 0.96, "spurious": 0.0, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 1, "periods": [9.22], "variant": "before", "attempt": 1, "recall": 0.92, "spurious": 0.0, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 1, "periods": [9.22], "variant": "before", "attempt": 2, "recall": 0.9, "spurious": 0.022, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 1, "periods": [9.22], "variant": "after", "attempt": 0, "recall": 0.9, "spurious": 0.022, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 1, "periods": [9.22], "variant": "after", "attempt": 1, "recall": 0.92, "spurious": 0.0, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 1, "periods": [9.22], "variant": "after", "attempt": 2, "recall": 0.9, "spurious": 0.022, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 2, "periods": [8.94], "variant": "before", "attempt": 0, "recall": 0.884, "spurious": 0.0, "nfiq2": 61, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 2, "periods": [8.94], "variant": "before", "attempt": 1, "recall": 0.957, "spurious": 0.029, "nfiq2": 60, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 2, "periods": [8.94], "variant": "before", "attempt": 2, "recall": 0.899, "spurious": 0.031, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 2, "periods": [8.94], "variant": "after", "attempt": 0, "recall": 0.971, "spurious": 0.029, "nfiq2": 61, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 2, "periods": [8.94], "variant": "after", "attempt": 1, "recall": 0.957, "spurious": 0.029, "nfiq2": 60, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 2, "periods": [8.94], "variant": "after", "attempt": 2, "recall": 0.899, "spurious": 0.031, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 3, "periods": [9.07], "variant": "before", "attempt": 0, "recall": 0.923, "spurious": 0.077, "nfiq2": 51, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 3, "periods": [9.07], "variant": "before", "attempt": 1, "recall": 0.949, "spurious": 0.0, "nfiq2": 62, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 3, "periods": [9.07], "variant": "before", "attempt": 2, "recall": 0.923, "spurious": 0.053, "nfiq2": 53, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 3, "periods": [9.07], "variant": "after", "attempt": 0, "recall": 1.0, "spurious": 0.093, "nfiq2": 62, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 3, "periods": [9.07], "variant": "after", "attempt": 1, "recall": 0.949, "spurious": 0.0, "nfiq2": 62, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 3, "periods": [9.07], "variant": "after", "attempt": 2, "recall": 0.923, "spurious": 0.053, "nfiq2": 53, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 4, "periods": [8.71], "variant": "before", "attempt": 0, "recall": 0.909, "spurious": 0.048, "nfiq2": 50, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 4, "periods": [8.71], "variant": "before", "attempt": 1, "recall": 0.955, "spurious": 0.045, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 4, "periods": [8.71], "variant": "before", "attempt": 2, "recall": 1.0, "spurious": 0.0, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 4, "periods": [8.71], "variant": "after", "attempt": 0, "recall": 0.955, "spurious": 0.045, "nfiq2": 53, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 4, "periods": [8.71], "variant": "after", "attempt": 1, "recall": 0.955, "spurious": 0.045, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 4, "periods": [8.71], "variant": "after", "attempt": 2, "recall": 1.0, "spurious": 0.0, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 5, "periods": [9.16], "variant": "before", "attempt": 0, "recall": 0.946, "spurious": 0.079, "nfiq2": 59, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 5, "periods": [9.16], "variant": "before", "attempt": 1, "recall": 0.946, "spurious": 0.028, "nfiq2": 59, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 5, "periods": [9.16], "variant": "before", "attempt": 2, "recall": 0.946, "spurious": 0.0, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 5, "periods": [9.16], "variant": "after", "attempt": 0, "recall": 0.946, "spurious": 0.028, "nfiq2": 60, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 5, "periods": [9.16], "variant": "after", "attempt": 1, "recall": 0.946, "spurious": 0.028, "nfiq2": 59, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 5, "periods": [9.16], "variant": "after", "attempt": 2, "recall": 0.946, "spurious": 0.0, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 6, "periods": [9.24], "variant": "before", "attempt": 0, "recall": 0.833, "spurious": 0.118, "nfiq2": 57, "accepted": false}
+{"kind": "tip_coarse", "seed": 8022, "code": 6, "periods": [9.24], "variant": "before", "attempt": 1, "recall": 0.944, "spurious": 0.0, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 6, "periods": [9.24], "variant": "before", "attempt": 2, "recall": 0.889, "spurious": 0.059, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 6, "periods": [9.24], "variant": "after", "attempt": 0, "recall": 0.861, "spurious": 0.061, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 6, "periods": [9.24], "variant": "after", "attempt": 1, "recall": 0.944, "spurious": 0.0, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 6, "periods": [9.24], "variant": "after", "attempt": 2, "recall": 0.889, "spurious": 0.059, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 7, "periods": [9.1], "variant": "before", "attempt": 0, "recall": 0.889, "spurious": 0.0, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 7, "periods": [9.1], "variant": "before", "attempt": 1, "recall": 0.889, "spurious": 0.0, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 7, "periods": [9.1], "variant": "before", "attempt": 2, "recall": 0.889, "spurious": 0.0, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 7, "periods": [9.1], "variant": "after", "attempt": 0, "recall": 0.867, "spurious": 0.0, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 7, "periods": [9.1], "variant": "after", "attempt": 1, "recall": 0.889, "spurious": 0.0, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 7, "periods": [9.1], "variant": "after", "attempt": 2, "recall": 0.889, "spurious": 0.0, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 8, "periods": [8.42], "variant": "before", "attempt": 0, "recall": 0.919, "spurious": 0.017, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 8, "periods": [8.42], "variant": "before", "attempt": 1, "recall": 0.935, "spurious": 0.094, "nfiq2": 60, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 8, "periods": [8.42], "variant": "before", "attempt": 2, "recall": 0.919, "spurious": 0.066, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 8, "periods": [8.42], "variant": "after", "attempt": 0, "recall": 0.935, "spurious": 0.017, "nfiq2": 52, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 8, "periods": [8.42], "variant": "after", "attempt": 1, "recall": 0.935, "spurious": 0.094, "nfiq2": 60, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 8, "periods": [8.42], "variant": "after", "attempt": 2, "recall": 0.919, "spurious": 0.066, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 9, "periods": [9.17], "variant": "before", "attempt": 0, "recall": 0.974, "spurious": 0.075, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 9, "periods": [9.17], "variant": "before", "attempt": 1, "recall": 0.947, "spurious": 0.0, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 9, "periods": [9.17], "variant": "before", "attempt": 2, "recall": 0.921, "spurious": 0.028, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 9, "periods": [9.17], "variant": "after", "attempt": 0, "recall": 0.895, "spurious": 0.105, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 9, "periods": [9.17], "variant": "after", "attempt": 1, "recall": 0.947, "spurious": 0.0, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 9, "periods": [9.17], "variant": "after", "attempt": 2, "recall": 0.921, "spurious": 0.028, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 10, "periods": [9.14], "variant": "before", "attempt": 0, "recall": 1.0, "spurious": 0.027, "nfiq2": 64, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 10, "periods": [9.14], "variant": "before", "attempt": 1, "recall": 1.0, "spurious": 0.053, "nfiq2": 65, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 10, "periods": [9.14], "variant": "before", "attempt": 2, "recall": 0.944, "spurious": 0.0, "nfiq2": 64, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 10, "periods": [9.14], "variant": "after", "attempt": 0, "recall": 1.0, "spurious": 0.027, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 10, "periods": [9.14], "variant": "after", "attempt": 1, "recall": 1.0, "spurious": 0.053, "nfiq2": 65, "accepted": true}
+{"kind": "tip_coarse", "seed": 8022, "code": 10, "periods": [9.14], "variant": "after", "attempt": 2, "recall": 0.944, "spurious": 0.0, "nfiq2": 64, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 1, "periods": [8.03], "variant": "before", "attempt": 0, "recall": 0.899, "spurious": 0.088, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 1, "periods": [8.03], "variant": "before", "attempt": 1, "recall": 0.884, "spurious": 0.062, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 1, "periods": [8.03], "variant": "before", "attempt": 2, "recall": 0.957, "spurious": 0.057, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 1, "periods": [8.03], "variant": "after", "attempt": 0, "recall": 0.971, "spurious": 0.056, "nfiq2": 52, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 1, "periods": [8.03], "variant": "after", "attempt": 1, "recall": 0.884, "spurious": 0.062, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 1, "periods": [8.03], "variant": "after", "attempt": 2, "recall": 0.957, "spurious": 0.057, "nfiq2": 57, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 2, "periods": [9.21], "variant": "before", "attempt": 0, "recall": 1.0, "spurious": 0.029, "nfiq2": 55, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 2, "periods": [9.21], "variant": "before", "attempt": 1, "recall": 0.912, "spurious": 0.046, "nfiq2": 61, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 2, "periods": [9.21], "variant": "before", "attempt": 2, "recall": 0.956, "spurious": 0.03, "nfiq2": 53, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 2, "periods": [9.21], "variant": "after", "attempt": 0, "recall": 1.0, "spurious": 0.056, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 2, "periods": [9.21], "variant": "after", "attempt": 1, "recall": 0.912, "spurious": 0.046, "nfiq2": 61, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 2, "periods": [9.21], "variant": "after", "attempt": 2, "recall": 0.956, "spurious": 0.03, "nfiq2": 53, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 6, "periods": [8.57], "variant": "before", "attempt": 0, "recall": 0.891, "spurious": 0.089, "nfiq2": 59, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 6, "periods": [8.57], "variant": "before", "attempt": 1, "recall": 0.87, "spurious": 0.0, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 6, "periods": [8.57], "variant": "before", "attempt": 2, "recall": 0.913, "spurious": 0.045, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 6, "periods": [8.57], "variant": "after", "attempt": 0, "recall": 0.891, "spurious": 0.109, "nfiq2": 56, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 6, "periods": [8.57], "variant": "after", "attempt": 1, "recall": 0.87, "spurious": 0.0, "nfiq2": 58, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 6, "periods": [8.57], "variant": "after", "attempt": 2, "recall": 0.913, "spurious": 0.045, "nfiq2": 54, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 7, "periods": [8.37], "variant": "before", "attempt": 0, "recall": 0.898, "spurious": 0.064, "nfiq2": 59, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 7, "periods": [8.37], "variant": "before", "attempt": 1, "recall": 0.878, "spurious": 0.065, "nfiq2": 59, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 7, "periods": [8.37], "variant": "before", "attempt": 2, "recall": 0.98, "spurious": 0.04, "nfiq2": 61, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 7, "periods": [8.37], "variant": "after", "attempt": 0, "recall": 0.918, "spurious": 0.062, "nfiq2": 59, "accepted": false}
+{"kind": "tip_coarse", "seed": 8029, "code": 7, "periods": [8.37], "variant": "after", "attempt": 1, "recall": 0.878, "spurious": 0.065, "nfiq2": 59, "accepted": true}
+{"kind": "tip_coarse", "seed": 8029, "code": 7, "periods": [8.37], "variant": "after", "attempt": 2, "recall": 0.98, "spurious": 0.04, "nfiq2": 61, "accepted": true}
+{"kind": "slap", "seed": 8000, "code": 13, "periods": [8.5, 7.48, 7.26, 7.94], "variant": "before", "attempt": 0, "recall": 0.815, "spurious": 0.12, "nfiq2": 61, "accepted": false}
+{"kind": "slap", "seed": 8000, "code": 13, "periods": [8.5, 7.48, 7.26, 7.94], "variant": "before", "attempt": 1, "recall": 0.895, "spurious": 0.04, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8000, "code": 13, "periods": [8.5, 7.48, 7.26, 7.94], "variant": "before", "attempt": 2, "recall": 0.901, "spurious": 0.099, "nfiq2": 64, "accepted": true}
+{"kind": "slap", "seed": 8000, "code": 13, "periods": [8.5, 7.48, 7.26, 7.94], "variant": "after", "attempt": 0, "recall": 0.901, "spurious": 0.082, "nfiq2": 55, "accepted": true}
+{"kind": "slap", "seed": 8000, "code": 13, "periods": [8.5, 7.48, 7.26, 7.94], "variant": "after", "attempt": 1, "recall": 0.926, "spurious": 0.032, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8000, "code": 13, "periods": [8.5, 7.48, 7.26, 7.94], "variant": "after", "attempt": 2, "recall": 0.938, "spurious": 0.084, "nfiq2": 63, "accepted": true}
+{"kind": "slap", "seed": 8000, "code": 14, "periods": [8.06, 8.03, 7.4, 7.55], "variant": "before", "attempt": 0, "recall": 0.873, "spurious": 0.081, "nfiq2": 62, "accepted": true}
+{"kind": "slap", "seed": 8000, "code": 14, "periods": [8.06, 8.03, 7.4, 7.55], "variant": "before", "attempt": 1, "recall": 0.856, "spurious": 0.094, "nfiq2": 60, "accepted": true}
+{"kind": "slap", "seed": 8000, "code": 14, "periods": [8.06, 8.03, 7.4, 7.55], "variant": "before", "attempt": 2, "recall": 0.89, "spurious": 0.053, "nfiq2": 55, "accepted": true}
+{"kind": "slap", "seed": 8000, "code": 14, "periods": [8.06, 8.03, 7.4, 7.55], "variant": "after", "attempt": 0, "recall": 0.878, "spurious": 0.054, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8000, "code": 14, "periods": [8.06, 8.03, 7.4, 7.55], "variant": "after", "attempt": 1, "recall": 0.862, "spurious": 0.077, "nfiq2": 60, "accepted": true}
+{"kind": "slap", "seed": 8000, "code": 14, "periods": [8.06, 8.03, 7.4, 7.55], "variant": "after", "attempt": 2, "recall": 0.928, "spurious": 0.067, "nfiq2": 55, "accepted": true}
+{"kind": "slap", "seed": 8002, "code": 13, "periods": [7.61, 6.92, 6.51, 6.65], "variant": "before", "attempt": 0, "recall": 0.893, "spurious": 0.107, "nfiq2": 55, "accepted": true}
+{"kind": "slap", "seed": 8002, "code": 13, "periods": [7.61, 6.92, 6.51, 6.65], "variant": "before", "attempt": 1, "recall": 0.858, "spurious": 0.121, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8002, "code": 13, "periods": [7.61, 6.92, 6.51, 6.65], "variant": "before", "attempt": 2, "recall": 0.846, "spurious": 0.117, "nfiq2": 52, "accepted": false}
+{"kind": "slap", "seed": 8002, "code": 13, "periods": [7.61, 6.92, 6.51, 6.65], "variant": "after", "attempt": 0, "recall": 0.899, "spurious": 0.056, "nfiq2": 47, "accepted": true}
+{"kind": "slap", "seed": 8002, "code": 13, "periods": [7.61, 6.92, 6.51, 6.65], "variant": "after", "attempt": 1, "recall": 0.911, "spurious": 0.083, "nfiq2": 51, "accepted": true}
+{"kind": "slap", "seed": 8002, "code": 13, "periods": [7.61, 6.92, 6.51, 6.65], "variant": "after", "attempt": 2, "recall": 0.893, "spurious": 0.112, "nfiq2": 51, "accepted": true}
+{"kind": "slap", "seed": 8002, "code": 14, "periods": [7.14, 7.45, 7.09, 6.54], "variant": "before", "attempt": 0, "recall": 0.904, "spurious": 0.146, "nfiq2": 49, "accepted": true}
+{"kind": "slap", "seed": 8002, "code": 14, "periods": [7.14, 7.45, 7.09, 6.54], "variant": "before", "attempt": 1, "recall": 0.875, "spurious": 0.185, "nfiq2": 51, "accepted": false}
+{"kind": "slap", "seed": 8002, "code": 14, "periods": [7.14, 7.45, 7.09, 6.54], "variant": "before", "attempt": 2, "recall": 0.882, "spurious": 0.184, "nfiq2": 49, "accepted": false}
+{"kind": "slap", "seed": 8002, "code": 14, "periods": [7.14, 7.45, 7.09, 6.54], "variant": "after", "attempt": 0, "recall": 0.926, "spurious": 0.08, "nfiq2": 43, "accepted": true}
+{"kind": "slap", "seed": 8002, "code": 14, "periods": [7.14, 7.45, 7.09, 6.54], "variant": "after", "attempt": 1, "recall": 0.926, "spurious": 0.143, "nfiq2": 51, "accepted": true}
+{"kind": "slap", "seed": 8002, "code": 14, "periods": [7.14, 7.45, 7.09, 6.54], "variant": "after", "attempt": 2, "recall": 0.912, "spurious": 0.108, "nfiq2": 50, "accepted": true}
+{"kind": "slap", "seed": 8002, "code": 15, "periods": [7.58, 8.09], "variant": "before", "attempt": 0, "recall": 0.967, "spurious": 0.063, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8002, "code": 15, "periods": [7.58, 8.09], "variant": "before", "attempt": 1, "recall": 0.902, "spurious": 0.098, "nfiq2": 49, "accepted": true}
+{"kind": "slap", "seed": 8002, "code": 15, "periods": [7.58, 8.09], "variant": "before", "attempt": 2, "recall": 0.88, "spurious": 0.069, "nfiq2": 52, "accepted": true}
+{"kind": "slap", "seed": 8002, "code": 15, "periods": [7.58, 8.09], "variant": "after", "attempt": 0, "recall": 0.924, "spurious": 0.034, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8002, "code": 15, "periods": [7.58, 8.09], "variant": "after", "attempt": 1, "recall": 0.967, "spurious": 0.022, "nfiq2": 49, "accepted": true}
+{"kind": "slap", "seed": 8002, "code": 15, "periods": [7.58, 8.09], "variant": "after", "attempt": 2, "recall": 0.891, "spurious": 0.047, "nfiq2": 52, "accepted": true}
+{"kind": "slap", "seed": 8005, "code": 13, "periods": [8.18, 7.57, 7.41, 7.79], "variant": "before", "attempt": 0, "recall": 0.825, "spurious": 0.106, "nfiq2": 59, "accepted": false}
+{"kind": "slap", "seed": 8005, "code": 13, "periods": [8.18, 7.57, 7.41, 7.79], "variant": "before", "attempt": 1, "recall": 0.838, "spurious": 0.134, "nfiq2": 63, "accepted": false}
+{"kind": "slap", "seed": 8005, "code": 13, "periods": [8.18, 7.57, 7.41, 7.79], "variant": "before", "attempt": 2, "recall": 0.857, "spurious": 0.12, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8005, "code": 13, "periods": [8.18, 7.57, 7.41, 7.79], "variant": "after", "attempt": 0, "recall": 0.831, "spurious": 0.092, "nfiq2": 61, "accepted": false}
+{"kind": "slap", "seed": 8005, "code": 13, "periods": [8.18, 7.57, 7.41, 7.79], "variant": "after", "attempt": 1, "recall": 0.844, "spurious": 0.071, "nfiq2": 61, "accepted": false}
+{"kind": "slap", "seed": 8005, "code": 13, "periods": [8.18, 7.57, 7.41, 7.79], "variant": "after", "attempt": 2, "recall": 0.909, "spurious": 0.103, "nfiq2": 60, "accepted": true}
+{"kind": "slap", "seed": 8005, "code": 14, "periods": [8.23, 7.86, 7.42, 7.53], "variant": "before", "attempt": 0, "recall": 0.902, "spurious": 0.083, "nfiq2": 53, "accepted": true}
+{"kind": "slap", "seed": 8005, "code": 14, "periods": [8.23, 7.86, 7.42, 7.53], "variant": "before", "attempt": 1, "recall": 0.88, "spurious": 0.085, "nfiq2": 52, "accepted": true}
+{"kind": "slap", "seed": 8005, "code": 14, "periods": [8.23, 7.86, 7.42, 7.53], "variant": "before", "attempt": 2, "recall": 0.946, "spurious": 0.098, "nfiq2": 54, "accepted": true}
+{"kind": "slap", "seed": 8005, "code": 14, "periods": [8.23, 7.86, 7.42, 7.53], "variant": "after", "attempt": 0, "recall": 0.913, "spurious": 0.04, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8005, "code": 14, "periods": [8.23, 7.86, 7.42, 7.53], "variant": "after", "attempt": 1, "recall": 0.891, "spurious": 0.047, "nfiq2": 52, "accepted": true}
+{"kind": "slap", "seed": 8005, "code": 14, "periods": [8.23, 7.86, 7.42, 7.53], "variant": "after", "attempt": 2, "recall": 0.946, "spurious": 0.079, "nfiq2": 54, "accepted": true}
+{"kind": "slap", "seed": 8005, "code": 15, "periods": [7.65, 7.99], "variant": "before", "attempt": 0, "recall": 0.856, "spurious": 0.085, "nfiq2": 64, "accepted": true}
+{"kind": "slap", "seed": 8005, "code": 15, "periods": [7.65, 7.99], "variant": "before", "attempt": 1, "recall": 0.904, "spurious": 0.05, "nfiq2": 63, "accepted": true}
+{"kind": "slap", "seed": 8005, "code": 15, "periods": [7.65, 7.99], "variant": "before", "attempt": 2, "recall": 0.848, "spurious": 0.086, "nfiq2": 65, "accepted": false}
+{"kind": "slap", "seed": 8005, "code": 15, "periods": [7.65, 7.99], "variant": "after", "attempt": 0, "recall": 0.824, "spurious": 0.055, "nfiq2": 60, "accepted": false}
+{"kind": "slap", "seed": 8005, "code": 15, "periods": [7.65, 7.99], "variant": "after", "attempt": 1, "recall": 0.912, "spurious": 0.034, "nfiq2": 63, "accepted": true}
+{"kind": "slap", "seed": 8005, "code": 15, "periods": [7.65, 7.99], "variant": "after", "attempt": 2, "recall": 0.856, "spurious": 0.061, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8006, "code": 13, "periods": [8.63, 8.6, 7.73, 7.92], "variant": "before", "attempt": 0, "recall": 0.834, "spurious": 0.093, "nfiq2": 44, "accepted": false}
+{"kind": "slap", "seed": 8006, "code": 13, "periods": [8.63, 8.6, 7.73, 7.92], "variant": "before", "attempt": 1, "recall": 0.84, "spurious": 0.075, "nfiq2": 52, "accepted": false}
+{"kind": "slap", "seed": 8006, "code": 13, "periods": [8.63, 8.6, 7.73, 7.92], "variant": "before", "attempt": 2, "recall": 0.897, "spurious": 0.071, "nfiq2": 54, "accepted": true}
+{"kind": "slap", "seed": 8006, "code": 13, "periods": [8.63, 8.6, 7.73, 7.92], "variant": "after", "attempt": 0, "recall": 0.811, "spurious": 0.06, "nfiq2": 43, "accepted": false}
+{"kind": "slap", "seed": 8006, "code": 13, "periods": [8.63, 8.6, 7.73, 7.92], "variant": "after", "attempt": 1, "recall": 0.846, "spurious": 0.069, "nfiq2": 49, "accepted": false}
+{"kind": "slap", "seed": 8006, "code": 13, "periods": [8.63, 8.6, 7.73, 7.92], "variant": "after", "attempt": 2, "recall": 0.897, "spurious": 0.071, "nfiq2": 54, "accepted": true}
+{"kind": "slap", "seed": 8006, "code": 14, "periods": [8.84, 7.74, 7.79, 8.19], "variant": "before", "attempt": 0, "recall": 0.903, "spurious": 0.044, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8006, "code": 14, "periods": [8.84, 7.74, 7.79, 8.19], "variant": "before", "attempt": 1, "recall": 0.869, "spurious": 0.031, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8006, "code": 14, "periods": [8.84, 7.74, 7.79, 8.19], "variant": "before", "attempt": 2, "recall": 0.897, "spurious": 0.044, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8006, "code": 14, "periods": [8.84, 7.74, 7.79, 8.19], "variant": "after", "attempt": 0, "recall": 0.903, "spurious": 0.058, "nfiq2": 59, "accepted": true}
+{"kind": "slap", "seed": 8006, "code": 14, "periods": [8.84, 7.74, 7.79, 8.19], "variant": "after", "attempt": 1, "recall": 0.876, "spurious": 0.038, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8006, "code": 14, "periods": [8.84, 7.74, 7.79, 8.19], "variant": "after", "attempt": 2, "recall": 0.903, "spurious": 0.044, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8008, "code": 13, "periods": [8.77, 8.06, 7.78, 8.59], "variant": "before", "attempt": 0, "recall": 0.936, "spurious": 0.043, "nfiq2": 60, "accepted": true}
+{"kind": "slap", "seed": 8008, "code": 13, "periods": [8.77, 8.06, 7.78, 8.59], "variant": "before", "attempt": 1, "recall": 0.887, "spurious": 0.06, "nfiq2": 60, "accepted": true}
+{"kind": "slap", "seed": 8008, "code": 13, "periods": [8.77, 8.06, 7.78, 8.59], "variant": "before", "attempt": 2, "recall": 0.858, "spurious": 0.09, "nfiq2": 52, "accepted": true}
+{"kind": "slap", "seed": 8008, "code": 13, "periods": [8.77, 8.06, 7.78, 8.59], "variant": "after", "attempt": 0, "recall": 0.936, "spurious": 0.083, "nfiq2": 53, "accepted": true}
+{"kind": "slap", "seed": 8008, "code": 13, "periods": [8.77, 8.06, 7.78, 8.59], "variant": "after", "attempt": 1, "recall": 0.879, "spurious": 0.061, "nfiq2": 61, "accepted": true}
+{"kind": "slap", "seed": 8008, "code": 13, "periods": [8.77, 8.06, 7.78, 8.59], "variant": "after", "attempt": 2, "recall": 0.858, "spurious": 0.09, "nfiq2": 52, "accepted": true}
+{"kind": "slap", "seed": 8008, "code": 14, "periods": [8.18, 7.12, 7.42, 7.7], "variant": "before", "attempt": 0, "recall": 0.864, "spurious": 0.041, "nfiq2": 65, "accepted": true}
+{"kind": "slap", "seed": 8008, "code": 14, "periods": [8.18, 7.12, 7.42, 7.7], "variant": "before", "attempt": 1, "recall": 0.877, "spurious": 0.053, "nfiq2": 52, "accepted": true}
+{"kind": "slap", "seed": 8008, "code": 14, "periods": [8.18, 7.12, 7.42, 7.7], "variant": "before", "attempt": 2, "recall": 0.852, "spurious": 0.061, "nfiq2": 54, "accepted": true}
+{"kind": "slap", "seed": 8008, "code": 14, "periods": [8.18, 7.12, 7.42, 7.7], "variant": "after", "attempt": 0, "recall": 0.846, "spurious": 0.035, "nfiq2": 51, "accepted": false}
+{"kind": "slap", "seed": 8008, "code": 14, "periods": [8.18, 7.12, 7.42, 7.7], "variant": "after", "attempt": 1, "recall": 0.895, "spurious": 0.04, "nfiq2": 50, "accepted": true}
+{"kind": "slap", "seed": 8008, "code": 14, "periods": [8.18, 7.12, 7.42, 7.7], "variant": "after", "attempt": 2, "recall": 0.852, "spurious": 0.055, "nfiq2": 47, "accepted": true}
+{"kind": "slap", "seed": 8011, "code": 13, "periods": [9.15, 7.87, 7.69, 8.27], "variant": "before", "attempt": 0, "recall": 0.887, "spurious": 0.072, "nfiq2": 60, "accepted": true}
+{"kind": "slap", "seed": 8011, "code": 13, "periods": [9.15, 7.87, 7.69, 8.27], "variant": "before", "attempt": 1, "recall": 0.894, "spurious": 0.065, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8011, "code": 13, "periods": [9.15, 7.87, 7.69, 8.27], "variant": "before", "attempt": 2, "recall": 0.856, "spurious": 0.074, "nfiq2": 64, "accepted": true}
+{"kind": "slap", "seed": 8011, "code": 13, "periods": [9.15, 7.87, 7.69, 8.27], "variant": "after", "attempt": 0, "recall": 0.906, "spurious": 0.046, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8011, "code": 13, "periods": [9.15, 7.87, 7.69, 8.27], "variant": "after", "attempt": 1, "recall": 0.881, "spurious": 0.06, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8011, "code": 13, "periods": [9.15, 7.87, 7.69, 8.27], "variant": "after", "attempt": 2, "recall": 0.863, "spurious": 0.086, "nfiq2": 64, "accepted": true}
+{"kind": "slap", "seed": 8011, "code": 14, "periods": [9.14, 8.41, 7.63, 8.15], "variant": "before", "attempt": 0, "recall": 0.922, "spurious": 0.05, "nfiq2": 66, "accepted": true}
+{"kind": "slap", "seed": 8011, "code": 14, "periods": [9.14, 8.41, 7.63, 8.15], "variant": "before", "attempt": 1, "recall": 0.922, "spurious": 0.078, "nfiq2": 63, "accepted": true}
+{"kind": "slap", "seed": 8011, "code": 14, "periods": [9.14, 8.41, 7.63, 8.15], "variant": "before", "attempt": 2, "recall": 0.928, "spurious": 0.072, "nfiq2": 65, "accepted": true}
+{"kind": "slap", "seed": 8011, "code": 14, "periods": [9.14, 8.41, 7.63, 8.15], "variant": "after", "attempt": 0, "recall": 0.892, "spurious": 0.063, "nfiq2": 54, "accepted": true}
+{"kind": "slap", "seed": 8011, "code": 14, "periods": [9.14, 8.41, 7.63, 8.15], "variant": "after", "attempt": 1, "recall": 0.934, "spurious": 0.072, "nfiq2": 65, "accepted": true}
+{"kind": "slap", "seed": 8011, "code": 14, "periods": [9.14, 8.41, 7.63, 8.15], "variant": "after", "attempt": 2, "recall": 0.928, "spurious": 0.067, "nfiq2": 64, "accepted": true}
+{"kind": "slap", "seed": 8016, "code": 13, "periods": [7.99, 7.44, 7.19, 7.23], "variant": "before", "attempt": 0, "recall": 0.858, "spurious": 0.123, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8016, "code": 13, "periods": [7.99, 7.44, 7.19, 7.23], "variant": "before", "attempt": 1, "recall": 0.874, "spurious": 0.042, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8016, "code": 13, "periods": [7.99, 7.44, 7.19, 7.23], "variant": "before", "attempt": 2, "recall": 0.874, "spurious": 0.111, "nfiq2": 53, "accepted": true}
+{"kind": "slap", "seed": 8016, "code": 13, "periods": [7.99, 7.44, 7.19, 7.23], "variant": "after", "attempt": 0, "recall": 0.891, "spurious": 0.089, "nfiq2": 55, "accepted": true}
+{"kind": "slap", "seed": 8016, "code": 13, "periods": [7.99, 7.44, 7.19, 7.23], "variant": "after", "attempt": 1, "recall": 0.907, "spurious": 0.057, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8016, "code": 13, "periods": [7.99, 7.44, 7.19, 7.23], "variant": "after", "attempt": 2, "recall": 0.891, "spurious": 0.084, "nfiq2": 53, "accepted": true}
+{"kind": "slap", "seed": 8016, "code": 14, "periods": [8.04, 7.53, 6.98, 7.56], "variant": "before", "attempt": 0, "recall": 0.868, "spurious": 0.071, "nfiq2": 65, "accepted": true}
+{"kind": "slap", "seed": 8016, "code": 14, "periods": [8.04, 7.53, 6.98, 7.56], "variant": "before", "attempt": 1, "recall": 0.901, "spurious": 0.047, "nfiq2": 62, "accepted": true}
+{"kind": "slap", "seed": 8016, "code": 14, "periods": [8.04, 7.53, 6.98, 7.56], "variant": "before", "attempt": 2, "recall": 0.879, "spurious": 0.053, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8016, "code": 14, "periods": [8.04, 7.53, 6.98, 7.56], "variant": "after", "attempt": 0, "recall": 0.907, "spurious": 0.024, "nfiq2": 54, "accepted": true}
+{"kind": "slap", "seed": 8016, "code": 14, "periods": [8.04, 7.53, 6.98, 7.56], "variant": "after", "attempt": 1, "recall": 0.934, "spurious": 0.029, "nfiq2": 60, "accepted": true}
+{"kind": "slap", "seed": 8016, "code": 14, "periods": [8.04, 7.53, 6.98, 7.56], "variant": "after", "attempt": 2, "recall": 0.896, "spurious": 0.058, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8019, "code": 14, "periods": [8.56, 8.34, 7.84, 8.18], "variant": "before", "attempt": 0, "recall": 0.847, "spurious": 0.096, "nfiq2": 54, "accepted": false}
+{"kind": "slap", "seed": 8019, "code": 14, "periods": [8.56, 8.34, 7.84, 8.18], "variant": "before", "attempt": 1, "recall": 0.868, "spurious": 0.06, "nfiq2": 48, "accepted": true}
+{"kind": "slap", "seed": 8019, "code": 14, "periods": [8.56, 8.34, 7.84, 8.18], "variant": "before", "attempt": 2, "recall": 0.847, "spurious": 0.103, "nfiq2": 56, "accepted": false}
+{"kind": "slap", "seed": 8019, "code": 14, "periods": [8.56, 8.34, 7.84, 8.18], "variant": "after", "attempt": 0, "recall": 0.889, "spurious": 0.086, "nfiq2": 51, "accepted": true}
+{"kind": "slap", "seed": 8019, "code": 14, "periods": [8.56, 8.34, 7.84, 8.18], "variant": "after", "attempt": 1, "recall": 0.875, "spurious": 0.06, "nfiq2": 49, "accepted": true}
+{"kind": "slap", "seed": 8019, "code": 14, "periods": [8.56, 8.34, 7.84, 8.18], "variant": "after", "attempt": 2, "recall": 0.868, "spurious": 0.094, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8020, "code": 14, "periods": [9.18, 9.65, 7.99, 8.23], "variant": "before", "attempt": 0, "recall": 0.91, "spurious": 0.073, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8020, "code": 14, "periods": [9.18, 9.65, 7.99, 8.23], "variant": "before", "attempt": 1, "recall": 0.892, "spurious": 0.069, "nfiq2": 61, "accepted": true}
+{"kind": "slap", "seed": 8020, "code": 14, "periods": [9.18, 9.65, 7.99, 8.23], "variant": "before", "attempt": 2, "recall": 0.874, "spurious": 0.104, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8020, "code": 14, "periods": [9.18, 9.65, 7.99, 8.23], "variant": "after", "attempt": 0, "recall": 0.898, "spurious": 0.062, "nfiq2": 59, "accepted": true}
+{"kind": "slap", "seed": 8020, "code": 14, "periods": [9.18, 9.65, 7.99, 8.23], "variant": "after", "attempt": 1, "recall": 0.892, "spurious": 0.069, "nfiq2": 61, "accepted": true}
+{"kind": "slap", "seed": 8020, "code": 14, "periods": [9.18, 9.65, 7.99, 8.23], "variant": "after", "attempt": 2, "recall": 0.874, "spurious": 0.104, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8021, "code": 13, "periods": [8.25, 8.26, 7.62, 8.36], "variant": "before", "attempt": 0, "recall": 0.919, "spurious": 0.081, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8021, "code": 13, "periods": [8.25, 8.26, 7.62, 8.36], "variant": "before", "attempt": 1, "recall": 0.913, "spurious": 0.111, "nfiq2": 61, "accepted": true}
+{"kind": "slap", "seed": 8021, "code": 13, "periods": [8.25, 8.26, 7.62, 8.36], "variant": "before", "attempt": 2, "recall": 0.899, "spurious": 0.076, "nfiq2": 62, "accepted": true}
+{"kind": "slap", "seed": 8021, "code": 13, "periods": [8.25, 8.26, 7.62, 8.36], "variant": "after", "attempt": 0, "recall": 0.872, "spurious": 0.051, "nfiq2": 64, "accepted": true}
+{"kind": "slap", "seed": 8021, "code": 13, "periods": [8.25, 8.26, 7.62, 8.36], "variant": "after", "attempt": 1, "recall": 0.906, "spurious": 0.112, "nfiq2": 61, "accepted": true}
+{"kind": "slap", "seed": 8021, "code": 13, "periods": [8.25, 8.26, 7.62, 8.36], "variant": "after", "attempt": 2, "recall": 0.886, "spurious": 0.07, "nfiq2": 62, "accepted": true}
+{"kind": "slap", "seed": 8021, "code": 14, "periods": [8.86, 8.58, 7.95, 8.13], "variant": "before", "attempt": 0, "recall": 0.917, "spurious": 0.04, "nfiq2": 52, "accepted": true}
+{"kind": "slap", "seed": 8021, "code": 14, "periods": [8.86, 8.58, 7.95, 8.13], "variant": "before", "attempt": 1, "recall": 0.879, "spurious": 0.049, "nfiq2": 60, "accepted": true}
+{"kind": "slap", "seed": 8021, "code": 14, "periods": [8.86, 8.58, 7.95, 8.13], "variant": "before", "attempt": 2, "recall": 0.917, "spurious": 0.047, "nfiq2": 52, "accepted": true}
+{"kind": "slap", "seed": 8021, "code": 14, "periods": [8.86, 8.58, 7.95, 8.13], "variant": "after", "attempt": 0, "recall": 0.924, "spurious": 0.047, "nfiq2": 61, "accepted": true}
+{"kind": "slap", "seed": 8021, "code": 14, "periods": [8.86, 8.58, 7.95, 8.13], "variant": "after", "attempt": 1, "recall": 0.879, "spurious": 0.049, "nfiq2": 60, "accepted": true}
+{"kind": "slap", "seed": 8021, "code": 14, "periods": [8.86, 8.58, 7.95, 8.13], "variant": "after", "attempt": 2, "recall": 0.917, "spurious": 0.047, "nfiq2": 52, "accepted": true}
+{"kind": "slap", "seed": 8025, "code": 13, "periods": [7.46, 7.07, 6.69, 7.48], "variant": "before", "attempt": 0, "recall": 0.875, "spurious": 0.097, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8025, "code": 13, "periods": [7.46, 7.07, 6.69, 7.48], "variant": "before", "attempt": 1, "recall": 0.807, "spurious": 0.109, "nfiq2": 63, "accepted": false}
+{"kind": "slap", "seed": 8025, "code": 13, "periods": [7.46, 7.07, 6.69, 7.48], "variant": "before", "attempt": 2, "recall": 0.865, "spurious": 0.103, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8025, "code": 13, "periods": [7.46, 7.07, 6.69, 7.48], "variant": "after", "attempt": 0, "recall": 0.896, "spurious": 0.05, "nfiq2": 55, "accepted": true}
+{"kind": "slap", "seed": 8025, "code": 13, "periods": [7.46, 7.07, 6.69, 7.48], "variant": "after", "attempt": 1, "recall": 0.88, "spurious": 0.066, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8025, "code": 13, "periods": [7.46, 7.07, 6.69, 7.48], "variant": "after", "attempt": 2, "recall": 0.901, "spurious": 0.055, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8025, "code": 14, "periods": [7.37, 6.74, 7.1, 6.94], "variant": "before", "attempt": 0, "recall": 0.915, "spurious": 0.11, "nfiq2": 55, "accepted": true}
+{"kind": "slap", "seed": 8025, "code": 14, "periods": [7.37, 6.74, 7.1, 6.94], "variant": "before", "attempt": 1, "recall": 0.909, "spurious": 0.111, "nfiq2": 52, "accepted": true}
+{"kind": "slap", "seed": 8025, "code": 14, "periods": [7.37, 6.74, 7.1, 6.94], "variant": "before", "attempt": 2, "recall": 0.875, "spurious": 0.12, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8025, "code": 14, "periods": [7.37, 6.74, 7.1, 6.94], "variant": "after", "attempt": 0, "recall": 0.92, "spurious": 0.11, "nfiq2": 51, "accepted": true}
+{"kind": "slap", "seed": 8025, "code": 14, "periods": [7.37, 6.74, 7.1, 6.94], "variant": "after", "attempt": 1, "recall": 0.926, "spurious": 0.079, "nfiq2": 51, "accepted": true}
+{"kind": "slap", "seed": 8025, "code": 14, "periods": [7.37, 6.74, 7.1, 6.94], "variant": "after", "attempt": 2, "recall": 0.932, "spurious": 0.084, "nfiq2": 54, "accepted": true}
+{"kind": "slap", "seed": 8025, "code": 15, "periods": [7.19, 7.63], "variant": "before", "attempt": 0, "recall": 0.881, "spurious": 0.035, "nfiq2": 52, "accepted": true}
+{"kind": "slap", "seed": 8025, "code": 15, "periods": [7.19, 7.63], "variant": "before", "attempt": 1, "recall": 0.873, "spurious": 0.076, "nfiq2": 60, "accepted": true}
+{"kind": "slap", "seed": 8025, "code": 15, "periods": [7.19, 7.63], "variant": "before", "attempt": 2, "recall": 0.913, "spurious": 0.057, "nfiq2": 49, "accepted": true}
+{"kind": "slap", "seed": 8025, "code": 15, "periods": [7.19, 7.63], "variant": "after", "attempt": 0, "recall": 0.921, "spurious": 0.025, "nfiq2": 48, "accepted": true}
+{"kind": "slap", "seed": 8025, "code": 15, "periods": [7.19, 7.63], "variant": "after", "attempt": 1, "recall": 0.937, "spurious": 0.033, "nfiq2": 48, "accepted": true}
+{"kind": "slap", "seed": 8025, "code": 15, "periods": [7.19, 7.63], "variant": "after", "attempt": 2, "recall": 0.929, "spurious": 0.041, "nfiq2": 52, "accepted": true}
+{"kind": "slap", "seed": 8026, "code": 13, "periods": [8.76, 7.76, 8.42, 8.35], "variant": "before", "attempt": 0, "recall": 0.929, "spurious": 0.042, "nfiq2": 59, "accepted": true}
+{"kind": "slap", "seed": 8026, "code": 13, "periods": [8.76, 7.76, 8.42, 8.35], "variant": "before", "attempt": 1, "recall": 0.882, "spurious": 0.085, "nfiq2": 63, "accepted": true}
+{"kind": "slap", "seed": 8026, "code": 13, "periods": [8.76, 7.76, 8.42, 8.35], "variant": "before", "attempt": 2, "recall": 0.912, "spurious": 0.043, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8026, "code": 13, "periods": [8.76, 7.76, 8.42, 8.35], "variant": "after", "attempt": 0, "recall": 0.912, "spurious": 0.066, "nfiq2": 54, "accepted": true}
+{"kind": "slap", "seed": 8026, "code": 13, "periods": [8.76, 7.76, 8.42, 8.35], "variant": "after", "attempt": 1, "recall": 0.876, "spurious": 0.075, "nfiq2": 63, "accepted": true}
+{"kind": "slap", "seed": 8026, "code": 13, "periods": [8.76, 7.76, 8.42, 8.35], "variant": "after", "attempt": 2, "recall": 0.912, "spurious": 0.043, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8026, "code": 14, "periods": [8.61, 8.03, 7.48, 8.57], "variant": "before", "attempt": 0, "recall": 0.922, "spurious": 0.085, "nfiq2": 67, "accepted": true}
+{"kind": "slap", "seed": 8026, "code": 14, "periods": [8.61, 8.03, 7.48, 8.57], "variant": "before", "attempt": 1, "recall": 0.953, "spurious": 0.054, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8026, "code": 14, "periods": [8.61, 8.03, 7.48, 8.57], "variant": "before", "attempt": 2, "recall": 0.961, "spurious": 0.039, "nfiq2": 53, "accepted": true}
+{"kind": "slap", "seed": 8026, "code": 14, "periods": [8.61, 8.03, 7.48, 8.57], "variant": "after", "attempt": 0, "recall": 0.977, "spurious": 0.094, "nfiq2": 60, "accepted": true}
+{"kind": "slap", "seed": 8026, "code": 14, "periods": [8.61, 8.03, 7.48, 8.57], "variant": "after", "attempt": 1, "recall": 0.961, "spurious": 0.061, "nfiq2": 54, "accepted": true}
+{"kind": "slap", "seed": 8026, "code": 14, "periods": [8.61, 8.03, 7.48, 8.57], "variant": "after", "attempt": 2, "recall": 0.961, "spurious": 0.054, "nfiq2": 53, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 13, "periods": [8.29, 7.67, 7.27, 7.76], "variant": "before", "attempt": 0, "recall": 0.923, "spurious": 0.083, "nfiq2": 61, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 13, "periods": [8.29, 7.67, 7.27, 7.76], "variant": "before", "attempt": 1, "recall": 0.895, "spurious": 0.099, "nfiq2": 61, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 13, "periods": [8.29, 7.67, 7.27, 7.76], "variant": "before", "attempt": 2, "recall": 0.916, "spurious": 0.09, "nfiq2": 59, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 13, "periods": [8.29, 7.67, 7.27, 7.76], "variant": "after", "attempt": 0, "recall": 0.895, "spurious": 0.092, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 13, "periods": [8.29, 7.67, 7.27, 7.76], "variant": "after", "attempt": 1, "recall": 0.902, "spurious": 0.085, "nfiq2": 53, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 13, "periods": [8.29, 7.67, 7.27, 7.76], "variant": "after", "attempt": 2, "recall": 0.937, "spurious": 0.107, "nfiq2": 59, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 14, "periods": [8.07, 7.9, 8.38, 8.21], "variant": "before", "attempt": 0, "recall": 0.916, "spurious": 0.097, "nfiq2": 66, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 14, "periods": [8.07, 7.9, 8.38, 8.21], "variant": "before", "attempt": 1, "recall": 0.916, "spurious": 0.058, "nfiq2": 63, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 14, "periods": [8.07, 7.9, 8.38, 8.21], "variant": "before", "attempt": 2, "recall": 0.895, "spurious": 0.092, "nfiq2": 64, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 14, "periods": [8.07, 7.9, 8.38, 8.21], "variant": "after", "attempt": 0, "recall": 0.902, "spurious": 0.098, "nfiq2": 63, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 14, "periods": [8.07, 7.9, 8.38, 8.21], "variant": "after", "attempt": 1, "recall": 0.916, "spurious": 0.058, "nfiq2": 59, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 14, "periods": [8.07, 7.9, 8.38, 8.21], "variant": "after", "attempt": 2, "recall": 0.895, "spurious": 0.099, "nfiq2": 64, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 15, "periods": [7.84, 7.81], "variant": "before", "attempt": 0, "recall": 0.914, "spurious": 0.071, "nfiq2": 62, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 15, "periods": [7.84, 7.81], "variant": "before", "attempt": 1, "recall": 0.883, "spurious": 0.131, "nfiq2": 61, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 15, "periods": [7.84, 7.81], "variant": "before", "attempt": 2, "recall": 0.891, "spurious": 0.066, "nfiq2": 64, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 15, "periods": [7.84, 7.81], "variant": "after", "attempt": 0, "recall": 0.906, "spurious": 0.079, "nfiq2": 51, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 15, "periods": [7.84, 7.81], "variant": "after", "attempt": 1, "recall": 0.875, "spurious": 0.111, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8027, "code": 15, "periods": [7.84, 7.81], "variant": "after", "attempt": 2, "recall": 0.875, "spurious": 0.074, "nfiq2": 63, "accepted": true}
+{"kind": "slap", "seed": 8029, "code": 13, "periods": [9.21, 7.4, 6.88, 7.8], "variant": "before", "attempt": 0, "recall": 0.873, "spurious": 0.163, "nfiq2": 60, "accepted": false}
+{"kind": "slap", "seed": 8029, "code": 13, "periods": [9.21, 7.4, 6.88, 7.8], "variant": "before", "attempt": 1, "recall": 0.836, "spurious": 0.055, "nfiq2": 53, "accepted": false}
+{"kind": "slap", "seed": 8029, "code": 13, "periods": [9.21, 7.4, 6.88, 7.8], "variant": "before", "attempt": 2, "recall": 0.818, "spurious": 0.094, "nfiq2": 60, "accepted": false}
+{"kind": "slap", "seed": 8029, "code": 13, "periods": [9.21, 7.4, 6.88, 7.8], "variant": "after", "attempt": 0, "recall": 0.885, "spurious": 0.039, "nfiq2": 59, "accepted": true}
+{"kind": "slap", "seed": 8029, "code": 13, "periods": [9.21, 7.4, 6.88, 7.8], "variant": "after", "attempt": 1, "recall": 0.848, "spurious": 0.054, "nfiq2": 50, "accepted": false}
+{"kind": "slap", "seed": 8029, "code": 13, "periods": [9.21, 7.4, 6.88, 7.8], "variant": "after", "attempt": 2, "recall": 0.861, "spurious": 0.047, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8029, "code": 14, "periods": [8.37, 8.25, 7.55, 8.02], "variant": "before", "attempt": 0, "recall": 0.926, "spurious": 0.101, "nfiq2": 60, "accepted": true}
+{"kind": "slap", "seed": 8029, "code": 14, "periods": [8.37, 8.25, 7.55, 8.02], "variant": "before", "attempt": 1, "recall": 0.902, "spurious": 0.087, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8029, "code": 14, "periods": [8.37, 8.25, 7.55, 8.02], "variant": "before", "attempt": 2, "recall": 0.902, "spurious": 0.087, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8029, "code": 14, "periods": [8.37, 8.25, 7.55, 8.02], "variant": "after", "attempt": 0, "recall": 0.945, "spurious": 0.067, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8029, "code": 14, "periods": [8.37, 8.25, 7.55, 8.02], "variant": "after", "attempt": 1, "recall": 0.908, "spurious": 0.086, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8029, "code": 14, "periods": [8.37, 8.25, 7.55, 8.02], "variant": "after", "attempt": 2, "recall": 0.92, "spurious": 0.096, "nfiq2": 55, "accepted": true}
+{"kind": "slap", "seed": 8030, "code": 13, "periods": [7.94, 7.97, 8.28, 7.25], "variant": "before", "attempt": 0, "recall": 0.927, "spurious": 0.114, "nfiq2": 55, "accepted": true}
+{"kind": "slap", "seed": 8030, "code": 13, "periods": [7.94, 7.97, 8.28, 7.25], "variant": "before", "attempt": 1, "recall": 0.955, "spurious": 0.101, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8030, "code": 13, "periods": [7.94, 7.97, 8.28, 7.25], "variant": "before", "attempt": 2, "recall": 0.91, "spurious": 0.069, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8030, "code": 13, "periods": [7.94, 7.97, 8.28, 7.25], "variant": "after", "attempt": 0, "recall": 0.881, "spurious": 0.098, "nfiq2": 61, "accepted": true}
+{"kind": "slap", "seed": 8030, "code": 13, "periods": [7.94, 7.97, 8.28, 7.25], "variant": "after", "attempt": 1, "recall": 0.944, "spurious": 0.092, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8030, "code": 13, "periods": [7.94, 7.97, 8.28, 7.25], "variant": "after", "attempt": 2, "recall": 0.91, "spurious": 0.058, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8030, "code": 14, "periods": [8.42, 7.76, 7.38, 7.78], "variant": "before", "attempt": 0, "recall": 0.937, "spurious": 0.069, "nfiq2": 60, "accepted": true}
+{"kind": "slap", "seed": 8030, "code": 14, "periods": [8.42, 7.76, 7.38, 7.78], "variant": "before", "attempt": 1, "recall": 0.949, "spurious": 0.133, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8030, "code": 14, "periods": [8.42, 7.76, 7.38, 7.78], "variant": "before", "attempt": 2, "recall": 0.962, "spurious": 0.121, "nfiq2": 51, "accepted": true}
+{"kind": "slap", "seed": 8030, "code": 14, "periods": [8.42, 7.76, 7.38, 7.78], "variant": "after", "attempt": 0, "recall": 0.924, "spurious": 0.076, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8030, "code": 14, "periods": [8.42, 7.76, 7.38, 7.78], "variant": "after", "attempt": 1, "recall": 0.968, "spurious": 0.078, "nfiq2": 59, "accepted": true}
+{"kind": "slap", "seed": 8030, "code": 14, "periods": [8.42, 7.76, 7.38, 7.78], "variant": "after", "attempt": 2, "recall": 0.943, "spurious": 0.086, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8032, "code": 13, "periods": [8.19, 7.59, 7.61, 7.84], "variant": "before", "attempt": 0, "recall": 0.905, "spurious": 0.083, "nfiq2": 53, "accepted": true}
+{"kind": "slap", "seed": 8032, "code": 13, "periods": [8.19, 7.59, 7.61, 7.84], "variant": "before", "attempt": 1, "recall": 0.854, "spurious": 0.094, "nfiq2": 53, "accepted": true}
+{"kind": "slap", "seed": 8032, "code": 13, "periods": [8.19, 7.59, 7.61, 7.84], "variant": "before", "attempt": 2, "recall": 0.905, "spurious": 0.071, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8032, "code": 13, "periods": [8.19, 7.59, 7.61, 7.84], "variant": "after", "attempt": 0, "recall": 0.937, "spurious": 0.039, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8032, "code": 13, "periods": [8.19, 7.59, 7.61, 7.84], "variant": "after", "attempt": 1, "recall": 0.892, "spurious": 0.06, "nfiq2": 59, "accepted": true}
+{"kind": "slap", "seed": 8032, "code": 13, "periods": [8.19, 7.59, 7.61, 7.84], "variant": "after", "attempt": 2, "recall": 0.924, "spurious": 0.039, "nfiq2": 49, "accepted": true}
+{"kind": "slap", "seed": 8032, "code": 14, "periods": [8.05, 7.54, 7.3, 8.03], "variant": "before", "attempt": 0, "recall": 0.864, "spurious": 0.081, "nfiq2": 58, "accepted": true}
+{"kind": "slap", "seed": 8032, "code": 14, "periods": [8.05, 7.54, 7.3, 8.03], "variant": "before", "attempt": 1, "recall": 0.853, "spurious": 0.118, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8032, "code": 14, "periods": [8.05, 7.54, 7.3, 8.03], "variant": "before", "attempt": 2, "recall": 0.87, "spurious": 0.091, "nfiq2": 54, "accepted": true}
+{"kind": "slap", "seed": 8032, "code": 14, "periods": [8.05, 7.54, 7.3, 8.03], "variant": "after", "attempt": 0, "recall": 0.864, "spurious": 0.07, "nfiq2": 59, "accepted": true}
+{"kind": "slap", "seed": 8032, "code": 14, "periods": [8.05, 7.54, 7.3, 8.03], "variant": "after", "attempt": 1, "recall": 0.87, "spurious": 0.091, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8032, "code": 14, "periods": [8.05, 7.54, 7.3, 8.03], "variant": "after", "attempt": 2, "recall": 0.886, "spurious": 0.069, "nfiq2": 53, "accepted": true}
+{"kind": "slap", "seed": 8035, "code": 13, "periods": [6.82, 6.33, 6.54, 6.18], "variant": "before", "attempt": 0, "recall": 0.85, "spurious": 0.112, "nfiq2": 55, "accepted": true}
+{"kind": "slap", "seed": 8035, "code": 13, "periods": [6.82, 6.33, 6.54, 6.18], "variant": "before", "attempt": 1, "recall": 0.859, "spurious": 0.097, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8035, "code": 13, "periods": [6.82, 6.33, 6.54, 6.18], "variant": "before", "attempt": 2, "recall": 0.806, "spurious": 0.122, "nfiq2": 50, "accepted": false}
+{"kind": "slap", "seed": 8035, "code": 13, "periods": [6.82, 6.33, 6.54, 6.18], "variant": "after", "attempt": 0, "recall": 0.888, "spurious": 0.062, "nfiq2": 55, "accepted": true}
+{"kind": "slap", "seed": 8035, "code": 13, "periods": [6.82, 6.33, 6.54, 6.18], "variant": "after", "attempt": 1, "recall": 0.883, "spurious": 0.09, "nfiq2": 53, "accepted": true}
+{"kind": "slap", "seed": 8035, "code": 13, "periods": [6.82, 6.33, 6.54, 6.18], "variant": "after", "attempt": 2, "recall": 0.859, "spurious": 0.068, "nfiq2": 52, "accepted": true}
+{"kind": "slap", "seed": 8035, "code": 14, "periods": [6.46, 6.57, 6.37, 6.25], "variant": "before", "attempt": 0, "recall": 0.832, "spurious": 0.219, "nfiq2": 54, "accepted": false}
+{"kind": "slap", "seed": 8035, "code": 14, "periods": [6.46, 6.57, 6.37, 6.25], "variant": "before", "attempt": 1, "recall": 0.822, "spurious": 0.235, "nfiq2": 46, "accepted": false}
+{"kind": "slap", "seed": 8035, "code": 14, "periods": [6.46, 6.57, 6.37, 6.25], "variant": "before", "attempt": 2, "recall": 0.886, "spurious": 0.232, "nfiq2": 46, "accepted": false}
+{"kind": "slap", "seed": 8035, "code": 14, "periods": [6.46, 6.57, 6.37, 6.25], "variant": "after", "attempt": 0, "recall": 0.871, "spurious": 0.111, "nfiq2": 46, "accepted": true}
+{"kind": "slap", "seed": 8035, "code": 14, "periods": [6.46, 6.57, 6.37, 6.25], "variant": "after", "attempt": 1, "recall": 0.866, "spurious": 0.125, "nfiq2": 46, "accepted": true}
+{"kind": "slap", "seed": 8035, "code": 14, "periods": [6.46, 6.57, 6.37, 6.25], "variant": "after", "attempt": 2, "recall": 0.921, "spurious": 0.101, "nfiq2": 47, "accepted": true}
+{"kind": "slap", "seed": 8035, "code": 15, "periods": [6.87, 7.43], "variant": "before", "attempt": 0, "recall": 0.933, "spurious": 0.074, "nfiq2": 61, "accepted": true}
+{"kind": "slap", "seed": 8035, "code": 15, "periods": [6.87, 7.43], "variant": "before", "attempt": 1, "recall": 0.903, "spurious": 0.062, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8035, "code": 15, "periods": [6.87, 7.43], "variant": "before", "attempt": 2, "recall": 0.896, "spurious": 0.077, "nfiq2": 63, "accepted": true}
+{"kind": "slap", "seed": 8035, "code": 15, "periods": [6.87, 7.43], "variant": "after", "attempt": 0, "recall": 0.933, "spurious": 0.053, "nfiq2": 61, "accepted": true}
+{"kind": "slap", "seed": 8035, "code": 15, "periods": [6.87, 7.43], "variant": "after", "attempt": 1, "recall": 0.948, "spurious": 0.016, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8035, "code": 15, "periods": [6.87, 7.43], "variant": "after", "attempt": 2, "recall": 0.955, "spurious": 0.059, "nfiq2": 47, "accepted": true}
+{"kind": "slap", "seed": 8036, "code": 13, "periods": [8.24, 7.49, 7.8, 7.26], "variant": "before", "attempt": 0, "recall": 0.829, "spurious": 0.08, "nfiq2": 58, "accepted": false}
+{"kind": "slap", "seed": 8036, "code": 13, "periods": [8.24, 7.49, 7.8, 7.26], "variant": "before", "attempt": 1, "recall": 0.884, "spurious": 0.091, "nfiq2": 60, "accepted": true}
+{"kind": "slap", "seed": 8036, "code": 13, "periods": [8.24, 7.49, 7.8, 7.26], "variant": "before", "attempt": 2, "recall": 0.89, "spurious": 0.08, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8036, "code": 13, "periods": [8.24, 7.49, 7.8, 7.26], "variant": "after", "attempt": 0, "recall": 0.912, "spurious": 0.068, "nfiq2": 56, "accepted": true}
+{"kind": "slap", "seed": 8036, "code": 13, "periods": [8.24, 7.49, 7.8, 7.26], "variant": "after", "attempt": 1, "recall": 0.901, "spurious": 0.079, "nfiq2": 50, "accepted": true}
+{"kind": "slap", "seed": 8036, "code": 13, "periods": [8.24, 7.49, 7.8, 7.26], "variant": "after", "attempt": 2, "recall": 0.923, "spurious": 0.062, "nfiq2": 55, "accepted": true}
+{"kind": "slap", "seed": 8036, "code": 14, "periods": [8.55, 7.6, 7.59, 8.01], "variant": "before", "attempt": 0, "recall": 0.883, "spurious": 0.075, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8036, "code": 14, "periods": [8.55, 7.6, 7.59, 8.01], "variant": "before", "attempt": 1, "recall": 0.909, "spurious": 0.073, "nfiq2": 59, "accepted": true}
+{"kind": "slap", "seed": 8036, "code": 14, "periods": [8.55, 7.6, 7.59, 8.01], "variant": "before", "attempt": 2, "recall": 0.909, "spurious": 0.06, "nfiq2": 53, "accepted": true}
+{"kind": "slap", "seed": 8036, "code": 14, "periods": [8.55, 7.6, 7.59, 8.01], "variant": "after", "attempt": 0, "recall": 0.89, "spurious": 0.049, "nfiq2": 53, "accepted": true}
+{"kind": "slap", "seed": 8036, "code": 14, "periods": [8.55, 7.6, 7.59, 8.01], "variant": "after", "attempt": 1, "recall": 0.922, "spurious": 0.047, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8036, "code": 14, "periods": [8.55, 7.6, 7.59, 8.01], "variant": "after", "attempt": 2, "recall": 0.922, "spurious": 0.072, "nfiq2": 57, "accepted": true}
+{"kind": "slap", "seed": 8037, "code": 13, "periods": [8.53, 7.42, 6.93, 7.62], "variant": "before", "attempt": 0, "recall": 0.873, "spurious": 0.09, "nfiq2": 64, "accepted": true}
+{"kind": "slap", "seed": 8037, "code": 13, "periods": [8.53, 7.42, 6.93, 7.62], "variant": "before", "attempt": 1, "recall": 0.88, "spurious": 0.096, "nfiq2": 59, "accepted": true}
+{"kind": "slap", "seed": 8037, "code": 13, "periods": [8.53, 7.42, 6.93, 7.62], "variant": "before", "attempt": 2, "recall": 0.88, "spurious": 0.07, "nfiq2": 53, "accepted": true}
+{"kind": "slap", "seed": 8037, "code": 13, "periods": [8.53, 7.42, 6.93, 7.62], "variant": "after", "attempt": 0, "recall": 0.92, "spurious": 0.086, "nfiq2": 52, "accepted": true}
+{"kind": "slap", "seed": 8037, "code": 13, "periods": [8.53, 7.42, 6.93, 7.62], "variant": "after", "attempt": 1, "recall": 0.94, "spurious": 0.054, "nfiq2": 62, "accepted": true}
+{"kind": "slap", "seed": 8037, "code": 13, "periods": [8.53, 7.42, 6.93, 7.62], "variant": "after", "attempt": 2, "recall": 0.947, "spurious": 0.034, "nfiq2": 53, "accepted": true}

@@ -1,0 +1,47 @@
+{
+ "control n.01 s.1": {
+  "prints": 8,
+  "median": 5.09,
+  "ring0": 9.57,
+  "ring14": 5.0,
+  "ring28": 3.45,
+  "ring56": 3.21,
+  "concentration": 0.34
+ },
+ "noise .003 s.1 (sweep)": {
+  "prints": 8,
+  "median": 4.0,
+  "ring0": 8.65,
+  "ring14": 4.14,
+  "ring28": 3.03,
+  "ring56": 2.56,
+  "concentration": 0.34
+ },
+ "noise .003 s.1 (E-041)": {
+  "prints": 4,
+  "median": 4.35,
+  "ring0": 9.18,
+  "ring14": 4.58,
+  "ring28": 3.28,
+  "ring56": 3.23,
+  "concentration": 0.33
+ },
+ "noise .01 s.03": {
+  "prints": 4,
+  "median": 4.01,
+  "ring0": 9.2,
+  "ring14": 3.95,
+  "ring28": 2.67,
+  "ring56": 2.16,
+  "concentration": 0.54
+ },
+ "ramp 40": {
+  "prints": 4,
+  "median": 5.12,
+  "ring0": 9.68,
+  "ring14": 4.71,
+  "ring28": 3.67,
+  "ring56": 4.36,
+  "concentration": 0.39
+ }
+}

@@ -1,0 +1,134 @@
+{
+ "prints": [
+  {
+   "name": "loop_a0.7_s0.1_3007",
+   "mindtct": {
+    "before": 35,
+    "after": 38,
+    "kept": 0.7428571428571429
+   },
+   "leader": {
+    "before": 36,
+    "after": 31,
+    "kept": 0.6388888888888888
+   }
+  },
+  {
+   "name": "loop_a0.7_s0.1_3022",
+   "mindtct": {
+    "before": 49,
+    "after": 44,
+    "kept": 0.8163265306122449
+   },
+   "leader": {
+    "before": 44,
+    "after": 40,
+    "kept": 0.7727272727272727
+   }
+  },
+  {
+   "name": "whorl_a0.7_s0.1_3008",
+   "mindtct": {
+    "before": 37,
+    "after": 33,
+    "kept": 0.7027027027027027
+   },
+   "leader": {
+    "before": 32,
+    "after": 32,
+    "kept": 0.75
+   }
+  },
+  {
+   "name": "arch_a0.6_s0.1_3006",
+   "mindtct": {
+    "before": 31,
+    "after": 24,
+    "kept": 0.7096774193548387
+   },
+   "leader": {
+    "before": 32,
+    "after": 30,
+    "kept": 0.78125
+   }
+  },
+  {
+   "name": "model2_PH7000/2",
+   "mindtct": {
+    "before": 37,
+    "after": 31,
+    "kept": 0.7837837837837838
+   },
+   "leader": {
+    "before": 35,
+    "after": 35,
+    "kept": 0.9142857142857143
+   }
+  },
+  {
+   "name": "model2_PH7001/3",
+   "mindtct": {
+    "before": 35,
+    "after": 33,
+    "kept": 0.8857142857142857
+   },
+   "leader": {
+    "before": 42,
+    "after": 37,
+    "kept": 0.8809523809523809
+   }
+  },
+  {
+   "name": "model2_PH7002/7",
+   "mindtct": {
+    "before": 46,
+    "after": 49,
+    "kept": 0.9565217391304348
+   },
+   "leader": {
+    "before": 54,
+    "after": 52,
+    "kept": 0.9444444444444444
+   }
+  },
+  {
+   "name": "model2_PH7003/8",
+   "mindtct": {
+    "before": 54,
+    "after": 49,
+    "kept": 0.7962962962962963
+   },
+   "leader": {
+    "before": 51,
+    "after": 51,
+    "kept": 0.9411764705882353
+   }
+  }
+ ],
+ "strength": 0.25,
+ "_provenance": {
+  "commit": "bfa5fb64b9f1ddf5201b90f0b1f505e2969e3dbd",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/developmental/diffused.py",
+   "../research/notebook/figures/O-002-diffused-025.jpg",
+   "../research/developmental/diffused_025.json",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3007.npz",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3022.npz",
+   "../data/research/sweep_d015/whorl_a0.7_s0.1_3008.npz",
+   "../data/research/sweep_d015/arch_a0.6_s0.1_3006.npz"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-10-31T07:08:27+0100",
+  "finished": "2026-10-31T07:09:27+0100"
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "developmental": {
+  "prints": 8,
+  "fine_coarse": 6.84269642829895,
+  "fine_mid": 4.548691987991333
+ },
+ "developmental_drawn": {
+  "prints": 8,
+  "fine_coarse": 7.2009992599487305,
+  "fine_mid": 4.383788824081421
+ },
+ "model2": {
+  "prints": 8,
+  "fine_coarse": 3.562758445739746,
+  "fine_mid": 2.7161697149276733
+ },
+ "model2_drawn": {
+  "prints": 8,
+  "fine_coarse": 2.5394333600997925,
+  "fine_mid": 1.5779742002487183
+ },
+ "_provenance": {
+  "commit": "c2fd6395d9d300ad6c82abb06851437c5761a123",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/realism/wobble_diffused.py",
+   "../research/realism/wobble_diffused.json",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3007.npz",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3022.npz",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3037.npz",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3052.npz",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3067.npz",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3082.npz",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3097.npz",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3112.npz"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-10-31T07:30:48+0100",
+  "finished": "2026-10-31T07:32:29+0100"
+ }
+}

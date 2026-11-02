@@ -1,0 +1,314 @@
+{
+ "mindtct": {
+  "density": {
+   "loop": {
+    "mean": 23.01338351614062,
+    "ci": [
+     22.51041725515037,
+     23.549753488001272
+    ],
+    "n": 120
+   },
+   "whorl": {
+    "mean": 14.284215034631824,
+    "ci": [
+     13.712616552687383,
+     14.860590898342318
+    ],
+    "n": 60
+   },
+   "arch": {
+    "mean": 10.286197899379273,
+    "ci": [
+     9.537580571083987,
+     11.035919823041247
+    ],
+    "n": 20
+   },
+   "real": {
+    "mean": 21.500858805471857,
+    "ci": [
+     20.18553729648241,
+     22.850604324378455
+    ],
+    "n": 90
+   }
+  },
+  "whorl_minus_loop": {
+   "mean": -8.729168481508797,
+   "ci": [
+    -9.486095986950138,
+    -7.981680901897255
+   ]
+  },
+  "loop_minus_arch": {
+   "mean": 12.727185616761348,
+   "ci": [
+    11.84363800971355,
+    13.62368083255353
+   ]
+  },
+  "loop": {
+   "below_over_above": {
+    "ratio": 1.367937942241197,
+    "ci": [
+     1.2741146245448716,
+     1.4646145125714944
+    ],
+    "fingers": 120
+   },
+   "counts_below_over_above": {
+    "ratio": 5.6080924855491325,
+    "ci": [
+     5.232599206570173,
+     6.012209904644633
+    ],
+    "fingers": 120
+   },
+   "delta_over_open": {
+    "ratio": 1.131435186126725,
+    "ci": [
+     1.0745204188156734,
+     1.1912981550103028
+    ],
+    "fingers": 120
+   }
+  },
+  "whorl": {
+   "below_over_above": {
+    "ratio": 1.1399522228788754,
+    "ci": [
+     0.9249460455051947,
+     1.381270075501605
+    ],
+    "fingers": 17
+   },
+   "counts_below_over_above": {
+    "ratio": 0.6795774647887324,
+    "ci": [
+     0.48010743974984743,
+     0.9390724025350486
+    ],
+    "fingers": 17
+   },
+   "delta_over_open": {
+    "ratio": 1.0214943065120674,
+    "ci": [
+     0.7966459369429638,
+     1.2933369179728353
+    ],
+    "fingers": 17
+   }
+  },
+  "arch": {
+   "below_over_above": null,
+   "counts_below_over_above": null,
+   "delta_over_open": null
+  },
+  "real": {
+   "below_over_above": {
+    "ratio": 1.2853301413433198,
+    "ci": [
+     1.1852266082073941,
+     1.398894761451347
+    ],
+    "fingers": 82
+   },
+   "counts_below_over_above": {
+    "ratio": 1.3259481964618678,
+    "ci": [
+     1.1058158858819684,
+     1.5677719196110609
+    ],
+    "fingers": 82
+   },
+   "delta_over_open": {
+    "ratio": 1.0025612202292091,
+    "ci": [
+     0.9131033822646807,
+     1.1131332483976881
+    ],
+    "fingers": 82
+   }
+  }
+ },
+ "leader": {
+  "density": {
+   "loop": {
+    "mean": 20.30407838433096,
+    "ci": [
+     19.83215052165099,
+     20.744723389365966
+    ],
+    "n": 120
+   },
+   "whorl": {
+    "mean": 13.600122046730915,
+    "ci": [
+     13.068640286857422,
+     14.145296502418072
+    ],
+    "n": 60
+   },
+   "arch": {
+    "mean": 10.793082716789502,
+    "ci": [
+     9.998430641078631,
+     11.63581761202136
+    ],
+    "n": 20
+   },
+   "real": {
+    "mean": 19.854161259602865,
+    "ci": [
+     18.434597583901574,
+     21.300969377944067
+    ],
+    "n": 90
+   }
+  },
+  "whorl_minus_loop": {
+   "mean": -6.7039563376000455,
+   "ci": [
+    -7.4538208159286325,
+    -5.998023625955582
+   ]
+  },
+  "loop_minus_arch": {
+   "mean": 9.510995667541458,
+   "ci": [
+    8.635132844768457,
+    10.376305487058683
+   ]
+  },
+  "loop": {
+   "below_over_above": {
+    "ratio": 1.1513760464801768,
+    "ci": [
+     1.0810360010148585,
+     1.225885811545426
+    ],
+    "fingers": 120
+   },
+   "counts_below_over_above": {
+    "ratio": 4.724177071509647,
+    "ci": [
+     4.443102112519822,
+     5.036337548201955
+    ],
+    "fingers": 120
+   },
+   "delta_over_open": {
+    "ratio": 0.991108899262004,
+    "ci": [
+     0.9463199020582425,
+     1.0438460061417683
+    ],
+    "fingers": 120
+   }
+  },
+  "whorl": {
+   "below_over_above": {
+    "ratio": 0.8635234070376702,
+    "ci": [
+     0.7234845724963433,
+     1.036255557939932
+    ],
+    "fingers": 17
+   },
+   "counts_below_over_above": {
+    "ratio": 0.511864406779661,
+    "ci": [
+     0.3757396449704142,
+     0.703181729771784
+    ],
+    "fingers": 17
+   },
+   "delta_over_open": {
+    "ratio": 1.01959450710254,
+    "ci": [
+     0.7829864711828561,
+     1.3479523881197855
+    ],
+    "fingers": 17
+   }
+  },
+  "arch": {
+   "below_over_above": null,
+   "counts_below_over_above": null,
+   "delta_over_open": null
+  },
+  "real": {
+   "below_over_above": {
+    "ratio": 1.2044565085708498,
+    "ci": [
+     1.114369189734735,
+     1.2959165767579253
+    ],
+    "fingers": 82
+   },
+   "counts_below_over_above": {
+    "ratio": 1.2816919714066284,
+    "ci": [
+     1.131237763699476,
+     1.4575362874954734
+    ],
+    "fingers": 82
+   },
+   "delta_over_open": {
+    "ratio": 1.0864607356494833,
+    "ci": [
+     1.0013413639098458,
+     1.1904293651748314
+    ],
+    "fingers": 82
+   }
+  }
+ },
+ "prints": {
+  "loop": {
+   "prints": 120,
+   "one_core": 120,
+   "one_core_one_delta": 0,
+   "rule_agrees": 0
+  },
+  "whorl": {
+   "prints": 60,
+   "one_core": 17,
+   "one_core_one_delta": 0,
+   "rule_agrees": 0
+  },
+  "arch": {
+   "prints": 20,
+   "one_core": 0,
+   "one_core_one_delta": 0,
+   "rule_agrees": 0
+  },
+  "real": {
+   "prints": 720,
+   "one_core": 420,
+   "one_core_one_delta": 36,
+   "rule_agrees": 22
+  }
+ },
+ "_provenance": {
+  "commit": "67cde9cc62ee41f88c2c8a96984f5112fb9a4da2",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/developmental/region_read.py",
+   "../research/developmental/region_d081.json"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-11-01T23:48:29+0100",
+  "finished": "2026-11-01T23:50:08+0100"
+ }
+}

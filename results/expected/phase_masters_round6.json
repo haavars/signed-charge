@@ -1,0 +1,193 @@
+{
+ "real": {
+  "close_same": 0.37191606418561,
+  "close_offset": 0.1319980385571858,
+  "close_opposite": 0.41027729027090865,
+  "prints": 708,
+  "count": 30.0,
+  "density_per_100mm2": 20.827978867744573,
+  "bifurcations": 0.4891252955082742,
+  "near_core_below_over_above": 1.206510784846837,
+  "with_core": 436
+ },
+ "m3_clump0.5": {
+  "close_same": 0.3559800161914043,
+  "close_offset": 0.12010621180280147,
+  "close_opposite": 0.4131180765762972,
+  "prints": 320,
+  "count": 32.0,
+  "density_per_100mm2": 21.66809149731938,
+  "bifurcations": 0.5,
+  "near_core_below_over_above": 1.0339511992759092,
+  "with_core": 237,
+  "accuracy_mh": 0.7637329849084248,
+  "pairs": {
+   "prints": 320,
+   "density_per_100mm2": 21.596309699218935,
+   "nn_median_px": 23.634977827050996,
+   "clustering": {
+    "10": 0.7382769901853872,
+    "20": 0.8049062049062049,
+    "30": 1.0099495706692108,
+    "40": 1.074397732640529,
+    "60": 1.0916815233471153,
+    "80": 1.1009734059894742
+   },
+   "close_pairs_per_print": 42.646875,
+   "close_same": 0.3679929654869202,
+   "close_offset": 0.12039276031362205,
+   "close_facing": 0.4026525976405071,
+   "close_EE": 0.26064336484208983,
+   "close_EB": 0.4913900490950392,
+   "close_BB": 0.24796658606287095,
+   "close_across0": 0.0620649226936323,
+   "close_across1": 0.21081556386018904,
+   "close_across2": 0.7271195134461786,
+   "facing_across1": 0.23421292083712467,
+   "facing_EB": 0.4924476797088262
+  },
+  "master_minutiae_median": 241.5
+ },
+ "m3_below1.6": {
+  "close_same": 0.3571880395712084,
+  "close_offset": 0.12190342584975397,
+  "close_opposite": 0.40718791259447945,
+  "prints": 320,
+  "count": 31.0,
+  "density_per_100mm2": 20.963983264441687,
+  "bifurcations": 0.5,
+  "near_core_below_over_above": 1.069575368770184,
+  "with_core": 227,
+  "accuracy_mh": 0.76610942385843,
+  "pairs": {
+   "prints": 320,
+   "density_per_100mm2": 20.500999661879337,
+   "nn_median_px": 23.93250688705234,
+   "clustering": {
+    "10": 0.8129496402877698,
+    "20": 0.8215845290081097,
+    "30": 1.0112638970157988,
+    "40": 1.0743912678421494,
+    "60": 1.0875959336199623,
+    "80": 1.1046127887645467
+   },
+   "close_pairs_per_print": 39.9875,
+   "close_same": 0.37425758049390434,
+   "close_offset": 0.1258987183494842,
+   "close_facing": 0.3900437636761488,
+   "close_EE": 0.255314160675211,
+   "close_EB": 0.5050797124101282,
+   "close_BB": 0.23960612691466082,
+   "close_across0": 0.06267583619881213,
+   "close_across1": 0.21397311659893717,
+   "close_across2": 0.7233510472022507,
+   "facing_across1": 0.24524143458224804,
+   "facing_EB": 0.5095171308355039
+  },
+  "master_minutiae_median": 241.5
+ },
+ "m3_clump0.5_below1.6": {
+  "close_same": 0.3616800328832592,
+  "close_offset": 0.12005109030116211,
+  "close_opposite": 0.4124619715049125,
+  "prints": 320,
+  "count": 31.0,
+  "density_per_100mm2": 21.1913390137467,
+  "bifurcations": 0.48749218261413385,
+  "near_core_below_over_above": 1.1142390093882737,
+  "with_core": 234,
+  "accuracy_mh": 0.7635903447782928,
+  "pairs": {
+   "prints": 320,
+   "density_per_100mm2": 20.89842532921753,
+   "nn_median_px": 23.886165577342048,
+   "clustering": {
+    "10": 0.7261219792865362,
+    "20": 0.8042952208106473,
+    "30": 1.005008347245409,
+    "40": 1.0831040621459782,
+    "60": 1.1037175154410908,
+    "80": 1.1048970968737388
+   },
+   "close_pairs_per_print": 41.828125,
+   "close_same": 0.3707881957415017,
+   "close_offset": 0.12267463578632798,
+   "close_facing": 0.4018677624206201,
+   "close_EE": 0.2670153156518491,
+   "close_EB": 0.500186776242062,
+   "close_BB": 0.2327979081060889,
+   "close_across0": 0.06507284273440418,
+   "close_across1": 0.21031004856182295,
+   "close_across2": 0.7246171087037728,
+   "facing_across1": 0.2323852017103551,
+   "facing_EB": 0.4945157092396356
+  },
+  "master_minutiae_median": 241.0
+ },
+ "m3_clump0.8_below1.6": {
+  "close_same": 0.36176202932511115,
+  "close_offset": 0.11976734931956205,
+  "close_opposite": 0.41247240304592014,
+  "prints": 320,
+  "count": 32.0,
+  "density_per_100mm2": 21.674459034228647,
+  "bifurcations": 0.47368421052631576,
+  "near_core_below_over_above": 1.0764463359489294,
+  "with_core": 233,
+  "accuracy_mh": 0.7634909607753755,
+  "pairs": {
+   "prints": 320,
+   "density_per_100mm2": 21.15644661761145,
+   "nn_median_px": 23.563058035714285,
+   "clustering": {
+    "10": 0.7236842105263158,
+    "20": 0.8202408256880734,
+    "30": 1.0203663203936577,
+    "40": 1.1048432589249737,
+    "60": 1.109618484685653,
+    "80": 1.1084203562821906
+   },
+   "close_pairs_per_print": 42.84375,
+   "close_same": 0.3701677607585704,
+   "close_offset": 0.11962071480671042,
+   "close_facing": 0.4064186725018235,
+   "close_EE": 0.2792122538293217,
+   "close_EB": 0.4962800875273523,
+   "close_BB": 0.22450765864332603,
+   "close_across0": 0.06528081692195478,
+   "close_across1": 0.21349380014587893,
+   "close_across2": 0.7212253829321663,
+   "facing_across1": 0.2449748743718593,
+   "facing_EB": 0.4958722182340273
+  },
+  "master_minutiae_median": 243.5
+ },
+ "_provenance": {
+  "commit": "475904c132355a5c85147a15921ad1e9d05b24de",
+  "uncommitted_changes": [
+   "docs/realism/phase_global.py",
+   "docs/realism/phase_masters.py"
+  ],
+  "command": [
+   "python",
+   "../docs/realism/phase_masters.py",
+   "../docs/realism/phase_masters_round6.json",
+   "20",
+   "m3_clump0.5",
+   "m3_below1.6",
+   "m3_clump0.5_below1.6",
+   "m3_clump0.8_below1.6"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-10-30T10:57:45+0100",
+  "finished": "2026-10-30T11:49:41+0100"
+ }
+}

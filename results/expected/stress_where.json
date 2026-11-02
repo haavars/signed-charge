@@ -1,0 +1,53 @@
+{
+ "stress": {
+  "by_template": {
+   "arch": 22.443114697224004,
+   "loop": 20.71075475203039,
+   "whorl": 19.99702065113431
+  },
+  "chosen_as": {
+   "arch": 17.025207461393073,
+   "loop": 21.275138518772632,
+   "whorl": 16.906258369934143
+  },
+  "tip_third": 15.205040931142372,
+  "middle_third": 24.18292422973321,
+  "base_third": 13.433097594160113
+ },
+ "guide": {
+  "by_template": {
+   "arch": 31.873450051689158,
+   "loop": 14.226661838041867,
+   "whorl": 20.02998091005951
+  },
+  "chosen_as": {
+   "arch": 15.528269676304925,
+   "loop": 11.760961684483025,
+   "whorl": 14.5773220755902
+  },
+  "tip_third": 10.592507711170553,
+  "middle_third": 15.448849613253321,
+  "base_third": 15.31243778343424
+ },
+ "prints": 180,
+ "_provenance": {
+  "commit": "f205f662087c768826f1185f49aed22d26fc4035",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/developmental/stress_where.py",
+   "../research/developmental/stress_where.json",
+   "../research/notebook/figures/E-058-where.jpg"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-10-31T14:25:33+0100",
+  "finished": "2026-10-31T14:26:43+0100"
+ }
+}

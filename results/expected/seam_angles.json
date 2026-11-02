@@ -1,0 +1,39 @@
+{
+ "loop": {
+  "median": 30.527873251287502,
+  "p90": 58.464071491735965,
+  "over_30": 0.5242402315484804,
+  "seam_px": 1036.5
+ },
+ "whorl": {
+  "median": 21.086739130625674,
+  "p90": 54.16107693950967,
+  "over_30": 0.409990229604299,
+  "seam_px": 1023.5
+ },
+ "arch": {
+  "median": 32.6721943235909,
+  "p90": 41.58249648171638,
+  "over_30": 0.577037037037037,
+  "seam_px": 337.5
+ },
+ "_provenance": {
+  "commit": "2c2b8f82efa33d09b49a39c9c8d12abb674b8872",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/developmental/seam_angles.py",
+   "<scratch>/seam_angles.json"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-10-31T10:26:57+0100",
+  "finished": "2026-10-31T10:27:08+0100"
+ }
+}

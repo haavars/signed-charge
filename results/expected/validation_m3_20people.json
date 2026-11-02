@@ -1,0 +1,134 @@
+{
+ "7000": {
+  "real": {
+   "close_same": 0.37191606418561,
+   "close_offset": 0.1319980385571858,
+   "close_opposite": 0.41027729027090865,
+   "prints": 708,
+   "count": 30.0,
+   "density_per_100mm2": 20.827978867744573,
+   "bifurcations": 0.4891252955082742,
+   "near_core_below_over_above": 1.206510784846837,
+   "with_core": 436,
+   "pairs": {
+    "prints": 707,
+    "density_per_100mm2": 21.63805727176615,
+    "nn_median_px": 20.347756835678258,
+    "clustering": {
+     "10": 0.7390924956369983,
+     "20": 1.054925791749445,
+     "30": 1.1603690199977903,
+     "40": 1.1950429977438446,
+     "60": 1.187992953834923,
+     "80": 1.1773970467916002
+    },
+    "close_pairs_per_print": 51.6944837340877,
+    "close_same": 0.37826967275911133,
+    "close_offset": 0.12583451898872716,
+    "close_facing": 0.4085312465798402,
+    "close_EE": 0.26573273503338074,
+    "close_EB": 0.39252489876327024,
+    "close_BB": 0.341742366203349,
+    "close_across0": 0.06432636532778811,
+    "close_across1": 0.22800153223158587,
+    "close_across2": 0.7076721024406261,
+    "facing_across1": 0.24700287991427233,
+    "facing_EB": 0.3776706181769473
+   }
+  },
+  "m3_clump0.5_below1.6": {
+   "close_same": 0.3526222796240074,
+   "close_offset": 0.12257673924476745,
+   "close_opposite": 0.40771722353578643,
+   "prints": 320,
+   "count": 31.0,
+   "density_per_100mm2": 20.41557732957073,
+   "bifurcations": 0.48918545789231477,
+   "near_core_below_over_above": 1.01675365847432,
+   "with_core": 248,
+   "accuracy_mh": 0.7741507321150944,
+   "pairs": {
+    "prints": 320,
+    "density_per_100mm2": 20.014567461120656,
+    "nn_median_px": 24.58139534883721,
+    "clustering": {
+     "10": 0.679340937896071,
+     "20": 0.7725752508361204,
+     "30": 0.9515958251399184,
+     "40": 1.0785006462731581,
+     "60": 1.0948689553340716,
+     "80": 1.0966693540260002
+    },
+    "close_pairs_per_print": 39.1125,
+    "close_same": 0.36161713007350593,
+    "close_offset": 0.12943432406519656,
+    "close_facing": 0.39509427932246727,
+    "close_EE": 0.27468839884947266,
+    "close_EB": 0.49920102269095556,
+    "close_BB": 0.22611057845957175,
+    "close_across0": 0.060003195909236175,
+    "close_across1": 0.22291466922339406,
+    "close_across2": 0.7170821348673697,
+    "facing_across1": 0.25662285136501517,
+    "facing_EB": 0.5017189079878666
+   }
+  },
+  "model2": {
+   "close_same": 0.3851003082032299,
+   "close_offset": 0.2606950160091129,
+   "close_opposite": 0.16275404612071925,
+   "prints": 320,
+   "count": 42.0,
+   "density_per_100mm2": 27.417245782056476,
+   "bifurcations": 0.478713768115942,
+   "near_core_below_over_above": 1.2832887438825449,
+   "with_core": 237,
+   "accuracy_mh": 0.9066853129732598,
+   "pairs": {
+    "prints": 320,
+    "density_per_100mm2": 27.417245782056476,
+    "nn_median_px": 23.049775928297056,
+    "clustering": {
+     "10": 0.3474358974358974,
+     "20": 0.725705329153605,
+     "30": 1.0820366598778004,
+     "40": 1.1789374706158908,
+     "60": 1.203178257827137,
+     "80": 1.191830982023186
+    },
+    "close_pairs_per_print": 78.3625,
+    "close_same": 0.3913303557186154,
+    "close_offset": 0.2603684798213431,
+    "close_facing": 0.16354282979741586,
+    "close_EE": 0.2742064125059818,
+    "close_EB": 0.48580315839846866,
+    "close_BB": 0.23999042909554952,
+    "close_across0": 0.04322858510129207,
+    "close_across1": 0.1768623384909874,
+    "close_across2": 0.7799090764077206,
+    "facing_across1": 0.21970251158254084,
+    "facing_EB": 0.48719824433065106
+   }
+  }
+ },
+ "_provenance": {
+  "commit": "6c8a395c32cc961d72f34ef40a722e64579a6458",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "<scratch>/samesize.py",
+   "../docs/realism/validation_m3_20people.json"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-10-30T13:02:17+0100",
+  "finished": "2026-10-30T13:18:35+0100"
+ }
+}

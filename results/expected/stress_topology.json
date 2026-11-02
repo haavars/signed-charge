@@ -1,0 +1,40 @@
+{
+ "arch": {
+  "0 cores 0 deltas": 20
+ },
+ "loop": {
+  "1 cores 1 deltas": 15,
+  "2 cores 2 deltas": 5
+ },
+ "whorl": {
+  "2 cores 1 deltas": 8,
+  "2 cores 0 deltas": 4,
+  "2 cores 2 deltas": 3,
+  "3 cores 3 deltas": 2,
+  "0 cores 0 deltas": 2,
+  "1 cores 1 deltas": 1
+ },
+ "_provenance": {
+  "commit": "6a6c943539403edec762811fa426b2d25811d3b9",
+  "uncommitted_changes": [
+   "research/notebook/2026-10-31.md",
+   "research/notebook/README.md"
+  ],
+  "command": [
+   "python",
+   "../research/developmental/stress_topology.py",
+   "../research/developmental/stress_topology.json",
+   "20"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-10-31T14:13:50+0100",
+  "finished": "2026-10-31T14:16:34+0100"
+ }
+}

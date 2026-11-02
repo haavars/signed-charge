@@ -1,0 +1,753 @@
+{
+ "real": {
+  "prints": 708,
+  "fingers": 90,
+  "sheet": {
+   "mindtct": {
+    "mean": 21.24813960880132,
+    "ci": [
+     19.99386767312223,
+     22.505349754783587
+    ]
+   },
+   "leader": {
+    "mean": 18.808750609019835,
+    "ci": [
+     17.148069662246538,
+     20.50048179249215
+    ]
+   },
+   "both": {
+    "mean": 14.786623655972344,
+    "ci": [
+     13.442964979026467,
+     16.0883459927437
+    ]
+   }
+  },
+  "window": {
+   "mindtct": {
+    "mean": 22.965523372719986,
+    "ci": [
+     21.708573486849193,
+     24.233145622713746
+    ]
+   },
+   "leader": {
+    "mean": 20.333169521256654,
+    "ci": [
+     18.860003003830958,
+     21.850293956305055
+    ]
+   },
+   "both": {
+    "mean": 16.03654112547552,
+    "ci": [
+     14.851791132527978,
+     17.19875186070439
+    ]
+   }
+  }
+ },
+ "sfinge": {
+  "prints": 240,
+  "fingers": 30,
+  "sheet": {
+   "mindtct": {
+    "mean": 22.721624955342747,
+    "ci": [
+     20.514590439008423,
+     25.311867396136538
+    ]
+   },
+   "leader": {
+    "mean": 22.592654129218932,
+    "ci": [
+     20.379960694738685,
+     25.215210277673677
+    ]
+   },
+   "both": {
+    "mean": 17.479340199368846,
+    "ci": [
+     15.682093542993627,
+     19.504464484786382
+    ]
+   }
+  },
+  "window": {
+   "mindtct": {
+    "mean": 23.51257095026735,
+    "ci": [
+     21.307907680314333,
+     25.913677217808136
+    ]
+   },
+   "leader": {
+    "mean": 22.79320526960996,
+    "ci": [
+     20.64361897237372,
+     25.162522427699514
+    ]
+   },
+   "both": {
+    "mean": 17.854411620218613,
+    "ci": [
+     16.040875121690206,
+     19.72461338204554
+    ]
+   }
+  }
+ },
+ "population": {
+  "prints": 200,
+  "fingers": 200,
+  "sheet": {
+   "mindtct": {
+    "mean": 19.122017451948782,
+    "ci": [
+     18.382567666109956,
+     19.934233349312294
+    ]
+   },
+   "leader": {
+    "mean": 17.341708348602868,
+    "ci": [
+     16.73983509265167,
+     17.97166204347288
+    ]
+   },
+   "both": {
+    "mean": 15.80296086036495,
+    "ci": [
+     15.22314057764846,
+     16.392817607813434
+    ]
+   }
+  },
+  "window": {
+   "mindtct": {
+    "mean": 18.75433700810823,
+    "ci": [
+     18.01163000680807,
+     19.542877145689914
+    ]
+   },
+   "leader": {
+    "mean": 17.63045974486137,
+    "ci": [
+     16.977495491143355,
+     18.314524701669313
+    ]
+   },
+   "both": {
+    "mean": 16.088103212998416,
+    "ci": [
+     15.464327080633435,
+     16.745760357857957
+    ]
+   }
+  }
+ },
+ "model2": {
+  "prints": 320,
+  "fingers": 160,
+  "sheet": {
+   "mindtct": {
+    "mean": 27.300474297348156,
+    "ci": [
+     26.39918614365844,
+     28.25601921131203
+    ]
+   },
+   "leader": {
+    "mean": 28.039204984633837,
+    "ci": [
+     27.101559265100672,
+     29.06223482884285
+    ]
+   },
+   "both": {
+    "mean": 26.19950101409319,
+    "ci": [
+     25.351871240005806,
+     27.112114000103357
+    ]
+   }
+  },
+  "window": {
+   "mindtct": {
+    "mean": 30.153203386000676,
+    "ci": [
+     29.19876027920199,
+     31.180215661462334
+    ]
+   },
+   "leader": {
+    "mean": 30.54739394845745,
+    "ci": [
+     29.53380060912213,
+     31.672183617130326
+    ]
+   },
+   "both": {
+    "mean": 28.618551453287438,
+    "ci": [
+     27.709606093384153,
+     29.591327272423555
+    ]
+   }
+  }
+ },
+ "field": {
+  "prints": 200,
+  "fingers": 200,
+  "sheet": {
+   "mindtct": {
+    "mean": 13.911689774682706,
+    "ci": [
+     13.52333042002118,
+     14.326990050960127
+    ]
+   },
+   "leader": {
+    "mean": 15.41186826157946,
+    "ci": [
+     14.963268175636147,
+     15.868695970020113
+    ]
+   },
+   "both": {
+    "mean": 13.375985899777014,
+    "ci": [
+     13.010492587450369,
+     13.771586600422001
+    ]
+   }
+  },
+  "window": {
+   "mindtct": {
+    "mean": 19.33099021928883,
+    "ci": [
+     18.77640760428984,
+     19.941685586686937
+    ]
+   },
+   "leader": {
+    "mean": 19.77199235311497,
+    "ci": [
+     19.188402481706188,
+     20.42331019457627
+    ]
+   },
+   "both": {
+    "mean": 18.252796104899705,
+    "ci": [
+     17.735847494303236,
+     18.831729562476934
+    ]
+   }
+  }
+ },
+ "readflow": {
+  "prints": 90,
+  "fingers": 90,
+  "sheet": {
+   "mindtct": {
+    "mean": 12.654331411962627,
+    "ci": [
+     12.061354286865143,
+     13.22423774141387
+    ]
+   },
+   "leader": {
+    "mean": 14.123941094628112,
+    "ci": [
+     13.491743616932022,
+     14.735432533231702
+    ]
+   },
+   "both": {
+    "mean": 12.308269477269027,
+    "ci": [
+     11.75687746132389,
+     12.83203421542779
+    ]
+   }
+  },
+  "window": {
+   "mindtct": {
+    "mean": 17.951599804448005,
+    "ci": [
+     17.273890349654046,
+     18.627754202725804
+    ]
+   },
+   "leader": {
+    "mean": 18.389595500651872,
+    "ci": [
+     17.706026853439617,
+     19.066640621548274
+    ]
+   },
+   "both": {
+    "mean": 17.184523860474624,
+    "ci": [
+     16.575432795871855,
+     17.809478134060353
+    ]
+   }
+  }
+ },
+ "realflow": {
+  "prints": 90,
+  "fingers": 90,
+  "sheet": {
+   "mindtct": {
+    "mean": 14.896812748777151,
+    "ci": [
+     14.516144620614192,
+     15.289016274763231
+    ]
+   },
+   "leader": {
+    "mean": 16.81630294654432,
+    "ci": [
+     16.393992032239893,
+     17.243112665999757
+    ]
+   },
+   "both": {
+    "mean": 14.467695949757088,
+    "ci": [
+     14.100812621992757,
+     14.834521600532304
+    ]
+   }
+  },
+  "window": {
+   "mindtct": {
+    "mean": 18.14963067597712,
+    "ci": [
+     17.560579252074753,
+     18.78823348309067
+    ]
+   },
+   "leader": {
+    "mean": 18.58274860171298,
+    "ci": [
+     18.0121269164536,
+     19.209212425658915
+    ]
+   },
+   "both": {
+    "mean": 17.262733722040977,
+    "ci": [
+     16.711419895636187,
+     17.81890702662544
+    ]
+   }
+  }
+ },
+ "_provenance": {
+  "commit": "f98af2d907c169cf77fab2976b9be52dee68cd18",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/developmental/density_consensus.py",
+   "../data/research/minutiae_parts/cache.pkl",
+   "../research/developmental/density_consensus.json",
+   "../data/research/flow_d055/readflow_9100_10.npz",
+   "../data/research/flow_d055/readflow_9100_2.npz",
+   "../data/research/flow_d055/readflow_9100_3.npz",
+   "../data/research/flow_d055/readflow_9100_4.npz",
+   "../data/research/flow_d055/readflow_9100_5.npz",
+   "../data/research/flow_d055/readflow_9100_7.npz",
+   "../data/research/flow_d055/readflow_9100_8.npz",
+   "../data/research/flow_d055/readflow_9100_9.npz",
+   "../data/research/flow_d055/readflow_9101_10.npz",
+   "../data/research/flow_d055/readflow_9101_2.npz",
+   "../data/research/flow_d055/readflow_9101_3.npz",
+   "../data/research/flow_d055/readflow_9101_4.npz",
+   "../data/research/flow_d055/readflow_9101_5.npz",
+   "../data/research/flow_d055/readflow_9101_7.npz",
+   "../data/research/flow_d055/readflow_9101_8.npz",
+   "../data/research/flow_d055/readflow_9101_9.npz",
+   "../data/research/flow_d055/readflow_9102_10.npz",
+   "../data/research/flow_d055/readflow_9102_2.npz",
+   "../data/research/flow_d055/readflow_9102_3.npz",
+   "../data/research/flow_d055/readflow_9102_4.npz",
+   "../data/research/flow_d055/readflow_9102_5.npz",
+   "../data/research/flow_d055/readflow_9102_7.npz",
+   "../data/research/flow_d055/readflow_9102_8.npz",
+   "../data/research/flow_d055/readflow_9102_9.npz",
+   "../data/research/flow_d055/readflow_9103_10.npz",
+   "../data/research/flow_d055/readflow_9103_2.npz",
+   "../data/research/flow_d055/readflow_9103_3.npz",
+   "../data/research/flow_d055/readflow_9103_4.npz",
+   "../data/research/flow_d055/readflow_9103_5.npz",
+   "../data/research/flow_d055/readflow_9103_7.npz",
+   "../data/research/flow_d055/readflow_9103_8.npz",
+   "../data/research/flow_d055/readflow_9103_9.npz",
+   "../data/research/flow_d055/readflow_9104_10.npz",
+   "../data/research/flow_d055/readflow_9104_2.npz",
+   "../data/research/flow_d055/readflow_9104_3.npz",
+   "../data/research/flow_d055/readflow_9104_4.npz",
+   "../data/research/flow_d055/readflow_9104_5.npz",
+   "../data/research/flow_d055/readflow_9104_7.npz",
+   "../data/research/flow_d055/readflow_9104_8.npz",
+   "../data/research/flow_d055/readflow_9104_9.npz",
+   "../data/research/flow_d055/readflow_9105_10.npz",
+   "../data/research/flow_d055/readflow_9105_2.npz",
+   "../data/research/flow_d055/readflow_9105_3.npz",
+   "../data/research/flow_d055/readflow_9105_4.npz",
+   "../data/research/flow_d055/readflow_9105_5.npz",
+   "../data/research/flow_d055/readflow_9105_7.npz",
+   "../data/research/flow_d055/readflow_9105_8.npz",
+   "../data/research/flow_d055/readflow_9105_9.npz",
+   "../data/research/flow_d055/readflow_9106_10.npz",
+   "../data/research/flow_d055/readflow_9106_2.npz",
+   "../data/research/flow_d055/readflow_9106_3.npz",
+   "../data/research/flow_d055/readflow_9106_4.npz",
+   "../data/research/flow_d055/readflow_9106_5.npz",
+   "../data/research/flow_d055/readflow_9106_7.npz",
+   "../data/research/flow_d055/readflow_9106_8.npz",
+   "../data/research/flow_d055/readflow_9106_9.npz",
+   "../data/research/flow_d055/readflow_9107_10.npz",
+   "../data/research/flow_d055/readflow_9107_2.npz",
+   "../data/research/flow_d055/readflow_9107_3.npz",
+   "../data/research/flow_d055/readflow_9107_4.npz",
+   "../data/research/flow_d055/readflow_9107_5.npz",
+   "../data/research/flow_d055/readflow_9107_7.npz",
+   "../data/research/flow_d055/readflow_9107_8.npz",
+   "../data/research/flow_d055/readflow_9107_9.npz",
+   "../data/research/flow_d055/readflow_9108_10.npz",
+   "../data/research/flow_d055/readflow_9108_2.npz",
+   "../data/research/flow_d055/readflow_9108_3.npz",
+   "../data/research/flow_d055/readflow_9108_4.npz",
+   "../data/research/flow_d055/readflow_9108_5.npz",
+   "../data/research/flow_d055/readflow_9108_7.npz",
+   "../data/research/flow_d055/readflow_9108_8.npz",
+   "../data/research/flow_d055/readflow_9108_9.npz",
+   "../data/research/flow_d055/readflow_9109_10.npz",
+   "../data/research/flow_d055/readflow_9109_2.npz",
+   "../data/research/flow_d055/readflow_9109_3.npz",
+   "../data/research/flow_d055/readflow_9109_4.npz",
+   "../data/research/flow_d055/readflow_9109_5.npz",
+   "../data/research/flow_d055/readflow_9109_7.npz",
+   "../data/research/flow_d055/readflow_9109_8.npz",
+   "../data/research/flow_d055/readflow_9109_9.npz",
+   "../data/research/flow_d055/readflow_9110_10.npz",
+   "../data/research/flow_d055/readflow_9110_2.npz",
+   "../data/research/flow_d055/readflow_9110_3.npz",
+   "../data/research/flow_d055/readflow_9110_4.npz",
+   "../data/research/flow_d055/readflow_9110_5.npz",
+   "../data/research/flow_d055/readflow_9110_7.npz",
+   "../data/research/flow_d055/readflow_9110_8.npz",
+   "../data/research/flow_d055/readflow_9110_9.npz",
+   "../data/research/flow_d055/readflow_9111_2.npz",
+   "../data/research/flow_d055/readflow_9111_3.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_101.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_102.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_103.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_104.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_105.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_106.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_107.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_108.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_109.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB1_110.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_101.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_102.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_103.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_104.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_105.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_106.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_107.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_108.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_109.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB2_110.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_101.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_102.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_103.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_104.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_105.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_106.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_107.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_108.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_109.npz",
+   "../data/research/flow_d055/realflow_FVC2000_DB3_110.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_101.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_102.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_103.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_104.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_105.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_106.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_107.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_108.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_109.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB1_110.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_101.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_102.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_103.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_104.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_105.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_106.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_107.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_108.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_109.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB2_110.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_101.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_102.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_103.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_104.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_105.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_106.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_107.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_108.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_109.npz",
+   "../data/research/flow_d055/realflow_FVC2002_DB3_110.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_101.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_102.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_103.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_104.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_105.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_106.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_107.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_108.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_109.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB1_110.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_101.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_102.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_103.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_104.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_105.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_106.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_107.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_108.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_109.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB2_110.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_101.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_102.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_103.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_104.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_105.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_106.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_107.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_108.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_109.npz",
+   "../data/research/flow_d055/realflow_FVC2004_DB3_110.npz",
+   "../data/research/field_d049/field_9100_10.npz",
+   "../data/research/field_d049/field_9100_2.npz",
+   "../data/research/field_d049/field_9100_3.npz",
+   "../data/research/field_d049/field_9100_4.npz",
+   "../data/research/field_d049/field_9100_5.npz",
+   "../data/research/field_d049/field_9100_7.npz",
+   "../data/research/field_d049/field_9100_8.npz",
+   "../data/research/field_d049/field_9100_9.npz",
+   "../data/research/field_d049/field_9101_10.npz",
+   "../data/research/field_d049/field_9101_2.npz",
+   "../data/research/field_d049/field_9101_3.npz",
+   "../data/research/field_d049/field_9101_4.npz",
+   "../data/research/field_d049/field_9101_5.npz",
+   "../data/research/field_d049/field_9101_7.npz",
+   "../data/research/field_d049/field_9101_8.npz",
+   "../data/research/field_d049/field_9101_9.npz",
+   "../data/research/field_d049/field_9102_10.npz",
+   "../data/research/field_d049/field_9102_2.npz",
+   "../data/research/field_d049/field_9102_3.npz",
+   "../data/research/field_d049/field_9102_4.npz",
+   "../data/research/field_d049/field_9102_5.npz",
+   "../data/research/field_d049/field_9102_7.npz",
+   "../data/research/field_d049/field_9102_8.npz",
+   "../data/research/field_d049/field_9102_9.npz",
+   "../data/research/field_d049/field_9103_10.npz",
+   "../data/research/field_d049/field_9103_2.npz",
+   "../data/research/field_d049/field_9103_3.npz",
+   "../data/research/field_d049/field_9103_4.npz",
+   "../data/research/field_d049/field_9103_5.npz",
+   "../data/research/field_d049/field_9103_7.npz",
+   "../data/research/field_d049/field_9103_8.npz",
+   "../data/research/field_d049/field_9103_9.npz",
+   "../data/research/field_d049/field_9104_10.npz",
+   "../data/research/field_d049/field_9104_2.npz",
+   "../data/research/field_d049/field_9104_3.npz",
+   "../data/research/field_d049/field_9104_4.npz",
+   "../data/research/field_d049/field_9104_5.npz",
+   "../data/research/field_d049/field_9104_7.npz",
+   "../data/research/field_d049/field_9104_8.npz",
+   "../data/research/field_d049/field_9104_9.npz",
+   "../data/research/field_d049/field_9105_10.npz",
+   "../data/research/field_d049/field_9105_2.npz",
+   "../data/research/field_d049/field_9105_3.npz",
+   "../data/research/field_d049/field_9105_4.npz",
+   "../data/research/field_d049/field_9105_5.npz",
+   "../data/research/field_d049/field_9105_7.npz",
+   "../data/research/field_d049/field_9105_8.npz",
+   "../data/research/field_d049/field_9105_9.npz",
+   "../data/research/field_d049/field_9106_10.npz",
+   "../data/research/field_d049/field_9106_2.npz",
+   "../data/research/field_d049/field_9106_3.npz",
+   "../data/research/field_d049/field_9106_4.npz",
+   "../data/research/field_d049/field_9106_5.npz",
+   "../data/research/field_d049/field_9106_7.npz",
+   "../data/research/field_d049/field_9106_8.npz",
+   "../data/research/field_d049/field_9106_9.npz",
+   "../data/research/field_d049/field_9107_10.npz",
+   "../data/research/field_d049/field_9107_2.npz",
+   "../data/research/field_d049/field_9107_3.npz",
+   "../data/research/field_d049/field_9107_4.npz",
+   "../data/research/field_d049/field_9107_5.npz",
+   "../data/research/field_d049/field_9107_7.npz",
+   "../data/research/field_d049/field_9107_8.npz",
+   "../data/research/field_d049/field_9107_9.npz",
+   "../data/research/field_d049/field_9108_10.npz",
+   "../data/research/field_d049/field_9108_2.npz",
+   "../data/research/field_d049/field_9108_3.npz",
+   "../data/research/field_d049/field_9108_4.npz",
+   "../data/research/field_d049/field_9108_5.npz",
+   "../data/research/field_d049/field_9108_7.npz",
+   "../data/research/field_d049/field_9108_8.npz",
+   "../data/research/field_d049/field_9108_9.npz",
+   "../data/research/field_d049/field_9109_10.npz",
+   "../data/research/field_d049/field_9109_2.npz",
+   "../data/research/field_d049/field_9109_3.npz",
+   "../data/research/field_d049/field_9109_4.npz",
+   "../data/research/field_d049/field_9109_5.npz",
+   "../data/research/field_d049/field_9109_7.npz",
+   "../data/research/field_d049/field_9109_8.npz",
+   "../data/research/field_d049/field_9109_9.npz",
+   "../data/research/field_d049/field_9110_10.npz",
+   "../data/research/field_d049/field_9110_2.npz",
+   "../data/research/field_d049/field_9110_3.npz",
+   "../data/research/field_d049/field_9110_4.npz",
+   "../data/research/field_d049/field_9110_5.npz",
+   "../data/research/field_d049/field_9110_7.npz",
+   "../data/research/field_d049/field_9110_8.npz",
+   "../data/research/field_d049/field_9110_9.npz",
+   "../data/research/field_d049/field_9111_10.npz",
+   "../data/research/field_d049/field_9111_2.npz",
+   "../data/research/field_d049/field_9111_3.npz",
+   "../data/research/field_d049/field_9111_4.npz",
+   "../data/research/field_d049/field_9111_5.npz",
+   "../data/research/field_d049/field_9111_7.npz",
+   "../data/research/field_d049/field_9111_8.npz",
+   "../data/research/field_d049/field_9111_9.npz",
+   "../data/research/field_d049/field_9112_10.npz",
+   "../data/research/field_d049/field_9112_2.npz",
+   "../data/research/field_d049/field_9112_3.npz",
+   "../data/research/field_d049/field_9112_4.npz",
+   "../data/research/field_d049/field_9112_5.npz",
+   "../data/research/field_d049/field_9112_7.npz",
+   "../data/research/field_d049/field_9112_8.npz",
+   "../data/research/field_d049/field_9112_9.npz",
+   "../data/research/field_d049/field_9113_10.npz",
+   "../data/research/field_d049/field_9113_2.npz",
+   "../data/research/field_d049/field_9113_3.npz",
+   "../data/research/field_d049/field_9113_4.npz",
+   "../data/research/field_d049/field_9113_5.npz",
+   "../data/research/field_d049/field_9113_7.npz",
+   "../data/research/field_d049/field_9113_8.npz",
+   "../data/research/field_d049/field_9113_9.npz",
+   "../data/research/field_d049/field_9114_10.npz",
+   "../data/research/field_d049/field_9114_2.npz",
+   "../data/research/field_d049/field_9114_3.npz",
+   "../data/research/field_d049/field_9114_4.npz",
+   "../data/research/field_d049/field_9114_5.npz",
+   "../data/research/field_d049/field_9114_7.npz",
+   "../data/research/field_d049/field_9114_8.npz",
+   "../data/research/field_d049/field_9114_9.npz",
+   "../data/research/field_d049/field_9115_10.npz",
+   "../data/research/field_d049/field_9115_2.npz",
+   "../data/research/field_d049/field_9115_3.npz",
+   "../data/research/field_d049/field_9115_4.npz",
+   "../data/research/field_d049/field_9115_5.npz",
+   "../data/research/field_d049/field_9115_7.npz",
+   "../data/research/field_d049/field_9115_8.npz",
+   "../data/research/field_d049/field_9115_9.npz",
+   "../data/research/field_d049/field_9116_10.npz",
+   "../data/research/field_d049/field_9116_2.npz",
+   "../data/research/field_d049/field_9116_3.npz",
+   "../data/research/field_d049/field_9116_4.npz",
+   "../data/research/field_d049/field_9116_5.npz",
+   "../data/research/field_d049/field_9116_7.npz",
+   "../data/research/field_d049/field_9116_8.npz",
+   "../data/research/field_d049/field_9116_9.npz",
+   "../data/research/field_d049/field_9117_10.npz",
+   "../data/research/field_d049/field_9117_2.npz",
+   "../data/research/field_d049/field_9117_3.npz",
+   "../data/research/field_d049/field_9117_4.npz",
+   "../data/research/field_d049/field_9117_5.npz",
+   "../data/research/field_d049/field_9117_7.npz",
+   "../data/research/field_d049/field_9117_8.npz",
+   "../data/research/field_d049/field_9117_9.npz",
+   "../data/research/field_d049/field_9118_10.npz",
+   "../data/research/field_d049/field_9118_2.npz",
+   "../data/research/field_d049/field_9118_3.npz",
+   "../data/research/field_d049/field_9118_4.npz",
+   "../data/research/field_d049/field_9118_5.npz",
+   "../data/research/field_d049/field_9118_7.npz",
+   "../data/research/field_d049/field_9118_8.npz",
+   "../data/research/field_d049/field_9118_9.npz",
+   "../data/research/field_d049/field_9119_10.npz",
+   "../data/research/field_d049/field_9119_2.npz",
+   "../data/research/field_d049/field_9119_3.npz",
+   "../data/research/field_d049/field_9119_4.npz",
+   "../data/research/field_d049/field_9119_5.npz",
+   "../data/research/field_d049/field_9119_7.npz",
+   "../data/research/field_d049/field_9119_8.npz",
+   "../data/research/field_d049/field_9119_9.npz",
+   "../data/research/field_d049/field_9120_10.npz",
+   "../data/research/field_d049/field_9120_2.npz",
+   "../data/research/field_d049/field_9120_3.npz",
+   "../data/research/field_d049/field_9120_4.npz",
+   "../data/research/field_d049/field_9120_5.npz",
+   "../data/research/field_d049/field_9120_7.npz",
+   "../data/research/field_d049/field_9120_8.npz",
+   "../data/research/field_d049/field_9120_9.npz",
+   "../data/research/field_d049/field_9121_10.npz",
+   "../data/research/field_d049/field_9121_2.npz",
+   "../data/research/field_d049/field_9121_3.npz",
+   "../data/research/field_d049/field_9121_4.npz",
+   "../data/research/field_d049/field_9121_5.npz",
+   "../data/research/field_d049/field_9121_7.npz",
+   "../data/research/field_d049/field_9121_8.npz",
+   "../data/research/field_d049/field_9121_9.npz",
+   "../data/research/field_d049/field_9122_10.npz",
+   "../data/research/field_d049/field_9122_2.npz",
+   "../data/research/field_d049/field_9122_3.npz",
+   "../data/research/field_d049/field_9122_4.npz",
+   "../data/research/field_d049/field_9122_5.npz",
+   "../data/research/field_d049/field_9122_7.npz",
+   "../data/research/field_d049/field_9122_8.npz",
+   "../data/research/field_d049/field_9122_9.npz",
+   "../data/research/field_d049/field_9123_10.npz",
+   "../data/research/field_d049/field_9123_2.npz",
+   "../data/research/field_d049/field_9123_3.npz",
+   "../data/research/field_d049/field_9123_4.npz",
+   "../data/research/field_d049/field_9123_5.npz",
+   "../data/research/field_d049/field_9123_7.npz",
+   "../data/research/field_d049/field_9123_8.npz",
+   "../data/research/field_d049/field_9123_9.npz",
+   "../data/research/field_d049/field_9124_10.npz",
+   "../data/research/field_d049/field_9124_2.npz",
+   "../data/research/field_d049/field_9124_3.npz",
+   "../data/research/field_d049/field_9124_4.npz",
+   "../data/research/field_d049/field_9124_5.npz",
+   "../data/research/field_d049/field_9124_7.npz",
+   "../data/research/field_d049/field_9124_8.npz",
+   "../data/research/field_d049/field_9124_9.npz"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-11-01T09:39:41+0100",
+  "finished": "2026-11-01T09:44:57+0100"
+ }
+}

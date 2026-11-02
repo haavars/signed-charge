@@ -1,0 +1,60 @@
+{
+ "leader_phantom_rendered": {
+  "stats": {
+   "close_same": 0.4633636039342308,
+   "close_offset": 0.20759678101101733,
+   "close_opposite": 0.1928585032217689,
+   "prints": 480,
+   "count": 41.0,
+   "density_per_100mm2": 28.15655385472221,
+   "bifurcations": 0.3879074017666768,
+   "near_core_below_over_above": 1.3468657858250457,
+   "with_core": 326
+  },
+  "pairs": {
+   "prints": 480,
+   "density_per_100mm2": 28.15655385472221,
+   "nn_median_px": 22.492304535193927,
+   "clustering": {
+    "10": 0.058798999165971644,
+    "20": 0.5757245587273916,
+    "30": 0.9222913190757874,
+    "40": 1.0505681145697716,
+    "60": 1.113513436574812,
+    "80": 1.1233696459303393
+   },
+   "close_pairs_per_print": 73.96875,
+   "close_same": 0.45590761864526125,
+   "close_offset": 0.20884382481340658,
+   "close_facing": 0.19597239825376708,
+   "close_EE": 0.3698352344740177,
+   "close_EB": 0.47379242360230955,
+   "close_BB": 0.15637234192367272,
+   "close_across0": 0.0672581326573722,
+   "close_across1": 0.2129840867483453,
+   "close_across2": 0.7197577805942825,
+   "facing_across1": 0.25783271054900836,
+   "facing_EB": 0.4738430583501006
+  }
+ },
+ "_provenance": {
+  "commit": "e3925733f68cba3681ea78d4529da78540fee110",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/realism/extractor_forks_phantom.py",
+   "../research/realism/extractor_forks_phantom.json"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-10-30T19:11:38+0100",
+  "finished": "2026-10-30T19:15:14+0100"
+ }
+}

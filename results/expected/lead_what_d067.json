@@ -1,0 +1,235 @@
+{
+ "s40": {
+  "misfit": {
+   "mean": 7.481766605377198,
+   "ci": [
+    6.871705574393272,
+    8.03033623278141
+   ]
+  },
+  "over20": {
+   "mean": 0.032357788085937506,
+   "ci": [
+    0.02127706739637587,
+    0.04440013461642796
+   ]
+  },
+  "over45": {
+   "mean": 0.00046725802951388896,
+   "ci": [
+    0.00020276387532552087,
+    0.0007613033718532982
+   ]
+  },
+  "seam_area": {
+   "mean": 0.10603841145833333,
+   "ci": [
+    0.10603841145833333,
+    0.10603841145833333
+   ]
+  },
+  "on_seam": {
+   "mean": 54.026073772280576,
+   "ci": [
+    48.32297733794751,
+    60.59656129928785
+   ]
+  },
+  "off_seam": {
+   "mean": 10.229879358256671,
+   "ci": [
+    9.40678561678774,
+    11.097434859867443
+   ]
+  },
+  "small": {
+   "mean": 0.18395354716056658,
+   "ci": [
+    0.11825585174607851,
+    0.24965124257505464
+   ]
+  }
+ },
+ "s50": {
+  "misfit": {
+   "mean": 6.641214275360108,
+   "ci": [
+    6.099911568164826,
+    7.153780281543732
+   ]
+  },
+  "over20": {
+   "mean": 0.00884128146701389,
+   "ci": [
+    0.004687033759223091,
+    0.014134207831488714
+   ]
+  },
+  "over45": {
+   "mean": 0.00036112467447916663,
+   "ci": [
+    0.00021633572048611116,
+    0.0005113559299045139
+   ]
+  },
+  "seam_area": {
+   "mean": 0.10609266493055554,
+   "ci": [
+    0.10609266493055554,
+    0.10609266493055554
+   ]
+  },
+  "on_seam": {
+   "mean": 49.663708378810256,
+   "ci": [
+    44.46202321195232,
+    54.989243192498144
+   ]
+  },
+  "off_seam": {
+   "mean": 15.110566439383115,
+   "ci": [
+    14.095233388020867,
+    16.0810675572433
+   ]
+  },
+  "small": {
+   "mean": 0.35476755523823555,
+   "ci": [
+    0.18395354716056656,
+    0.538721102398802
+   ]
+  }
+ },
+ "s60": {
+  "misfit": {
+   "mean": 5.135326838493347,
+   "ci": [
+    4.735723882317544,
+    5.54176502764225
+   ]
+  },
+  "over20": {
+   "mean": 0.0033545600043402776,
+   "ci": [
+    0.001789008246527778,
+    0.00529123094346788
+   ]
+  },
+  "over45": {
+   "mean": 0.0003611246744791667,
+   "ci": [
+    0.0002298990885416667,
+    0.0005069393581814235
+   ]
+  },
+  "seam_area": {
+   "mean": 0.10609266493055554,
+   "ci": [
+    0.10609266493055554,
+    0.10609266493055554
+   ]
+  },
+  "on_seam": {
+   "mean": 39.2603380450944,
+   "ci": [
+    34.925600406046115,
+    43.59507568414267
+   ]
+  },
+  "off_seam": {
+   "mean": 21.107756232445674,
+   "ci": [
+    19.99063264354186,
+    22.224879821349482
+   ]
+  },
+  "small": {
+   "mean": 0.48616294606721155,
+   "ci": [
+    0.3416280161553379,
+    0.6306978759790852
+   ]
+  }
+ },
+ "_provenance": {
+  "commit": "d98dd4387df9647d17a0c7b243e02c23e6982871",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/developmental/neutral_what.py",
+   "../research/developmental/lead_what_d067.json",
+   "../data/research/lead_d067/s40_9100_10.npz",
+   "../data/research/lead_d067/s40_9100_2.npz",
+   "../data/research/lead_d067/s40_9100_3.npz",
+   "../data/research/lead_d067/s40_9100_4.npz",
+   "../data/research/lead_d067/s40_9100_5.npz",
+   "../data/research/lead_d067/s40_9100_7.npz",
+   "../data/research/lead_d067/s40_9100_8.npz",
+   "../data/research/lead_d067/s40_9100_9.npz",
+   "../data/research/lead_d067/s40_9101_10.npz",
+   "../data/research/lead_d067/s40_9101_2.npz",
+   "../data/research/lead_d067/s40_9101_3.npz",
+   "../data/research/lead_d067/s40_9101_4.npz",
+   "../data/research/lead_d067/s40_9101_5.npz",
+   "../data/research/lead_d067/s40_9101_7.npz",
+   "../data/research/lead_d067/s40_9101_8.npz",
+   "../data/research/lead_d067/s40_9101_9.npz",
+   "../data/research/lead_d067/s40_9102_2.npz",
+   "../data/research/lead_d067/s40_9102_3.npz",
+   "../data/research/lead_d067/s40_9102_4.npz",
+   "../data/research/lead_d067/s40_9102_5.npz",
+   "../data/research/lead_d067/s50_9100_10.npz",
+   "../data/research/lead_d067/s50_9100_2.npz",
+   "../data/research/lead_d067/s50_9100_3.npz",
+   "../data/research/lead_d067/s50_9100_4.npz",
+   "../data/research/lead_d067/s50_9100_5.npz",
+   "../data/research/lead_d067/s50_9100_7.npz",
+   "../data/research/lead_d067/s50_9100_8.npz",
+   "../data/research/lead_d067/s50_9100_9.npz",
+   "../data/research/lead_d067/s50_9101_10.npz",
+   "../data/research/lead_d067/s50_9101_2.npz",
+   "../data/research/lead_d067/s50_9101_3.npz",
+   "../data/research/lead_d067/s50_9101_4.npz",
+   "../data/research/lead_d067/s50_9101_5.npz",
+   "../data/research/lead_d067/s50_9101_7.npz",
+   "../data/research/lead_d067/s50_9101_8.npz",
+   "../data/research/lead_d067/s50_9101_9.npz",
+   "../data/research/lead_d067/s50_9102_2.npz",
+   "../data/research/lead_d067/s50_9102_3.npz",
+   "../data/research/lead_d067/s50_9102_4.npz",
+   "../data/research/lead_d067/s50_9102_5.npz",
+   "../data/research/lead_d067/s60_9100_10.npz",
+   "../data/research/lead_d067/s60_9100_2.npz",
+   "../data/research/lead_d067/s60_9100_3.npz",
+   "../data/research/lead_d067/s60_9100_4.npz",
+   "../data/research/lead_d067/s60_9100_5.npz",
+   "../data/research/lead_d067/s60_9100_7.npz",
+   "../data/research/lead_d067/s60_9100_8.npz",
+   "../data/research/lead_d067/s60_9100_9.npz",
+   "../data/research/lead_d067/s60_9101_10.npz",
+   "../data/research/lead_d067/s60_9101_2.npz",
+   "../data/research/lead_d067/s60_9101_3.npz",
+   "../data/research/lead_d067/s60_9101_4.npz",
+   "../data/research/lead_d067/s60_9101_5.npz",
+   "../data/research/lead_d067/s60_9101_7.npz",
+   "../data/research/lead_d067/s60_9101_8.npz",
+   "../data/research/lead_d067/s60_9101_9.npz",
+   "../data/research/lead_d067/s60_9102_2.npz",
+   "../data/research/lead_d067/s60_9102_3.npz",
+   "../data/research/lead_d067/s60_9102_4.npz",
+   "../data/research/lead_d067/s60_9102_5.npz"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-11-01T17:20:13+0100",
+  "finished": "2026-11-01T17:20:14+0100"
+ }
+}

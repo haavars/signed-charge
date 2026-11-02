@@ -1,0 +1,200 @@
+{
+ "real": {
+  "prints": 180,
+  "median": 3.0235021114349365,
+  "p90": 9.736152172088623,
+  "ring0": 4.73962140083313,
+  "ring14": 2.71058189868927,
+  "ring28": 2.3589911460876465,
+  "ring56": 2.872896432876587,
+  "concentration": 0.5080457355762278
+ },
+ "FVC2000/DB1_B": {
+  "prints": 20,
+  "median": 2.965601325035095,
+  "p90": 9.660229206085205,
+  "ring0": 4.8645477294921875,
+  "ring14": 2.5861750841140747,
+  "ring28": 2.5183409452438354,
+  "ring56": 4.517650604248047,
+  "concentration": 0.5166044791278221
+ },
+ "FVC2000/DB2_B": {
+  "prints": 20,
+  "median": 3.0235021114349365,
+  "p90": 9.680867671966553,
+  "ring0": 4.741554498672485,
+  "ring14": 2.6764752864837646,
+  "ring28": 2.6018742322921753,
+  "ring56": 2.6250123977661133,
+  "concentration": 0.5403509207684867
+ },
+ "FVC2000/DB3_B": {
+  "prints": 20,
+  "median": 3.8926823139190674,
+  "p90": 12.043071269989014,
+  "ring0": 5.455836296081543,
+  "ring14": 3.7043466567993164,
+  "ring28": 3.341280698776245,
+  "ring56": 5.180469512939453,
+  "concentration": 0.38385940976060695
+ },
+ "FVC2002/DB1_B": {
+  "prints": 20,
+  "median": 2.6815892457962036,
+  "p90": 8.852791786193848,
+  "ring0": 4.4772117137908936,
+  "ring14": 2.3714486360549927,
+  "ring28": 2.1017770767211914,
+  "ring56": 2.2975962162017822,
+  "concentration": 0.535906734823056
+ },
+ "FVC2002/DB2_B": {
+  "prints": 20,
+  "median": 2.9133983850479126,
+  "p90": 9.394774913787842,
+  "ring0": 4.495792388916016,
+  "ring14": 2.4071124792099,
+  "ring28": 2.296574592590332,
+  "ring56": 3.2991687059402466,
+  "concentration": 0.5475155622422172
+ },
+ "FVC2002/DB3_B": {
+  "prints": 20,
+  "median": 2.913630485534668,
+  "p90": 8.650840282440186,
+  "ring0": 4.521092176437378,
+  "ring14": 2.6364476680755615,
+  "ring28": 2.1998586654663086,
+  "ring56": 2.228010892868042,
+  "concentration": 0.4791183100204546
+ },
+ "FVC2004/DB1_B": {
+  "prints": 20,
+  "median": 3.087787628173828,
+  "p90": 9.410336017608643,
+  "ring0": 4.876464366912842,
+  "ring14": 2.726991295814514,
+  "ring28": 2.284270405769348,
+  "ring56": 2.3372011184692383,
+  "concentration": 0.5335984710518832
+ },
+ "FVC2004/DB2_B": {
+  "prints": 20,
+  "median": 3.054893732070923,
+  "p90": 9.870211124420166,
+  "ring0": 4.490056037902832,
+  "ring14": 2.8463958501815796,
+  "ring28": 2.6188557147979736,
+  "ring56": 2.840176820755005,
+  "concentration": 0.487764653074957
+ },
+ "FVC2004/DB3_B": {
+  "prints": 20,
+  "median": 3.668078899383545,
+  "p90": 11.874853610992432,
+  "ring0": 5.140353441238403,
+  "ring14": 3.2075761556625366,
+  "ring28": 2.7682011127471924,
+  "ring56": 2.72491717338562,
+  "concentration": 0.5514345583610663
+ },
+ "model2": {
+  "prints": 48,
+  "median": 2.1291168928146362,
+  "p90": 7.085467338562012,
+  "ring0": 4.1843719482421875,
+  "ring14": 1.5859809517860413,
+  "ring28": 1.2925277948379517,
+  "ring56": 1.298603355884552,
+  "concentration": 0.31370263569288803
+ },
+ "sweep_d015_loop_a0.5": {
+  "prints": 8,
+  "median": 4.179903984069824,
+  "p90": 11.780523777008057,
+  "ring0": 9.111910820007324,
+  "ring14": 4.373900651931763,
+  "ring28": 3.349478602409363,
+  "ring56": 3.2266277074813843,
+  "concentration": 0.3487360666484517
+ },
+ "sweep_d015_loop_a0.7": {
+  "prints": 8,
+  "median": 4.752846956253052,
+  "p90": 15.074776649475098,
+  "ring0": 9.058199405670166,
+  "ring14": 4.513951778411865,
+  "ring28": 3.2518523931503296,
+  "ring56": 2.976166009902954,
+  "concentration": 0.32496403145996045
+ },
+ "sweep_d015_whorl_a0.7": {
+  "prints": 8,
+  "median": 3.6396665573120117,
+  "p90": 12.345518112182617,
+  "ring0": 8.25841474533081,
+  "ring14": 3.729577422142029,
+  "ring28": 2.874979853630066,
+  "ring56": 2.249750256538391,
+  "concentration": 0.5394891716458451
+ },
+ "sweep_d015_arch_a0.7": {
+  "prints": 4,
+  "median": 4.097816228866577,
+  "p90": 14.454626083374023,
+  "ring0": 9.349262237548828,
+  "ring14": 3.9949750900268555,
+  "ring28": 3.13336443901062,
+  "ring56": 2.8049142360687256,
+  "concentration": 0.5464956111582917
+ },
+ "_provenance": {
+  "commit": "eb64005fe33346b7e0fd759b5b6c5537839c3921",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/realism/wobble_where.py",
+   "../research/realism/wobble_where.json",
+   "../data/research/sweep_d015/loop_a0.5_s0.1_3001.npz",
+   "../data/research/sweep_d015/loop_a0.5_s0.1_3016.npz",
+   "../data/research/sweep_d015/loop_a0.5_s0.1_3031.npz",
+   "../data/research/sweep_d015/loop_a0.5_s0.1_3046.npz",
+   "../data/research/sweep_d015/loop_a0.5_s0.1_3061.npz",
+   "../data/research/sweep_d015/loop_a0.5_s0.1_3076.npz",
+   "../data/research/sweep_d015/loop_a0.5_s0.1_3091.npz",
+   "../data/research/sweep_d015/loop_a0.5_s0.1_3106.npz",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3007.npz",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3022.npz",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3037.npz",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3052.npz",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3067.npz",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3082.npz",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3097.npz",
+   "../data/research/sweep_d015/loop_a0.7_s0.1_3112.npz",
+   "../data/research/sweep_d015/whorl_a0.7_s0.1_3008.npz",
+   "../data/research/sweep_d015/whorl_a0.7_s0.1_3023.npz",
+   "../data/research/sweep_d015/whorl_a0.7_s0.1_3038.npz",
+   "../data/research/sweep_d015/whorl_a0.7_s0.1_3053.npz",
+   "../data/research/sweep_d015/whorl_a0.7_s0.1_3068.npz",
+   "../data/research/sweep_d015/whorl_a0.7_s0.1_3083.npz",
+   "../data/research/sweep_d015/whorl_a0.7_s0.1_3098.npz",
+   "../data/research/sweep_d015/whorl_a0.7_s0.1_3113.npz",
+   "../data/research/sweep_d015/arch_a0.7_s0.1_3009.npz",
+   "../data/research/sweep_d015/arch_a0.7_s0.1_3024.npz",
+   "../data/research/sweep_d015/arch_a0.7_s0.1_3039.npz",
+   "../data/research/sweep_d015/arch_a0.7_s0.1_3054.npz"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-10-31T07:54:15+0100",
+  "finished": "2026-10-31T07:59:52+0100"
+ }
+}

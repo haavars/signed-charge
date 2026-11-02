@@ -1,0 +1,197 @@
+{
+ "K15_a0.6_s0.1_2001": {
+  "pattern": "K15",
+  "speed": 0.6,
+  "endings": 18,
+  "forks": 348,
+  "islands": 5,
+  "area_mm2": 173.4061048,
+  "density": 216.83204315884038,
+  "density_no_islands": 211.06523350036056
+ },
+ "K15_a0.6_s0.1_2005": {
+  "pattern": "K15",
+  "speed": 0.6,
+  "endings": 19,
+  "forks": 313,
+  "islands": 0,
+  "area_mm2": 173.4061048,
+  "density": 191.45808066152927,
+  "density_no_islands": 191.45808066152927
+ },
+ "K15_a0.6_s0.1_2009": {
+  "pattern": "K15",
+  "speed": 0.6,
+  "endings": 21,
+  "forks": 307,
+  "islands": 4,
+  "area_mm2": 173.4061048,
+  "density": 193.7648045249212,
+  "density_no_islands": 189.15135679813736
+ },
+ "K15_a0.6_s0.1_2013": {
+  "pattern": "K15",
+  "speed": 0.6,
+  "endings": 13,
+  "forks": 334,
+  "islands": 1,
+  "area_mm2": 173.4061048,
+  "density": 201.26165708094496,
+  "density_no_islands": 200.10829514924896
+ },
+ "noise3_a0.6_s0.1_2002": {
+  "pattern": "noise3",
+  "speed": 0.6,
+  "endings": 29,
+  "forks": 19,
+  "islands": 1,
+  "area_mm2": 173.4061048,
+  "density": 28.83404829239899,
+  "density_no_islands": 27.680686360703028
+ },
+ "noise3_a0.6_s0.1_2006": {
+  "pattern": "noise3",
+  "speed": 0.6,
+  "endings": 27,
+  "forks": 11,
+  "islands": 0,
+  "area_mm2": 173.4061048,
+  "density": 21.91387670222323,
+  "density_no_islands": 21.91387670222323
+ },
+ "noise3_a0.6_s0.1_2010": {
+  "pattern": "noise3",
+  "speed": 0.6,
+  "endings": 29,
+  "forks": 11,
+  "islands": 4,
+  "area_mm2": 173.4061048,
+  "density": 27.680686360703028,
+  "density_no_islands": 23.06723863391919
+ },
+ "noise3_a0.6_s0.1_2014": {
+  "pattern": "noise3",
+  "speed": 0.6,
+  "endings": 27,
+  "forks": 17,
+  "islands": 1,
+  "area_mm2": 173.4061048,
+  "density": 26.527324429007066,
+  "density_no_islands": 25.37396249731111
+ },
+ "ramp40_a0.6_s0.1_2004": {
+  "pattern": "ramp40",
+  "speed": 0.6,
+  "endings": 42,
+  "forks": 12,
+  "islands": 5,
+  "area_mm2": 173.4061048,
+  "density": 36.9075818142707,
+  "density_no_islands": 31.14077215579091
+ },
+ "ramp40_a0.6_s0.1_2008": {
+  "pattern": "ramp40",
+  "speed": 0.6,
+  "endings": 48,
+  "forks": 14,
+  "islands": 15,
+  "area_mm2": 173.4061048,
+  "density": 53.05464885801413,
+  "density_no_islands": 35.754219882574745
+ },
+ "ramp40_a0.6_s0.1_2012": {
+  "pattern": "ramp40",
+  "speed": 0.6,
+  "endings": 43,
+  "forks": 19,
+  "islands": 13,
+  "area_mm2": 173.4061048,
+  "density": 50.74792499462222,
+  "density_no_islands": 35.754219882574745
+ },
+ "ramp40_a0.6_s0.1_2016": {
+  "pattern": "ramp40",
+  "speed": 0.6,
+  "endings": 35,
+  "forks": 23,
+  "islands": 18,
+  "area_mm2": 173.4061048,
+  "density": 54.208010789710094,
+  "density_no_islands": 33.44749601918283
+ },
+ "sigma3_a0.6_s0.03_2003": {
+  "pattern": "sigma3",
+  "speed": 0.6,
+  "endings": 47,
+  "forks": 8,
+  "islands": 12,
+  "area_mm2": 173.4061048,
+  "density": 45.5577963019904,
+  "density_no_islands": 31.717453121638883
+ },
+ "sigma3_a0.6_s0.03_2007": {
+  "pattern": "sigma3",
+  "speed": 0.6,
+  "endings": 45,
+  "forks": 10,
+  "islands": 6,
+  "area_mm2": 173.4061048,
+  "density": 38.637624711814645,
+  "density_no_islands": 31.717453121638883
+ },
+ "sigma3_a0.6_s0.03_2011": {
+  "pattern": "sigma3",
+  "speed": 0.6,
+  "endings": 30,
+  "forks": 8,
+  "islands": 7,
+  "area_mm2": 173.4061048,
+  "density": 29.987410224094944,
+  "density_no_islands": 21.91387670222323
+ },
+ "sigma3_a0.6_s0.03_2015": {
+  "pattern": "sigma3",
+  "speed": 0.6,
+  "endings": 33,
+  "forks": 6,
+  "islands": 10,
+  "area_mm2": 173.4061048,
+  "density": 34.0241769850308,
+  "density_no_islands": 22.490557668071208
+ },
+ "_provenance": {
+  "commit": "75e46cc8d105ad32acd3e4462a548c181f36afdf",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/developmental/defects_direct.py",
+   "../research/developmental/islands_direct.json",
+   "<scratch>/islands_debug/K15_a0.6_s0.1_2001.npz",
+   "<scratch>/islands_debug/K15_a0.6_s0.1_2005.npz",
+   "<scratch>/islands_debug/K15_a0.6_s0.1_2009.npz",
+   "<scratch>/islands_debug/K15_a0.6_s0.1_2013.npz",
+   "<scratch>/islands_debug/noise3_a0.6_s0.1_2002.npz",
+   "<scratch>/islands_debug/noise3_a0.6_s0.1_2006.npz",
+   "<scratch>/islands_debug/noise3_a0.6_s0.1_2010.npz",
+   "<scratch>/islands_debug/noise3_a0.6_s0.1_2014.npz",
+   "<scratch>/islands_debug/ramp40_a0.6_s0.1_2004.npz",
+   "<scratch>/islands_debug/ramp40_a0.6_s0.1_2008.npz",
+   "<scratch>/islands_debug/ramp40_a0.6_s0.1_2012.npz",
+   "<scratch>/islands_debug/ramp40_a0.6_s0.1_2016.npz",
+   "<scratch>/islands_debug/sigma3_a0.6_s0.03_2003.npz",
+   "<scratch>/islands_debug/sigma3_a0.6_s0.03_2007.npz",
+   "<scratch>/islands_debug/sigma3_a0.6_s0.03_2011.npz",
+   "<scratch>/islands_debug/sigma3_a0.6_s0.03_2015.npz"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-10-31T02:13:53+0100",
+  "finished": "2026-10-31T02:13:53+0100"
+ }
+}

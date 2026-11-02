@@ -1,0 +1,65 @@
+{
+ "real": {
+  "prints": 116,
+  "share": 0.12330937417040053,
+  "p99": 26.673355102539062,
+  "longest": 139.5,
+  "turn": 4.754079341888428
+ },
+ "model2": {
+  "prints": 32,
+  "share": 0.04750495671960356,
+  "p99": 13.327046394348145,
+  "longest": 81.0,
+  "turn": 4.147856712341309
+ },
+ "sigma_test_loop": {
+  "prints": 4,
+  "share": 0.14210758699243348,
+  "p99": 30.85243034362793,
+  "longest": 177.0,
+  "turn": 4.32991886138916
+ },
+ "sigma_test_whorl": {
+  "prints": 2,
+  "share": 0.11888947604333856,
+  "p99": 45.92647171020508,
+  "longest": 134.5,
+  "turn": 4.057026386260986
+ },
+ "sigma_test_arch": {
+  "prints": 2,
+  "share": 0.1372059223309119,
+  "p99": 31.730523109436035,
+  "longest": 240.5,
+  "turn": 3.33780300617218
+ },
+ "_provenance": {
+  "commit": "439e6a7b777e0d16a149a628679e10e80390bb00",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/realism/seams.py",
+   "../research/realism/seams.json",
+   "<scratch>/sigma_test/loop_a0.7_s0.03_4501.npz",
+   "<scratch>/sigma_test/loop_a0.7_s0.03_4502.npz",
+   "<scratch>/sigma_test/loop_a0.7_s0.03_4503.npz",
+   "<scratch>/sigma_test/loop_a0.7_s0.03_4504.npz",
+   "<scratch>/sigma_test/whorl_a0.7_s0.03_4505.npz",
+   "<scratch>/sigma_test/whorl_a0.7_s0.03_4506.npz",
+   "<scratch>/sigma_test/arch_a0.7_s0.03_4507.npz",
+   "<scratch>/sigma_test/arch_a0.7_s0.03_4508.npz"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-10-31T09:25:16+0100",
+  "finished": "2026-10-31T09:29:41+0100"
+ }
+}

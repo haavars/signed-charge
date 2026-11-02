@@ -1,0 +1,68 @@
+{
+ "real": {
+  "extreme_low_curvature": 0.49503376781008146,
+  "extreme_high_curvature": 0.7976050716130547,
+  "lowest_curvature_share": 0.2694219349332001,
+  "between_median": 0.025190292563544027
+ },
+ "model2": {
+  "extreme_low_curvature": 0.28253732691891714,
+  "extreme_high_curvature": 0.7442528735632183,
+  "lowest_curvature_share": 0.3750322480121176,
+  "accuracy_h10": 0.8394483746143695,
+  "between_median": 0.026509234153577515,
+  "below_fvc_p1": 0.02517123287671233,
+  "below_fvc_p5": 0.08321917808219179,
+  "prints": 320
+ },
+ "bend0.15": {
+  "extreme_low_curvature": 0.3315525171731348,
+  "extreme_high_curvature": 0.7061143984220908,
+  "lowest_curvature_share": 0.36904716269917326,
+  "accuracy_h10": 0.808017209729034,
+  "between_median": 0.03171888504290403,
+  "below_fvc_p1": 0.0127838519764508,
+  "below_fvc_p5": 0.04978973927670311,
+  "prints": 320
+ },
+ "bend0.3": {
+  "extreme_low_curvature": 0.387646137758179,
+  "extreme_high_curvature": 0.7209775967413442,
+  "lowest_curvature_share": 0.37201685694107056,
+  "accuracy_h10": 0.742204702943744,
+  "between_median": 0.037493502137231134,
+  "below_fvc_p1": 0.007793472966390648,
+  "below_fvc_p5": 0.03019970774476376,
+  "prints": 320
+ },
+ "fine0.08": {
+  "extreme_low_curvature": 0.405419788182678,
+  "extreme_high_curvature": 0.7263779527559056,
+  "lowest_curvature_share": 0.3543764891142383,
+  "accuracy_h10": 0.761223612988491,
+  "between_median": 0.028828847328653557,
+  "below_fvc_p1": 0.01113013698630137,
+  "below_fvc_p5": 0.05291095890410959,
+  "prints": 320
+ },
+ "fine0.15": {
+  "extreme_low_curvature": 0.5585267917397759,
+  "extreme_high_curvature": 0.6976102941176471,
+  "lowest_curvature_share": 0.31488412733603727,
+  "accuracy_h10": 0.7584866875691347,
+  "between_median": 0.03614683926726214,
+  "below_fvc_p1": 0.0032534246575342467,
+  "below_fvc_p5": 0.014726027397260274,
+  "prints": 320
+ },
+ "bend0.3_fine0.08": {
+  "extreme_low_curvature": 0.47267138214916754,
+  "extreme_high_curvature": 0.7394167450611477,
+  "lowest_curvature_share": 0.350837486552923,
+  "accuracy_h10": 0.7292368639537573,
+  "between_median": 0.03844586472764037,
+  "below_fvc_p1": 0.004132231404958678,
+  "below_fvc_p5": 0.019669421487603304,
+  "prints": 320
+ }
+}

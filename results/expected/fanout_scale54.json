@@ -1,0 +1,210 @@
+{
+ "real": {
+  "prints": 235,
+  "splay_per_ridge": 0.026811927556991577,
+  "splay_p90": 0.04538125544786453,
+  "bend_per_ridge": 0.05677304416894913,
+  "period": 10.511985778808594,
+  "demand_per_100mm2": 9.524020195007324,
+  "ln_period_sd": 0.026411864906549454,
+  "coherence": 0.5221559405326843
+ },
+ "FVC2000/DB1_B": {
+  "prints": 26,
+  "splay_per_ridge": 0.03607938438653946,
+  "splay_p90": 0.05819166079163551,
+  "bend_per_ridge": 0.053768035024404526,
+  "period": 11.282025337219238,
+  "demand_per_100mm2": 11.584888458251953,
+  "ln_period_sd": 0.02568696066737175,
+  "coherence": 0.5733266174793243
+ },
+ "FVC2000/DB2_B": {
+  "prints": 27,
+  "splay_per_ridge": 0.031098399311304092,
+  "splay_p90": 0.040805261582136154,
+  "bend_per_ridge": 0.0593709871172905,
+  "period": 10.127663612365723,
+  "demand_per_100mm2": 11.936781883239746,
+  "ln_period_sd": 0.03454434499144554,
+  "coherence": 0.5528929829597473
+ },
+ "FVC2000/DB3_B": {
+  "prints": 26,
+  "splay_per_ridge": 0.021940928883850574,
+  "splay_p90": 0.04312559589743614,
+  "bend_per_ridge": 0.046447375789284706,
+  "period": 11.74166202545166,
+  "demand_per_100mm2": 6.08357834815979,
+  "ln_period_sd": 0.027062855660915375,
+  "coherence": 0.5147682726383209
+ },
+ "FVC2002/DB1_B": {
+  "prints": 27,
+  "splay_per_ridge": 0.022738242521882057,
+  "splay_p90": 0.042563993483781815,
+  "bend_per_ridge": 0.050556182861328125,
+  "period": 9.94408130645752,
+  "demand_per_100mm2": 8.523334503173828,
+  "ln_period_sd": 0.024618808180093765,
+  "coherence": 0.5207673907279968
+ },
+ "FVC2002/DB2_B": {
+  "prints": 27,
+  "splay_per_ridge": 0.03607112169265747,
+  "splay_p90": 0.057901546359062195,
+  "bend_per_ridge": 0.05817490443587303,
+  "period": 10.334144592285156,
+  "demand_per_100mm2": 13.199613571166992,
+  "ln_period_sd": 0.02525470219552517,
+  "coherence": 0.49553173780441284
+ },
+ "FVC2002/DB3_B": {
+  "prints": 25,
+  "splay_per_ridge": 0.018693238496780396,
+  "splay_p90": 0.032375089824199677,
+  "bend_per_ridge": 0.06063966453075409,
+  "period": 9.74067211151123,
+  "demand_per_100mm2": 7.368443965911865,
+  "ln_period_sd": 0.016126565635204315,
+  "coherence": 0.45209041237831116
+ },
+ "FVC2004/DB1_B": {
+  "prints": 27,
+  "splay_per_ridge": 0.02737758867442608,
+  "splay_p90": 0.05389028787612915,
+  "bend_per_ridge": 0.057002704590559006,
+  "period": 10.908097267150879,
+  "demand_per_100mm2": 9.362263679504395,
+  "ln_period_sd": 0.024720676243305206,
+  "coherence": 0.5328359603881836
+ },
+ "FVC2004/DB2_B": {
+  "prints": 24,
+  "splay_per_ridge": 0.02851916290819645,
+  "splay_p90": 0.04445052705705166,
+  "bend_per_ridge": 0.06445379555225372,
+  "period": 11.234180927276611,
+  "demand_per_100mm2": 8.06506896018982,
+  "ln_period_sd": 0.028370489366352558,
+  "coherence": 0.5468161702156067
+ },
+ "FVC2004/DB3_B": {
+  "prints": 26,
+  "splay_per_ridge": 0.022700579836964607,
+  "splay_p90": 0.044995302334427834,
+  "bend_per_ridge": 0.05504736676812172,
+  "period": 10.154870986938477,
+  "demand_per_100mm2": 9.503162860870361,
+  "ln_period_sd": 0.06321423500776291,
+  "coherence": 0.49345892667770386
+ },
+ "sfinge": {
+  "prints": 80,
+  "splay_per_ridge": 0.03169230930507183,
+  "splay_p90": 0.05017872527241707,
+  "bend_per_ridge": 0.054451970383524895,
+  "period": 9.842687606811523,
+  "demand_per_100mm2": 12.573100566864014,
+  "ln_period_sd": 0.011644054669886827,
+  "coherence": 0.41842013597488403
+ },
+ "model2": {
+  "prints": 160,
+  "splay_per_ridge": 0.028075847774744034,
+  "splay_p90": 0.05432376638054848,
+  "bend_per_ridge": 0.03891207277774811,
+  "period": 9.766619682312012,
+  "demand_per_100mm2": 10.957064151763916,
+  "ln_period_sd": 0.01991456188261509,
+  "coherence": 0.695315957069397
+ },
+ "d_s1_sp2_f3": {
+  "prints": 160,
+  "splay_per_ridge": 0.03122720029205084,
+  "splay_p90": 0.06082529574632645,
+  "bend_per_ridge": 0.04122052527964115,
+  "period": 11.07045841217041,
+  "demand_per_100mm2": 9.141749382019043,
+  "ln_period_sd": 0.06452896445989609,
+  "coherence": 0.7134014964103699
+ },
+ "noise3_a0.6": {
+  "prints": 4,
+  "splay_per_ridge": 0.01998304110020399,
+  "splay_p90": 0.032334416173398495,
+  "bend_per_ridge": 0.03044424019753933,
+  "period": 10.073135375976562,
+  "demand_per_100mm2": 7.596120595932007,
+  "ln_period_sd": 0.02906787395477295,
+  "coherence": 0.7221227586269379
+ },
+ "loop_a0.5": {
+  "prints": 12,
+  "splay_per_ridge": 0.01896886806935072,
+  "splay_p90": 0.03127090632915497,
+  "bend_per_ridge": 0.032917944714426994,
+  "period": 10.134089469909668,
+  "demand_per_100mm2": 7.10242223739624,
+  "ln_period_sd": 0.029418020509183407,
+  "coherence": 0.6919742822647095
+ },
+ "loop_a0.6": {
+  "prints": 12,
+  "splay_per_ridge": 0.01943438034504652,
+  "splay_p90": 0.031447820365428925,
+  "bend_per_ridge": 0.0330631285905838,
+  "period": 10.124079704284668,
+  "demand_per_100mm2": 7.353822708129883,
+  "ln_period_sd": 0.029361875727772713,
+  "coherence": 0.6791627407073975
+ },
+ "_provenance": {
+  "commit": "da0ac7b46721f5095a588b6170e33eb9bbe83269",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../research/realism/fanout.py",
+   "../research/realism/fanout_scale54.json",
+   "<scratch>/islands_debug/noise3_a0.6_s0.1_2002.npz",
+   "<scratch>/islands_debug/noise3_a0.6_s0.1_2006.npz",
+   "<scratch>/islands_debug/noise3_a0.6_s0.1_2010.npz",
+   "<scratch>/islands_debug/noise3_a0.6_s0.1_2014.npz",
+   "<scratch>/sweep/loop_a0.5_s0.1_1001.npz",
+   "<scratch>/sweep/loop_a0.5_s0.1_1019.npz",
+   "<scratch>/sweep/loop_a0.5_s0.1_1037.npz",
+   "<scratch>/sweep/loop_a0.5_s0.1_1055.npz",
+   "<scratch>/sweep/loop_a0.5_s0.1_1073.npz",
+   "<scratch>/sweep/loop_a0.5_s0.1_1091.npz",
+   "<scratch>/sweep/loop_a0.5_s0.1_1109.npz",
+   "<scratch>/sweep/loop_a0.5_s0.1_1127.npz",
+   "<scratch>/sweep/loop_a0.5_s0.1_1145.npz",
+   "<scratch>/sweep/loop_a0.5_s0.1_1163.npz",
+   "<scratch>/sweep/loop_a0.5_s0.1_1181.npz",
+   "<scratch>/sweep/loop_a0.5_s0.1_1199.npz",
+   "<scratch>/sweep/loop_a0.6_s0.1_1004.npz",
+   "<scratch>/sweep/loop_a0.6_s0.1_1022.npz",
+   "<scratch>/sweep/loop_a0.6_s0.1_1040.npz",
+   "<scratch>/sweep/loop_a0.6_s0.1_1058.npz",
+   "<scratch>/sweep/loop_a0.6_s0.1_1076.npz",
+   "<scratch>/sweep/loop_a0.6_s0.1_1094.npz",
+   "<scratch>/sweep/loop_a0.6_s0.1_1112.npz",
+   "<scratch>/sweep/loop_a0.6_s0.1_1130.npz",
+   "<scratch>/sweep/loop_a0.6_s0.1_1148.npz",
+   "<scratch>/sweep/loop_a0.6_s0.1_1166.npz",
+   "<scratch>/sweep/loop_a0.6_s0.1_1184.npz",
+   "<scratch>/sweep/loop_a0.6_s0.1_1202.npz"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-10-31T02:32:01+0100",
+  "finished": "2026-10-31T04:42:23+0100"
+ }
+}

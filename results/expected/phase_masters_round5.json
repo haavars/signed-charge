@@ -1,0 +1,151 @@
+{
+ "real": {
+  "close_same": 0.37191606418561,
+  "close_offset": 0.1319980385571858,
+  "close_opposite": 0.41027729027090865,
+  "prints": 708,
+  "count": 30.0,
+  "density_per_100mm2": 20.827978867744573,
+  "bifurcations": 0.4891252955082742,
+  "near_core_below_over_above": 1.206510784846837,
+  "with_core": 436
+ },
+ "global_s4_free4_sp3": {
+  "close_same": 0.4035512580565933,
+  "close_offset": 0.13993626999199363,
+  "close_opposite": 0.35095802970210105,
+  "prints": 320,
+  "count": 32.0,
+  "density_per_100mm2": 20.92047004989695,
+  "bifurcations": 0.475,
+  "near_core_below_over_above": 1.089701005192293,
+  "with_core": 230,
+  "accuracy_mh": 0.7734811364160612,
+  "pairs": {
+   "prints": 320,
+   "density_per_100mm2": 20.703756397920106,
+   "nn_median_px": 25.277225261064146,
+   "clustering": {
+    "10": 0.5833333333333334,
+    "20": 0.6639083386378103,
+    "30": 0.913953488372093,
+    "40": 1.0410947368421053,
+    "60": 1.0596658711217184,
+    "80": 1.08099116949194
+   },
+   "close_pairs_per_print": 38.634375,
+   "close_same": 0.41349187090512013,
+   "close_offset": 0.14502952357841947,
+   "close_facing": 0.3397233681145353,
+   "close_EE": 0.2795438000485319,
+   "close_EB": 0.496157890479657,
+   "close_BB": 0.22429830947181104,
+   "close_across0": 0.057024993933511285,
+   "close_across1": 0.20723125454986654,
+   "close_across2": 0.7357437515166222,
+   "facing_across1": 0.25642857142857145,
+   "facing_EB": 0.49142857142857144
+  },
+  "master_minutiae_median": 225.5
+ },
+ "global_s4_free5_sp3": {
+  "close_same": 0.3983774889913965,
+  "close_offset": 0.13062108380957024,
+  "close_opposite": 0.36884033240169195,
+  "prints": 320,
+  "count": 34.0,
+  "density_per_100mm2": 22.63843929036088,
+  "bifurcations": 0.4843597262952102,
+  "near_core_below_over_above": 1.058686883644831,
+  "with_core": 230,
+  "accuracy_mh": 0.7647562930219545,
+  "pairs": {
+   "prints": 320,
+   "density_per_100mm2": 22.58161592497087,
+   "nn_median_px": 24.27615270203272,
+   "clustering": {
+    "10": 0.49951409135082603,
+    "20": 0.6630290125099814,
+    "30": 0.9020428254984002,
+    "40": 1.0324605063838996,
+    "60": 1.0615693607590553,
+    "80": 1.0807361234787771
+   },
+   "close_pairs_per_print": 44.728125,
+   "close_same": 0.40473695242087615,
+   "close_offset": 0.13211765527841823,
+   "close_facing": 0.36470341647453364,
+   "close_EE": 0.2753440927827849,
+   "close_EB": 0.4979389366310347,
+   "close_BB": 0.2267169705861804,
+   "close_across0": 0.05791937399566827,
+   "close_across1": 0.20945993153077622,
+   "close_across2": 0.7326206944735555,
+   "facing_across1": 0.2567049808429119,
+   "facing_EB": 0.4990421455938697
+  },
+  "master_minutiae_median": 258.0
+ },
+ "global_s6_free5_sp3": {
+  "close_same": 0.35932875627581073,
+  "close_offset": 0.11865591526591031,
+  "close_opposite": 0.41058176387303125,
+  "prints": 320,
+  "count": 32.0,
+  "density_per_100mm2": 21.104700001976376,
+  "bifurcations": 0.4791304347826087,
+  "near_core_below_over_above": 0.9308031611836061,
+  "with_core": 229,
+  "accuracy_mh": 0.762830283545657,
+  "pairs": {
+   "prints": 320,
+   "density_per_100mm2": 21.089868900495294,
+   "nn_median_px": 23.840600226500566,
+   "clustering": {
+    "10": 0.7423728813559322,
+    "20": 0.8310893512851897,
+    "30": 0.9849030470914127,
+    "40": 1.0856416980822816,
+    "60": 1.0907563681825285,
+    "80": 1.0995654366041632
+   },
+   "close_pairs_per_print": 41.396875,
+   "close_same": 0.37049898090133615,
+   "close_offset": 0.12417905940967766,
+   "close_facing": 0.3991847210689213,
+   "close_EE": 0.27047633426436174,
+   "close_EB": 0.4924888654034876,
+   "close_BB": 0.23703480033215069,
+   "close_across0": 0.061523363780478596,
+   "close_across1": 0.2198233562315996,
+   "close_across2": 0.7186532799879218,
+   "facing_across1": 0.2632375189107413,
+   "facing_EB": 0.4888426626323752
+  },
+  "master_minutiae_median": 243.0
+ },
+ "_provenance": {
+  "commit": "490f2c09c118825cdb680869441ca5bf3d1b1119",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "../docs/realism/phase_masters.py",
+   "../docs/realism/phase_masters_round5.json",
+   "20",
+   "global_s4_free4_sp3",
+   "global_s4_free5_sp3",
+   "global_s6_free5_sp3"
+  ],
+  "cwd": "<repo>/python_biometrics",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<repo>/python_biometrics/tools",
+   "PYTHONPATH": "."
+  },
+  "started": "2026-10-30T10:16:33+0100",
+  "finished": "2026-10-30T10:55:57+0100"
+ }
+}
