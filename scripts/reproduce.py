@@ -160,13 +160,13 @@ def main():
     parser.add_argument("--jobs", type=int, default=max(1, (os.cpu_count() or 2) - 2))
     args = parser.parse_args()
     VERIFY.mkdir(parents=True, exist_ok=True)
-    chosen = [s for s in steps() if s["stage"] == args.stage and args.only in (None, s["name"])]
+    chosen = [s["name"] for s in steps() if s["stage"] == args.stage and args.only in (None, s["name"])]
     if args.list:
-        print("\n".join(s["name"] for s in chosen))
+        print("\n".join(chosen))
         return
     paths.require_fvc()
-    for step in chosen:
-        run(step, args.jobs)
+    for name in chosen:  # looked up afresh, as a step's arguments can list what the step before made
+        run(next(s for s in steps() if s["name"] == name), args.jobs)
 
 
 if __name__ == "__main__":
