@@ -48,7 +48,7 @@ We define a pair correlation of signs, lifted along the ridge flow so that it ne
 
     src/signed_charge/measure/      the measures: minutiae, signs, h(r), C(R), flux, winding
     src/signed_charge/generate/     the generators: Turing fronts, placed minutiae
-    src/signed_charge/reads/        one script for each result behind the paper
+    src/signed_charge/reads/        one script for each result behind the paper (CLAIMS.md)
     src/signed_charge/exploratory/  other experiments, not behind any paper claim and not checked
     src/ridgegen/                   the generator behind ZP and ZP+P
     scripts/                        setup, generation, reproduction and comparison
