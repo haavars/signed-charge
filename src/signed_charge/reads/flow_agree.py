@@ -12,6 +12,12 @@ def row(path):
     return dict(got, path=str(path)) if got else None
 
 
-fc.rm.field_row = row
-fc.SETS = ()
-fc.main(sys.argv[1], sys.argv[2], sys.argv[3:])
+def main(cache, out, runs):
+    """flow_charge's read on the given prints alone, none of its own sets."""
+    fc.rm.field_row = row
+    fc.SETS = ()
+    fc.main(cache, out, runs)
+
+
+if __name__ == "__main__":
+    main(sys.argv[1], sys.argv[2], sys.argv[3:])
