@@ -13,6 +13,7 @@ DATA = _path("SIGNED_CHARGE_DATA", ROOT / "data")
 FVC = _path("FVC_ROOT", DATA / "fvc")  # holds FVC2000/DB1_B/ and so on
 LEADER = _path("LEADER_ONNX", DATA / "leader.onnx")
 SYNFING = _path("SYNFING_ROOT", DATA / "synfing")
+ANGULI = _path("ANGULI_ROOT", DATA / "anguli")
 RENDERED = _path("RENDERED_ROOT", DATA / "rendered")  # the diffusion render of ZP's masters
 RENDERED_02 = _path("RENDERED_02_ROOT", DATA / "rendered_02")  # an earlier render, exploratory reads only
 GENERATED = _path("GENERATED_ROOT", DATA / "generated")  # what scripts/generate_*.sh write

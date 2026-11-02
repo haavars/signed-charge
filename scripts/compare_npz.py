@@ -1,8 +1,10 @@
-"""Are two runs' arrays the same? compare_npz.py DIR_A DIR_B [GLOB]: each .npz in A against its namesake in B, exactly."""
+"""Are two runs' arrays the same? compare_npz.py DIR_A DIR_B [GLOB]: each .npz in A against its namesake in B, exactly, leaving out run metadata."""
 import sys
 from pathlib import Path
 
 import numpy as np
+
+METADATA = {"provenance", "settings"}
 
 
 def main(a, b, pattern="*.npz"):
@@ -13,7 +15,7 @@ def main(a, b, pattern="*.npz"):
             missing += 1
             continue
         x, y = np.load(path, allow_pickle=True), np.load(other, allow_pickle=True)
-        keys = set(x.files) | set(y.files)
+        keys = (set(x.files) | set(y.files)) - METADATA
         bad = [k for k in keys if k not in x.files or k not in y.files or not np.array_equal(x[k], y[k])]
         if bad:
             differ += 1

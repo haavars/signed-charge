@@ -2,5 +2,6 @@
 export FVC_ROOT=/path/to/fvc           # holds FVC2000/DB1_B/*.tif and so on
 export LEADER_ONNX=/path/to/leader.onnx
 export SYNFING_ROOT=/path/to/SynFing
+export ANGULI_ROOT=/path/to/anguli
 export RENDERED_ROOT=/path/to/rendered
 export OMP_NUM_THREADS=1

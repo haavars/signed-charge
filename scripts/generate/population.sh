@@ -9,4 +9,4 @@ export -f job
 seed=${5:-4000}
 { for i in $(seq 1 $2); do seed=$((seed+1)); echo "loop 860 $seed"; done
   for i in $(seq 1 $3); do seed=$((seed+1)); echo "whorl 930 $seed"; done
-  for i in $(seq 1 $4); do seed=$((seed+1)); echo "arch 1110 $seed"; done; } | shuf --random-source=<(yes) | xargs -P 8 -L 1 bash -c 'job $0 $1 $2'
+  for i in $(seq 1 $4); do seed=$((seed+1)); echo "arch 1110 $seed"; done; } | shuf --random-source=<(yes) | xargs -P ${JOBS:-8} -L 1 bash -c 'job $0 $1 $2'

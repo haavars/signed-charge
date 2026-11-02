@@ -1,6 +1,7 @@
-"""Does a rerun equal a stored result? compare_results.py EXPECTED.json ACTUAL.json [TOLERANCE]
+"""Does a rerun equal a stored result? compare_results.py EXPECTED.json ACTUAL.json [TOLERANCE] [--partial]
 
-Every number and string is compared, leaving out `_provenance`. With no tolerance numbers must be equal exactly.
+Every number and string is compared, leaving out `_provenance`. With no tolerance numbers must be equal exactly. With --partial,
+the rerun may hold fewer sections than the stored result, where the stored one also read prints the paper doesn't use.
 """
 import json
 import sys
@@ -12,7 +13,8 @@ def walk(x, y, path, out, tolerance):
             if key == "_provenance":
                 continue
             if key not in x or key not in y:
-                out.append((f"{path}/{key}", "present in only one"))
+                if not (partial and key in x):
+                    out.append((f"{path}/{key}", "present in only one"))
             else:
                 walk(x[key], y[key], f"{path}/{key}", out, tolerance)
     elif isinstance(x, list) and isinstance(y, list):
@@ -32,6 +34,7 @@ def walk(x, y, path, out, tolerance):
 
 
 counts = {"n": 0}
+partial = False
 
 
 def main(expected, actual, tolerance=0.0):
@@ -44,4 +47,5 @@ def main(expected, actual, tolerance=0.0):
 
 
 if __name__ == "__main__":
-    sys.exit(main(*sys.argv[1:]))
+    partial = "--partial" in sys.argv
+    sys.exit(main(*[a for a in sys.argv[1:] if a != "--partial"]))
