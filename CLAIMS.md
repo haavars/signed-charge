@@ -29,6 +29,7 @@ The last column says whether `check_claims.py` covers a table, number by number.
 | §5.10, Table 9 | Net charge and the flow in 96 px patches | `flux_scale_d070`, with the variants `flux_d078_*` and `flux_e124_outside_q0` | `signed_charge.reads.flux_scale` | Yes |
 | §5.11, Table 10 | h on one ridge, by finger, and by sensor | `ridge_frame_d072`, `ridge_robust_d077`, `ridge_robust_shared_e117` | `signed_charge.measure.ridge_frame`, `signed_charge.reads.ridge_robust` | Yes: `ridge_frame_d072` |
 | §5.10 and §6 | Most of the charge comes with the flow: fronts on given flows | `flow_charge_d054`, `field_d049`, `flow_read_d055`, `flow_agree_*` | `signed_charge.measure.flow_charge`, `signed_charge.reads.field_read`, `signed_charge.reads.flow_read`, `signed_charge.reads.flow_agree` | No |
+| §6 | Why zero-pole flows form domains: fan-out 0.041 / 0.028 against real's 0.038 / 0.027, and spacing clears 15 % of the demand (E-042) | The fan-out is `fanout`, key `splay_per_ridge`, a partial step. The 15 % is printed by `spacing_demand`, which stores no file and has no step | `signed_charge.measure.fanout`, `signed_charge.reads.spacing_demand` | No |
 | §6 | Whether less charge helps a matcher | `tstr_d082_{zp,zpp,synfing}_{1,2,3}_e200`, run by `scripts/reproduce.py matcher` on the GPU | `signed_charge.reads.tstr` | No |
 
 ## Table 6's two files
