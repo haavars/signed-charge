@@ -5,12 +5,12 @@
 
 Run: python -m signed_charge.exploratory.sweep_read ...
 """
+
 import itertools
 import json
 import os
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import numpy as np
 
@@ -42,7 +42,13 @@ def one(task):
             p = period[i0 : i0 + 96, j0 : j0 + 96]
             cvs.append(float(p.std() / p.mean()))
     finger = f"sweep/{seed}"
-    return {"patches": fx.read(im, points, inner, finger), "frame": rf.read(im, points, inner, finger), "cv": float(np.mean(cvs)), "period": float(period[inner].mean()), "finger": finger}
+    return {
+        "patches": fx.read(im, points, inner, finger),
+        "frame": rf.read(im, points, inner, finger),
+        "cv": float(np.mean(cvs)),
+        "period": float(period[inner].mean()),
+        "finger": finger,
+    }
 
 
 def excess(patches, q):
@@ -80,7 +86,14 @@ def main(mode, out, rest):
         rows = list(pool.map(one, [(SEED_TEST + i, params) for i in range(TEST)], chunksize=2))
     rng = np.random.default_rng(0)
     patches = [p for r in rows for p in r["patches"]]
-    report = {"params": list(params), "sheets": len(rows), "flux": fx.summary(patches, rng), "frame": rf.summary([r["frame"] for r in rows], rng), "cv": fx.boot([{"finger": r["finger"], "v": r["cv"]} for r in rows], lambda p: float(np.mean([x["v"] for x in p])), rng), "period": float(np.mean([r["period"] for r in rows]))}
+    report = {
+        "params": list(params),
+        "sheets": len(rows),
+        "flux": fx.summary(patches, rng),
+        "frame": rf.summary([r["frame"] for r in rows], rng),
+        "cv": fx.boot([{"finger": r["finger"], "v": r["cv"]} for r in rows], lambda p: float(np.mean([x["v"] for x in p])), rng),
+        "period": float(np.mean([r["period"] for r in rows])),
+    }
     report["_provenance"] = fx.provenance.record(fx.provenance.start())
     json.dump(report, open(out, "w"), indent=1)
 

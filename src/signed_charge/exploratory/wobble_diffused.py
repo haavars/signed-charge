@@ -4,9 +4,9 @@ The prints of `wobble.py` as drawn have no capture in them, and real ones do. So
 
 Run: python -m signed_charge.exploratory.wobble_diffused OUT.json RUN.npz...
 """
+
 import json
 import sys
-from pathlib import Path
 
 import numpy as np
 
@@ -34,7 +34,14 @@ def main(out, paths):
         im = np.pad(im, ((16, 16 + pad[0]), (16, 16 + pad[1])), constant_values=235)
         report["model2_drawn"].append(wb.measure((("m", i, 1), im))[1])
         report["model2"].append(wb.measure((("m", i, 1), diffusion.render(im, 400 + i)))[1])
-    summary = {k: {"prints": sum(1 for r in v if r), "fine_coarse": float(np.median([r["fine_coarse"] for r in v if r])), "fine_mid": float(np.median([r["fine_mid"] for r in v if r]))} for k, v in report.items()}
+    summary = {
+        k: {
+            "prints": sum(1 for r in v if r),
+            "fine_coarse": float(np.median([r["fine_coarse"] for r in v if r])),
+            "fine_mid": float(np.median([r["fine_mid"] for r in v if r])),
+        }
+        for k, v in report.items()
+    }
     print(summary, flush=True)
     summary["_provenance"] = provenance.record(started)
     json.dump(summary, open(out, "w"), indent=1)

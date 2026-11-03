@@ -8,6 +8,7 @@
 Run: python -m signed_charge.reads.quality_lift OUT.json
 LIMIT=n takes the first n fingers of each set, to try the code.
 """
+
 import glob
 import json
 import os
@@ -21,7 +22,6 @@ import cv2
 import numpy as np
 from scipy import stats
 
-from signed_charge.reads import field_read as fr
 from signed_charge.measure import field_similarity as fs
 from signed_charge.measure import minutiae_cache as mc
 from signed_charge.reads import minutiae_parts as parts
@@ -129,14 +129,19 @@ def one(task):
     out = {"finger": row["finger"], "q4": float((sf.quality(im)[inner] >= 4).mean())}
     for reader, (_, y_sign) in sm.EXTRACTORS.items():
         p = sf.inside(row["points"][reader], inner)
-        out[reader] = {"triangles": triangles(sf.inside(p, guarded), y_sign, field, guarded, singular, rng), "filter": {c: by_pairs(p, y_sign, field, inner, coherence, c) for c in COHERENCE}}
+        out[reader] = {
+            "triangles": triangles(sf.inside(p, guarded), y_sign, field, guarded, singular, rng),
+            "filter": {c: by_pairs(p, y_sign, field, inner, coherence, c) for c in COHERENCE},
+        }
     return out
 
 
 def placed(im, mask, centre):
     dy, dx = N / 2 - centre[0], N / 2 - centre[1]
     M = np.float32([[1, 0, dx], [0, 1, dy]])
-    return cv2.warpAffine(im, M, (N, N), flags=cv2.INTER_NEAREST, borderValue=255), cv2.warpAffine(mask.astype(np.uint8), M, (N, N), flags=cv2.INTER_NEAREST).astype(bool)
+    return cv2.warpAffine(im, M, (N, N), flags=cv2.INTER_NEAREST, borderValue=255), cv2.warpAffine(
+        mask.astype(np.uint8), M, (N, N), flags=cv2.INTER_NEAREST
+    ).astype(bool)
 
 
 def amplitude(im, fg, inner):
@@ -176,7 +181,10 @@ def degrade(task):
 
 def boot(fingers, stat, rng):
     every = np.arange(len(fingers))
-    return {"mean": float(stat(every)), "ci": [float(np.percentile([stat(rng.integers(len(fingers), size=len(fingers))) for _ in range(RESAMPLES)], q)) for q in (2.5, 97.5)]}
+    return {
+        "mean": float(stat(every)),
+        "ci": [float(np.percentile([stat(rng.integers(len(fingers), size=len(fingers))) for _ in range(RESAMPLES)], q)) for q in (2.5, 97.5)],
+    }
 
 
 def main(out):
@@ -206,21 +214,41 @@ def main(out):
             tri = np.zeros((len(chosen), 2))
             for r in read:
                 tri[at[r["finger"]]] += r[reader]["triangles"]
+
             def pair_error(i):
                 e = tri[i, 1].sum() / max(tri[i].sum(), 1)
                 grid = np.linspace(0, 0.5, 501)
                 return float(grid[np.argmin(np.abs(3 * grid * (1 - grid) ** 2 + grid**3 - e))])
-            e = {"triangles": int(tri.sum()), "fail": boot(chosen, lambda i: tri[i, 1].sum() / max(tri[i].sum(), 1), rng), "p": boot(chosen, pair_error, rng), "filter": {}}
+
+            e = {
+                "triangles": int(tri.sum()),
+                "fail": boot(chosen, lambda i: tri[i, 1].sum() / max(tri[i].sum(), 1), rng),
+                "p": boot(chosen, pair_error, rng),
+                "filter": {},
+            }
             for c in COHERENCE:
-                t = np.zeros((len(chosen), len(sm.EDGES) - 1)); k = t.copy(); f = np.zeros(len(chosen)); n = f.copy()
+                t = np.zeros((len(chosen), len(sm.EDGES) - 1))
+                k = t.copy()
+                f = np.zeros(len(chosen))
+                n = f.copy()
                 for r in read:
                     a, b, x, y = r[reader]["filter"][c]
-                    t[at[r["finger"]]] += a; k[at[r["finger"]]] += b; f[at[r["finger"]]] += x; n[at[r["finger"]]] += y
-                e["filter"][c] = {"kept": float(k.sum() / max(f.sum(), 1)), "h_short": boot(chosen, lambda i: t[i][:, BAND].sum() / max(k[i][:, BAND].sum(), 1), rng), "h_long": boot(chosen, lambda i: t[i][:, LONG].sum() / max(k[i][:, LONG].sum(), 1), rng), "c60_rescaled": boot(chosen, lambda i: 2 * t[i][:, NEAR].sum() / max(n[i].sum(), 1) * f[i].sum() / max(k[i].sum(), 1), rng)}
-            t = np.zeros((len(chosen), len(sm.EDGES) - 1)); k = t.copy()
+                    t[at[r["finger"]]] += a
+                    k[at[r["finger"]]] += b
+                    f[at[r["finger"]]] += x
+                    n[at[r["finger"]]] += y
+                e["filter"][c] = {
+                    "kept": float(k.sum() / max(f.sum(), 1)),
+                    "h_short": boot(chosen, lambda i: t[i][:, BAND].sum() / max(k[i][:, BAND].sum(), 1), rng),
+                    "h_long": boot(chosen, lambda i: t[i][:, LONG].sum() / max(k[i][:, LONG].sum(), 1), rng),
+                    "c60_rescaled": boot(chosen, lambda i: 2 * t[i][:, NEAR].sum() / max(n[i].sum(), 1) * f[i].sum() / max(k[i].sum(), 1), rng),
+                }
+            t = np.zeros((len(chosen), len(sm.EDGES) - 1))
+            k = t.copy()
             for r in read:
                 a, b, *_ = r[reader]["filter"][0.0]
-                t[at[r["finger"]]] += a; k[at[r["finger"]]] += b
+                t[at[r["finger"]]] += a
+                k[at[r["finger"]]] += b
             h = t[:, BAND].sum(1) / np.maximum(k[:, BAND].sum(1), 1)
             rho, pv = stats.spearmanr(q4[0] / q4[1], h)
             e["spearman_q4_h"] = [float(rho), float(pv)]
@@ -245,8 +273,13 @@ def main(out):
         for reader in sm.EXTRACTORS:
             e = {}
             for n in ("clean", "degraded", "real"):
-                t = np.array([r[n][reader][0] for r in read]); c = np.array([float(r[n][reader][2]) for r in read])
-                e[n] = {"per_print": float(c.mean()), "c60": boot(every, lambda i: 2 * t[i][:, NEAR].sum() / max(c[i].sum(), 1), rng), "h_short": boot(every, lambda i: t[i][:, BAND].sum() / max(np.array([r[n][reader][1] for r in read])[i][:, BAND].sum(), 1), rng)}
+                t = np.array([r[n][reader][0] for r in read])
+                c = np.array([float(r[n][reader][2]) for r in read])
+                e[n] = {
+                    "per_print": float(c.mean()),
+                    "c60": boot(every, lambda i: 2 * t[i][:, NEAR].sum() / max(c[i].sum(), 1), rng),
+                    "h_short": boot(every, lambda i: t[i][:, BAND].sum() / max(np.array([r[n][reader][1] for r in read])[i][:, BAND].sum(), 1), rng),
+                }
             entry[reader] = e
         report[arm] = entry
     report["_provenance"] = provenance.record(started)

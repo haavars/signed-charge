@@ -2,6 +2,7 @@
 
 Standardised difference, real less the set, bin by bin. Blue, the set has too few pairs there; red, too many. Run with python_biometrics' environment.
 """
+
 import json
 import sys
 
@@ -9,8 +10,8 @@ import cv2
 import numpy as np
 
 CELL, GAP, MARGIN, TOP, LIMIT = 30, 2, 64, 58, 1.0
-LOW, MIDDLE, HIGH = np.array((0x1f, 0x5f, 0xb4)), np.array((0xf0, 0xef, 0xec)), np.array((0xc4, 0x3a, 0x31))  # RGB: too few, none, too many
-SURFACE, INK, MUTED = (0xfb, 0xfc, 0xfc), (0x22, 0x22, 0x22), (0x66, 0x66, 0x66)
+LOW, MIDDLE, HIGH = np.array((0x1F, 0x5F, 0xB4)), np.array((0xF0, 0xEF, 0xEC)), np.array((0xC4, 0x3A, 0x31))  # RGB: too few, none, too many
+SURFACE, INK, MUTED = (0xFB, 0xFC, 0xFC), (0x22, 0x22, 0x22), (0x66, 0x66, 0x66)
 SETS = (("population", "Population"), ("sfinge", "SFinGe"), ("model2", "Model 2"))
 READERS = (("mindtct", "mindtct"), ("leader", "LEADER"))
 FONT = cv2.FONT_HERSHEY_SIMPLEX

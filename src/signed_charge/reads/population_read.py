@@ -5,6 +5,7 @@ SFinGe beside it, and real against real at the population's own size, each of 30
 
 Run: python -m signed_charge.reads.population_read OUT.json SHEET.jpg RUN.npz...
 """
+
 import json
 import os
 import re
@@ -65,8 +66,17 @@ def described(rows, name, rng):
     pairs = mp.summary([p[name] for _, _, p, *_ in rows if p[name]])
     signed = sm.curve([q for _, _, _, q, *_ in rows if q], name, rng)
     stats = [s[name] for _, s, *_ in rows if s[name]]
-    return {"density": pairs["density_per_100mm2"], "same": pairs["close_same"], "offset": pairs["close_offset"], "facing": pairs["close_facing"],
-            "forks": float(np.mean([s["bifurcations"] for s in stats if s["bifurcations"] is not None])), "c60": signed["screening"]["60"], "c90": signed["screening"]["90"], "h": signed["h"], "pairs_binned": signed["pairs"]}
+    return {
+        "density": pairs["density_per_100mm2"],
+        "same": pairs["close_same"],
+        "offset": pairs["close_offset"],
+        "facing": pairs["close_facing"],
+        "forks": float(np.mean([s["bifurcations"] for s in stats if s["bifurcations"] is not None])),
+        "c60": signed["screening"]["60"],
+        "c90": signed["screening"]["90"],
+        "h": signed["h"],
+        "pairs_binned": signed["pairs"],
+    }
 
 
 def floor(real, size, name, rng):
@@ -91,16 +101,27 @@ def main(out, figure, paths):
         sfinge = list(pool.map(read_image, list(cf.fvc(("DB4",))), chunksize=4))
         rows = list(pool.map(one, sorted(paths), chunksize=1))
     rng = np.random.default_rng(0)
-    report = {"direct": {"density": float(np.median([r[4]["density"] for r in rows])), "no_islands": float(np.median([r[4]["density_no_islands"] for r in rows])),
-                         "islands": float(np.mean([r[4]["islands"] for r in rows]))}}
+    report = {
+        "direct": {
+            "density": float(np.median([r[4]["density"] for r in rows])),
+            "no_islands": float(np.median([r[4]["density_no_islands"] for r in rows])),
+            "islands": float(np.mean([r[4]["islands"] for r in rows])),
+        }
+    }
     for name in READERS:
-        report[name] = {"population": {**scored(real, rows, name, rng), **described(rows, name, rng)},
-                        "sfinge": {**scored(real, sfinge, name, rng), **described(sfinge, name, rng)},
-                        "floor": floor(real, len(rows), name, rng)}
+        report[name] = {
+            "population": {**scored(real, rows, name, rng), **described(rows, name, rng)},
+            "sfinge": {**scored(real, sfinge, name, rng), **described(sfinge, name, rng)},
+            "floor": floor(real, len(rows), name, rng),
+        }
         for pattern in sorted({r[0][0] for r in rows}):
             mine = [r for r in rows if r[0][0] == pattern]
             report[name][pattern] = {**(scored(real, mine, name, rng) if len(mine) >= MINIMUM else {}), **described(mine, name, rng)}
-        print(name, {k: round(v["folds"]["mean"], 3) if "folds" in v else round(v.get("mean", v.get("density", 0)), 3) for k, v in report[name].items()}, flush=True)
+        print(
+            name,
+            {k: round(v["folds"]["mean"], 3) if "folds" in v else round(v.get("mean", v.get("density", 0)), 3) for k, v in report[name].items()},
+            flush=True,
+        )
     tiles = [r[5] for r in rows][:48]
     if len(tiles) >= 8:
         cols = 12 if len(tiles) >= 12 else len(tiles)

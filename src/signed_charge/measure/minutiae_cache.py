@@ -5,6 +5,7 @@ inside it, (x, y, angle in radians, bifurcation). E-038's prints are rendered ag
 
 Run: python -m signed_charge.measure.minutiae_cache OUT.pkl RUN.npz...
 """
+
 import os
 import pickle
 import re
@@ -67,6 +68,7 @@ def from_variant(task):
 
 def main(out, paths):
     started = provenance.start()
+    Path(out).parent.mkdir(parents=True, exist_ok=True)  # checked first: the write comes after half an hour of reading
     tasks = [(v, s, f, c) for v in cl.VARIANTS for s in range(cl.FIRST, cl.FIRST + 20) for f in (2, 3, 4, 5, 7, 8, 9, 10) for c in (1, 2)]
     with ProcessPoolExecutor(JOBS) as pool:
         rows = list(pool.map(from_fvc, list(cf.fvc(("DB1", "DB2", "DB3", "DB4"))), chunksize=4))

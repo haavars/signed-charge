@@ -10,12 +10,12 @@ Through each print's window, as `minutiae_parts` lays it, with `signed_minutiae.
 
 Run: python -m signed_charge.reads.minutiae_place CACHE.pkl OUT.json
 """
+
 import json
 import os
 import pickle
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -52,7 +52,11 @@ def measures(points, unit, turning, mask):
     if mask.sum() < 400 or len(points) < 5:
         return None
     x, y = points[:, 0].astype(int), points[:, 1].astype(int)
-    return {"field": float(np.abs(unit[mask].mean())), "minutiae": float(np.abs(np.exp(2j * points[:, 2]).mean())), "seeking": float(turning[y, x].mean() / max(turning[mask].mean(), 1e-6))}
+    return {
+        "field": float(np.abs(unit[mask].mean())),
+        "minutiae": float(np.abs(np.exp(2j * points[:, 2]).mean())),
+        "seeking": float(turning[y, x].mean() / max(turning[mask].mean(), 1e-6)),
+    }
 
 
 def placed(window, place, shape):
@@ -110,7 +114,9 @@ def read(task):
             masks["cored"] = placed(window["mask"], (int(round(core[0] - window["core"][0])), int(round(core[1] - window["core"][1]))), inner.shape) & inner
     out = {"set": row["set"], "finger": row["finger"], "kind": kind}
     for reader in parts.READERS:
-        out[reader] = {base: measures(sf.inside(row["points"][reader], mask), unit, turning, mask) if mask is not None else None for base, mask in masks.items()}
+        out[reader] = {
+            base: measures(sf.inside(row["points"][reader], mask), unit, turning, mask) if mask is not None else None for base, mask in masks.items()
+        }
     return out
 
 
@@ -174,13 +180,24 @@ def main(cache, out):
     report = {}
     keys = ("field", "minutiae", "seeking")
     for reader in parts.READERS:
-        report[reader] = {name: {base: {k: summary([r for r in results if r["kind"] == name], reader, base, k, rng) for k in keys} for base in ("centred", "cored")} for name in SETS}
-        report[reader]["by_pattern"] = {p: {base: {k: summary([r for r in results if r["set"] == f"population/{p}"], reader, base, k, rng) for k in keys} for base in ("centred", "cored")} for p in ("arch", "loop", "whorl")}
+        report[reader] = {
+            name: {base: {k: summary([r for r in results if r["kind"] == name], reader, base, k, rng) for k in keys} for base in ("centred", "cored")}
+            for name in SETS
+        }
+        report[reader]["by_pattern"] = {
+            p: {base: {k: summary([r for r in results if r["set"] == f"population/{p}"], reader, base, k, rng) for k in keys} for base in ("centred", "cored")}
+            for p in ("arch", "loop", "whorl")
+        }
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)
     for reader in parts.READERS:
         for name in SETS:
-            print(reader, name.ljust(11), {b: {k: (round(v[k]["mean"], 3), [round(c, 3) for c in v[k]["ci"]]) if v[k] else None for k in v} for b, v in report[reader][name].items()}, flush=True)
+            print(
+                reader,
+                name.ljust(11),
+                {b: {k: (round(v[k]["mean"], 3), [round(c, 3) for c in v[k]["ci"]]) if v[k] else None for k in v} for b, v in report[reader][name].items()},
+                flush=True,
+            )
 
 
 if __name__ == "__main__":

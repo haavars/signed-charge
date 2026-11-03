@@ -4,12 +4,12 @@ Exploratory, on the validation review's request: `extractor_free.charge`'s reads
 
 Run: python -m signed_charge.reads.cancel_sweep OUT.json
 """
+
 import json
 import os
 import pickle
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -78,7 +78,11 @@ def main(out):
                 for r in read:
                     t[at[r["finger"]]] += r[key, dist]
                 stat = lambda i: 2 * t[i, 0].sum() / max(t[i, 1].sum(), 1)  # noqa: E731
-                report[name][key][dist] = {"per_print": float(t[:, 1].sum() / len(read)), "c60": float(stat(np.arange(len(fingers)))), "ci": [float(np.percentile([stat(rng.integers(len(fingers), size=len(fingers))) for _ in range(ef.RESAMPLES)], q)) for q in (2.5, 97.5)]}
+                report[name][key][dist] = {
+                    "per_print": float(t[:, 1].sum() / len(read)),
+                    "c60": float(stat(np.arange(len(fingers)))),
+                    "ci": [float(np.percentile([stat(rng.integers(len(fingers), size=len(fingers))) for _ in range(ef.RESAMPLES)], q)) for q in (2.5, 97.5)],
+                }
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)
 

@@ -20,11 +20,10 @@ so the noise wanders, by about 1 % of u* at the default strength.
 
 Run: python -m signed_charge.generate.competency_model loop OUT.npz --speed 1.0
 """
+
 import argparse
 import json
-import sys
 import time
-from pathlib import Path
 
 import numpy as np
 import scipy.sparse as sp
@@ -144,8 +143,7 @@ def run(pattern, speed, noise, sigma, scale, seed, dx, dt, t_end, vary=0.0, soft
     stiff, mass = g.laplacian(points, tris)
     n = len(points)
     m = sp.diags(mass)
-    solve = lambda a: spla.splu(a.tocsc(), permc_spec="MMD_AT_PLUS_A", diag_pivot_thresh=0.0,
-                                options=dict(SymmetricMode=True))
+    solve = lambda a: spla.splu(a.tocsc(), permc_spec="MMD_AT_PLUS_A", diag_pivot_thresh=0.0, options=dict(SymmetricMode=True))
     stiff_v = stiff
     if aniso:
         sites = site_vertices(points, index, s, pattern, person_of(seed, vary))
@@ -170,8 +168,7 @@ def run(pattern, speed, noise, sigma, scale, seed, dx, dt, t_end, vary=0.0, soft
         if any(abs(t - f_) < dt / 2 for f_ in snapshots):
             frames[int(round(t))] = u[index].astype(np.float32)
             print(json.dumps({"t": round(t), "u_max": float(u.max()), "seconds": round(time.time() - started)}), flush=True)
-    return {"s": s, "phi": phi, "frames": frames, "u": u[index].astype(np.float32),
-            "arrival": t_arrive[index].astype(np.float32)}
+    return {"s": s, "phi": phi, "frames": frames, "u": u[index].astype(np.float32), "arrival": t_arrive[index].astype(np.float32)}
 
 
 def main():
@@ -196,8 +193,15 @@ def main():
     started = provenance.start()
     g.K, RAMP = args.K, args.ramp
     r = run(args.pattern, args.speed, args.noise, args.sigma, args.scale, args.seed, args.dx, args.dt, args.t, args.vary, args.soft, args.aniso)
-    np.savez_compressed(args.out, s=r["s"], phi=r["phi"], u=r["u"], arrival=r["arrival"],
-                        **{f"t{k}": v for k, v in r["frames"].items()}, provenance=json.dumps(provenance.record(started)))
+    np.savez_compressed(
+        args.out,
+        s=r["s"],
+        phi=r["phi"],
+        u=r["u"],
+        arrival=r["arrival"],
+        **{f"t{k}": v for k, v in r["frames"].items()},
+        provenance=json.dumps(provenance.record(started)),
+    )
 
 
 if __name__ == "__main__":

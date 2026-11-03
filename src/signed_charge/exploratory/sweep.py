@@ -2,6 +2,7 @@
 
 A line crosses the ridges and moves along them, carrying a sorted list of ridges. At each step they follow a smooth blueprint, relax towards even spacing with stiffness k, and at rate b a ridge is gained in a gap or lost, a little more often where a gap is wide or tight, by s. A gain's new ridge is lost again soon with chance m. A gain is a fork or a start, a loss a merge or an end, with `FORK` the share of forks. So sign and type are separate draws, and ridges bend round events as well as following the blueprint.
 """
+
 import cv2
 import numpy as np
 

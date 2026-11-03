@@ -14,10 +14,9 @@
 
 Run: python -m signed_charge.generate.field_print OUT.npz --flow model2:9000:7
 """
+
 import argparse
 import json
-import sys
-from pathlib import Path
 
 import cv2
 import numpy as np

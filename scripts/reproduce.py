@@ -9,6 +9,7 @@ Stages, in the order to run them:
 Results land in results/verify/, a finished step is skipped, and a summary is appended to results/verify/summary.jsonl.
 Held-out reads aren't here, by design: see DATA.md.
 """
+
 import argparse
 import json
 import os
@@ -51,7 +52,9 @@ def figure(name):
 
 def steps():
     M, R = "signed_charge.measure", "signed_charge.reads"
-    field, flows, real_flow, read_flow, lead = (runs(p) for p in ("field_d049/field_*.npz", "flow_d055/*flow_*.npz", "flow_d055/realflow_*.npz", "flow_d055/readflow_*.npz", "lead_d067/lead_*.npz"))
+    field, flows, real_flow, read_flow, lead = (
+        runs(p) for p in ("field_d049/field_*.npz", "flow_d055/*flow_*.npz", "flow_d055/realflow_*.npz", "flow_d055/readflow_*.npz", "lead_d067/lead_*.npz")
+    )
     outside = runs("outside_d066/*.jpg")
     deferred = [
         # quick
@@ -59,7 +62,11 @@ def steps():
         read("signed_reinked", f"{M}.signed_minutiae", out("signed_reinked"), "--reinked", stage="quick"),
         read("signed_false", f"{R}.signed_false", out("signed_false"), stage="quick"),
         # generate
-        build("population", ["scripts/generate/population.sh", str(G / "population_d020"), "120", "60", "20", "4100"], G / "population_d020" / "whorl_a0.7_s0.03_4280.npz"),
+        build(
+            "population",
+            ["scripts/generate/population.sh", str(G / "population_d020"), "120", "60", "20", "4100"],
+            G / "population_d020" / "whorl_a0.7_s0.03_4280.npz",
+        ),
         build("fronts on model flows", ["scripts/generate/field_population.sh", str(G / "field_d049")], G / "field_d049" / "field_9124_10.npz"),
         build("fronts on real flows", ["scripts/generate/flow_population.sh", str(G / "flow_d055")], G / "flow_d055" / "readflow_9111_10.npz"),
         build("slower, noisier fronts", ["scripts/generate/lead_run.sh", str(G / "lead_d067"), "population", "0.5"], G / "lead_d067" / "lead_9144_10.npz"),
@@ -85,6 +92,7 @@ def steps():
         read("flow_agree_readflow", f"{R}.flow_agree", CACHE, out("flow_agree_readflow"), *read_flow),
         read("flow_agree_realflow", f"{R}.flow_agree", CACHE, out("flow_agree_realflow"), *real_flow),
         read("extractor_free_d062", f"{R}.extractor_free", out("extractor_free_d062")),
+        read("cross_signs", f"{R}.cross_signs", out("cross_signs")),
         read("quality_lift_d063", f"{R}.quality_lift", out("quality_lift_d063")),
         read("quality_degrade_d064", f"{R}.quality_degrade", out("quality_degrade_d064")),
         read("cancel_sweep_e102", f"{R}.cancel_sweep", out("cancel_sweep_e102")),
@@ -149,7 +157,10 @@ def run(step, jobs):
         result["same"], result["comparison"] = compare(step)
     with open(VERIFY / "summary.jsonl", "a") as stream:
         stream.write(json.dumps(result) + "\n")
-    print(f"done    {step['name']}: exit {code}, {minutes:.0f} min, {result.get('comparison', '').splitlines()[0] if result.get('comparison') else ''}", flush=True)
+    print(
+        f"done    {step['name']}: exit {code}, {minutes:.0f} min, {result.get('comparison', '').splitlines()[0] if result.get('comparison') else ''}",
+        flush=True,
+    )
 
 
 def main():

@@ -6,11 +6,11 @@ Scale is held at 1. CIs are by finger, resampling the fingers; the difference be
 
 Run: python -m signed_charge.exploratory.stress_flow OUT.json FIGURE.jpg
 """
+
 import json
 import os
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -162,7 +162,12 @@ def interval(rows, name, rng):
     by = {f: [v[name][0] for k, v in rows if k[1] == f and v and v.get(name)] for f in fingers}
     means = np.array([np.mean(by[f]) for f in fingers])
     draws = [np.mean(means[rng.integers(len(means), size=len(means))]) for _ in range(RESAMPLES)]
-    return {"mean": float(means.mean()), "ci": [float(np.percentile(draws, q)) for q in (2.5, 97.5)], "fingers": len(fingers), "by_finger": dict(zip(fingers, means.tolist()))}
+    return {
+        "mean": float(means.mean()),
+        "ci": [float(np.percentile(draws, q)) for q in (2.5, 97.5)],
+        "fingers": len(fingers),
+        "by_finger": dict(zip(fingers, means.tolist())),
+    }
 
 
 def main(out, figure):
@@ -186,7 +191,12 @@ def main(out, figure):
     fingers = sorted(set(report["stress"]["by_finger"]) & set(report["guide"]["by_finger"]))
     diff = np.array([report["stress"]["by_finger"][f] - report["guide"]["by_finger"][f] for f in fingers])
     draws = [np.mean(diff[rng.integers(len(diff), size=len(diff))]) for _ in range(RESAMPLES)]
-    report["difference"] = {"mean": float(diff.mean()), "ci": [float(np.percentile(draws, q)) for q in (2.5, 97.5)], "fingers_stress_lower": int((diff < 0).sum()), "of": len(diff)}
+    report["difference"] = {
+        "mean": float(diff.mean()),
+        "ci": [float(np.percentile(draws, q)) for q in (2.5, 97.5)],
+        "fingers_stress_lower": int((diff < 0).sum()),
+        "of": len(diff),
+    }
     report["chosen"] = {name: {p: sum(1 for _, v in rows if v and v.get(name) and v[name][1] == p) for p in templates} for name, templates in SETS.items()}
     report["_provenance"] = provenance.record(started)
     for name in SETS:

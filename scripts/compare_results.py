@@ -3,6 +3,7 @@
 Every number and string is compared, leaving out `_provenance`. With no tolerance numbers must be equal exactly. With --partial,
 the rerun may hold fewer sections than the stored result, where the stored one also read prints the paper doesn't use.
 """
+
 import json
 import sys
 

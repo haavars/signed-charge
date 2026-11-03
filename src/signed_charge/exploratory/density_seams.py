@@ -4,6 +4,7 @@ The saved sweeps, D-010's and D-015's, with `minutiae_seams`' seams: for each ru
 
 Run: python -m signed_charge.exploratory.density_seams OUT.json RUN.npz...
 """
+
 import json
 import os
 import re
@@ -49,7 +50,12 @@ def one(path):
     inner = cv2.erode(fs.foreground(im).astype(np.uint8), np.ones((2 * ms.BORDER + 1, 2 * ms.BORDER + 1), np.uint8)).astype(bool)
     on = (seams.kink(d["arrival"]) >= seams.SEAM) & inner
     off = inner & ~on
-    out = {"pattern": match.group(1), "speed": float(match.group(2)), "noise": 0.01 if "sweep_d010" in str(path) or "noise0.01" in str(path) else 0.003, "area_on": float(on.sum() / max(inner.sum(), 1))}
+    out = {
+        "pattern": match.group(1),
+        "speed": float(match.group(2)),
+        "noise": 0.01 if "sweep_d010" in str(path) or "noise0.01" in str(path) else 0.003,
+        "area_on": float(on.sum() / max(inner.sum(), 1)),
+    }
     readers = {"direct": skeleton_points, **{k: v[0] for k, v in sm.EXTRACTORS.items()}}
     for reader, extract in readers.items():
         points = extract(im)
@@ -86,9 +92,17 @@ def main(out, paths):
                 for speed in sorted({r["speed"] for r in group}):
                     picked = [r for r in group if r["noise"] == noise and r["speed"] == speed]
                     if picked:
-                        entry["by_speed"][f"{noise}/{speed}"] = {k: float(np.mean([r[reader][k] for r in picked])) for k in ("on", "off", "off_density")} | {"runs": len(picked), "area_on": float(np.mean([r["area_on"] for r in picked]))}
+                        entry["by_speed"][f"{noise}/{speed}"] = {k: float(np.mean([r[reader][k] for r in picked])) for k in ("on", "off", "off_density")} | {
+                            "runs": len(picked),
+                            "area_on": float(np.mean([r["area_on"] for r in picked])),
+                        }
             report[pattern][reader] = entry
-            print(pattern, reader.ljust(8), {k: (round(entry[k]["per_unit_speed"], 1), [round(c, 1) for c in entry[k]["ci"]]) for k in ("on", "off", "off_density")}, flush=True)
+            print(
+                pattern,
+                reader.ljust(8),
+                {k: (round(entry[k]["per_unit_speed"], 1), [round(c, 1) for c in entry[k]["ci"]]) for k in ("on", "off", "off_density")},
+                flush=True,
+            )
             print("   ", {k: (round(v["on"], 1), round(v["off"], 1), round(v["off_density"], 1)) for k, v in entry["by_speed"].items()}, flush=True)
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)

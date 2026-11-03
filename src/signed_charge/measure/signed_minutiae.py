@@ -10,6 +10,7 @@ endings alike; mindtct's angle is read y up, LEADER's y down. `controls` checks 
 
 Run: python -m signed_charge.measure.signed_minutiae OUT.json
 """
+
 import json
 import os
 import re
@@ -120,10 +121,17 @@ def curve(rows, name, rng):
     draws = [rng.integers(len(xs), size=len(xs)) for _ in range(RESAMPLES)]
     hs = np.array([h(d) for d in draws])
     cs = [screen(d) for d in draws]
-    return {"prints": len(xs), "minutiae": float(minutiae.mean()), "r": ((EDGES[:-1] + EDGES[1:]) / 2).tolist(), "h": h(every).tolist(),
-            "h_low": np.percentile(hs, 2.5, 0).tolist(), "h_high": np.percentile(hs, 97.5, 0).tolist(), "pairs": count.sum(0).tolist(),
-            "h_shuffled": (shuffled.sum(0) / np.maximum(count.sum(0), 1)).tolist(),
-            "screening": {str(R): {"mean": screen(every)[R], "ci": [float(np.percentile([c[R] for c in cs], q)) for q in (2.5, 97.5)]} for R in RADII}}
+    return {
+        "prints": len(xs),
+        "minutiae": float(minutiae.mean()),
+        "r": ((EDGES[:-1] + EDGES[1:]) / 2).tolist(),
+        "h": h(every).tolist(),
+        "h_low": np.percentile(hs, 2.5, 0).tolist(),
+        "h_high": np.percentile(hs, 97.5, 0).tolist(),
+        "pairs": count.sum(0).tolist(),
+        "h_shuffled": (shuffled.sum(0) / np.maximum(count.sum(0), 1)).tolist(),
+        "screening": {str(R): {"mean": screen(every)[R], "ci": [float(np.percentile([c[R] for c in cs], q)) for q in (2.5, 97.5)]} for R in RADII},
+    }
 
 
 def planted(task):
@@ -175,7 +183,12 @@ def controls(pool, rng):
     for kind in ("independent", "pairs", "one_sign"):
         rows = [v for k, v in done if k[0] == kind and v]
         report[kind] = {name: curve(rows, name, rng) for name in EXTRACTORS}
-        print("control", kind, {n: (round(report[kind][n]["screening"]["60"]["mean"], 2), np.round(report[kind][n]["h"][2:9], 2).tolist()) for n in EXTRACTORS}, flush=True)
+        print(
+            "control",
+            kind,
+            {n: (round(report[kind][n]["screening"]["60"]["mean"], 2), np.round(report[kind][n]["h"][2:9], 2).tolist()) for n in EXTRACTORS},
+            flush=True,
+        )
     return report
 
 

@@ -1,4 +1,5 @@
 """Are two runs' arrays the same? compare_npz.py DIR_A DIR_B [GLOB]: each .npz in A against its namesake in B, exactly, leaving out run metadata."""
+
 import sys
 from pathlib import Path
 

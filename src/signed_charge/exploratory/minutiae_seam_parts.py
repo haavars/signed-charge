@@ -5,12 +5,12 @@ Clumping, which needs no seams and so can be read on real: the share of a print'
 
 Run: python -m signed_charge.exploratory.minutiae_seam_parts CACHE.pkl OUT.json
 """
+
 import json
 import os
 import pickle
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -121,7 +121,10 @@ def main(cache, out):
     for reader in parts.READERS:
         report[reader] = {case[1]: {name: cl.spread(results[("fold", reader, name, case)]) for name in NAMES} for case in CASES}
         report[reader]["full_ci"] = {name: [float(np.percentile(results[("draw", reader, name, CASES[0])], q)) for q in (2.5, 97.5)] for name in NAMES}
-        report[reader]["counts"] = {name: float(np.mean([np.median([g[2] for g in parts.HIST[(reader, "cored", "none", s)][name]]) for s in range(cl.SEEDS)])) for name in ("real", *NAMES)}
+        report[reader]["counts"] = {
+            name: float(np.mean([np.median([g[2] for g in parts.HIST[(reader, "cored", "none", s)][name]]) for s in range(cl.SEEDS)]))
+            for name in ("real", *NAMES)
+        }
         for key, entry in report[reader].items():
             print(reader, key.ljust(8), {k: round(v["mean"], 3) if isinstance(v, dict) else v for k, v in entry.items()}, flush=True)
     if EQUAL < 1:

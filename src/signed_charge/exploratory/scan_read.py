@@ -6,6 +6,7 @@ it arrived, and the density at t = 900 where the run went on past it. Too few pr
 
 Run: python -m signed_charge.exploratory.scan_read OUT.json SHEET.jpg RUN.npz...
 """
+
 import json
 import re
 import sys
@@ -49,15 +50,33 @@ def main(out, sheet, paths):
         p = mp.describe((name, im))[1] or {}
         close = p.get("close", {})
         n = max(sum(close.get(k, 0) for k in ("same", "offset", "facing", "other")), 1)
-        report[name] = {"pattern": pattern, "speed": float(speed), "sigma": float(sigma), "seed": int(seed), "period_px": period(im),
-                        "density": s.get("density"), "bifurcations": s.get("bifurcations"), "count": s.get("count"), "close": n,
-                        "same": close.get("same", 0) / n, "offset": close.get("offset", 0) / n, "facing": close.get("facing", 0) / n,
-                        "end": end, "unreached": float(np.mean(arrival[contact] > end)),
-                        "age_median": float(end - np.median(arrival[contact])),
-                        "density_t900": (ms.describe((name, screen.print_of(run["t900"])))[1] or {}).get("density")
-                        if "t900" in run and end > 900 else None}
-        print(name.ljust(24), {k: round(v, 2) if isinstance(v, float) else v for k, v in report[name].items()
-                               if k in ("density", "bifurcations", "period_px", "same", "offset", "facing", "unreached", "age_median")}, flush=True)
+        report[name] = {
+            "pattern": pattern,
+            "speed": float(speed),
+            "sigma": float(sigma),
+            "seed": int(seed),
+            "period_px": period(im),
+            "density": s.get("density"),
+            "bifurcations": s.get("bifurcations"),
+            "count": s.get("count"),
+            "close": n,
+            "same": close.get("same", 0) / n,
+            "offset": close.get("offset", 0) / n,
+            "facing": close.get("facing", 0) / n,
+            "end": end,
+            "unreached": float(np.mean(arrival[contact] > end)),
+            "age_median": float(end - np.median(arrival[contact])),
+            "density_t900": (ms.describe((name, screen.print_of(run["t900"])))[1] or {}).get("density") if "t900" in run and end > 900 else None,
+        }
+        print(
+            name.ljust(24),
+            {
+                k: round(v, 2) if isinstance(v, float) else v
+                for k, v in report[name].items()
+                if k in ("density", "bifurcations", "period_px", "same", "offset", "facing", "unreached", "age_median")
+            },
+            flush=True,
+        )
     rows = []
     for key in sorted(tiles):
         cells = [t for pattern in ("loop", "whorl", "arch") for t in tiles[key].get(pattern, [])]

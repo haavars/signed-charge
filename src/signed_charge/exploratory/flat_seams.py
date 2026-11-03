@@ -8,10 +8,9 @@ so 180 is head-on, and small angles are fronts nearly in line, their kink runnin
 
 Run: python -m signed_charge.exploratory.flat_seams OUT.npz --alpha 45
 """
+
 import argparse
 import json
-import sys
-from pathlib import Path
 
 import numpy as np
 from scipy.ndimage import gaussian_filter
@@ -98,7 +97,9 @@ def main():
     parser.add_argument("--delay", type=float, default=0.0)
     args = parser.parse_args()
     started = provenance.start()
-    u, t_arrive, seam = run(args.alpha, args.speed, args.noise, args.sigma, args.scale, args.seed, args.soft, args.ramp, args.eps, args.cue, args.disc, args.delay)
+    u, t_arrive, seam = run(
+        args.alpha, args.speed, args.noise, args.sigma, args.scale, args.seed, args.soft, args.ramp, args.eps, args.cue, args.disc, args.delay
+    )
     np.savez_compressed(args.out, u=u, arrival=t_arrive, seam=seam, settings=json.dumps(vars(args)), provenance=json.dumps(provenance.record(started)))
 
 

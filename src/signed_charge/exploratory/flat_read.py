@@ -4,6 +4,7 @@ Each run's ridges, as `screen.print_of`, inside its margin of `MARGIN` cells. On
 
 Run: python -m signed_charge.exploratory.flat_read OUT.json RUN.npz...
 """
+
 import json
 import os
 import re
@@ -61,14 +62,36 @@ def main(out, paths):
             if key.split("_")[1] == "h":
                 pooled = np.sum([r[key] for r in group], 0)
                 each = [r[key][0] / r[key][1] for r in group if r[key][1]]
-                entry[key] = {"mean": float(pooled[0] / max(pooled[1], 1)), "pairs": int(pooled[1]), "sd": float(np.std(each, ddof=1)) if len(each) > 1 else None}
+                entry[key] = {
+                    "mean": float(pooled[0] / max(pooled[1], 1)),
+                    "pairs": int(pooled[1]),
+                    "sd": float(np.std(each, ddof=1)) if len(each) > 1 else None,
+                }
             else:
                 values = np.array([r[key] for r in group])
                 half = float(stats.t.ppf(0.975, len(values) - 1) * values.std(ddof=1) / np.sqrt(len(values))) if len(values) > 1 else None
                 entry[key] = {"mean": float(values.mean()), "half": half}
         report[name] = entry
-        print(name.ljust(24), entry["runs"], "skeleton", round(entry["skeleton_on"]["mean"], 1), round(entry["skeleton_off"]["mean"], 1), "mindtct", round(entry["mindtct_on"]["mean"], 1), round(entry["mindtct_off"]["mean"], 1), "leader", round(entry["leader_on"]["mean"], 1), round(entry["leader_off"]["mean"], 1),
-              "h on", round(entry["mindtct_h_on"]["mean"], 2), round(entry["leader_h_on"]["mean"], 2), "off", round(entry["mindtct_h_off"]["mean"], 2), round(entry["leader_h_off"]["mean"], 2), flush=True)
+        print(
+            name.ljust(24),
+            entry["runs"],
+            "skeleton",
+            round(entry["skeleton_on"]["mean"], 1),
+            round(entry["skeleton_off"]["mean"], 1),
+            "mindtct",
+            round(entry["mindtct_on"]["mean"], 1),
+            round(entry["mindtct_off"]["mean"], 1),
+            "leader",
+            round(entry["leader_on"]["mean"], 1),
+            round(entry["leader_off"]["mean"], 1),
+            "h on",
+            round(entry["mindtct_h_on"]["mean"], 2),
+            round(entry["leader_h_on"]["mean"], 2),
+            "off",
+            round(entry["mindtct_h_off"]["mean"], 2),
+            round(entry["leader_h_off"]["mean"], 2),
+            flush=True,
+        )
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)
 

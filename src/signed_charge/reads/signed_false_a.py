@@ -4,6 +4,7 @@
 
 Run: python -m signed_charge.reads.signed_false_a OUT.json IMAGES
 """
+
 import json
 import sys
 from concurrent.futures import ProcessPoolExecutor
@@ -35,7 +36,21 @@ def main(out, root):
     json.dump(report, open(out, "w"), indent=1)
     for reader in sm.EXTRACTORS:
         r = report[reader]
-        print(reader, r["fingers"], r["prints"], {k: (round(r[k]["c60"]["mean"], 2), [round(c, 2) for c in r[k]["c60"]["ci"]], round(r[k]["h_long"]["mean"], 3), [round(c, 3) for c in r[k]["h_long"]["ci"]]) for k in ("all", "confirmed", "clean")}, flush=True)
+        print(
+            reader,
+            r["fingers"],
+            r["prints"],
+            {
+                k: (
+                    round(r[k]["c60"]["mean"], 2),
+                    [round(c, 2) for c in r[k]["c60"]["ci"]],
+                    round(r[k]["h_long"]["mean"], 3),
+                    [round(c, 3) for c in r[k]["h_long"]["ci"]],
+                )
+                for k in ("all", "confirmed", "clean")
+            },
+            flush=True,
+        )
 
 
 if __name__ == "__main__":

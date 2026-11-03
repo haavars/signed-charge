@@ -6,11 +6,11 @@ By the divergence theorem a read flow's spreading is the net charge of the minut
 
 Run: python -m signed_charge.reads.agreement_null OUT.json
 """
+
 import json
 import os
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -84,7 +84,11 @@ def main(out):
                 table = np.array([g[reader][flow] for g in group], float)
                 value = lambda i: table[i, 0].sum() / max(table[i, 1].sum(), 1)  # noqa: E731
                 draws = [value(rng.integers(len(table), size=len(table))) for _ in range(RESAMPLES)]
-                report[name][f"{reader}/{flow}"] = {"mean": float(value(np.arange(len(table)))), "ci": [float(np.percentile(draws, q)) for q in (2.5, 97.5)], "minutiae": float(table[:, 1].sum() / len(table))}
+                report[name][f"{reader}/{flow}"] = {
+                    "mean": float(value(np.arange(len(table)))),
+                    "ci": [float(np.percentile(draws, q)) for q in (2.5, 97.5)],
+                    "minutiae": float(table[:, 1].sum() / len(table)),
+                }
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)
 

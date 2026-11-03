@@ -22,11 +22,10 @@ its Figure Ax2:
 Run: python -m signed_charge.generate.glover_model
 loop OUT.npz [--sigma S --scale PX --seed N]
 """
+
 import argparse
 import json
-import sys
 import time
-from pathlib import Path
 
 import numpy as np
 import scipy.sparse as sp
@@ -155,10 +154,8 @@ def run(pattern, dx, dt, t_end, snapshots=(150, 300, 450, 900, 2500), sigma=0.0,
     stiff, mass = laplacian(points, tris)
     n = len(points)
     m = sp.diags(mass)
-    lu_u = spla.splu((m * (1 + dt * MU) + dt * stiff).tocsc(), permc_spec="MMD_AT_PLUS_A", diag_pivot_thresh=0.0,
-                     options=dict(SymmetricMode=True))
-    lu_v = spla.splu((m * (1 + dt * NU) + dt * D * stiff).tocsc(), permc_spec="MMD_AT_PLUS_A", diag_pivot_thresh=0.0,
-                     options=dict(SymmetricMode=True))
+    lu_u = spla.splu((m * (1 + dt * MU) + dt * stiff).tocsc(), permc_spec="MMD_AT_PLUS_A", diag_pivot_thresh=0.0, options=dict(SymmetricMode=True))
+    lu_v = spla.splu((m * (1 + dt * NU) + dt * D * stiff).tocsc(), permc_spec="MMD_AT_PLUS_A", diag_pivot_thresh=0.0, options=dict(SymmetricMode=True))
     u, v = initial(points, pattern)
     reached = np.zeros(n, bool) if gated else np.ones(n, bool)
     crease, nail = boundaries(points, s, phi, index, pattern)
@@ -181,8 +178,7 @@ def run(pattern, dx, dt, t_end, snapshots=(150, 300, 450, 900, 2500), sigma=0.0,
                 u[where] *= np.exp(-dt * a / (1 - a))
         if any(abs(t - f) < dt / 2 for f in snapshots):
             frames[int(round(t))] = u[index].astype(np.float32)
-            print(json.dumps({"t": round(t), "u_max": float(u.max()), "u_min": float(u.min()),
-                              "seconds": round(time.time() - started)}), flush=True)
+            print(json.dumps({"t": round(t), "u_max": float(u.max()), "u_min": float(u.min()), "seconds": round(time.time() - started)}), flush=True)
     return {"s": s, "phi": phi, "frames": frames, "n": n, "u": u[index].astype(np.float32)}
 
 
@@ -199,11 +195,15 @@ def main():
     parser.add_argument("--everywhere", action="store_true", help="E-029's noise, not gated on the front")
     args = parser.parse_args()
     started = provenance.start()
-    result = run(args.pattern, args.dx, args.dt, args.t, sigma=args.sigma, scale=args.scale, seed=args.seed,
-                 gated=not args.everywhere)
-    np.savez_compressed(args.out, s=result["s"], phi=result["phi"], u=result["u"],
-                        **{f"t{k}": v for k, v in result["frames"].items()},
-                        provenance=json.dumps(provenance.record(started)))
+    result = run(args.pattern, args.dx, args.dt, args.t, sigma=args.sigma, scale=args.scale, seed=args.seed, gated=not args.everywhere)
+    np.savez_compressed(
+        args.out,
+        s=result["s"],
+        phi=result["phi"],
+        u=result["u"],
+        **{f"t{k}": v for k, v in result["frames"].items()},
+        provenance=json.dumps(provenance.record(started)),
+    )
 
 
 if __name__ == "__main__":

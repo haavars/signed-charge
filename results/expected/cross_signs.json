@@ -1,0 +1,76 @@
+{
+ "real": {
+  "fingers": 90,
+  "mindtct_minutiae": 22607,
+  "matches": 15424,
+  "opposite": {
+   "mean": 0.006677904564315352,
+   "ci": [
+    0.0045186901889823225,
+    0.009064776543887423
+   ]
+  },
+  "across_share": 0.0009725103734439834
+ },
+ "sfinge": {
+  "fingers": 30,
+  "mindtct_minutiae": 5990,
+  "matches": 4530,
+  "opposite": {
+   "mean": 0.0041942604856512146,
+   "ci": [
+    0.0019675235670691036,
+    0.006553334094470701
+   ]
+  },
+  "across_share": 0.0002207505518763797
+ },
+ "model2": {
+  "fingers": 160,
+  "mindtct_minutiae": 13415,
+  "matches": 12862,
+  "opposite": {
+   "mean": 0.0012439744985227803,
+   "ci": [
+    0.0006907588021092365,
+    0.0018740704740978667
+   ]
+  },
+  "across_share": 0.0027989426216762556
+ },
+ "e027": {
+  "fingers": 160,
+  "mindtct_minutiae": 9764,
+  "matches": 7431,
+  "opposite": {
+   "mean": 0.00026914278024491994,
+   "ci": [
+    0.0,
+    0.0008365579237976093
+   ]
+  },
+  "across_share": 0.0008074283407347598
+ },
+ "_provenance": {
+  "commit": "d64918140585d88967d83f380c91c75182e363f4",
+  "uncommitted_changes": [],
+  "command": [
+   "python",
+   "-m",
+   "signed_charge.reads.cross_signs",
+   "results/expected/cross_signs.json"
+  ],
+  "cwd": "<signed-charge>",
+  "ridgegen": "0.25.1",
+  "python": "3.12.14",
+  "host": "STORE",
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "RIDGEGEN_TOOLS": "<signed-charge>/tools",
+   "PYTHONPATH": "src"
+  },
+  "started": "2026-11-02T23:32:12+0100",
+  "finished": "2026-11-02T23:32:13+0100",
+  "note": "Run on the cleanup branch against the original minutiae cache, <repo>/data/research/minutiae_parts/cache.pkl, as section 5.7's figure had no stored file."
+ }
+}

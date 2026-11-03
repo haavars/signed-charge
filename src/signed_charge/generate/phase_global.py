@@ -22,11 +22,11 @@ spirals placed: how many found, how many spurious, and where (near a singular po
 
 Run: python -m signed_charge.generate.phase_global OUT.json
 """
+
 import json
 import sys
 import time
 from collections import deque
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -97,8 +97,7 @@ def spiral_phase(shape, spirals):
 def direct(normal, b):
     """The sparse direct solve: symmetric ordering, no pivoting (6.5 s and 1.6 GB at full size, against 11 s and 1.8
     GB for `spsolve`, the same answer)."""
-    return spla.splu(normal, permc_spec="MMD_AT_PLUS_A", diag_pivot_thresh=0.0,
-                     options=dict(SymmetricMode=True)).solve(b)
+    return spla.splu(normal, permc_spec="MMD_AT_PLUS_A", diag_pivot_thresh=0.0, options=dict(SymmetricMode=True)).solve(b)
 
 
 def assemble_anisotropic(beta_u, gx, gy, cgx, cgy, psi_s, weight, spacing_weight):
@@ -189,8 +188,7 @@ def solve_continuous(beta_u, period, spirals, exact=False, spacing_weight=None):
         psi_c = direct(normal, b)
     else:
         half = period[::2, ::2] / 2 if np.ndim(period) else period / 2
-        coarse, _, _ = solve_continuous(beta_u[::2, ::2], half, [(x / 2, y / 2, p) for x, y, p in spirals],
-                                        exact=True, spacing_weight=spacing_weight)
+        coarse, _, _ = solve_continuous(beta_u[::2, ::2], half, [(x / 2, y / 2, p) for x, y, p in spirals], exact=True, spacing_weight=spacing_weight)
         yy, xx = np.mgrid[0:h, 0:w]
         start = map_coordinates(coarse, [yy / 2, xx / 2], order=1, mode="nearest").ravel()
         jacobi = 1 / normal.diagonal()
@@ -255,12 +253,20 @@ def period_field(beta_u, period, singular, smoothness, bound, step=4, clear=2.5)
     vals = np.concatenate([fx, -fx, fy, -fy])
     transport = sp.csr_matrix((vals, (rows, cols)), shape=(n, h * w))
     root = np.sqrt(smoothness) / step
-    right = sp.csr_matrix((np.r_[np.full((w - 1) * h, root), np.full((w - 1) * h, -root)],
-                           (np.r_[np.arange((w - 1) * h), np.arange((w - 1) * h)], np.r_[idx[:, 1:].ravel(), idx[:, :-1].ravel()])),
-                          shape=((w - 1) * h, h * w))
-    down = sp.csr_matrix((np.r_[np.full((h - 1) * w, root), np.full((h - 1) * w, -root)],
-                          (np.r_[np.arange((h - 1) * w), np.arange((h - 1) * w)], np.r_[idx[1:, :].ravel(), idx[:-1, :].ravel()])),
-                         shape=((h - 1) * w, h * w))
+    right = sp.csr_matrix(
+        (
+            np.r_[np.full((w - 1) * h, root), np.full((w - 1) * h, -root)],
+            (np.r_[np.arange((w - 1) * h), np.arange((w - 1) * h)], np.r_[idx[:, 1:].ravel(), idx[:, :-1].ravel()]),
+        ),
+        shape=((w - 1) * h, h * w),
+    )
+    down = sp.csr_matrix(
+        (
+            np.r_[np.full((h - 1) * w, root), np.full((h - 1) * w, -root)],
+            (np.r_[np.arange((h - 1) * w), np.arange((h - 1) * w)], np.r_[idx[1:, :].ravel(), idx[:-1, :].ravel()]),
+        ),
+        shape=((h - 1) * w, h * w),
+    )
     a = sp.vstack([transport, right, down]).tocsc()
     rhs = np.r_[target[i, j], np.zeros(a.shape[0] - n)]
     u = spla.spsolve((a.T @ a + 1e-9 * sp.identity(h * w)).tocsc(), a.T @ rhs).reshape(h, w)
@@ -351,9 +357,12 @@ def pairs(beta_u, period, spirals, singular, rate, mix, rng, edge=30, labels=Non
         beta = beta_u[int(y), int(x)]  # across the ridges
         mix4 = tuple(mix) + (0.0,) * (4 - len(mix))
         layout = rng.choice(4, p=mix4)
-        a, sep = [(beta, 1.0), (beta + rng.choice([-1, 1]) * np.pi / 4, rng.uniform(1.0, 1.5)),
-                  (beta + np.pi / 2, rng.uniform(1.5, 3.0)),
-                  (rng.uniform(0, np.pi), rng.uniform(*free))][layout]
+        a, sep = [
+            (beta, 1.0),
+            (beta + rng.choice([-1, 1]) * np.pi / 4, rng.uniform(1.0, 1.5)),
+            (beta + np.pi / 2, rng.uniform(1.5, 3.0)),
+            (rng.uniform(0, np.pi), rng.uniform(*free)),
+        ][layout]
         d = sep * period * np.array([np.cos(a), np.sin(a)]) / 2
         sign = rng.choice([-1, 1])
         ends = [(x + d[0], y + d[1]), (x - d[0], y - d[1])]
@@ -370,8 +379,21 @@ def pairs(beta_u, period, spirals, singular, rate, mix, rng, edge=30, labels=Non
     return out
 
 
-def master_ridges(m, seed, fgp, smooth=2.0, rate=0.0, mix=(0.5, 0.3, 0.2), spacing=0.0, clump=0.0, below=1.0,
-                  dither=False, spacing_weight=None, vary=None, free=FREE_SEPARATION):
+def master_ridges(
+    m,
+    seed,
+    fgp,
+    smooth=2.0,
+    rate=0.0,
+    mix=(0.5, 0.3, 0.2),
+    spacing=0.0,
+    clump=0.0,
+    below=1.0,
+    dither=False,
+    spacing_weight=None,
+    vary=None,
+    free=FREE_SEPARATION,
+):
     """A master's ridges drawn from one phase: the flow's spirals (density smoothed over `smooth` periods) and
     `rate` added pairs per 100 mm²; and the spirals. `vary` is (smoothness, bound) for `period_field`."""
     from ridgegen.synthesis import rng_for
@@ -381,8 +403,7 @@ def master_ridges(m, seed, fgp, smooth=2.0, rate=0.0, mix=(0.5, 0.3, 0.2), spaci
     barrier = cuts(shape, singular)
     beta_u = unwrap_direction(m.orientation, barrier)
     field = period_field(beta_u, period, singular, *vary) if vary else period
-    spirals, _, _ = flow_spirals(beta_u, field, barrier, rng_for(seed, fgp, FLOW_SALT), smooth=smooth,
-                                 spacing=spacing, dither=dither)
+    spirals, _, _ = flow_spirals(beta_u, field, barrier, rng_for(seed, fgp, FLOW_SALT), smooth=smooth, spacing=spacing, dither=dither)
     if rate:
         where = placement(shape, m.cores, clump, below, seed, fgp) if clump or below != 1.0 else None
         spirals += pairs(beta_u, float(np.mean(field)), spirals, singular, rate, mix, rng_for(seed, fgp, PAIR_SALT), where=where, free=free)
@@ -403,12 +424,11 @@ def match(found, spirals, singular, barrier, period):
             matched += 1
         elif any(np.hypot(p["x"] - x, p["y"] - y) < 4 * period for x, y in singular):
             near_sp += 1
-        elif barrier[:, max(0, p["x"] - 6):p["x"] + 7].any():
+        elif barrier[:, max(0, p["x"] - 6) : p["x"] + 7].any():
             near_cut += 1
         else:
             elsewhere += 1
-    return {"found": len(found), "matched": matched, "spurious_near_singular": near_sp, "spurious_near_cut": near_cut,
-            "spurious_elsewhere": elsewhere}
+    return {"found": len(found), "matched": matched, "spurious_near_singular": near_sp, "spurious_near_cut": near_cut, "spurious_elsewhere": elsewhere}
 
 
 def one(seed, fgp, out_images=None):
@@ -424,15 +444,21 @@ def one(seed, fgp, out_images=None):
     beta_u = unwrap_direction(m.orientation, barrier)
     rng = rng_for(seed, fgp, FLOW_SALT)
     flow, net, gross = flow_spirals(beta_u, period, barrier, rng)
-    rows = {"seed": seed, "fgp": fgp, "period": period, "pattern": m.pattern, "flow_net": net, "flow_gross": gross,
-            "grown": len(minutiae.extract(m.ridges > 0, np.ones(shape, bool)))}
+    rows = {
+        "seed": seed,
+        "fgp": fgp,
+        "period": period,
+        "pattern": m.pattern,
+        "flow_net": net,
+        "flow_gross": gross,
+        "grown": len(minutiae.extract(m.ridges > 0, np.ones(shape, bool))),
+    }
     images = {}
     for name, spirals in (("none", []), ("flow", flow)):
         psi_c, psi_s, seconds = solve_continuous(beta_u, period, spirals)
         ridges = render(psi_c + psi_s)
         found = minutiae.extract(ridges > 0, np.ones(shape, bool))
-        rows[name] = {**match(found, spirals, singular, barrier, period), "placed": len(spirals),
-                      "solve_s": round(seconds, 1)}
+        rows[name] = {**match(found, spirals, singular, barrier, period), "placed": len(spirals), "solve_s": round(seconds, 1)}
         images[name] = ridges
     if out_images:
         np.save(out_images, np.stack([m.ridges, images["none"], images["flow"]]))

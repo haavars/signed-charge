@@ -4,6 +4,7 @@ Ink as drawn, white paper outside the contact, then `diffusion.render` at its st
 
 Run: python -m signed_charge.exploratory.diffused SHEET.jpg OUT.json RUN.npz...
 """
+
 import json
 import os
 import sys

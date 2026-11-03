@@ -7,6 +7,7 @@ mm² of print in rings around the core. CPU only (`synthesis.use_device("cpu")`)
 
 Run: python -m signed_charge.exploratory.master_traits 2000 50 > traits.jsonl
 """
+
 import json
 import sys
 
@@ -33,8 +34,7 @@ def traits(seed, f):
     m = fingers.master(seed, f)
     # The print's scale, as a rolled print draws it (fingerprints.rolled_capture, without the capture's jitter).
     s = fp.finger_scale(seed, f) * min(1.0, 1.02 / m.scale)
-    out = {"seed": seed, "fgp": f, "finger": m.name, "hand": m.hand, "pattern": m.pattern,
-           "spacing_mm": m.period * s / MM, "print_scale": s}
+    out = {"seed": seed, "fgp": f, "finger": m.name, "hand": m.hand, "pattern": m.pattern, "spacing_mm": m.period * s / MM, "print_scale": s}
     if m.cores:
         cx, cy = np.mean(m.cores, 0)
         out["core"] = [cx / fingers.MASTER_W, cy / fingers.MASTER_H]
@@ -48,8 +48,7 @@ def traits(seed, f):
         pairs = []
         for d in m.deltas:
             c = min(m.cores, key=lambda c: np.hypot(c[0] - d[0], c[1] - d[1]))
-            pairs.append((ridge_count(m.ridges, c, d), np.hypot(d[0] - c[0], d[1] - c[1]) * s / MM,
-                          float(np.degrees(np.arctan2(d[1] - c[1], d[0] - c[0])))))
+            pairs.append((ridge_count(m.ridges, c, d), np.hypot(d[0] - c[0], d[1] - c[1]) * s / MM, float(np.degrees(np.arctan2(d[1] - c[1], d[0] - c[0])))))
         rc, dist, angle = max(pairs)
         out.update(ridge_count=rc, ridge_counts=[p[0] for p in pairs], core_delta_mm=dist, delta_direction=angle)
     return out

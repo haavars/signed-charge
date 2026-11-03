@@ -4,6 +4,7 @@ Each planar print of `field_print`, and model 2's own print of the same finger, 
 
 Run: python -m signed_charge.reads.field_read CACHE.pkl OUT.json SHEET.jpg RUN.npz...
 """
+
 import json
 import os
 import pickle
@@ -92,10 +93,23 @@ def summary(rows, reader, rng):
     count = np.array([r[reader][1] for r in rows])
     n = np.array([r[reader][2] for r in rows], float)
     band = lambda a, b: (sm.EDGES[:-1] >= a) & (sm.EDGES[1:] <= b)  # noqa: E731
-    measures = {"h_short": lambda i: total[i][:, band(*sf.SHORT)].sum() / max(count[i][:, band(*sf.SHORT)].sum(), 1), "h_long": lambda i: total[i][:, band(*sf.LONG)].sum() / max(count[i][:, band(*sf.LONG)].sum(), 1), "c60": lambda i: 2 * total[i][:, sm.EDGES[1:] <= 60].sum() / max(n[i].sum(), 1), "c150": lambda i: 2 * total[i].sum() / max(n[i].sum(), 1)}
+    measures = {
+        "h_short": lambda i: total[i][:, band(*sf.SHORT)].sum() / max(count[i][:, band(*sf.SHORT)].sum(), 1),
+        "h_long": lambda i: total[i][:, band(*sf.LONG)].sum() / max(count[i][:, band(*sf.LONG)].sum(), 1),
+        "c60": lambda i: 2 * total[i][:, sm.EDGES[1:] <= 60].sum() / max(n[i].sum(), 1),
+        "c150": lambda i: 2 * total[i].sum() / max(n[i].sum(), 1),
+    }
     draws = [rng.integers(len(rows), size=len(rows)) for _ in range(RESAMPLES)]
     every = np.arange(len(rows))
-    return {"fingers": len(rows), "minutiae_a_window": float(n.mean() / DRAW), **{k: {"mean": float(f(every)), "ci": [float(np.percentile([f(d) for d in draws], q)) for q in (2.5, 97.5)]} for k, f in measures.items()}}, n, total
+    return (
+        {
+            "fingers": len(rows),
+            "minutiae_a_window": float(n.mean() / DRAW),
+            **{k: {"mean": float(f(every)), "ci": [float(np.percentile([f(d) for d in draws], q)) for q in (2.5, 97.5)]} for k, f in measures.items()},
+        },
+        n,
+        total,
+    )
 
 
 def main(cache, out, figure, paths):
@@ -143,7 +157,10 @@ def main(cache, out, figure, paths):
         reach = sm.EDGES[1:] <= 60
         difference = lambda i: 2 * t_a[i][:, reach].sum() / max(n_a[i].sum(), 1) - 2 * t_b[i][:, reach].sum() / max(n_b[i].sum(), 1)  # noqa: E731
         draws = [difference(rng.integers(len(field), size=len(field))) for _ in range(RESAMPLES)]
-        report[reader]["charge"]["c60_field_less_same2"] = {"mean": float(difference(np.arange(len(field)))), "ci": [float(np.percentile(draws, q)) for q in (2.5, 97.5)]}
+        report[reader]["charge"]["c60_field_less_same2"] = {
+            "mean": float(difference(np.arange(len(field)))),
+            "ci": [float(np.percentile(draws, q)) for q in (2.5, 97.5)],
+        }
         print(reader, json.dumps(report[reader]["charge"])[:600], flush=True)
         report[reader]["sheet"] = pr.described(sheets, reader, rng)
         report[reader]["sheet"].pop("h", None)

@@ -4,6 +4,7 @@ Each site's wave alone (`competency_model.site_arrivals`), with the run's own ge
 
 Run: python -m signed_charge.exploratory.domains SHEET.jpg RUN.npz...
 """
+
 import json
 import re
 import sys

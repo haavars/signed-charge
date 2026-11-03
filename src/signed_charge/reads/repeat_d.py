@@ -4,12 +4,12 @@ guarded disc, at each scale: correlation and the slope of impression 2 on impres
 agreement (unit double angle, turned) checks the alignment. Sets: real (FVC DB1-3 B), SFinGe, model 2 (2 captures).
 Run from python_biometrics: RIDGEGEN_TOOLS=$PWD/tools PYTHONPATH=. OMP_NUM_THREADS=1 .venv/bin/python repeat_d.py OUT.json
 """
+
 import json
 import os
 import pickle
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import numpy as np
 from signed_charge.measure import field_similarity as fs
@@ -72,8 +72,12 @@ def pair(task):
     if ok.sum() < 500:
         return None
     xb, yb, xa, ya = xb[ok], yb[ok], xa[ok], ya[ok]
-    out = {"finger": ra["finger"], "cells": int(ok.sum()), "matches": int(count),
-           "orientation": float(np.abs(np.mean(zb[yb, xb] * np.conj(za[ya, xa] * np.exp(2j * turn)))))}
+    out = {
+        "finger": ra["finger"],
+        "cells": int(ok.sum()),
+        "matches": int(count),
+        "orientation": float(np.abs(np.mean(zb[yb, xb] * np.conj(za[ya, xa] * np.exp(2j * turn))))),
+    }
     near_b = np.minimum(nb[yb, xb], na[ya, xa])
     for s in SCALES:
         vb = spb[s][yb, xb]
@@ -82,7 +86,14 @@ def pair(task):
             if pick.sum() < 50:
                 continue
             a, b = va[pick], vb[pick]
-            out[f"{s}/{part}"] = (float((a * b).sum()), float((a * a).sum()), float((b * b).sum()), float(np.linalg.norm(a, axis=1).sum()), float(np.linalg.norm(b, axis=1).sum()), int(pick.sum()))
+            out[f"{s}/{part}"] = (
+                float((a * b).sum()),
+                float((a * a).sum()),
+                float((b * b).sum()),
+                float(np.linalg.norm(a, axis=1).sum()),
+                float(np.linalg.norm(b, axis=1).sum()),
+                int(pick.sum()),
+            )
     return out
 
 
@@ -111,8 +122,13 @@ def main(out):
     for name in sorted({t[0] for t in tasks}):
         rows = [r for t, r in zip(tasks, done) if t[0] == name and r]
         fingers = sorted({r["finger"] for r in rows})
-        rep = {"pairs": len(rows), "fingers": len(fingers), "aligned_of": sum(1 for t in tasks if t[0] == name),
-               "orientation": float(np.mean([r["orientation"] for r in rows])), "cells": float(np.mean([r["cells"] for r in rows]))}
+        rep = {
+            "pairs": len(rows),
+            "fingers": len(fingers),
+            "aligned_of": sum(1 for t in tasks if t[0] == name),
+            "orientation": float(np.mean([r["orientation"] for r in rows])),
+            "cells": float(np.mean([r["cells"] for r in rows])),
+        }
         for s in SCALES:
             for part in ("far", "all"):
                 key = f"{s}/{part}"
@@ -124,15 +140,24 @@ def main(out):
                 stat = lambda i: (t[i, 0].sum() / np.sqrt(t[i, 1].sum() * t[i, 2].sum()), t[i, 0].sum() / t[i, 1].sum(), t[i, 4].sum() / t[i, 3].sum())  # noqa: E731
                 full = stat(np.arange(len(t)))
                 draws = np.array([stat(np.concatenate([np.flatnonzero(f == j) for j in rng.integers(len(fingers), size=len(fingers))])) for _ in range(500)])
-                rep[key] = {"pairs": len(have), "cells": int(t[:, 5].sum()), "corr": float(full[0]), "corr_ci": [float(np.percentile(draws[:, 0], q)) for q in (2.5, 97.5)],
-                            "slope": float(full[1]), "abs_ratio_b_over_a": float(full[2]), "mean_abs_a": float(t[:, 3].sum() / t[:, 5].sum())}
+                rep[key] = {
+                    "pairs": len(have),
+                    "cells": int(t[:, 5].sum()),
+                    "corr": float(full[0]),
+                    "corr_ci": [float(np.percentile(draws[:, 0], q)) for q in (2.5, 97.5)],
+                    "slope": float(full[1]),
+                    "abs_ratio_b_over_a": float(full[2]),
+                    "mean_abs_a": float(t[:, 3].sum() / t[:, 5].sum()),
+                }
         report[name] = rep
         print("==", name, rep["pairs"], "pairs of", rep["aligned_of"], "orientation agreement", round(rep["orientation"], 3))
         for s in SCALES:
             for part in ("far", "all"):
                 e = rep.get(f"{s}/{part}")
                 if e:
-                    print(f"  {s} {part}: corr {e['corr']:.2f} ({e['corr_ci'][0]:.2f}-{e['corr_ci'][1]:.2f}) slope {e['slope']:.2f} |d| {e['mean_abs_a']:.2e} cells {e['cells']}")
+                    print(
+                        f"  {s} {part}: corr {e['corr']:.2f} ({e['corr_ci'][0]:.2f}-{e['corr_ci'][1]:.2f}) slope {e['slope']:.2f} |d| {e['mean_abs_a']:.2e} cells {e['cells']}"
+                    )
     json.dump(report, open(out, "w"), indent=1)
 
 

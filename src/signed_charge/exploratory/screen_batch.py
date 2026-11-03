@@ -7,6 +7,7 @@ same number of prints (one capture each, first of each finger, seeds from 7000) 
 
 Run: python -m signed_charge.exploratory.screen_batch OUT.json RUN.npz...
 """
+
 import json
 import re
 import sys
@@ -32,9 +33,18 @@ def one(path):
 
 def line(name, s, p, accuracy=None):
     c = p["clustering"]
-    print(name.ljust(16), "prints", s["prints"], "dens %.1f bif %.2f b/a %s" % (s["density_per_100mm2"], s["bifurcations"], s["near_core_below_over_above"] and round(s["near_core_below_over_above"], 2)),
-          "acc", accuracy and round(accuracy, 3), "same/off/face %.2f %.2f %.2f" % (p["close_same"], p["close_offset"], p["close_facing"]),
-          "EE/EB/BB %.2f %.2f %.2f" % (p["close_EE"], p["close_EB"], p["close_BB"]), "c10/20/40 %.2f %.2f %.2f" % (c[10], c[20], c[40]))
+    print(
+        name.ljust(16),
+        "prints",
+        s["prints"],
+        "dens %.1f bif %.2f b/a %s"
+        % (s["density_per_100mm2"], s["bifurcations"], s["near_core_below_over_above"] and round(s["near_core_below_over_above"], 2)),
+        "acc",
+        accuracy and round(accuracy, 3),
+        "same/off/face %.2f %.2f %.2f" % (p["close_same"], p["close_offset"], p["close_facing"]),
+        "EE/EB/BB %.2f %.2f %.2f" % (p["close_EE"], p["close_EB"], p["close_BB"]),
+        "c10/20/40 %.2f %.2f %.2f" % (c[10], c[20], c[40]),
+    )
 
 
 def main(out, paths):

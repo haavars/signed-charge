@@ -7,9 +7,8 @@ Kept apart from `competency_model.py` while D-020's population starts new proces
 
 Run: python -m signed_charge.exploratory.stress_run loop OUT.npz --speed 0.7 ...
 """
+
 import json
-import sys
-from pathlib import Path
 
 import numpy as np
 import scipy.sparse as sp
@@ -86,7 +85,15 @@ def main():
         cm.site_arrivals = core_arrivals
     cm.anisotropy = lambda points, tris, psi, epsilon: stiffness(points, tris, args.pattern, person, epsilon, args.dx)
     r = cm.run(args.pattern, args.speed, args.noise, args.sigma, args.scale, args.seed, args.dx, args.dt, args.t, args.vary, 0.0, args.aniso)
-    np.savez_compressed(args.out, s=r["s"], phi=r["phi"], u=r["u"], arrival=r["arrival"], **{f"t{k}": v for k, v in r["frames"].items()}, provenance=json.dumps(provenance.record(started)))
+    np.savez_compressed(
+        args.out,
+        s=r["s"],
+        phi=r["phi"],
+        u=r["u"],
+        arrival=r["arrival"],
+        **{f"t{k}": v for k, v in r["frames"].items()},
+        provenance=json.dumps(provenance.record(started)),
+    )
 
 
 if __name__ == "__main__":

@@ -5,6 +5,7 @@ C(60) on both extractors, per sensor and pooled, CI by finger, on FVC DB1-3 B an
 
 Run: python -m signed_charge.reads.held_out_signed OUT.json [IMAGES]
 """
+
 import glob
 import json
 import os
@@ -65,19 +66,27 @@ def charge(rows, extractor, rng):
     """C(60) and its CI by finger."""
     near = sm.EDGES[1:] <= 60
     by = {}
-    for (key, value) in rows:
+    for key, value in rows:
         if value and value[extractor]:
             s = by.setdefault(key[1], [0.0, 0.0])
             s[0] += 2 * np.asarray(value[extractor]["sum"])[near].sum()
             s[1] += value[extractor]["minutiae"]
     a = np.array(list(by.values()))
     draws = [a[d, 0].sum() / a[d, 1].sum() for d in (rng.integers(len(a), size=len(a)) for _ in range(RESAMPLES))]
-    return {"mean": float(a[:, 0].sum() / a[:, 1].sum()), "ci": [float(np.percentile(draws, q)) for q in (2.5, 97.5)], "fingers": len(a), "prints": sum(1 for _, v in rows if v and v[extractor])}
+    return {
+        "mean": float(a[:, 0].sum() / a[:, 1].sum()),
+        "ci": [float(np.percentile(draws, q)) for q in (2.5, 97.5)],
+        "fingers": len(a),
+        "prints": sum(1 for _, v in rows if v and v[extractor]),
+    }
 
 
 def summary(rows, rng):
     sensors = sorted({k[0] for k, _ in rows})
-    return {name: {"pooled": charge(rows, name, rng), "sensors": {s: charge([r for r in rows if r[0][0] == s], name, rng) for s in sensors}} for name in sm.EXTRACTORS}
+    return {
+        name: {"pooled": charge(rows, name, rng), "sensors": {s: charge([r for r in rows if r[0][0] == s], name, rng) for s in sensors}}
+        for name in sm.EXTRACTORS
+    }
 
 
 def verdict(a, b, sfinge):
@@ -85,7 +94,11 @@ def verdict(a, b, sfinge):
     for name, (low, high) in BANDS.items():
         pa, pb, ps = a[name]["pooled"], b[name]["pooled"], sfinge[name]["pooled"]
         inside = sum(low <= v["mean"] <= high for v in a[name]["sensors"].values())
-        out[name] = {"overlaps_b": bool(pa["ci"][0] <= pb["ci"][1] and pb["ci"][0] <= pa["ci"][1]), "sensors_in_band": inside, "sfinge_above": bool(ps["ci"][0] > pa["ci"][1])}
+        out[name] = {
+            "overlaps_b": bool(pa["ci"][0] <= pb["ci"][1] and pb["ci"][0] <= pa["ci"][1]),
+            "sensors_in_band": inside,
+            "sfinge_above": bool(ps["ci"][0] > pa["ci"][1]),
+        }
         out[name]["holds"] = bool(out[name]["overlaps_b"] and inside >= SENSORS_IN_BAND and out[name]["sfinge_above"])
     out["holds"] = all(out[n]["holds"] for n in BANDS)
     return out
@@ -106,7 +119,14 @@ def main(out, root=None):
     json.dump(report, open(out, "w"), indent=1)
     for key in report:
         if key not in ("_provenance", "verdict"):
-            print(key, {n: (round(v["pooled"]["mean"], 2), [round(x, 2) for x in v["pooled"]["ci"]], v["pooled"]["fingers"], v["pooled"]["prints"]) for n, v in report[key].items()}, flush=True)
+            print(
+                key,
+                {
+                    n: (round(v["pooled"]["mean"], 2), [round(x, 2) for x in v["pooled"]["ci"]], v["pooled"]["fingers"], v["pooled"]["prints"])
+                    for n, v in report[key].items()
+                },
+                flush=True,
+            )
     if "verdict" in report:
         print(json.dumps(report["verdict"]), flush=True)
 

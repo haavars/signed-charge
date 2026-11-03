@@ -2,6 +2,7 @@
 
 With --hash, every FVC B file is hashed against manifests/fvc_b.sha256, which takes a minute or so.
 """
+
 import hashlib
 import sys
 from pathlib import Path

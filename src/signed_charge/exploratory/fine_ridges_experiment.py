@@ -18,6 +18,7 @@ GPU (the diffusion model, `ridgegen install-tools --diffusion`) and NBIS and NFI
 
 Run: python -m signed_charge.exploratory.fine_ridges_experiment OUT.jsonl 20 3
 """
+
 import json
 import sys
 
@@ -108,7 +109,7 @@ def texture(image500, contact500):
     g = image500.astype(np.float32)
     ys, xs = np.nonzero(inside)
     y0, x0 = int(np.median(ys)) - 64, int(np.median(xs)) - 64
-    patch = g[max(0, y0):y0 + 128, max(0, x0):x0 + 128]
+    patch = g[max(0, y0) : y0 + 128, max(0, x0) : x0 + 128]
     if patch.shape != (128, 128):
         return None, None
     patch = (patch - patch.mean()) * np.outer(np.hanning(128), np.hanning(128))
@@ -135,11 +136,26 @@ def main(out, per_bin=20, attempts=3):
                         small = jp2.downsample(image)
                         m = verify.verify(small, capture)
                         high, contrast = texture(small, capture.contact)
-                        f.write(json.dumps({
-                            "seed": seed, "fgp": fgp, "period": round(period, 2), "bin": b[0], "variant": variant,
-                            "attempt": attempt, "k": round(k, 3), "recall": m["minutiae_recall"],
-                            "spurious": m["minutiae_spurious"], "nfiq2": m["nfiq2"], "accepted": m["accepted"],
-                            "high_frequency": high, "contrast": contrast}) + "\n")
+                        f.write(
+                            json.dumps(
+                                {
+                                    "seed": seed,
+                                    "fgp": fgp,
+                                    "period": round(period, 2),
+                                    "bin": b[0],
+                                    "variant": variant,
+                                    "attempt": attempt,
+                                    "k": round(k, 3),
+                                    "recall": m["minutiae_recall"],
+                                    "spurious": m["minutiae_spurious"],
+                                    "nfiq2": m["nfiq2"],
+                                    "accepted": m["accepted"],
+                                    "high_frequency": high,
+                                    "contrast": contrast,
+                                }
+                            )
+                            + "\n"
+                        )
                         f.flush()
             print(b, file=sys.stderr, flush=True)
 

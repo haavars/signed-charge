@@ -5,6 +5,7 @@ and a circle must wind 180° within `TOLERANCE`, so a nearby core spoils nothing
 
 Run: python -m signed_charge.exploratory.delta_knees OUT.json RUN.npz...
 """
+
 import json
 import os
 import sys
@@ -70,7 +71,12 @@ def stairs(step):
 def deltas(z):
     coarse = z[sm.CELL // 2 :: sm.CELL, sm.CELL // 2 :: sm.CELL]
     step = lambda a, b: np.angle(b * np.conj(a))
-    wind = step(coarse[:-1, :-1], coarse[:-1, 1:]) + step(coarse[:-1, 1:], coarse[1:, 1:]) + step(coarse[1:, 1:], coarse[1:, :-1]) + step(coarse[1:, :-1], coarse[:-1, :-1])
+    wind = (
+        step(coarse[:-1, :-1], coarse[:-1, 1:])
+        + step(coarse[:-1, 1:], coarse[1:, 1:])
+        + step(coarse[1:, 1:], coarse[1:, :-1])
+        + step(coarse[1:, :-1], coarse[:-1, :-1])
+    )
     return wind
 
 
@@ -154,7 +160,11 @@ def main(out, runs):
             if steps:
                 a = np.abs(np.array(steps))
                 big = a[:, 0] > 20
-                report[f"{name}_{sign}"].update(step_turn=float(np.median(a[:, 0])), step_width=float(np.median(a[:, 1])), width_sin=float(np.median((a[:, 1] * np.sin(np.radians(a[:, 0]) / 2))[big])) if big.any() else None)
+                report[f"{name}_{sign}"].update(
+                    step_turn=float(np.median(a[:, 0])),
+                    step_width=float(np.median(a[:, 1])),
+                    width_sin=float(np.median((a[:, 1] * np.sin(np.radians(a[:, 0]) / 2))[big])) if big.any() else None,
+                )
             print(f"{name}_{sign}".ljust(26), json.dumps(report[f"{name}_{sign}"]), flush=True)
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)

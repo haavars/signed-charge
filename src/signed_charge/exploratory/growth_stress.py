@@ -10,10 +10,8 @@ Solved on a coarse mesh, as the stress is smooth, then carried to the model's me
 
 Lengths are model units, the membrane's stiffness Et is 1 and the nail's force is 1: only ratios matter.
 """
-import json
+
 import os
-import sys
-from pathlib import Path
 
 import numpy as np
 import scipy.sparse as sp
@@ -23,7 +21,6 @@ from scipy.spatial import cKDTree
 
 from signed_charge.generate import competency_model as cm
 from signed_charge.generate import glover_model as g
-from signed_charge.measure import provenance
 
 POISSON = 0.3
 COARSE = 6.0  # model units
@@ -130,7 +127,9 @@ def solve(pattern, person=(0.0, 0.0, 0.0, 0.0), spring=240.0, normal_spring=240.
     forces[3 * crease + 2] += crease_force * g.R * dphi  # up the finger; both of the row's ends are half a step, near enough
     for column in (0, -1):
         for i in np.nonzero(s >= g.NAIL_FROM * g.L)[0]:
-            forces[3 * index[i, column] + 1] += np.clip((s[i] - g.NAIL_FROM * g.L) / ((1 - g.NAIL_FROM) * g.L), 0, 1) * ds  # the furrow lies in y = 0 and the surface leaves it along +y
+            forces[3 * index[i, column] + 1] += (
+                np.clip((s[i] - g.NAIL_FROM * g.L) / ((1 - g.NAIL_FROM) * g.L), 0, 1) * ds
+            )  # the furrow lies in y = 0 and the surface leaves it along +y
 
     mass = np.zeros(n)
     for k in range(3):
@@ -165,7 +164,9 @@ def pad_profile(points, index, s, pattern, person, width):
 
 def carry(result, s, phi):
     """The tensor on another (s, φ) grid: bilinear, each component. Returns (ns, nphi, 3, 3)."""
-    ss, pp = np.meshgrid((s - result["s"][0]) / (result["s"][1] - result["s"][0]), (phi - result["phi"][0]) / (result["phi"][1] - result["phi"][0]), indexing="ij")
+    ss, pp = np.meshgrid(
+        (s - result["s"][0]) / (result["s"][1] - result["s"][0]), (phi - result["phi"][0]) / (result["phi"][1] - result["phi"][0]), indexing="ij"
+    )
     grid = result["tensor"][result["index"]]
     return np.stack([np.stack([map_coordinates(grid[:, :, a, b], [ss, pp], order=1, mode="nearest") for b in range(3)], -1) for a in range(3)], -2)
 

@@ -5,6 +5,7 @@ period, and the 99th percentile of that turning. A print with smooth flow has al
 
 Run: python -m signed_charge.exploratory.seams OUT.json RUN.npz...
 """
+
 import json
 import os
 import sys
@@ -40,7 +41,12 @@ def singular(z, inner):
     """Cells round which the double angle winds, as a mask."""
     coarse = z[CELL // 2 :: CELL, CELL // 2 :: CELL]
     step = lambda a, b: np.angle(b * np.conj(a))
-    wind = step(coarse[:-1, :-1], coarse[:-1, 1:]) + step(coarse[:-1, 1:], coarse[1:, 1:]) + step(coarse[1:, 1:], coarse[1:, :-1]) + step(coarse[1:, :-1], coarse[:-1, :-1])
+    wind = (
+        step(coarse[:-1, :-1], coarse[:-1, 1:])
+        + step(coarse[:-1, 1:], coarse[1:, 1:])
+        + step(coarse[1:, 1:], coarse[1:, :-1])
+        + step(coarse[1:, :-1], coarse[:-1, :-1])
+    )
     mask = np.zeros(z.shape, np.uint8)
     for i, j in zip(*np.nonzero(np.abs(wind) > np.pi)):
         cv2.circle(mask, (int((j + 1) * CELL), int((i + 1) * CELL)), int(2 * PERIOD), 1, -1)
@@ -62,7 +68,12 @@ def measure(item):
     fast = keep & (turn > LIMIT)
     labels, n = nd.label(fast, np.ones((3, 3)))
     longest = max([max(s[0].stop - s[0].start, s[1].stop - s[1].start) for s in nd.find_objects(labels)], default=0)
-    return key, {"share": float(fast.sum() / keep.sum()), "p99": float(np.percentile(turn[keep], 99)), "longest": int(longest), "turn": float(np.median(turn[keep]))}
+    return key, {
+        "share": float(fast.sum() / keep.sum()),
+        "p99": float(np.percentile(turn[keep], 99)),
+        "longest": int(longest),
+        "turn": float(np.median(turn[keep])),
+    }
 
 
 def rendered(task):

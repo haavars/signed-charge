@@ -28,6 +28,7 @@ with `--procedural MODEL PEOPLE`, fingertips inked flat from master model MODEL,
 Run: python -m signed_charge.measure.conformality OUT.json [PEOPLE] [--binarise]
 [--procedural 2 40]
 """
+
 import glob
 import json
 import os
@@ -35,7 +36,6 @@ import subprocess
 import sys
 import tempfile
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -61,8 +61,7 @@ def binarised(im):
     with tempfile.TemporaryDirectory() as tmp:
         h, w = im.shape
         np.ascontiguousarray(im, dtype=np.uint8).tofile(f"{tmp}/i.raw")
-        subprocess.run([NBIS / "cjpegl", "jpl", f"{tmp}/i.raw", "-raw_in", f"{w},{h},8,500"], check=True,
-                       capture_output=True)
+        subprocess.run([NBIS / "cjpegl", "jpl", f"{tmp}/i.raw", "-raw_in", f"{w},{h},8,500"], check=True, capture_output=True)
         subprocess.run([NBIS / "mindtct", "-b", "-m1", f"{tmp}/i.jpl", f"{tmp}/b"], check=True, capture_output=True)
         b = np.fromfile(f"{tmp}/b.brw", np.uint8).reshape(h, w)
     return np.where(b > 0, 255, 0).astype(np.uint8) if b.max() <= 1 else b
@@ -87,8 +86,7 @@ def sample(c2, s2, p):
     fx, fy = x - x0, y - y0
 
     def at(a):
-        return (a[y0, x0] * (1 - fx) * (1 - fy) + a[y0, x0 + 1] * fx * (1 - fy)
-                + a[y0 + 1, x0] * (1 - fx) * fy + a[y0 + 1, x0 + 1] * fx * fy)
+        return a[y0, x0] * (1 - fx) * (1 - fy) + a[y0, x0 + 1] * fx * (1 - fy) + a[y0 + 1, x0] * (1 - fx) * fy + a[y0 + 1, x0 + 1] * fx * fy
 
     theta = 0.5 * np.arctan2(at(s2), at(c2))
     return np.stack([np.cos(theta), np.sin(theta)], 1)
@@ -126,12 +124,12 @@ def meet(a, b, oka, okb, tol=1.5):
     px, both inside up to there (`oka`, `okb`, as `trace` returns them)."""
     out, ok = np.zeros((len(a), 2)), np.zeros(len(a), bool)
     for i in range(0, len(a), 256):
-        d = np.linalg.norm(a[i:i + 256, :, None, :] - b[i:i + 256, None, :, :], axis=3)
+        d = np.linalg.norm(a[i : i + 256, :, None, :] - b[i : i + 256, None, :, :], axis=3)
         flat = d.reshape(len(d), -1).argmin(1)
         ia, ib = np.unravel_index(flat, d.shape[1:])
         rows = np.arange(len(d))
-        out[i:i + 256] = (a[i + rows, ia] + b[i + rows, ib]) / 2
-        ok[i:i + 256] = (d[rows, ia, ib] < tol) & oka[i + rows, ia] & okb[i + rows, ib]
+        out[i : i + 256] = (a[i + rows, ia] + b[i + rows, ib]) / 2
+        ok[i : i + 256] = (d[rows, ia, ib] < tol) & oka[i + rows, ia] & okb[i + rows, ib]
     return out, ok
 
 
@@ -200,11 +198,14 @@ def describe(item):
     index, curvature = moduli(binarised(im) if BINARISE else im, fg)
     if len(index) < 200:
         return key, None
-    return key, {"n": int(len(index)), "h10": histogram(index, curvature, 10).ravel().tolist(),
-                 "h20": histogram(index, curvature, 20).ravel().tolist(),
-                 "index_sd": float(np.std(index)), "index_p99": float(np.percentile(np.abs(index), 99)),
-                 "extreme_at_high_curvature": float(np.mean((np.abs(index) > INDEX_MAX)[curvature > 1.3]))
-                 if np.any(curvature > 1.3) else None}
+    return key, {
+        "n": int(len(index)),
+        "h10": histogram(index, curvature, 10).ravel().tolist(),
+        "h20": histogram(index, curvature, 20).ravel().tolist(),
+        "index_sd": float(np.std(index)),
+        "index_p99": float(np.percentile(np.abs(index), 99)),
+        "extreme_at_high_curvature": float(np.mean((np.abs(index) > INDEX_MAX)[curvature > 1.3])) if np.any(curvature > 1.3) else None,
+    }
 
 
 def fvc(dbs):
@@ -271,7 +272,7 @@ def main(out, args):
     args = [a for a in args if a != "--binarise"]
     sources = list(fvc(("DB1", "DB2", "DB3"))) + list(fvc(("DB4",)))
     if "--procedural" in args:
-        model, people = (int(a) for a in args[args.index("--procedural") + 1:][:2])
+        model, people = (int(a) for a in args[args.index("--procedural") + 1 :][:2])
         sources += list(procedural(model, people))
     else:
         sources += list(phantom(int(args[0]) if args else 60))
@@ -287,13 +288,15 @@ def main(out, args):
         report[name] = {f"accuracy_{f}": accuracy(real, xs, f) for f in ("h10", "h20")}
     for name, xs in [("real", real), ("sfinge", sfinge)] + [(n, xs) for n, xs in sets.items() if not n.startswith("FVC") and n != "real"]:
         e = [v["extreme_at_high_curvature"] for _, v in xs if v["extreme_at_high_curvature"] is not None]
-        report.setdefault(name, {}).update({
-            "index_sd_median": float(np.median([v["index_sd"] for _, v in xs])),
-            "index_p99_median": float(np.median([v["index_p99"] for _, v in xs])),
-            "extreme_at_high_curvature_median": float(np.median(e)) if e else None,
-            "mean_h10": np.mean([v["h10"] for _, v in xs], 0).round(4).tolist()})
-    print(json.dumps({k: {kk: vv for kk, vv in v.items() if kk != "mean_h10"} if isinstance(v, dict) else v
-                      for k, v in report.items()}, indent=1))
+        report.setdefault(name, {}).update(
+            {
+                "index_sd_median": float(np.median([v["index_sd"] for _, v in xs])),
+                "index_p99_median": float(np.median([v["index_p99"] for _, v in xs])),
+                "extreme_at_high_curvature_median": float(np.median(e)) if e else None,
+                "mean_h10": np.mean([v["h10"] for _, v in xs], 0).round(4).tolist(),
+            }
+        )
+    print(json.dumps({k: {kk: vv for kk, vv in v.items() if kk != "mean_h10"} if isinstance(v, dict) else v for k, v in report.items()}, indent=1))
     json.dump({"report": report, "prints": [[list(k), v] for k, v in described]}, open(out, "w"))
 
 

@@ -6,6 +6,7 @@ positive with no flow at all: planted independent spirals on straight stripes me
 
 Run: python -m signed_charge.reads.who_pays OUT.json [RUN.npz...]
 """
+
 import json
 import os
 import sys
@@ -20,7 +21,6 @@ from signed_charge.measure import conformality as cf
 from signed_charge.measure import fanout as fo
 from signed_charge.measure import field_similarity as fs
 from signed_charge.measure import flow_check as fc
-from signed_charge.measure import minutiae_stats as ms
 from signed_charge.measure import provenance
 from signed_charge.measure import signed_minutiae as sm
 
@@ -104,8 +104,12 @@ def score(rows, rng):
         strong, sn = np.array([x["strong_sum"] for x in xs]), np.array([x["strong_n"] for x in xs], float)
         draws = [rng.integers(len(xs), size=len(xs)) for _ in range(RESAMPLES)]
         p = [total[d].sum() / n[d].sum() for d in draws]
-        report[name] = {"prints": len(xs), "P": float(total.sum() / n.sum()), "ci": [float(np.percentile(p, q)) for q in (2.5, 97.5)],
-                        "P_strong": float(strong.sum() / max(sn.sum(), 1))}
+        report[name] = {
+            "prints": len(xs),
+            "P": float(total.sum() / n.sum()),
+            "ci": [float(np.percentile(p, q)) for q in (2.5, 97.5)],
+            "P_strong": float(strong.sum() / max(sn.sum(), 1)),
+        }
     return report
 
 

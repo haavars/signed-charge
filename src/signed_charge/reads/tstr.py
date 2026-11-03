@@ -4,6 +4,7 @@ A ResNet-18 with an ArcFace head on one arm's ridge maps, all in memory, shifted
 
 Run: python -m signed_charge.reads.tstr DATA_DIR ARM SEED OUT.json
 """
+
 import json
 import os
 import sys
@@ -86,7 +87,14 @@ def scored(z, rng):
         picked = list(dict.fromkeys(rng.choice(len(keys), len(keys))))  # a finger twice would score against itself
         g, i = rate([keys[j] for j in picked]) if len(picked) > 1 else (genuine, impostor)
         draws.append(equal_error(g, i)[0])
-    return {"eer": eer, "fmr100": fmr, "genuine": len(genuine), "impostor": len(impostor), "genuine_mean": float(genuine.mean()), "impostor_mean": float(impostor.mean())}, draws
+    return {
+        "eer": eer,
+        "fmr100": fmr,
+        "genuine": len(genuine),
+        "impostor": len(impostor),
+        "genuine_mean": float(genuine.mean()),
+        "impostor_mean": float(impostor.mean()),
+    }, draws
 
 
 def main(data, arm, seed, out):

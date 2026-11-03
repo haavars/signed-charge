@@ -4,6 +4,7 @@ A minutia counts if mindtct's and LEADER's are mutual nearest within `NEAR` px. 
 
 Run: python -m signed_charge.exploratory.density_consensus CACHE.pkl OUT.json RUN.npz...
 """
+
 import json
 import os
 import pickle

@@ -5,9 +5,9 @@ The picture is the whole volar surface, flattened as `screen.flattened` does and
 
 Run: python -m signed_charge.exploratory.stress_read OUT.jpg
 """
+
 import argparse
 import json
-import sys
 from pathlib import Path
 
 import cv2
@@ -76,10 +76,11 @@ def edges(angle, s):
     side = np.concatenate([angle[:, 1], angle[:, -2]])
     both = np.concatenate([s, s])
     nail = both >= g.NAIL_FROM * g.L
-    return {"crease": float(np.median(90 - fold(angle[1, 1:-1]))), "nail": float(np.median(fold(side[nail & (both < both.max() - 12)]))),
-            "margin": float(np.median(fold(side[~nail & (both > 30)])))}
-
-
+    return {
+        "crease": float(np.median(90 - fold(angle[1, 1:-1]))),
+        "nail": float(np.median(fold(side[nail & (both < both.max() - 12)]))),
+        "margin": float(np.median(fold(side[~nail & (both > 30)]))),
+    }
 
 
 def picture(path, angle, weight, s, phi, spots):
@@ -122,8 +123,16 @@ def read(pattern, person, **kwargs):
     inner = singular(angle[:-6, :])  # the rows at the pole are too short to hold an angle
     inner = clean([x for x in inner if 1 <= x[1] < len(phi) - 2 and x[0] >= 1], s, phi)
     seen = [x for x in inner if x[3]]
-    return {"edges": edges(angle, s), "points": inner, "sum": sum(x[2] for x in inner), "cores": sum(x[2] > 0 for x in seen), "deltas": sum(x[2] < 0 for x in seen),
-            "s1": [float(np.percentile(s1, q)) for q in (5, 50, 95)], "s2": [float(np.percentile(s2, q)) for q in (5, 50, 95)], "weight": float(np.median(weight))}, (angle, weight, s, phi)
+    return {
+        "edges": edges(angle, s),
+        "points": inner,
+        "sum": sum(x[2] for x in inner),
+        "cores": sum(x[2] > 0 for x in seen),
+        "deltas": sum(x[2] < 0 for x in seen),
+        "s1": [float(np.percentile(s1, q)) for q in (5, 50, 95)],
+        "s2": [float(np.percentile(s2, q)) for q in (5, 50, 95)],
+        "weight": float(np.median(weight)),
+    }, (angle, weight, s, phi)
 
 
 def main():
@@ -140,8 +149,22 @@ def main():
     height = dict(zip(("whorl", "loop", "arch"), (float(v) for v in args.height.split(","))))
     tiles = []
     for pattern in ("arch", "loop", "whorl"):
-        report, (angle, weight, s, phi) = read(pattern, (0.0, 0.0, 0.0, 0.0), spring=args.spring, normal_spring=args.normal, load=load[pattern], width=args.width, crease_force=args.crease, height=height[pattern])
-        print(pattern, json.dumps({k: v for k, v in report.items() if k != "points"}), [(round(float(s[r])), round(float(np.degrees(phi[k]))), p) for r, k, p, _ in report["points"]], flush=True)
+        report, (angle, weight, s, phi) = read(
+            pattern,
+            (0.0, 0.0, 0.0, 0.0),
+            spring=args.spring,
+            normal_spring=args.normal,
+            load=load[pattern],
+            width=args.width,
+            crease_force=args.crease,
+            height=height[pattern],
+        )
+        print(
+            pattern,
+            json.dumps({k: v for k, v in report.items() if k != "points"}),
+            [(round(float(s[r])), round(float(np.degrees(phi[k]))), p) for r, k, p, _ in report["points"]],
+            flush=True,
+        )
         out = Path(args.out).with_suffix(f".{pattern}.jpg")
         picture(out, angle, weight, s, phi, report["points"])
         tiles.append(cv2.imread(str(out)))

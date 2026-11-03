@@ -24,11 +24,11 @@ classifier) and the flow tail (`field_similarity.py`: between-people distances b
 
 Run: python -m signed_charge.generate.flow_variants OUT.json 30 model2 bend0.15 ...
 """
+
 import itertools
 import json
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import numpy as np
 
@@ -38,10 +38,19 @@ from signed_charge.measure.conformality import fs
 
 # (bend: Δ's SD in radians, fine: amplitude in radians, fine's scale in px[, ears: amplitude in radians where the
 # field turns fastest, flat: how much of model 2's far-field flattening to keep])
-VARIANTS = {"model2": (0.0, 0.0, 60), "bend0.15": (0.15, 0.0, 60), "bend0.3": (0.3, 0.0, 60),
-            "fine0.08": (0.0, 0.08, 60), "fine0.15": (0.0, 0.15, 60), "bend0.3_fine0.08": (0.3, 0.08, 60),
-            "fine0.06": (0.0, 0.06, 60), "bend0.1_fine0.06": (0.1, 0.06, 60), "fine0.08_flat0.5": (0.0, 0.08, 60, 0.0, 0.5),
-            "fine0.08_ears0.25": (0.0, 0.08, 60, 0.25, 1.0), "bend0.1_fine0.06_ears0.25_flat0.5": (0.1, 0.06, 60, 0.25, 0.5)}
+VARIANTS = {
+    "model2": (0.0, 0.0, 60),
+    "bend0.15": (0.15, 0.0, 60),
+    "bend0.3": (0.3, 0.0, 60),
+    "fine0.08": (0.0, 0.08, 60),
+    "fine0.15": (0.0, 0.15, 60),
+    "bend0.3_fine0.08": (0.3, 0.08, 60),
+    "fine0.06": (0.0, 0.06, 60),
+    "bend0.1_fine0.06": (0.1, 0.06, 60),
+    "fine0.08_flat0.5": (0.0, 0.08, 60, 0.0, 0.5),
+    "fine0.08_ears0.25": (0.0, 0.08, 60, 0.25, 1.0),
+    "bend0.1_fine0.06_ears0.25_flat0.5": (0.1, 0.06, 60, 0.25, 0.5),
+}
 BEND_SALT, FINE_SALT, EARS_SALT = 31, 32, 33
 EARS_SCALE = 40  # px
 EARS_TURN = 0.02  # rad/px: where the field turns this fast or faster (about 25 px from a core), the full amplitude
@@ -148,15 +157,16 @@ def tail(described):
 def shares(xs):
     h = np.sum([np.array(v["h10"]).reshape(10, 10) * v["n"] for v in xs], 0)
     low, high = h[:3], h[5:]
-    return {"extreme_low_curvature": float(low[:, [0, -1]].sum() / low.sum()),
-            "extreme_high_curvature": float(high[:, [0, -1]].sum() / max(high.sum(), 1)),
-            "lowest_curvature_share": float(h[0].sum() / h.sum())}
+    return {
+        "extreme_low_curvature": float(low[:, [0, -1]].sum() / low.sum()),
+        "extreme_high_curvature": float(high[:, [0, -1]].sum() / max(high.sum(), 1)),
+        "lowest_curvature_share": float(h[0].sum() / h.sum()),
+    }
 
 
 def main(out, people=30, variants=("model2",)):
     real_items = [((k[0], k[1], k[2]), im) for k, im in cf.fvc(("DB1", "DB2", "DB3"))]
-    tasks = [(v, s, f, c) for v in variants for s in range(3000, 3000 + people) for f in (2, 3, 4, 5, 7, 8, 9, 10)
-             for c in (1, 2)]
+    tasks = [(v, s, f, c) for v in variants for s in range(3000, 3000 + people) for f in (2, 3, 4, 5, 7, 8, 9, 10) for c in (1, 2)]
     with ProcessPoolExecutor(JOBS) as pool:
         real = list(pool.map(describe, real_items, chunksize=4))
         mine = list(pool.map(tip, tasks, chunksize=2))
@@ -168,9 +178,14 @@ def main(out, people=30, variants=("model2",)):
         xs = [(k, c, f) for k, c, f in mine if k[0] == v]
         t = tail(xs)
         cs = [(k, c) for k, c, _ in xs if c]
-        report[v] = {**shares([c for _, c in cs]), "accuracy_h10": cf.accuracy(real_c, cs, "h10"),
-                     "between_median": float(np.median(t)), "below_fvc_p1": float(np.mean(t < p1)),
-                     "below_fvc_p5": float(np.mean(t < p5)), "prints": len(xs)}
+        report[v] = {
+            **shares([c for _, c in cs]),
+            "accuracy_h10": cf.accuracy(real_c, cs, "h10"),
+            "between_median": float(np.median(t)),
+            "below_fvc_p1": float(np.mean(t < p1)),
+            "below_fvc_p5": float(np.mean(t < p5)),
+            "prints": len(xs),
+        }
         print(json.dumps({v: report[v]}), flush=True)
     json.dump(report, open(out, "w"), indent=1)
 

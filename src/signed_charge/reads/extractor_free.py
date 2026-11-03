@@ -6,12 +6,12 @@
 CI by finger. Run: python -m signed_charge.reads.extractor_free OUT.json
 LIMIT=n takes the first n fingers of each set, to try the code.
 """
+
 import json
 import os
 import pickle
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -175,7 +175,10 @@ def main(out):
                 sizes = np.zeros((len(where_r), 3))
                 for r in rows:
                     sizes[at[r["finger"]]] += r[f"size{scale}"]
-                mean[f"size{scale}"] = {"own": boot(sizes, where_r, lambda i: sizes[i, 0].sum() / sizes[i, 2].sum(), rng), "mean": boot(sizes, where_r, lambda i: sizes[i, 1].sum() / sizes[i, 2].sum(), rng)}
+                mean[f"size{scale}"] = {
+                    "own": boot(sizes, where_r, lambda i: sizes[i, 0].sum() / sizes[i, 2].sum(), rng),
+                    "mean": boot(sizes, where_r, lambda i: sizes[i, 1].sum() / sizes[i, 2].sum(), rng),
+                }
             for reader in sm.EXTRACTORS:
                 mean[reader] = {}
                 for scale in SCALES:
@@ -183,7 +186,11 @@ def main(out):
                     for r in rows:
                         (a, n), (b, _) = r[reader][scale]
                         table[at[r["finger"]]] += (a, b, n)
-                    mean[reader][scale] = {"own": boot(table, where_r, lambda i: table[i, 0].sum() / max(table[i, 2].sum(), 1), rng), "mean": boot(table, where_r, lambda i: table[i, 1].sum() / max(table[i, 2].sum(), 1), rng), "rise": boot(table, where_r, lambda i: (table[i, 1].sum() - table[i, 0].sum()) / max(table[i, 2].sum(), 1), rng)}
+                    mean[reader][scale] = {
+                        "own": boot(table, where_r, lambda i: table[i, 0].sum() / max(table[i, 2].sum(), 1), rng),
+                        "mean": boot(table, where_r, lambda i: table[i, 1].sum() / max(table[i, 2].sum(), 1), rng),
+                        "rise": boot(table, where_r, lambda i: (table[i, 1].sum() - table[i, 0].sum()) / max(table[i, 2].sum(), 1), rng),
+                    }
             report[name]["mean"] = mean
     report["_provenance"] = provenance.record(started)
     json.dump(report, open(out, "w"), indent=1)

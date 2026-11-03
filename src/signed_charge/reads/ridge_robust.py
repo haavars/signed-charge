@@ -4,11 +4,11 @@
 
 Run: python -m signed_charge.reads.ridge_robust OUT.json
 """
+
 import json
 import pickle
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np

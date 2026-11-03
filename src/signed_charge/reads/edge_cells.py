@@ -2,12 +2,12 @@
 mindtct's minutiae as the only charges, cells split by distance to the nearest core/delta and to the foreground's edge.
 Run from python_biometrics: RIDGEGEN_TOOLS=$PWD/tools PYTHONPATH=. OMP_NUM_THREADS=1 .venv/bin/python edge_cells.py OUT.json SETS...
 """
+
 import json
 import os
 import pickle
 import sys
 from concurrent.futures import ProcessPoolExecutor
-from pathlib import Path
 
 import cv2
 import numpy as np
@@ -67,11 +67,23 @@ def one(task):
         dc = d[ci_, cj_] * np.sign(np.cos(ang[ci_, cj_]) * kcx + np.sin(ang[ci_, cj_]) * kcy + 1e-12) * phi_c
         rho = (lift * np.exp(-(dist**2) / (2 * s * s)) / (2 * np.pi * s * s)).sum(1)
         out[s] = {}
-        for part, pick in (("near_singular", near_c < s), ("far_shallow", (near_c >= s) & (edge_c < s)), ("far_deep", (near_c >= s) & (edge_c >= s)),
-                           ("far_deep2", (near_c >= 2 * s) & (edge_c >= 2 * s)), ("all", np.ones(len(cells), bool))):
+        for part, pick in (
+            ("near_singular", near_c < s),
+            ("far_shallow", (near_c >= s) & (edge_c < s)),
+            ("far_deep", (near_c >= s) & (edge_c >= s)),
+            ("far_deep2", (near_c >= 2 * s) & (edge_c >= 2 * s)),
+            ("all", np.ones(len(cells), bool)),
+        ):
             if pick.sum() < 3:
                 continue
-            out[s][part] = (int(pick.sum()), float(np.abs(dc[pick]).sum()), float(dc[pick] @ dc[pick]), float(np.abs(rho[pick]).sum()), float(rho[pick] @ rho[pick]), float(rho[pick] @ dc[pick]))
+            out[s][part] = (
+                int(pick.sum()),
+                float(np.abs(dc[pick]).sum()),
+                float(dc[pick] @ dc[pick]),
+                float(np.abs(rho[pick]).sum()),
+                float(rho[pick] @ rho[pick]),
+                float(rho[pick] @ dc[pick]),
+            )
     return out
 
 
@@ -100,10 +112,18 @@ def main(out, sets):
                 if len(t) < 3:
                     continue
                 n = t[:, 0].sum()
-                e = {"prints": len(t), "cells": int(n), "abs_phi_d": float(t[:, 1].sum() / n), "abs_rho": float(t[:, 3].sum() / n),
-                     "d_on_rho": float(t[:, 5].sum() / max(t[:, 4].sum(), 1e-24)), "corr": float(t[:, 5].sum() / np.sqrt(max(t[:, 2].sum() * t[:, 4].sum(), 1e-30)))}
+                e = {
+                    "prints": len(t),
+                    "cells": int(n),
+                    "abs_phi_d": float(t[:, 1].sum() / n),
+                    "abs_rho": float(t[:, 3].sum() / n),
+                    "d_on_rho": float(t[:, 5].sum() / max(t[:, 4].sum(), 1e-24)),
+                    "corr": float(t[:, 5].sum() / np.sqrt(max(t[:, 2].sum() * t[:, 4].sum(), 1e-30))),
+                }
                 rep[f"{s}/{part}"] = e
-                print(f"  s={s} {part:13s} prints={len(t):4d} cells={int(n):7d} |Phi d|={e['abs_phi_d']:.2e} |rho|={e['abs_rho']:.2e} ratio={e['abs_rho'] / e['abs_phi_d']:.2f} d/rho={e['d_on_rho']:.2f} corr={e['corr']:.2f}")
+                print(
+                    f"  s={s} {part:13s} prints={len(t):4d} cells={int(n):7d} |Phi d|={e['abs_phi_d']:.2e} |rho|={e['abs_rho']:.2e} ratio={e['abs_rho'] / e['abs_phi_d']:.2f} d/rho={e['d_on_rho']:.2f} corr={e['corr']:.2f}"
+                )
         report[name] = rep
     json.dump(report, open(out, "w"), indent=1)
 

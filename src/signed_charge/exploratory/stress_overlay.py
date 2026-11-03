@@ -5,6 +5,7 @@ A file name holds pattern and seed, and the finger's geometry follows from the s
 
 Run: python -m signed_charge.exploratory.stress_overlay OUT.jpg RUN.npz...
 """
+
 import re
 import sys
 from pathlib import Path
@@ -46,7 +47,16 @@ def main(out, paths):
         heat = cv2.applyColorMap(np.clip(np.nan_to_num(cross) / (np.pi / 2) * 255, 0, 255).astype(np.uint8), cv2.COLORMAP_VIRIDIS)
         heat[~contact] = 255
         tiles.append(np.vstack([over, heat]))
-        print(Path(path).stem, "weak share", round(float((weak[contact] < WEAK).mean()), 3), "median crossing", round(float(np.degrees(np.nanmedian(cross[contact]))), 1), "share over 45", round(float(np.nanmean(cross[contact] > np.pi / 4)), 3), flush=True)
+        print(
+            Path(path).stem,
+            "weak share",
+            round(float((weak[contact] < WEAK).mean()), 3),
+            "median crossing",
+            round(float(np.degrees(np.nanmedian(cross[contact]))), 1),
+            "share over 45",
+            round(float(np.nanmean(cross[contact] > np.pi / 4)), 3),
+            flush=True,
+        )
     cv2.imwrite(out, np.hstack(tiles), [cv2.IMWRITE_JPEG_QUALITY, 90])
 
 
