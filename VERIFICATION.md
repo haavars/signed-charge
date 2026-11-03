@@ -4,7 +4,7 @@ What has been rerun from this repository, and how it compared with the stored re
 
 ## Machine
 
-One Linux workstation: 24 cores, an RTX 4090, Python 3.12.14, with the packages in `uv.lock`. Data at the paths in `scripts/env.example.sh`, matching `manifests/`: all 960 FVC B files and LEADER's file hash as listed.
+One Linux workstation: a 12-core AMD Ryzen 9 3900X (24 threads), an RTX 4090, Python 3.12.14, with the packages in `uv.lock`. Data at the paths in `scripts/env.example.sh`, matching `manifests/`: all 960 FVC B files and LEADER's file hash as listed.
 
 ## The full rerun, 2026-11-02 to 2026-11-03
 
