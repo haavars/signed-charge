@@ -52,14 +52,20 @@ Prints are compared array by array, leaving out their run metadata (`provenance`
 
 Each seed's rerun lies within the stored run's confidence interval for that seed. ZP and SynFing swap order, and their seeds' ranges overlap in both runs.
 
+### After merging the cleanup branch, 2026-11-03
+
+The quick stage and `cross_signs` were rerun on the merged code, which reformatted every module and changed no program structure.
+
+| Read | Outcome |
+|---|---|
+| `signed_minutiae` | 6,688 of 6,688 values identical |
+| `signed_reinked` | 1,672 of 1,672 values identical |
+| `signed_false` | 1,118 of 1,118 values identical |
+| `cross_signs` | 28 of 28 values identical |
+
 ### Printed numbers
 
-| Check | Outcome |
-|---|---|
-| `scripts/check_claims.py results/verify`, main's version | 133 of 133 checked match the paper |
-| The cleanup branch's version, covering 300 numbers | 256 of 256 checked match the paper |
-
-The differences above are all below the paper's rounding. The numbers not checked are in results not rerun by this stage: the quick stage's `signed_minutiae` (18 numbers, run separately), the held-out look (24, see below), and `cross_signs` (2, added on the cleanup branch).
+`scripts/check_claims.py results/verify`, covering 300 numbers: **276 of 276 checked match the paper**. The other 24 are the held-out look's, which isn't rerun by design (below). The differences listed above are all below the paper's rounding.
 
 ## Earlier runs
 
