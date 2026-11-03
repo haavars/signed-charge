@@ -61,7 +61,7 @@ We define a pair correlation of signs, lifted along the ridge flow so that it ne
 
 ## Reproducing the results
 
-You need Linux, [uv](https://docs.astral.sh/uv/), gcc, make and curl, and about 20 GB of disk. The matcher test needs a CUDA 13 GPU. The rest runs on CPU, and a many-core machine helps: a full run takes most of a day on 24 cores.
+You need Linux, [uv](https://docs.astral.sh/uv/), gcc, make and curl, and about 20 GB of disk. The matcher test needs a CUDA 13 GPU. The rest runs on CPU, and a many-core machine helps: a full run takes most of a day on 24 threads.
 
 **1. Set up.** This installs pinned Python packages and builds NBIS into `tools/`.
 
