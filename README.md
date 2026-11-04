@@ -4,7 +4,7 @@ Code and stored results for a draft paper, shared so that its numbers can be che
 
 ## The research in brief
 
-A minutia is a place where a ridge is added or lost, so it carries a sign, and a ridge pattern can be read as a phase in which each minutia is a charge of +1 or -1. Whether neighbouring charges are arranged in any particular way is a plain question, and we found no prior work that answers it. Champod (1996) tabulated a fixed-frame sign by region, and his one-sign regions need comparing with what's below; pair statistics in the older literature are still being checked.
+A minutia is a place where a ridge is added or lost, so it carries a sign, and a ridge pattern can be read as a phase in which each minutia is a charge of +1 or -1. Whether neighbouring charges are arranged in any particular way is a plain question, and we found no prior work that answers it. Champod (1996) tabulated a fixed-frame sign by region, and his one-sign regions need comparing with what's below. Stoney and Thornton's minutia-pair studies (1986, 1987) haven't been read yet.
 
 We define a pair correlation of signs, lifted along the ridge flow so that it needs no global direction:
 
