@@ -24,22 +24,24 @@ We define a pair correlation of signs, lifted along the ridge flow so that it ne
 | SFinGe, fingers set aside, 90 fingers | 2.38 / 2.73 | |
 | ZP, a zero-pole flow at fixed spacing | 4.15 / 3.88 | 0.51 / 0.48 |
 | ZP+P, the same flow with placed minutiae | 3.39 / 2.88 | 0.54 / 0.58 |
-| Anguli | 2.12 / 2.10 | 0.47 / 0.46 |
-| SynFing, a GAN | 1.67 / 1.92 | 0.33 / 0.38 |
+| Anguli, through real windows | 2.12 / 2.10 | 0.47 / 0.46 |
+| SynFing, a GAN, through real windows | 1.67 / 1.92 | 0.33 / 0.38 |
+
+Anguli and SynFing are read through real prints' windows here (the paper's Table 8). Read on each image's own print they give 2.23 / 2.22 and 1.66 / 2.03 (Table 7).
 
 - **It survives false minutiae.** Keeping only minutiae that recur across impressions moves real's C(60) to 0.89 / 1.00, and generators stay well above it.
 - **It survives having no extractor against ZP.** Counting spirals in the phase gives real 1.03, against 4.22 for ZP.
 - **Real doesn't screen.** Charges of a random field read -0.88 through the same windows, and real's sum stays positive at about +1.0 to +1.6.
 - **Net charge closes on the flow,** with r about 0.90 on real, as the divergence theorem requires. What separates real is the excess X = ⟨Q²⟩ − ⟨N⟩, which adding independent minutiae can't move: 2.8 / 2.7 on real, 5.3 / 5.2 on Turing fronts laid on the same prints' low-passed flow, and 10 to 19 on the other generators.
-- **On one ridge at 1.5 to 3 mm, real's sign has almost no memory:** h is 0.01 / 0.05, against 0.24 or more on every generator.
+- **On one ridge at 1.5 to 3 mm, real's sign has almost no memory:** by the extractors h is 0.01 / 0.05, against 0.24 or more on every generator. With no extractor (phase winding) this holds against ZP (0.61) but not against SFinGe (0.04, real −0.01), so against SFinGe it depends on which marks count as minutiae.
 - **For zero-pole flows the cause lies in the flow.** At fixed spacing a flow that spreads forces net charge, and swapping the ridge mechanism took C(60) down by only a third. What real prints do instead isn't settled.
 
 ### What this doesn't show
 
-- **Not new sensors.** The held-out fingers come from the same nine sensors as the tuning data. C(60) ranges from 0.03 to 1.51 across them.
+- **Not new sensors.** The held-out fingers come from the same nine sensors as the tuning data. C(60) ranges from 0.03 to 1.51 across them. For real prints in general the unit is the sensor, so n is 9, and each sensor's mean rests on 10 fingers.
 - **A generator at real's image quality isn't tested.** On clear ridges real reads about 1.3, so part of the low end of the band is quality. Two registered recipes for degrading generators failed their own fairness gates.
 - **A registered long-range band failed.** On LEADER, h(60-100 px) overlaps between real and SFinGe, so no long-range difference from SFinGe is claimed.
-- **The extractor-free result is firm against ZP only.** The read behaves differently on SFinGe, for reasons we can't explain.
+- **The size of the gap is less certain than its direction.** With no extractor, SFinGe reads 1.76 against real's 1.03, under the 2.4 to 2.7 the extractors give, and at a matched ridge count SFinGe's excess is a third smaller. That extractor-free read is firm against ZP only: it behaves differently on SFinGe, for reasons we can't explain.
 - **Whether charge matters to recognition is open.** Less charge helped no comparison in a matcher test, but those sets differ in far more than charge.
 - **Plain prints only.** Real's numbers come from plain prints, which show little of the area beside the delta. Champod's rolled prints show one sign at up to 83 % there.
 - **The prior-art search isn't complete.** It missed Champod's tables, and the older literature was reached largely through secondary sources.
