@@ -4,30 +4,43 @@ Code and stored results for a draft paper, shared so that its numbers can be che
 
 ## The research in brief
 
-A minutia is a place where a ridge is added or lost, so it carries a sign, and a ridge pattern can be read as a phase in which each minutia is a charge of +1 or -1. Whether neighbouring charges are arranged in any particular way is a plain question, and we found no prior work that answers it. Champod (1996) tabulated a fixed-frame sign by region, and his one-sign regions need comparing with what's below. Stoney and Thornton's minutia-pair studies (1986, 1987) haven't been read yet.
+A minutia is a place where a ridge is added or lost, so it carries a sign, and a ridge pattern can be read as a phase in which each minutia is a charge of +1 or -1 (Larkin & Fletcher 2007). Whether neighbouring charges are arranged in any particular way is a plain question. For friction ridge skin we found no prior work that answers it. Charge correlations of phase singularities are well studied in optics: neighbouring vortices of a random wave anticorrelate, and their charge is screened (Halperin 1981; Freund & Shvartsman 1994; Shvartsman & Freund 1994; Berry & Dennis 2000; Dennis 2003). Champod (1996) tabulated a fixed-frame sign by region, and his one-sign regions need comparing with what's below. Stoney and Thornton's minutia-pair studies (1986, 1987) haven't been read yet.
 
-We define a pair correlation of signs, lifted along the ridge flow so that it needs no global direction:
+We define a pair correlation of signs. Ridge flow has no global direction, so a sign is only defined for a pair. For minutiae i and j whose straight segment lies on the print, the ridge direction is lifted continuously along that segment, from the print's orientation field smoothed over one ridge period (9 px). s_i and s_j are each minutia's sign against the lifted direction at its end. Pairs whose segment leaves the print are dropped. The sign rule was calibrated on planted spirals, 96 of 96 right, for forks and endings alike.
 
     h(r) = mean of s_i s_j over pairs of minutiae at separation r
     C(R) = sum over a minutia's neighbours within R of s_i s_j, averaged over minutiae
 
-`h` is 0 for independent signs, negative for opposite neighbours and positive for one-sign domains. C(R) = -1 would mean a charge is exactly screened within R. All numbers below are mindtct / LEADER, at 500 ppi, where 60 px is 3 mm.
+h(r) is the mark correlation function of a point process with marks ±1 (Illian et al. 2008), except that here the marks are defined only pairwise, through the lift.
+
+- **h** is 0 for independent signs with no net bias: planted spirals of random sign on straight ridges read about 0. It is negative for opposite neighbours and positive for one-sign domains.
+- **The flow sets a bias.** Where the flow fans out, it demands minutiae of one sign. So independent signs that follow that local mean give h > 0, and part of every positive h below is the flow's. Separating the two needs the flow's predicted mean sign. That isn't done yet (see below).
+- **C(R) = -1** would mean a charge is exactly screened within R. C is a sum, so it grows with the number of neighbours as h does not; minutiae a print are given beside it.
+
+All numbers below are mindtct / LEADER, plain impressions at 500 ppi, where 60 px is 3 mm, about six ridge periods.
 
 ### Findings
 
-**Real prints carry little net charge within 3 mm, and every generator we tested carries more.**
+**Within 3 mm, neighbouring minutiae on real prints share sign only weakly, and every generator we tested shares it more.** The ordering is the same on both extractors.
 
-| | C(60) | h(15-45 px) |
-|---|---|---|
-| Real, fingers set aside, 270 fingers | 0.81 / 1.07 | |
-| Real, tuning data, 90 fingers | 0.70 / 1.03 | 0.13 / 0.23 |
-| SFinGe, fingers set aside, 90 fingers | 2.38 / 2.73 | |
-| ZP, a zero-pole flow at fixed spacing | 4.15 / 3.88 | 0.51 / 0.48 |
-| ZP+P, the same flow with placed minutiae | 3.39 / 2.88 | 0.54 / 0.58 |
-| Anguli, through real windows | 2.12 / 2.10 | 0.47 / 0.46 |
-| SynFing, a GAN, through real windows | 1.67 / 1.92 | 0.33 / 0.38 |
+| | minutiae a print | C(60) | h(15-45 px) |
+|---|---|---|---|
+| Real, fingers set aside, 270 fingers | | 0.81 / 1.07 | |
+| Real, tuning data, 90 fingers | 31.5 / 27.9 | 0.70 / 1.03 | 0.13 / 0.23 |
+| SFinGe, fingers set aside, 90 fingers | | 2.38 / 2.73 | |
+| SFinGe, tuning data, 30 fingers | 25.0 / 24.8 | 2.42 / 2.76 | 0.45 / 0.53 |
+| ZP, a zero-pole flow at fixed spacing | 49.1 / 51.2 | 4.15 / 3.88 | 0.51 / 0.48 |
+| ZP+P, the same flow with placed minutiae | 35.0 / 28.3 | 3.39 / 2.88 | 0.54 / 0.58 |
+| Anguli, through real windows | 25.8 / 25.2 | 2.12 / 2.10 | 0.47 / 0.46 |
+| SynFing, a GAN, through real windows | 28.7 / 25.5 | 1.67 / 1.92 | 0.33 / 0.38 |
 
-Anguli and SynFing are read through real prints' windows here (the paper's Table 8). Read on each image's own print they give 2.23 / 2.22 and 1.66 / 2.03 (Table 7).
+mindtct / LEADER, all minutiae. Confidence intervals, by finger, are in the paper and in `results/expected/`.
+
+- **The held-out rows have no h or count.** The held-out look read C(60) only, and the protocol allows each look once (`docs/held-out-protocol.md`).
+- **Density doesn't explain the gap.** SFinGe has fewer minutiae a print than real and still about three times its C(60), and h, which doesn't scale with the number of neighbours, separates it as well.
+- **Where these come from.** Anguli and SynFing are read through real prints' windows here (the paper's Table 8). Read on each image's own print, they give 2.23 / 2.22 and 1.66 / 2.03 (Table 7), and the minutiae column counts minutiae a window.
+
+What else the paper finds:
 
 - **It survives false minutiae.** Keeping only minutiae that recur across impressions moves real's C(60) to 0.89 / 1.00, and generators stay well above it.
 - **It survives having no extractor against ZP.** Counting spirals in the phase gives real 1.03, against 4.22 for ZP.
@@ -44,6 +57,8 @@ Anguli and SynFing are read through real prints' windows here (the paper's Table
 - **The size of the gap is less certain than its direction.** With no extractor, SFinGe reads 1.76 against real's 1.03, under the 2.4 to 2.7 the extractors give, and at a matched ridge count SFinGe's excess is a third smaller. That extractor-free read is firm against ZP only: it behaves differently on SFinGe, for reasons we can't explain.
 - **Whether charge matters to recognition is open.** Less charge helped no comparison in a matcher test, but those sets differ in far more than charge.
 - **Plain prints only.** Real's numbers come from plain prints, which show little of the area beside the delta. Champod's rolled prints show one sign at up to 83 % there.
+- **The flow's own bias isn't taken out.** h and C are read on raw signs. A null that keeps the mean sign the flow demands at each point, or correlations of the residual signs, isn't done, so how much of each positive h is the flow's and how much is arrangement is open. The paper's reads of flow agreement and of excess charge over independent signs (X) bear on it, but don't settle it.
+- **Two parts of the lift aren't checked.** Pairs whose segment passes close to a core or delta, where the lift is least certain, are kept. And there is no edge correction for C(R): near the print's edge a minutia's disc is cut off, which pulls C toward 0. h, a mean over pairs, is far less affected.
 - **The prior-art search isn't complete.** It missed Champod's tables, and the older literature was reached largely through secondary sources.
 
 ## What's here
