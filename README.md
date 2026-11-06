@@ -11,7 +11,7 @@ We define a pair correlation of signs. Ridge flow has no global direction, so a 
     h(r) = mean of s_i s_j over pairs of minutiae at separation r
     C(R) = sum over a minutia's neighbours within R of s_i s_j, averaged over minutiae
 
-h(r) is the mark correlation function of a point process with marks ±1 (Illian et al. 2008), except that here the marks are defined only pairwise, through the lift.
+h(r) is the non-normalised mark correlation function c_mm(r) of a point process with marks ±1 (Illian et al. 2008), except that here the marks are defined only pairwise, through the lift. The normalised k_mm(r) divides by the squared mean mark, which is near 0 here, so it isn't used.
 
 - **h** is 0 for independent signs with no net bias: planted spirals of random sign on straight ridges read about 0. It is negative for opposite neighbours and positive for one-sign domains.
 - **The flow sets a bias.** Where the flow fans out, it demands minutiae of one sign. So independent signs that follow that local mean give h > 0, and part of every positive h below is the flow's. Separating the two needs the flow's predicted mean sign. That isn't done yet (see below).
